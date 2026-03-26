@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Phone, CheckCircle } from "lucide-react";
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Testimonials } from "@/components/testimonials";
 import { CtaSection } from "@/components/cta-section";
 import { homeTestimonials, homeTestimonialsEs } from "@/data/Tetimonials";
+import { useParams } from "next/navigation";
 
 const inputCls = "w-full bg-black/60 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-primary transition-colors";
 const selectCls = "w-full bg-black/60 border border-white/20 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition-colors";
@@ -271,7 +272,10 @@ function BookingForm({ t }: { t: any }) {
 }
 
 // ── MAIN CONTENT ──────────────────────────────────────────────────────────────
-export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
+export default function MainContent() {
+  const params = useParams();
+    const lng = params.lng as "es" | "en";
+    const [dict, setDict] = useState<any>(null);
   const t = dict;
   const testimonios = lng === "en" ? homeTestimonials : homeTestimonialsEs;
 
