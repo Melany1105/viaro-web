@@ -1,0 +1,565 @@
+{
+  "contact": {
+  "label": "Contáctanos",
+  "title": "Hagamos que tu viaje suceda",
+  "subtitle": "¿Tienes alguna pregunta, necesitas una cotización personalizada o quieres planear un viaje especial? Estamos disponibles 24/7. Escríbenos y una persona real te responderá.",
+
+  "form": {
+    "title": "Envíanos un mensaje",
+    "name": "Nombre completo",
+    "namePlaceholder": "Juan Pérez",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "juan@email.com",
+    "phone": "Teléfono",
+    "phonePlaceholder": "(206) 000-0000",
+    "service": "Tipo de servicio",
+    "serviceDefault": "Selecciona un servicio...",
+    "serviceOptions": [
+      { "value": "airport", "label": "Traslado al aeropuerto" },
+      { "value": "hourly", "label": "Chárter por horas" },
+      { "value": "corporate", "label": "Viaje corporativo" },
+      { "value": "event", "label": "Evento especial" },
+      { "value": "other", "label": "Otro" }
+    ],
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntanos sobre tu viaje, fechas, número de pasajeros...",
+    "submit": "Enviar mensaje",
+    "successTitle": "¡Mensaje enviado!",
+    "successText": "Gracias por contactarnos. Te responderemos en menos de 1 hora.",
+    "successBtn": "Enviar otro"
+  },
+
+  "info": {
+    "phone": { "label": "Teléfono", "value": "(206) 672-8281", "note": "Disponible 24/7" },
+    "email": { "label": "Correo", "value": "reservations@viaro.io", "note": "Respuesta en menos de 1 hora" },
+    "hours": { "label": "Horario", "value": "24 horas / 7 días a la semana", "note": "Incluidos días festivos" },
+    "location": { "label": "Sede principal", "value": "Seattle, Washington", "note": "Atendemos más de 40 ciudades en Norteamérica" }
+  },
+
+  "social": {
+    "label": "Síguenos",
+    "links": [
+      { "label": "Instagram", "href": "#" },
+      { "label": "Facebook", "href": "#" },
+      { "label": "LinkedIn", "href": "#" }
+    ]
+  }
+},
+"navbar": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "locations": "Locaciones",
+    "book": "Reservar",
+    "airline": "FBO y Tripulaciones",
+    "airport": "Traslados al Aeropuerto",
+    "corporate": "Viajes Corporativos",
+    "cruise": "Traslados a Cruceros",
+    "hourly": "Chofer por Horas"
+  },
+  "testimo": {
+    "title": "Opiniones sobre transporte de lujo con estrellas"
+  },
+  "map": {
+    "title": "Regiones de Servicio en EE. UU.",
+    "west": "Costa Oeste",
+    "central": "Zona Central",
+    "east": "Costa Este",
+    "select": "Seleccionar",
+    "canada": "Soporte en Canadá",
+    "costarica": "Soporte en Costa Rica"
+  },
+  "locations": {
+    "hero": {
+      "subtitle": "Servicio Premium con Chofer",
+      "title": "Transporte de Lujo en Todo el Estado de Washington",
+      "description": "Atendemos las principales ciudades y aeropuertos con profesionalismo, puntualidad y excelencia."
+    },
+    "intro": {
+      "title": "Transporte Ejecutivo en el que Puede Confiar",
+      "subtitle": "Confiable, Profesional y Siempre Puntual",
+      "description": "Ofrecemos servicios de transporte terrestre de primera clase en todo el estado de Washington. Ya sea que necesite traslados al aeropuerto, viajes corporativos o transporte para eventos especiales, nuestros choferes garantizan comodidad, seguridad y discreción."
+    },
+    "stats": {
+      "title": "Por Qué Nos Eligen Nuestros Clientes",
+      "ratingLabel": "Servicio Mejor Calificado",
+      "ratingDesc": "Reseñas constantes de 5 estrellas de clientes satisfechos.",
+      "flightLabel": "Monitoreo de Vuelos",
+      "flightDesc": "Seguimiento en tiempo real para recogidas sin complicaciones.",
+      "supportLabel": "Atención al Cliente",
+      "supportDesc": "Disponible 24 horas al día, 7 días a la semana.",
+      "licensedLabel": "Totalmente Licenciados y Asegurados",
+      "licensedDesc": "Conductores profesionales y vehículos certificados."
+    },
+    "topCities": "Principales Ciudades que Atendemos",
+    "faqTitle": "Preguntas Frecuentes",
+    "buttons": {
+      "bookNow": "Reservar Ahora",
+      "quote": "Solicitar Cotización",
+      "moreQuestions": "Más Preguntas"
+    }
+  },
+  "home": {
+    "hero_top_text": "El Servicio de Auto de Lujo y Chofer Ejecutivo Líder en América",
+    "hero_title": "El nuevo estándar de lujo. Elegido por 500 empresas Fortune.",
+    "subtitle": "Trusted by 500 Fortune Companies.",
+    "book_now": "Reservar Ahora",
+    "form_title": "Reserva tu viaje",
+    "form_subtitle": "Cotización inmediata · Sin compromiso",
+    "form_service": "Tipo de servicio",
+    "form_service_placeholder": "Selecciona un servicio...",
+    "form_service_airport": "Traslado al aeropuerto",
+    "form_service_corporate": "Corporativo / Ejecutivo",
+    "form_service_cruise": "Puerto de cruceros",
+    "form_service_fbo": "Jet privado / FBO",
+    "form_service_hourly": "Renta por hora",
+    "form_pickup": "Lugar de recogida",
+    "form_pickup_placeholder": "Dirección, aeropuerto, hotel...",
+    "form_dropoff": "Destino",
+    "form_dropoff_placeholder": "Destino...",
+    "form_date": "Fecha",
+    "form_time": "Hora",
+    "form_passengers": "Pasajeros",
+    "form_passenger": "pasajero",
+    "form_passengers_label": "pasajeros",
+    "form_cta": "Obtener cotización",
+    "call_cta": "Llamar al (206) 672-8281",
+   
+    "welcome_title": "Bienvenido a Viaro",
+    "welcome_description": "Viajar debería ser la parte más sencilla de tu día. Viaro te da más que un traslado. Te damos tranquilidad.\n\n¿Llegando a Nueva York?\n\n¿Cerrando un trato en Chicago? ¿O de vacaciones en Miami? Nuestros choferes profesionales están listos y esperándote.\n\nRastreamos tu vuelo. Llevamos tu equipaje. Te llevamos a tiempo, con estilo y sin estrés.",
+
+    "services_title": "Servicios de Transporte de Lujo para Cada Necesidad",
+    "services": [
+      {
+        "id": "airport",
+        "title": "Traslados al Aeropuerto",
+        "description": "Olvídate de las filas de taxis y la confusión de los viajes compartidos. Viaro ofrece servicios confiables de transporte de ida y vuelta en los principales aeropuertos del país.",
+        "detail": "Usamos software de seguimiento de vuelos en tiempo real. Si tu vuelo llega antes, estaremos ahí. Si se retrasa, te esperamos. Nuestros choferes te reciben en la recogida de equipaje o en la acera y te ayudan con tus maletas.",
+        "served_label": "Disponible en",
+        "served": "JFK, LAX, ORD, DFW, ATL, IAD, MIA, BOS, SFO, SEA, LAS, IAH, PHX, DEN, SAN, CLT, BNA, AUS, PHL, MCO y más.",
+        "cta": "Reservar Traslado al Aeropuerto →"
+      },
+      {
+        "id": "fbo",
+        "title": "Traslados para Tripulaciones y FBO",
+        "description": "El tiempo es crítico para las tripulaciones de vuelo y los viajeros en jets privados. Viaro ofrece transporte terrestre rápido y confiable para pilotos y sobrecargos entre vuelos.",
+        "detail": "¿Vuelas en privado? Nuestros conductores tienen autorización para recibirte directamente en la pista de los terminales FBO donde está permitido. Solo danos tu número de cola y nosotros hacemos el resto.",
+        "served_label": "Ubicaciones FBO",
+        "served": "Signature Flight Support, Atlantic Aviation, Million Air y terminales privadas en todo el país.",
+        "cta": "Programar Recogida en FBO →"
+      },
+      {
+        "id": "corporate",
+        "title": "Transporte Corporativo",
+        "description": "Convierte el tiempo de viaje en tiempo productivo. Nuestros vehículos de lujo funcionan como una oficina móvil tranquila para ejecutivos ocupados.",
+        "detail": "Disfruta de asientos de cuero, puertos de carga, Wi-Fi bajo solicitud y un viaje sin sobresaltos. Simplificamos la facturación con cuentas centralizadas y facturas mensuales. Un solo punto de contacto para todas tus necesidades de viaje corporativo.",
+        "served_label": "Ideal para",
+        "served": "Viajes ejecutivos, transporte de clientes, roadshows, juntas directivas y eventos corporativos.",
+        "cta": "Abrir Cuenta Corporativa →"
+      },
+      {
+        "id": "cruise",
+        "title": "Traslados a Cruceros",
+        "description": "Comienza tus vacaciones desde el momento en que sales de casa. Viaro ofrece traslados directos a terminales de cruceros en las principales ciudades portuarias.",
+        "detail": "Nuestros conductores conocen los puntos exactos de llegada y salida de cada línea de cruceros. Evita las aglomeraciones y aborda tu barco con facilidad. También te recogemos cuando termina tu crucero.",
+        "served_label": "Puertos de crucero",
+        "served": "Puerto de Miami, Port Everglades, Puerto de Seattle, Puerto de Los Ángeles, Puerto de San Diego, Galveston y más.",
+        "cta": "Reservar Traslado a Crucero →"
+      },
+      {
+        "id": "hourly",
+        "title": "Chárteres Privados por Hora",
+        "description": "¿Necesitas un auto y conductor por todo el día? Nuestro servicio de chofer por horas te da total libertad.",
+        "detail": "Ya sea que tengas varias reuniones, un día de compras, un tour de vinos, una salida nocturna o cualquier evento especial, tu conductor permanece contigo. Reserva flexible con un mínimo de 3 horas.",
+        "served_label": "Usos populares",
+        "served": "Reuniones de negocios, tours por la ciudad, ocasiones especiales, transporte para bodas, tours por viñedos.",
+        "cta": "Reservar Chofer por Horas →"
+      }
+    ],
+
+    "locations_title": "Servicio de Auto Negro en las Principales Ciudades del País",
+    "locations_subtitle": "Viaro ofrece un servicio consistente y de alta calidad en los principales destinos de negocios y ocio del país. Una sola cuenta, el mismo estándar de lujo en todos lados.",
+    "locations_cta": "Reserva tu Viaje más Cercano →",
+    "locations_regions": [
+      {
+        "region": "Costa Este",
+        "cities": [
+          { "label": "Nueva York (JFK, LGA, EWR)", "slug": "new-york" },
+          { "label": "Washington DC (IAD, DCA, BWI)", "slug": "washington-dc" },
+          { "label": "Boston (BOS)", "slug": "boston" },
+          { "label": "Filadelfia (PHL)", "slug": "philadelphia" },
+          { "label": "Charlotte (CLT)", "slug": "charlotte" },
+          { "label": "Atlanta (ATL)", "slug": "atlanta" },
+          { "label": "Miami (MIA, FLL)", "slug": "miami" },
+          { "label": "Orlando (MCO)", "slug": "orlando" }
+        ]
+      },
+      {
+        "region": "Centro de EE.UU.",
+        "cities": [
+          { "label": "Chicago (ORD, MDW)", "slug": "chicago" },
+          { "label": "Dallas (DFW, DAL)", "slug": "dallas" },
+          { "label": "Houston (IAH, HOU)", "slug": "houston" },
+          { "label": "Austin (AUS)", "slug": "austin" },
+          { "label": "Nashville (BNA)", "slug": "nashville" }
+        ]
+      },
+      {
+        "region": "Costa Oeste y Montaña",
+        "cities": [
+          { "label": "Los Ángeles (LAX, BUR, SNA)", "slug": "los-angeles" },
+          { "label": "San Francisco (SFO, OAK, SJC)", "slug": "san-francisco" },
+          { "label": "Seattle (SEA)", "slug": "seattle" },
+          { "label": "San Diego (SAN)", "slug": "san-diego" },
+          { "label": "Las Vegas (LAS)", "slug": "las-vegas" },
+          { "label": "Phoenix (PHX)", "slug": "phoenix" },
+          { "label": "Denver (DEN)", "slug": "denver" }
+        ]
+      },
+      {
+        "region": "Canadá",
+        "cities": [{ "label": "Vancouver (YVR)", "slug": "vancouver" }]
+      }
+    ],
+
+    "fleet_title": "Nuestra Flota de Lujo",
+    "fleet": [
+      {
+        "type": "Sedanes de Lujo",
+        "models": [
+          "Mercedes-Benz S-Class",
+          "BMW 7 Series",
+          "Volvo S90",
+          "Audi A8"
+        ],
+        "passengers": "Hasta 3 cómodamente",
+        "luggage": "2-3 maletas",
+        "bestFor": "Viajes ejecutivos, parejas, viajes de negocios individuales",
+        "features": "Cabina silenciosa, interior de cuero, espacio de trabajo en el asiento trasero, control de clima y carga para teléfono. Pregunta por nuestra opción sedán Primera Clase para mayor espacio.",
+        "cta": "Reservar Sedán de Lujo →"
+      },
+      {
+        "type": "SUVs de Lujo",
+        "models": [
+          "Cadillac Escalade",
+          "Lincoln Navigator",
+          "Chevrolet Suburban",
+          "Mercedes GLS"
+        ],
+        "passengers": "Hasta 6 cómodamente",
+        "luggage": "5-6 maletas",
+        "bestFor": "Grupos pequeños, familias, viajeros con equipaje extra",
+        "features": "Asientos espaciosos, amplio espacio para maletas y bolsas de golf, posición elevada y vista dominante de la carretera. Perfecto para traslados al aeropuerto con toda la familia.",
+        "cta": "Reservar SUV de Lujo →"
+      },
+      {
+        "type": "Vans Sprinter Ejecutivas",
+        "models": ["Mercedes-Benz Sprinter"],
+        "passengers": "Hasta 14 (configuración ejecutiva: 8-10)",
+        "luggage": "Más de 10 maletas",
+        "bestFor": "Equipos corporativos, familias numerosas, roadshows, eventos grupales",
+        "features": "Techos altos para fácil acceso, asientos ejecutivos de cuero, almacenamiento superior, carga USB en todos los asientos y configuración de conferencia opcional. Mueve a todo tu grupo juntos con comodidad.",
+        "cta": "Reservar Sprinter Ejecutiva →"
+      }
+    ],
+
+    "about_title": "Por qué Viaro Es el Servicio de Chofer de Confianza en América",
+    "about_founder_label": "Conoce a Nuestro Fundador",
+    "about_founder_name": "Bijo Cherian",
+    "about_founder_description": "Viaro es liderado por el CEO Bijo Cherian, experto en la industria de viajes con más de diez años de experiencia en transporte terrestre de lujo. Bijo comenzó con un objetivo simple: ofrecer un servicio de auto privado seguro y confiable en el Noroeste del Pacífico. Ese compromiso con la calidad se ha convertido en una marca nacional que sirve a más de 21 ciudades en América. Cada decisión que tomamos pone a nuestros pasajeros primero.",
+    "about_vision_label": "Nuestra Visión",
+    "about_vision": "Establecer el estándar nacional en transporte privado donde cada viaje sea seguro, lujoso y puntual.",
+    "about_mission_label": "Nuestra Misión",
+    "about_mission": "Tratar a cada pasajero como un VIP. Creemos en el uso de empleados profesionales para garantizarte un chofer capacitado y con verificación de antecedentes en cada reserva.",
+    "about_why_title": "¿Por qué elegir Viaro?",
+    "about_why": [
+      {
+        "label": "La Seguridad Primero",
+        "desc": "Revisamos, capacitamos, licenciamos y aseguramos a todos nuestros choferes empleados."
+      },
+      {
+        "label": "Siempre a Tiempo",
+        "desc": "Rastreamos vuelos y tráfico en tiempo real. Tu conductor estará ahí cuando lo necesites."
+      },
+      {
+        "label": "Consistencia Nacional",
+        "desc": "Ya sea en Nueva York o Seattle, recibes el mismo servicio de alta calidad."
+      },
+      {
+        "label": "Soporte 24/7",
+        "desc": "Nuestro equipo está disponible las 24 horas para reservas y asistencia."
+      },
+      {
+        "label": "Precios Transparentes",
+        "desc": "Conoce tu tarifa por adelantado. Sin precios de demanda. Sin cargos ocultos."
+      }
+    ],
+    "about_cta": "Obtener tu Cotización Gratis"
+  },
+  "footer": {
+    "sections": {
+      "services": "Servicios",
+      "company": "Empresa",
+      "hours": "Horario"
+    },
+    "hours_text": "Servicio 24/7",
+    "all_rights": "Todos los derechos reservados.",
+    "airport": "Traslados al Aeropuerto",
+    "corporate": "Transporte Corporativo",
+    "airline": "Aviación Privada y Tripulación",
+    "cruise": "Traslados a Puerto de Cruceros",
+    "hourly": "Chofer por Hora"
+  },
+
+ "about": {
+
+    "hero": {
+      "eyebrow": "11 años de excelencia. 60,000+ viajes. Una misión: a tiempo, siempre.",
+      "title": "Creado por choferes, diseñado para pasajeros",
+      "subtitle": "Todo viaje comienza con un camino. Toda reserva es una ruta.",
+      "quote": "El nombre Viaro viene de 'via', la palabra latina para camino, ruta y vía. Viaro significa 'yo viajo'. Es una idea simple: todo viaje comienza con un camino. Y cada camino debe llevar a algún lugar que valga la pena. No somos solo otra empresa de autos de lujo. Somos un servicio de transporte ejecutivo a nivel nacional, construido desde cero por personas que realmente manejan para ganarse la vida y que entienden lo que los pasajeros realmente necesitan.",
+      "cta_book": "Reserva tu primer viaje con Viaro",
+      "cta_call": "Llama al (206) 672-8281"
+    },
+
+    "trust": {
+      "title": "Los números que nos definen"
+    },
+
+    "story": {
+      "label": "Nuestra historia",
+      "title": "De Seattle a Norteamérica",
+      "paragraphs": [
+        "Viaro nació en Seattle, Washington, una ciudad conocida por la innovación, el café y hacer las cosas bien. Lo que comenzó como un servicio local de autos de lujo se ha convertido en una operación a nivel nacional que atiende más de 40 ciudades en Estados Unidos, Canadá y Costa Rica.",
+        "Nuestro crecimiento ha sido constante e intencional. No nos apresuramos a entrar en nuevos mercados. Primero construimos relaciones. Entrenamos choferes que conocen las rutas locales, las costumbres locales y las expectativas locales. Luego expandimos.",
+        "Hoy puedes reservar Viaro desde Seattle hasta Nueva York, desde Los Ángeles hasta Miami, desde Vancouver hasta San José, Costa Rica. Los mismos estándares. El mismo servicio. El mismo compromiso con la excelencia."
+      ],
+      "cta": "Ver todas nuestras áreas de servicio →"
+    },
+
+    "team": {
+      "label": "Nuestra gente",
+      "title": "Diseñado para choferes, no en su contra",
+      "subtitle": "La mayoría de las plataformas tratan a los conductores como una ocurrencia tardía. Nosotros construimos Viaro de manera diferente. Nuestros fundadores son choferes profesionales que entienden cada desafío que enfrentan los conductores a diario. Los madrugones. Los retrasos de vuelos. Los cambios de último momento. Los clientes que se convierten en amigos con los años. La mayoría de los choferes no quieren administrar un negocio. Quieren manejar. Quieren trabajo confiable, ingresos estables y clientes que vuelvan. Viaro les da exactamente eso. Cuando los choferes son bien tratados, los pasajeros lo notan. El servicio es mejor. Los autos están más limpios. La actitud es genuina. Todos ganan.",
+      "cta": "Conoce a nuestros choferes →",
+      "members": [
+        {
+          "title": "Elige tu chofer y quédate con él",
+          "description": "Cuando encuentres un chofer que te guste, agrégalo a tus favoritos. Solicítalo en tu próximo viaje y lo haremos posible. Construye una relación real con alguien que conoce tus preferencias, tus horarios y cómo te gusta viajar."
+        },
+        {
+          "title": "Tecnología creada para flujos de trabajo reales",
+          "description": "En 2022 reconstruimos nuestro motor de reservas desde cero: sin infraestructura heredada, sin compromisos heredados. Cada función fue diseñada alrededor de los flujos de trabajo reales de pasajeros y choferes."
+        }
+      ]
+    },
+
+    "values": {
+      "label": "Nuestros valores",
+      "title": "En lo que creemos",
+      "items": [
+        {
+          "title": "A tiempo, siempre",
+          "description": "Rastreamos vuelos. Monitoreamos el tráfico. Planificamos rutas antes de que tú lo pienses. Nuestro 99.8% de puntualidad no es un argumento de marketing, es un compromiso diario."
+        },
+        {
+          "title": "Relaciones sobre transacciones",
+          "description": "Recordamos tu nombre. Recordamos tus preferencias. Construimos relaciones que duran años, no solo viajes únicos. Esa es la diferencia entre un servicio de autos y un socio de transporte."
+        },
+        {
+          "title": "Transparencia en todo",
+          "description": "Lo que cotizamos es lo que pagas: tarifas fijas y sin cargos ocultos. Nuestros precios son claros porque la confianza se gana con honestidad."
+        },
+        {
+          "title": "La excelencia es el estándar",
+          "description": "Vehículos limpios. Choferes profesionales. Soporte 24/7 con personas reales. No tomamos atajos porque estamos completamente enfocados en el cliente."
+        }
+      ]
+    },
+
+    "mission": {
+      "label": "Misión",
+      "title": "A tiempo, siempre",
+      "description": "Viaro existe para ofrecer transporte terrestre de nivel ejecutivo con la confiabilidad de una aerolínea y la calidez de una relación de confianza. Cada ruta, cada pasajero, cada vez."
+    },
+
+    "vision": {
+      "label": "Visión",
+      "title": "El servicio de autos de lujo líder en Norteamérica",
+      "description": "Estamos construyendo la red de transporte ejecutivo más confiable del continente, ciudad por ciudad, chofer por chofer, relación por relación."
+    },
+     "faqTitle": "Frequently Asked Questions",
+    "buttons": {
+      "bookNow": "Book Now",
+      "quote": "Request a Quote",
+      "moreQuestions": "More Questions"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "description": "Encuentra respuestas a las preguntas más comunes sobre nuestros servicios, ubicaciones y transporte al aeropuerto.",
+    "sections": {
+      "locations": {
+        "title": "Ubicaciones",
+        "description": "Conoce más sobre las áreas a las que servimos."
+      },
+      "services": {
+        "title": "Nuestros Servicios",
+        "description": "Detalles sobre nuestros servicios de transporte."
+      },
+      "airport": {
+        "title": "Transporte al Aeropuerto",
+        "description": "Todo lo que necesitas saber sobre recogidas y traslados al aeropuerto."
+      }
+    }
+  },
+  "cta": {
+    "sectionTitle": "Contáctanos",
+    "heading": "Reserva tu Transporte de Lujo",
+    "description": "Estamos disponibles 24/7 para cubrir tus necesidades de transporte. Contáctanos y recibe una cotización personalizada.",
+    "info": {
+      "phone": {
+        "label": "Teléfono",
+        "value": "(206) 672-8281"
+      },
+      "email": {
+        "label": "Correo",
+        "value": "reservations@viaro.io"
+      },
+      "office": {
+        "label": "Oficina Central",
+        "value": "555 Andover Park W, Tukwila, WA 98188, Estados Unidos"
+      }
+    },
+    "form": {
+      "title": "Solicitar Cotización",
+      "subtitle": "Rellena el formulario y responderemos en 2 horas.",
+      "fields": {
+        "fullName": "Nombre Completo",
+        "phone": "Teléfono",
+        "email": "Correo",
+        "message": "Mensaje",
+        "placeholders": {
+          "fullName": "John Smith",
+          "phone": "+52 55 1234 5678",
+          "email": "john@company.com",
+          "message": "Cuéntanos sobre tu viaje..."
+        }
+      },
+      "button": "Enviar Solicitud"
+    }
+  },
+  "services": {
+    "hero": {
+      "subtitle": "El Más Alto Nivel para tu Experiencia de Viaje.",
+      "title": "Servicios",
+      "tagline": "En Viaro, estamos comprometidos con un servicio excepcional y resultados exitosos."
+    },
+    "professional": {
+      "subtitle": "El más alto nivel para tu experiencia de viaje.",
+      "title": "Servicio Profesional de Chofer y Auto Negro en EE.UU. y Canadá",
+      "cta": "Obtén tu Cotización Inmediata",
+      "cards": [
+        {
+          "title": "Traslados Ejecutivos al Aeropuerto",
+          "desc": "Recogidas y entregas puntuales con seguimiento de vuelo incluido."
+        },
+        {
+          "title": "Viajes Corporativos",
+          "desc": "Transporte confiable para reuniones, conferencias y eventos."
+        }
+      ]
+    },
+  
+    
+    "serviceCards": {
+      "title": "Nuestros Servicios de Transporte Premium",
+      "subtitle": "Desde recogidas en aeropuertos hasta viajes ejecutivos de todo el día, Viaro ofrece el servicio adecuado para cada viaje. Todos los traslados incluyen seguimiento en tiempo real, servicio de bienvenida, tiempo de espera gratuito y soporte de clase mundial.",
+      "learnMore": "Ver más",
+      "items": [
+        {
+          "img": "/images/ImagenAirport.png",
+          "title": "Airport Transfers",
+          "desc": "FBO or Fixed Base Operator Transfers. Commercial Airline Transfer.",
+          "href": "/airport-transfers"
+        },
+        {
+          "img": "/images/ImagenCorporate.png",
+          "title": "Corporate Transportation & Executive Car Service",
+          "desc": "Reliable transportation for meetings, conferences, roadshows, and events.",
+          "href": "/corporate-transportation-executive-car-service"
+        },
+        {
+          "img": "/images/ImagenAirline.png",
+          "title": "Airline Crew & Private Aviation (FBO) Transfers",
+          "desc": "Fast, discreet ground transportation for flight crews and private jet travelers.",
+          "href": "/fbo-crew-transportation"
+        },
+        {
+          "img": "/images/ImagenCruise.png",
+          "title": "Cruise Port Transfer Service",
+          "desc": "Transportation to and from Piers or Cruise Terminals.",
+          "href": "/service/cruise-port-transfers"
+        },
+        {
+          "img": "/images/ImagenHourly.png",
+          "title": "Hourly Chauffeur Hire & Private Car Service",
+          "desc": "Your driver, your schedule. Flexible hourly booking with a minimum of 3 hours.",
+          "href": "/hourly-chauffeur-hire"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Cuánto Cuesta Contratar a Viaro",
+      "subtitle": "Cada tarifa se muestra antes de reservar. Sin recargos de combustible. Sin cargos adicionales al finalizar. La propina se paga directamente a tu chofer y está incluida en tu tarifa desde el inicio.",
+      "bookCta": "Reservar",
+      "plans": [
+        {
+          "category": "ESTÁNDAR",
+          "type": "Sedán",
+          "price": 129,
+          "description": "Tarifa mínima · Primeras 18 millas · Todo incluido",
+          "features": [
+            "Cadillac, Lincoln, BMW o similar",
+            "1 a 3 pasajeros",
+            "Chofer profesional",
+            "Seguimiento de vuelo incluido",
+            "Propina al chofer, no a la empresa"
+          ]
+        },
+        {
+          "category": "MÁS POPULAR",
+          "type": "SUV",
+          "price": 159,
+          "description": "Tarifa mínima · Primeras 18 millas · Todo incluido",
+          "features": [
+            "Cadillac Escalade, Mercedes, Volvo o similar",
+            "1 a 6 pasajeros",
+            "Espacio extra para equipaje",
+            "Chofer preasignado",
+            "Seguimiento de vuelo incluido"
+          ]
+        },
+        {
+          "category": "VIAJE EN GRUPO",
+          "type": "Sprinter",
+          "price": 299,
+          "description": "Tarifa mínima · Primeras 18 millas · Todo incluido",
+          "features": [
+            "Mercedes Sprinter o similar",
+            "Hasta 14 pasajeros",
+            "Ideal para grupos corporativos",
+            "Traslados a terminales de crucero",
+            "Transporte para eventos y reuniones"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "cta": "¿Tienes más preguntas? Contáctanos →"
+    }
+  },
+  "cta_button": "Obtén tu cotización inmediata →"
+}
