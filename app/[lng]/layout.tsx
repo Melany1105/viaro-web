@@ -42,8 +42,8 @@ export default async function RootLayout({
 }) {
   const { lng } = await params;
   const dict = (await getDictionary(lng)) as any;
- const base = `/${lng}`;
-   return (
+  const base = `/${lng}`;
+  return (
     <html lang={lng} className="scroll-smooth">
       <body className={`${geisRocFont.variable} antialiased`}>
         <ScrollReveal />
@@ -51,9 +51,9 @@ export default async function RootLayout({
 
         {children}
 
-<Suspense fallback={null}>
-  <QuoteButton label={dict.cta_button || "Get Quote"} lng={lng} />
-</Suspense>
+        <Suspense fallback={null}>
+          <QuoteButton label={dict.cta_button || "Get Quote"} lng={lng} />
+        </Suspense>
         <Footer dict={dict.footer} lng={lng} />
       </body>
     </html>
