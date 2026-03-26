@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Phone, CheckCircle } from "lucide-react";
@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Testimonials } from "@/components/testimonials";
 import { CtaSection } from "@/components/cta-section";
 import { homeTestimonials, homeTestimonialsEs } from "@/data/Tetimonials";
-import { useParams } from "next/navigation";
 
 const inputCls = "w-full bg-black/60 border border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-primary transition-colors";
 const selectCls = "w-full bg-black/60 border border-white/20 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition-colors";
@@ -92,7 +91,7 @@ function BookingForm({ t }: { t: any }) {
             key={key}
             onClick={() => setTrip(key)}
             className={`py-2 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
-              trip === key ? "bg-primary" : "text-white/50 hover:text-white"
+              trip === key ? "bg-primary text-black" : "text-white/50 hover:text-white"
             }`}
           >
             {label}
@@ -272,10 +271,7 @@ function BookingForm({ t }: { t: any }) {
 }
 
 // ── MAIN CONTENT ──────────────────────────────────────────────────────────────
-export default function MainContent() {
-  const params = useParams();
-    const lng = params.lng as "es" | "en";
-    const [dict, setDict] = useState<any>(null);
+export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
   const t = dict;
   const testimonios = lng === "en" ? homeTestimonials : homeTestimonialsEs;
 
@@ -347,7 +343,7 @@ export default function MainContent() {
 
         {/* ── TRUST METRICS ── */}
         <section style={{
-          background: "rgb(9,9,11)",
+          background: "rgb(30,30,30)",
           borderTop: "1px solid rgba(255,255,255,0.1)",
           borderBottom: "1px solid rgba(255,255,255,0.1)",
           padding: "40px 16px",
@@ -366,7 +362,7 @@ export default function MainContent() {
           <div style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 24, textAlign: "center" }}>
             {TRUST_METRICS.map((m) => (
               <div key={m.value} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-                <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
+                <div style={{ color: "rgba(255,255,255,0.55)" }}>{m.icon}</div>
                 <span style={{ fontSize: 22, fontWeight: 700, color: "#fff", lineHeight: 1 }}>{m.value}</span>
                 <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
                   {m.label[lng as "en" | "es"]}
