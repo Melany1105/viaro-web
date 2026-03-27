@@ -36,30 +36,169 @@ export const ServicesFa = [
     answer:"We are happy to help you with your international travel! We do offer professional travel services to Canada. However, we do not currently provide transportation services into Mexico. All Canadian trips require an 8-hour minimum due to potential border delays, ensuring a seamless journey."
   },
 ];
+export const MainFa = [
+  {
+  question: "How far in advance to book black car service?",
+  answer: (
+    <>
+      We suggest booking at least 24 hours ahead to get your first choice of vehicle. 
+      Need a ride sooner? We often handle same-day and last-minute requests.{" "}
+      <a
+        href="tel:+12066728281"
+        className="underline underline-offset-4 decoration-2 font-semibold hover:text-primary"
+      >
+        Call us
+      </a>{" "}
+      or{" "}
+      <a
+        href="https://booking.allblacklimoseattle.com/"
+        className="underline underline-offset-4 decoration-2 font-semibold hover:text-primary"
+      >
+        book online to check availability
+      </a>.
+    </>
+  )
+},
+  {
+    question:" What happens if my flight is delayed?",
+    answer:"No need to call us. We track every flight in real time using the latest software. If your plane is late, we adjust your pickup time automatically. Your chauffeur will be waiting when you land. No extra charge for flight delays."
+  },
+  {
+    question:"Does your black car service price include gratuity?",
+    answer:" Our prices are clear and upfront. Your quote shows the full cost of your ride. Gratuity for your chauffeur is not included in the price. Feel free to tip your driver for great service."
+  },
+  {
+    question:"Do you offer car seats for children?",
+    answer:"Yes. We provide child safety seats at no extra cost upon request. Just tell us your child's age and weight when you book. We will have the right seat ready and installed for your pickup."
+  },
+  {
+    question:"What is your cancellation policy?",
+    answer:" Plans change, and we understand. Cancel a standard airport transfer up to 3 hours before your pickup for a full refund. Hourly charters need 24-72 hours' notice, depending on length. Check our booking terms for full details."
+  },
+  {
+    question:"What airports do you serve?",
+    answer:"Viaro offers airport car service at all major US airports. This includes JFK, LAX, ORD, DFW, ATL, MIA, SFO, SEA, DEN, LAS, and more. We cover over 50 airports across our 21+ service cities."
+  },
+  {
+    question:"Are your chauffeurs employees or contractors?",
+    answer:" All Viaro chauffeurs are professional employees, not gig workers. Every driver passes a thorough background check, drug screening, and professional driving training. You get a trained professional every time"
+  },
+  {
+    question:"Do you implement health protocols?",
+    answer:"Absolutely, every ride is sanitized to the highest post-Covid health standards. You can rest assured that all surfaces are cleaned and disinfected after every service. "
+  },
+];
 export const AboutFa = [
   {
-    question:"What does the name Viaro mean?",
-    answer:"We operate a premium fleet of late-model luxury vehicles. Options include luxury sedans (Mercedes-Benz S-Class, BMW 7 Series, Volvo S90). You can also choose luxury SUVs like the Cadillac Escalade, Lincoln Navigator, and Chevrolet Suburban. For groups up to 14 passengers, Mercedes-Benz Sprinter Vans are available."
+    question: "What does the name Viaro mean?",
+    answer: (
+      <>
+        We operate a premium fleet of late-model luxury vehicles. Options include luxury sedans
+        (Mercedes-Benz S-Class, BMW 7 Series, Volvo S90). You can also choose luxury SUVs like
+        the Cadillac Escalade, Lincoln Navigator, and Chevrolet Suburban. For groups up to 14
+        passengers, Mercedes-Benz Sprinter Vans are available.
+      </>
+    )
   },
   {
-    question:"Can I choose my chauffeur?",
-    answer:"Yes. This is one of our most popular features. Book a chauffeur you like, add them to your favorites, and request them on your next trip. The platform is built around that relationship. No more random driver assignments —your favorite chauffeur knows your preferences."
+    question: "Can I choose my chauffeur?",
+    answer: (
+      <>
+        Yes. This is one of our most popular features. Book a chauffeur you like, add them to
+        your favorites, and request them on your next trip. The platform is built around that
+        relationship. No more random driver assignments—your favorite chauffeur knows your
+        preferences.
+      </>
+    )
   },
   {
-    question:"Where does Viaro operate?",
-    answer:"We serve all 50 US states, Canada, and Costa Rica—over 40 cities and growing. Our headquarters are in Seattle, Washington, but our reach spans the continent. More countries are in development. See our full service areas [link to /service-areas/]."
+    question: "Where does Viaro operate?",
+    answer: (
+      <>
+        We serve all 50 US states, Canada, and Costa Rica—over 40 cities and growing. Our
+        headquarters are in Seattle, Washington, but our reach spans the continent. More
+        countries are in development. See our full service areas{" "}
+        <a
+          href="/service-areas/"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          here
+        </a>.
+      </>
+    )
   },
   {
-    question:"Is Viaro BBB verified?",
-    answer:"Yes. Viaro is BBB verified [https://www.bbb.org/us/wa/gig-harbor/profile/limo-service/all-black-limo-llc-1296-1000165075] with 5-star ratings across Google [https://share.google/623jLmGdaKgMUeMvj], Yelp [https://www.yelp.com/biz/all-black-limo-gig-harbor-2?osq=Airport+Shuttles/], TripAdvisor [https://www.tripadvisor.com/Attraction_Review-g60878-d23940386-Reviews-All_Black_Limo_LLC-Seattle_Washington.html], and Trustpilot [https://www.trustpilot.com/review/allblacklimoseattle.com]. We take our reputation seriously."
+    question: "Is Viaro BBB verified?",
+    answer: (
+      <>
+        Yes. Viaro is BBB verified{" "}
+        <a
+          href="https://www.bbb.org/us/wa/gig-harbor/profile/limo-service/all-black-limo-llc-1296-1000165075"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          here
+        </a>{" "}
+        with 5-star ratings across{" "}
+        <a
+          href="https://share.google/623jLmGdaKgMUeMvj"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          Google
+        </a>
+        ,{" "}
+        <a
+          href="https://www.yelp.com/biz/all-black-limo-gig-harbor-2?osq=Airport+Shuttles/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          Yelp
+        </a>
+        ,{" "}
+        <a
+          href="https://www.tripadvisor.com/Attraction_Review-g60878-d23940386-Reviews-All_Black_Limo_LLC-Seattle_Washington.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          TripAdvisor
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://www.trustpilot.com/review/allblacklimoseattle.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          Trustpilot
+        </a>
+        . We take our reputation seriously.
+      </>
+    )
   },
   {
-    question:"What is the cancellation policy?",
-    answer:"For standard point-to-point trips (airport transfers, etc.), cancel up to 24 hours before pickup for a full refund. For hourly charters and special event bookings, we require 72 hours’ notice. We understand plans change—contact us and we will work with you."
+    question: "What is the cancellation policy?",
+    answer: (
+      <>
+        For standard point-to-point trips (airport transfers, etc.), cancel up to 24 hours before
+        pickup for a full refund. For hourly charters and special event bookings, we require 72
+        hours’ notice. We understand plans change—contact us and we will work with you.
+      </>
+    )
   },
   {
-    question:"How is Viaro different from rideshare apps?",
-    answer:"Rideshare apps assign random drivers with personal vehicles. Viaro provides professional chauffeurs with luxury vehicles, flat rates (no surge pricing), flight tracking, and the ability to choose and keep your favorite driver. We are a black car service, not a rideshare."
+    question: "How is Viaro different from rideshare apps?",
+    answer: (
+      <>
+        Rideshare apps assign random drivers with personal vehicles. Viaro provides professional
+        chauffeurs with luxury vehicles, flat rates (no surge pricing), flight tracking, and the
+        ability to choose and keep your favorite driver. We are a black car service, not a rideshare.
+      </>
+    )
   }
 ];
 export const LocationsFa = [
@@ -252,6 +391,58 @@ export const FAMap = {
 
 };
 export type FAMapKey = keyof typeof FAMap;
+export const MainFaEs = [
+  {
+    question: "¿Con cuánta anticipación debo reservar un servicio de transporte ejecutivo?",
+    answer: (
+      <>
+        Recomendamos reservar al menos con 24 horas de anticipación para asegurar el vehículo de tu preferencia.
+        ¿Necesitas un viaje antes? Frecuentemente manejamos solicitudes el mismo día o de último momento.{" "}
+        <a
+          href="tel:+12066728281"
+          className="underline underline-offset-4 decoration-2 font-semibold hover:text-primary"
+        >
+          Llámanos
+        </a>{" "}
+        o{" "}
+        <a
+          href="https://booking.allblacklimoseattle.com/"
+          className="underline underline-offset-4 decoration-2 font-semibold hover:text-primary"
+        >
+          reserva en línea para verificar disponibilidad
+        </a>.
+      </>
+    )
+  },
+  {
+    question: "¿Qué pasa si mi vuelo se retrasa?",
+    answer: "No necesitas llamarnos. Seguimos todos los vuelos en tiempo real con tecnología avanzada. Si tu vuelo se retrasa, ajustamos automáticamente la hora de recogida. Tu chofer estará esperándote cuando aterrices. No hay costo adicional por retrasos de vuelo."
+  },
+  {
+    question: "¿El precio del servicio incluye propina?",
+    answer: "Nuestros precios son claros y transparentes. Tu cotización muestra el costo total del servicio. La propina para el chofer no está incluida en el precio. Puedes darle propina si recibes un excelente servicio."
+  },
+  {
+    question: "¿Ofrecen asientos para niños?",
+    answer: "Sí. Proporcionamos asientos de seguridad para niños sin costo adicional bajo solicitud. Solo indícanos la edad y el peso de tu hijo al momento de reservar. Tendremos el asiento adecuado listo e instalado para tu viaje."
+  },
+  {
+    question: "¿Cuál es su política de cancelación?",
+    answer: "Entendemos que los planes cambian. Puedes cancelar un traslado estándar al aeropuerto hasta 3 horas antes para recibir un reembolso completo. Los servicios por horas requieren entre 24 y 72 horas de aviso, dependiendo de la duración. Consulta los términos de tu reserva para más detalles."
+  },
+  {
+    question: "¿Qué aeropuertos cubren?",
+    answer: "Viaro ofrece servicio de transporte en todos los aeropuertos principales de EE. UU., incluyendo JFK, LAX, ORD, DFW, ATL, MIA, SFO, SEA, DEN, LAS, entre otros. Cubrimos más de 50 aeropuertos en más de 21 ciudades."
+  },
+  {
+    question: "¿Sus choferes son empleados o contratistas?",
+    answer: "Todos los choferes de Viaro son empleados profesionales, no trabajadores independientes. Cada conductor pasa por una verificación de antecedentes, pruebas de drogas y capacitación profesional. Siempre contarás con un conductor altamente capacitado."
+  },
+  {
+    question: "¿Implementan protocolos de salud?",
+    answer: "Sí, cada viaje se desinfecta siguiendo los más altos estándares de salud posteriores al Covid. Puedes estar seguro de que todas las superficies se limpian y desinfectan después de cada servicio."
+  },
+];
 export const LocationsFaEs = [
   {
     question: "¿Brindan servicio a Canadá?",
@@ -281,27 +472,116 @@ export const LocationsFaEs = [
 export const AboutFaEs = [
   {
     question: "¿Qué significa el nombre Viaro?",
-    answer: "Operamos una flota premium de vehículos de lujo de modelos recientes. Las opciones incluyen sedanes de lujo (Mercedes-Benz Clase S, BMW Serie 7, Volvo S90). También puedes elegir SUVs de lujo como el Cadillac Escalade, Lincoln Navigator y Chevrolet Suburban. Para grupos de hasta 14 pasajeros, contamos con Mercedes-Benz Sprinter Vans."
+    answer: (
+      <>
+        Operamos una flota premium de vehículos de lujo de modelos recientes. Las opciones incluyen
+        sedanes de lujo (Mercedes-Benz Clase S, BMW Serie 7, Volvo S90). También puedes elegir SUVs
+        de lujo como el Cadillac Escalade, Lincoln Navigator y Chevrolet Suburban. Para grupos de
+        hasta 14 pasajeros, contamos con Mercedes-Benz Sprinter Vans.
+      </>
+    )
   },
   {
     question: "¿Puedo elegir mi chofer?",
-    answer: "Sí. Esta es una de nuestras funciones más populares. Reserva un chofer que te guste, agrégalo a tus favoritos y solicítalo en tu próximo viaje. La plataforma fue creada alrededor de esa relación. Sin asignaciones aleatorias de conductores: tu chofer favorito ya conoce tus preferencias."
+    answer: (
+      <>
+        Sí. Esta es una de nuestras funciones más populares. Reserva un chofer que te guste,
+        agrégalo a tus favoritos y solicítalo en tu próximo viaje. La plataforma fue creada
+        alrededor de esa relación. Sin asignaciones aleatorias de conductores: tu chofer favorito
+        ya conoce tus preferencias.
+      </>
+    )
   },
   {
     question: "¿Dónde opera Viaro?",
-    answer: "Atendemos los 50 estados de EE. UU., Canadá y Costa Rica, más de 40 ciudades y en crecimiento. Nuestra sede está en Seattle, Washington, pero nuestra cobertura abarca el continente. Más países están en desarrollo. Consulta todas nuestras áreas de servicio [enlace a /service-areas/]."
+    answer: (
+      <>
+        Atendemos los 50 estados de EE. UU., Canadá y Costa Rica, más de 40 ciudades y en
+        crecimiento. Nuestra sede está en Seattle, Washington, pero nuestra cobertura abarca el
+        continente. Más países están en desarrollo. Consulta todas nuestras áreas de servicio{" "}
+        <a
+          href="/service-areas/"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          aquí
+        </a>.
+      </>
+    )
   },
   {
     question: "¿Viaro está verificado por la BBB?",
-    answer: "Sí. Viaro está verificado por la BBB [https://www.bbb.org/us/wa/gig-harbor/profile/limo-service/all-black-limo-llc-1296-1000165075] con calificaciones de 5 estrellas en Google [https://share.google/623jLmGdaKgMUeMvj], Yelp [https://www.yelp.com/biz/all-black-limo-gig-harbor-2?osq=Airport+Shuttles/], TripAdvisor [https://www.tripadvisor.com/Attraction_Review-g60878-d23940386-Reviews-All_Black_Limo_LLC-Seattle_Washington.html] y Trustpilot [https://www.trustpilot.com/review/allblacklimoseattle.com]. Nos tomamos muy en serio nuestra reputación."
+    answer: (
+      <>
+        Sí. Viaro está verificado por la BBB{" "}
+        <a
+          href="https://www.bbb.org/us/wa/gig-harbor/profile/limo-service/all-black-limo-llc-1296-1000165075"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          aquí
+        </a>{" "}
+        con calificaciones de 5 estrellas en{" "}
+        <a
+          href="https://share.google/623jLmGdaKgMUeMvj"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          Google
+        </a>
+        ,{" "}
+        <a
+          href="https://www.yelp.com/biz/all-black-limo-gig-harbor-2?osq=Airport+Shuttles/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          Yelp
+        </a>
+        ,{" "}
+        <a
+          href="https://www.tripadvisor.com/Attraction_Review-g60878-d23940386-Reviews-All_Black_Limo_LLC-Seattle_Washington.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          TripAdvisor
+        </a>{" "}
+        y{" "}
+        <a
+          href="https://www.trustpilot.com/review/allblacklimoseattle.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          Trustpilot
+        </a>
+        . Nos tomamos muy en serio nuestra reputación.
+      </>
+    )
   },
   {
     question: "¿Cuál es la política de cancelación?",
-    answer: "Para viajes estándar de punto a punto (traslados al aeropuerto, etc.), cancela hasta 24 horas antes de la recogida para obtener un reembolso completo. Para chárteres por horas y reservas de eventos especiales, se requiere un aviso de 72 horas. Entendemos que los planes cambian: contáctanos y trabajaremos contigo."
+    answer: (
+      <>
+        Para viajes estándar de punto a punto (traslados al aeropuerto, etc.), cancela hasta 24
+        horas antes de la recogida para obtener un reembolso completo. Para chárteres por horas y
+        reservas de eventos especiales, se requiere un aviso de 72 horas. Entendemos que los planes
+        cambian: contáctanos y trabajaremos contigo.
+      </>
+    )
   },
   {
     question: "¿En qué se diferencia Viaro de las apps de transporte compartido?",
-    answer: "Las apps de transporte compartido asignan conductores aleatorios con vehículos personales. Viaro ofrece choferes profesionales con vehículos de lujo, tarifas fijas (sin precios dinámicos), rastreo de vuelos y la posibilidad de elegir y conservar tu chofer favorito. Somos un servicio de auto de lujo, no un servicio de transporte compartido."
+    answer: (
+      <>
+        Las apps de transporte compartido asignan conductores aleatorios con vehículos personales.
+        Viaro ofrece choferes profesionales con vehículos de lujo, tarifas fijas (sin precios
+        dinámicos), rastreo de vuelos y la posibilidad de elegir y conservar tu chofer favorito.
+        Somos un servicio de auto de lujo, no un servicio de transporte compartido.
+      </>
+    )
   }
 ];
 export const ServicesFaEs = [

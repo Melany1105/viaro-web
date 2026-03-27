@@ -181,37 +181,65 @@ export default function LocationsContent() {
   return (
     <main>
 
-      {/* ── HERO ── */}
-      <section id="inicio" className="relative min-h-screen flex items-center pt-0">
-        <div className="absolute w-full h-[60vh] md:h-[75vh] lg:h-screen">
-          <Image
-            src="/images/ImagenLocations1.png"
-            alt="Luxury vehicle parked in front of a modern building"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-background/75" />
-        </div>
-        <div className="relative z-20 max-w-7xl pl-6 lg:pl-16 pt-20">
-          <div className="max-w-3xl">
-            <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)]">
-              {t.hero.subtitle}
-            </p>
-            <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)]">
-              {t.subtitle}
-            </p>
-            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl text-balance">
-              {t.hero.title}
-            </h1>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em]">
-                {t.hero.description}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+     
+<section className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
+  <Image
+    src="/images/ImagenLocations1.png"
+    alt="Luxury vehicle parked in front of a modern building"
+    fill
+    priority
+    className="object-cover object-top sm:object-center"
+    sizes="100vw"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
+
+  <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
+
+    <div className="flex flex-col items-center text-center sm:hidden">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
+        {t.hero.subtitle}
+      </p>
+    </div>
+
+    <div>
+      <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand">
+        {t.hero.subtitle}
+      </p>
+
+      <h1 className="font-serif font-bold leading-[1.1] text-[1.6rem] sm:text-4xl lg:text-5xl xl:text-6xl max-w-[280px] sm:max-w-xl lg:max-w-2xl">
+        {t.hero.title}
+      </h1>
+
+      {t.hero.description && (
+        <p className="mt-2 sm:mt-3 text-xs sm:text-base text-white/60 leading-relaxed font-light max-w-[260px] sm:max-w-xl">
+          {t.hero.description}
+        </p>
+      )}
+
+      <div className="mt-5 sm:mt-8 flex flex-wrap gap-3">
+        <a href="https://booking.allblacklimoseattle.com/">
+          <button className="border border-primary bg-primary text-black font-semibold text-sm px-6 py-3 rounded-full hover:bg-transparent hover:text-white transition-all duration-300">
+            {t.buttons.bookNow}
+          </button>
+        </a>
+        <a href="tel:2066728281">
+          <button className="border border-white/60 text-white font-semibold text-sm px-6 py-3 rounded-full hover:border-white hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
+            </svg>
+            {t.buttons.callUs ?? "Call Us"}
+          </button>
+        </a>
+      </div>
+
+      {t.hero.body && (
+        <p className="mt-4 text-sm italic text-white/30 text-center sm:text-base">
+          "{t.hero.body}"
+        </p>
+      )}
+    </div>
+  </div>
+</section>
 
       {/* ── TRUST METRICS ── */}
       <section style={{
@@ -256,7 +284,7 @@ export default function LocationsContent() {
         <div>
           <h2 className="text-3xl font-semibold mb-6">{t.intro.title}</h2>
           <h3 className="mb-4">{t.intro.subtitle}</h3>
-          <p className="text-neutral-400 leading-relaxed">{t.intro.description}</p>
+          <p className="text-neutral-400 leading-relaxed whitespace-pre-line">{t.intro.description}</p>
           <div className="mt-8">
             <a href="https://booking.allblacklimoseattle.com/">
               <Button size="lg" className="bg-primary rounded-full text-primary-foreground hover:bg-primary/90 px-8 uppercase tracking-widest text-xs font-semibold h-10">

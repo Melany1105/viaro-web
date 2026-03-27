@@ -83,54 +83,69 @@ export default function AboutContent() {
   return (
     <main className="bg-black text-white">
 
-      {/* ── HERO ── */}
-      <section className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
-        <Image
-          src="/images/ImagenAboutUs.png"
-          alt="Viaro luxury black car"
-          fill priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/40" />
-        <div className="absolute bottom-0 left-0 right-0 z-10 mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-16 pb-12 sm:pb-20">
-          <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)] whitespace-pre-line">
-            {t.hero.eyebrow}
-          </p>
-          <h1 className="font-serif font-bold leading-[1.1] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
-            {t.hero.title}
-          </h1>
-          {t.hero.subtitle && (
-            <p className="mt-3 text-sm sm:text-base text-white/60 leading-relaxed font-light tracking-wide max-w-xl">
-              {t.hero.subtitle}
-            </p>
-          )}
+<section className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
+  <Image
+    src="/images/ImagenAboutUs.png"
+    alt="Viaro luxury black car"
+    fill
+    priority
+    className="object-cover object-top sm:object-center"
+    sizes="100vw"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
 
-          {/* CTAs */}
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="/booking">
-              <button className="border border-primary bg-primary text-black font-semibold text-sm px-6 py-3 rounded-full hover:bg-transparent hover:text-white transition-all duration-300">
-                {t.hero.cta_book}
-              </button>
-            </a>
-            <a href="tel:2066728281">
-              <button className="border border-white/60 text-white font-semibold text-sm px-6 py-3 rounded-full hover:border-white hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center gap-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
-                </svg>
-                {t.hero.cta_call}
-              </button>
-            </a>
-          </div>
+  {/* Contenido — distribuido verticalmente en móvil */}
+  <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
 
-          {/* Quote — debajo de los botones, centrado */}
-          {t.hero.quote && (
-            <p className="mt-6 text-sm italic text-white/40 text-center w-full">
-              "{t.hero.quote}"
-            </p>
-          )}
-        </div>
-      </section>
+    {/* Bloque superior solo en móvil — eyebrow centrado */}
+    <div className="flex flex-col items-center text-center sm:hidden">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
+        {t.hero.eyebrow}
+      </p>
+    </div>
+
+    {/* Bloque principal */}
+    <div>
+      {/* Eyebrow — solo visible en sm+ */}
+      <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand whitespace-pre-line">
+        {t.hero.eyebrow}
+      </p>
+
+      <h1 className="font-serif font-bold leading-[1.1] text-[1.6rem] xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl max-w-[280px] xs:max-w-sm sm:max-w-xl lg:max-w-2xl">
+        {t.hero.title}
+      </h1>
+
+      {t.hero.subtitle && (
+        <p className="mt-2 sm:mt-3 text-xs sm:text-base text-white/60 leading-relaxed font-light max-w-[260px] xs:max-w-xs sm:max-w-xl">
+          {t.hero.subtitle}
+        </p>
+      )}
+
+      {/* Botones — apilados en móvil, fila en sm+ */}
+      <div className="mt-5 sm:mt-8 flex flex-wrap gap-3">
+        <a href="/booking">
+          <button className="border border-primary bg-primary text-black font-semibold text-sm px-6 py-3 rounded-full hover:bg-transparent hover:text-white transition-all duration-300">
+            {t.hero.cta_book}
+          </button>
+        </a>
+        <a href="tel:2066728281">
+          <button className="border border-white/60 text-white font-semibold text-sm px-6 py-3 rounded-full hover:border-white hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
+            </svg>
+            {t.hero.cta_call}
+          </button>
+        </a>
+      </div>
+
+      {t.hero.quote && (
+        <p className="mt-4 text-sm italic text-white/30 text-center sm:text-base">
+          "{t.hero.quote}"
+        </p>
+      )}
+    </div>
+  </div>
+</section>
 
       {/* ── TRUST BAR ── */}
       <section style={{
@@ -159,65 +174,86 @@ export default function AboutContent() {
           textAlign: "center",
         }}>
           {METRICS.map((m) => (
-            <div key={m.value} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-              <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
-              <span style={{ fontSize: 22, fontWeight: 700, color: "#fff", lineHeight: 1 }}>{m.value}</span>
-              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                {m.label[lng]}
-              </span>
-            </div>
-          ))}
+  <div key={m.value} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+    <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
+    <span style={{ fontSize: 22, fontWeight: 700, color: "#ffffff", lineHeight: 1 }}>
+      {m.value}
+    </span>
+    <span style={{
+      fontSize: 11,
+      color: "#9ca3af !important" as any,
+      textTransform: "uppercase" as const,
+      letterSpacing: "0.08em",
+      display: "block",
+    }}>
+      {m.label[lng as "en" | "es"]}
+    </span>
+  </div>
+))}
         </div>
       </section>
 
       {/* ── STORY ── */}
       <section className="py-16 sm:py-24 bg-black">
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">{t.story.label}</p>
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">{t.story.title}</h2>
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-            <div className="space-y-4">
-              {(t.story.paragraphs as string[]).map((p: string, i: number) => (
-                <p key={i} className="text-sm sm:text-base text-neutral-300 leading-relaxed">{p}</p>
-              ))}
-              <a href="/service-areas" className="inline-block mt-2 text-sm text-primary underline underline-offset-4 hover:opacity-80 transition-opacity">
-                {t.story.cta}
-              </a>
+          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">
+            {t.story.label}
+          </p>
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+            {t.story.title}
+          </h2>
+
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+            {/* Texto */}
+            <div className="flex flex-col justify-between gap-6">
+              <div className="space-y-4">
+                {(t.story.paragraphs as string[]).map((p: string, i: number) => (
+                  <p key={i} className="text-sm sm:text-base text-neutral-300 leading-relaxed">{p}</p>
+                ))}
+                <a href="/service-areas" className="inline-block mt-2 text-sm text-primary underline underline-offset-4 hover:opacity-80 transition-opacity">
+                  {t.story.cta}
+                </a>
+              </div>
+              <button className="self-start sm:self-center border border-primary bg-primary text-black font-semibold text-sm px-6 py-3 rounded-full hover:bg-transparent hover:text-white transition-all duration-300">
+                {t.story.city}
+              </button>
             </div>
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
-              <Image src="/images/Imagen2About.png" alt="Viaro fleet across North America" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+
+            {/* Imagen — 16/9 en móvil, 4/3 en tablet, full height en desktop */}
+            <div className="relative w-full aspect-video sm:aspect-[4/3] lg:aspect-auto lg:min-h-[400px] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/Imagen2About.png"
+                alt="Viaro fleet across North America"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* ── TEAM ── */}
-      <section className="py-16 sm:py-24 bg-neutral-950">
-        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+      <section className="relative py-16 sm:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/ImagenTAbout.png"
+            alt={t.team.title}
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-neutral-950/80" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
           <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">{t.team.label}</p>
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-2xl mb-6">{t.team.title}</h2>
-          {t.team.subtitle && (
-            <p className="text-sm sm:text-base text-neutral-400 leading-relaxed max-w-3xl mb-16">{t.team.subtitle}</p>
-          )}
-          <div className="flex flex-col gap-12">
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-2xl mb-12">{t.team.title}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.team.members.map((item: any, i: number) => (
-              <div key={i} className={`grid lg:grid-cols-2 gap-8 items-center ${i % 2 !== 0 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                {/* Text */}
-                <div className="group flex flex-col gap-4 border border-white/5 rounded-2xl bg-neutral-900/40 p-8 hover:border-primary/40 hover:bg-neutral-900/70 transition-all duration-300">
-                  <div className="h-px w-10 bg-primary" />
-                  <h3 className="font-serif font-bold text-xl sm:text-2xl text-white group-hover:text-primary transition-colors duration-300">{item.title}</h3>
-                  <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">{item.description}</p>
-                </div>
-                {/* Image */}
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
-                  <Image
-                    src={item.image ?? "/images/Imagen2About.png"}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
+              <div key={i} className="flex flex-col gap-4 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-sm p-6 sm:p-8 hover:border-primary/50 hover:bg-black/60 transition-all duration-300">
+                <div className="h-px w-10 bg-primary" />
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-white">{item.title}</h3>
+                <p className="text-sm text-neutral-300 leading-relaxed whitespace-pre-wrap">{item.description}</p>
               </div>
             ))}
           </div>
@@ -251,14 +287,21 @@ export default function AboutContent() {
       {/* ── MISSION ── */}
       <section className="py-16 sm:py-24 bg-neutral-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">{t.mission.label ?? "Mission"}</p>
               <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">{t.mission.title}</h2>
-              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">{t.mission.description}</p>
+              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed whitespace-pre-line">{t.mission.description}</p>
             </div>
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
-              <Image src="/images/Imagen2About.png" alt="Luxury executive transportation" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            {/* Imagen — 16/9 en móvil, 4/3 en tablet+  */}
+            <div className="relative w-full aspect-video sm:aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/Imagen2About.png"
+                alt="Luxury executive transportation"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
@@ -267,14 +310,21 @@ export default function AboutContent() {
       {/* ── VISION ── */}
       <section className="py-16 sm:py-24 bg-black">
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden order-2 lg:order-1">
-              <Image src="/images/Imagen3About.png" alt="Future of luxury transportation" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            {/* Imagen — en móvil va arriba, en desktop a la izquierda */}
+            <div className="relative w-full aspect-video sm:aspect-[4/3] rounded-2xl overflow-hidden order-1 lg:order-1">
+              <Image
+                src="/images/Imagen3About.png"
+                alt="Future of luxury transportation"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
+              />
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-2 lg:order-2">
               <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">{t.vision.label ?? "Vision"}</p>
               <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">{t.vision.title}</h2>
-              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">{t.vision.description}</p>
+              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed whitespace-pre-line">{t.vision.description}</p>
             </div>
           </div>
         </div>

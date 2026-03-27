@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 
 type Fa = {
   question: string;
-  answer: string;
+  answer:  React.ReactNode;
 };
 
 type FaProps = {

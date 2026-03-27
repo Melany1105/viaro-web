@@ -78,7 +78,7 @@
     "welcome_title": "Welcome to Viaro",
     "welcome_description": "Traveling should be the easiest part of your day. Viaro gives you more than a ride. We give you peace of mind.\nFlying into New York?\n\n Closing a deal in Chicago? Or vacationing in Miami? Our professional chauffeurs are ready and waiting for you.\n\nWe track your flight. We carry your bags. We get you there on time, in style, and stress-free.",
 
-    "services_title": "Luxury Transportation Services for Every Need",
+    "services_title": "Luxury Transportation Services For Every Need",
     "services": [
       {
         "id": "airport",
@@ -211,7 +211,7 @@
         "features": "High ceilings for easy entry, executive leather seating, overhead storage, USB charging throughout, and optional conference setup. Move your entire group together in comfort.",
         "cta": "Book Executive Sprinter →"
       }
-    ],
+    ],"moreQuestions": "More Questions",
 
     "about_title": "Why Viaro Is America's Trusted Chauffeur Service",
     "about_founder_label": "Meet Our Founder",
@@ -251,15 +251,16 @@
     "title": "5-Star Rated Luxury Transportation Reviews"
   },
   "locations": {
-    "hero": {
-      "subtitle": "Premium Chauffeur Service",
-      "title": "Luxury Transportation Across Washington State",
-      "description": "Serving major cities and airports with professionalism, punctuality, and excellence."
-    },
+   "hero": {
+  "subtitle": "Premium Chauffeur Service",
+  "title": "Black Car Service Locations Across North America",
+  "description": "Luxury Chauffeur Service in 25+ US, Canadian & Costa Rican Cities",
+  "body": "Same service. Same luxury. Every city you travel to.\n\nViaro provides professional black car service in over 25 major cities across the United States, Canada, and Costa Rica. Need an airport pickup in Los Angeles? A corporate car for a business meeting in Chicago? A cruise transfer in Seattle or Vancouver?\n\nOur local chauffeurs know every city and every airport. We track your flight, meet you at baggage claim, and get you where you need to go — on time, every time."
+},
     "intro": {
-      "title": "Executive Transportation You Can Trust",
-      "subtitle": "Reliable, Professional & Always On Time",
-      "description": "We provide first-class ground transportation services throughout Washington State. Whether you need airport transfers, corporate travel, or special event transportation, our experienced chauffeurs guarantee comfort, safety, and discretion."
+      "title": "Our Service Areas: Major Airports & Cities",
+      "subtitle": "Where We Drive in the United States and Canada",
+      "description": "Viaro offers premium black car service and executive chauffeur transportation at major airports and business hubs throughout North America. From coast to coast, our professional drivers offer reliable airport transfers, corporate travel, and hourly car service. We deliver consistent luxury standards from start to finish with our travel experience and attention to detail.Need a luxurysedan for a quick airport run? An SUV for your family? A Sprinter van for your team? We have vehicles ready in every city listed below, even for long distances. Click any location to see local fleet options and book your ride."
     },
     "stats": {
       "title": "Why Clients Choose Us",
@@ -308,7 +309,6 @@
     "trust": {
       "title": "The Numbers That Define Us"
     },
-
     "story": {
       "label": "Our Story",
       "title": "From Seattle to North America",
@@ -317,7 +317,8 @@
         "Our growth has been steady and intentional. We do not rush into new markets. We build relationships first. We train chauffeurs who understand local roads, local customs, and local expectations. Then we expand.",
         "Today, you can book Viaro from Seattle to New York, from Los Angeles to Miami, from Vancouver to San José, Costa Rica. Same standards. Same service. Same commitment to excellence."
       ],
-      "cta": "See all our service areas →"
+      "cta": "See all our service areas →",
+      "city": " Find Viaro in Your City →"
     },
 
     "team": {
@@ -328,17 +329,17 @@
       "members": [
         
         {
-          "title": "Pick Your Driver—and Keep Them",
-          "description": "Here is something most car services do not offer: you can choose your chauffeur.When you find a driver you like, add them to your favorites. Request them on your next trip, and we will do our best to accommodate. Build a real relationship with someone who knows your preferences, your timing, and how you like to travel.No more random driver assignments. No more explaining your pickup spot every time. Your favorite chauffeur already knows."
-        },
-        {
-          "title": "Technology Built for Real Workflows",
-          "description": "Most black car companies use off-the-shelf software built by people who have never driven a mile for hire. We took a different approach.In 2022, we built Viaro's booking engine from scratch. No legacy infrastructure. No inherited compromises. No outsourcing to developers unfamiliar with the industry. Every feature was designed around the actual workflows of passengers and chauffeurs."
-        },
-         {
-          "title": "Designed for Chauffeurs, Not Against Them",
-          "description": "Most platforms treat drivers as an afterthought. We built Viaro differently.Our founders include professional chauffeurs who understand every challenge drivers face daily. The early mornings. The flight delays. The last-minute changes. The clients who become friends over the years of service.Most chauffeurs do not want to run a business. They want to drive. They want reliable work, steady income, and clients who come back. Viaro gives them exactly that. When chauffeurs are treated well, passengers notice. The service is better. The cars are cleaner. The attitude is genuine. Everyone wins."
-        }
+  "title": "Pick Your Driver—and Keep Them",
+  "description": "Here is something most car services do not offer: you can choose your chauffeur.\n\nWhen you find a driver you like, add them to your favorites. Request them on your next trip, and we will do our best to accommodate. Build a real relationship with someone who knows your preferences, your timing, and how you like to travel.\n\nNo more random driver assignments. No more explaining your pickup spot every time. Your favorite chauffeur already knows."
+},
+{
+  "title": "Technology Built for Real Workflows",
+  "description": "Most black car companies use off-the-shelf software built by people who have never driven a mile for hire. We took a different approach.\n\nIn 2022, we built Viaro's booking engine from scratch. No legacy infrastructure. No inherited compromises. No outsourcing to developers unfamiliar with the industry. Every feature was designed around the actual workflows of passengers and chauffeurs."
+},
+{
+  "title": "Designed for Chauffeurs, Not Against Them",
+  "description": "Most platforms treat drivers as an afterthought. We built Viaro differently.\n\nOur founders include professional chauffeurs who understand every challenge drivers face daily. The early mornings. The flight delays. The last-minute changes. The clients who become friends over the years of service.\n\nMost chauffeurs do not want to run a business. They want to drive. They want reliable work, steady income, and clients who come back. Viaro gives them exactly that.\n\nWhen chauffeurs are treated well, passengers notice. The service is better. The cars are cleaner. The attitude is genuine. Everyone wins."
+}
       ]
     },
 
@@ -368,14 +369,12 @@
     "mission": {
       "label": "Mission",
       "title": "On Time, Every Time",
-      "description": "Viaro exists to deliver executive-grade ground transportation with the reliability of an airline and the warmth of a trusted relationship. Every route, every passenger, every time."
-    },
+"description": "Every passenger deserves to be treated like a VIP. That is not a slogan. It is how we operate.\n\nWe eliminate the unpredictability of modern travel by delivering world-class black car service built on three pillars:\n\nProfessional Chauffeurs: Every driver in our network is background-checked, drug-tested, and commercially insured. We work with career professionals who take pride in what they do — not random drivers chasing fares.\n\nTransparent Pricing: Transparent rates. No sudden surge. No hidden fees. What we quote is what you pay.\n\nReliability You Can Count On: Real-time flight tracking. 99.8% on-time arrival. 24/7 human support. When we say we will be there, we are there.\n\nFrom airport transfers to corporate roadshows to private FBO pickups, we transform every trip into a quiet, comfortable, and completely reliable experience."    },
 
     "vision": {
       "label": "Vision",
       "title": "North America's Premier Black Car Service",
-      "description": "We are building the most trusted executive transportation network on the continent—city by city, chauffeur by chauffeur, relationship by relationship."
-    },
+"description": "We see a future where executive travel is simple, safe, and stress-free.\n\nTransparent pricing. No cancelled rides. No wondering if your driver will show up on time.\n\nViaro exists to be the most trusted name in luxury ground transportation across the United States, Canada, and Costa Rica.\n\nWe protect your time. We guarantee your safety. We give you peace of mind — every trip, every time."    },
      "faqTitle": "Frequently Asked Questions",
     "buttons": {
       "bookNow": "Book Now",
@@ -437,12 +436,15 @@
       }
     }
   },
-  "services": {
-    "hero": {
-      "subtitle": "The Highest Level for Your Travel Experience.",
-      "title": "Services",
-      "tagline": "At Viaro, we are committed to exceptional\nservice and successful outcomes."
-    },
+ "services": {
+  "hero": {
+    "subtitle": "The Highest Level for Your Travel Experience.",
+    "title": "Professional Chauffeur & Black Car Services",
+    "tagline": "Airport Transfers, Corporate Transportation & Hourly Chauffeur Hire for Business and Leisure",
+    "body": "Your ride should be the easiest part of your day. Viaro gives you more than a car. We give you peace of mind.\n\nWhether you need an airport pickup in New York, a corporate car in Chicago, or a cruise transfer in Seattle, our professional chauffeurs are ready.\n\nWe track your flight. We carry your bags. We get you there on time, every time. No gig workers, just trained professionals in luxury vehicles, available 24/7 across North America.",
+    "cta_book": "Book Your Ride",
+    "cta_call": "Call Us"
+  },
     "professional": {
       "subtitle": "The Highest Level for Your Travel Experience.",
       "title": "Professional Chauffeur & Black Car Services in U.S. & Canada",
@@ -460,43 +462,43 @@
     },
    
    
-    "serviceCards": {
-      "title": "Our Premier Transportation Services",
-      "subtitle": "From airport pickups to all-day executive travel, Viaro offers the right service for every trip. All rides include real-time tracking, meet-and-greet service, free wait time, and world-class support.",
-      "learnMore": "Learn More",
-      "items": [
-        {
-          "img": "/images/ImagenAirport.png",
-          "title": "Airport Transfers",
-          "desc": "FBO or Fixed Base Operator Transfers. Commercial Airline Transfer.",
-          "href": "/airport-transfers"
-        },
-        {
-          "img": "/images/ImagenCorporate.png",
-          "title": "Corporate Transportation & Executive Car Service",
-          "desc": "Reliable transportation for meetings, conferences, roadshows, and events.",
-          "href": "/corporate-transportation-executive-car-service"
-        },
-        {
-          "img": "/images/ImagenAirline.png",
-          "title": "Airline Crew & Private Aviation (FBO) Transfers",
-          "desc": "Fast, discreet ground transportation for flight crews and private jet travelers.",
-          "href": "/fbo-crew-transportation"
-        },
-        {
-          "img": "/images/ImagenCruise.png",
-          "title": "Cruise Port Transfer Service",
-          "desc": "Transportation to and from Piers or Cruise Terminals.",
-          "href": "/cruise-port-transfers"
-        },
-        {
-          "img": "/images/ImagenHourly.png",
-          "title": "Hourly Chauffeur Hire & Private Car Service",
-          "desc": "Your driver, your schedule. Flexible hourly booking with a minimum of 3 hours.",
-          "href": "/hourly-chauffeur-hire"
-        }
-      ]
-    },
+  "serviceCards": {
+  "title": "Our Premier Transportation Services",
+  "subtitle": "From airport pickups to all-day executive travel, Viaro offers the right service for every trip. All rides include real-time tracking, meet-and-greet service, free wait time, and world-class support.",
+  "learnMore": "Learn More",
+  "items": [
+  {
+    "img": "/images/ImagenAirport.png",
+    "title": "Airport Transfers",
+    "desc": "Skip the taxi line and avoid surge pricing.\n\nViaro offers dependable airport pickup and drop-off at every major airport in the US and Canada. We track your flight in real time, meet you at baggage claim with a name sign, and assist with all luggage.\n\nFlight delayed? We adjust at no extra charge.\n\nServing JFK, LAX, ORD, SEA, YYZ, SFO, ATL, DEN, and 50+ more.",
+    "href": "airport-transfers"
+  },
+  {
+    "img": "/images/ImagenAirline.png",
+    "title": "Airline Crew & Private Aviation (FBO) Transfers",
+    "desc": "You fly private to save time — don't waste it waiting for ground transportation.\n\nViaro specializes in FBO transfers with tarmac-side pickup where permitted, tail number tracking, and full coordination with Signature, Atlantic Aviation, Million Air, and other FBO operators.\n\nWe also provide reliable, on-time crew shuttles for pilots and flight attendants.",
+    "href": "fbo-crew-transportation"
+  },
+  {
+    "img": "/images/ImagenCorporate.png",
+    "title": "Corporate Transportation & Executive Car Service",
+    "desc": "Turn your commute into productive time.\n\nOur executive chauffeurs pass background checks, drug screening, and professional training — no gig workers. We handle multi-city roadshows, board meetings, and investor days.\n\nCorporate accounts include Net-30 monthly invoicing, privacy partitions, and NDA-compliant drivers for high-profile clients.",
+    "href": "corporate-transportation-executive-car-service"
+  },
+  {
+    "img": "/images/ImagenCruise.png",
+    "title": "Cruise Port Transfer Service",
+    "desc": "Start your vacation the moment you leave your door.\n\nWe offer direct door-to-ship transfers to major cruise terminals across North America. Spacious SUVs fit the whole family plus 6+ suitcases, child seats available on request, and flat-rate pricing — one price for the vehicle, no surprise fees.\n\nServing Seattle, Vancouver, Miami, Fort Lauderdale, Los Angeles, San Diego, Galveston, New Orleans, and more.",
+    "href": "cruise-port-transfers"
+  },
+  {
+    "img": "/images/ImagenHourly.png",
+    "title": "Hourly Chauffeur Hire & Private Car Service",
+    "desc": "Need a chauffeur for the whole day? Our as-directed service puts you in control.\n\nVisit multiple stops — meetings, shopping, dinner — without booking separate rides. Your driver waits with the vehicle between stops, keeping your belongings safe.\n\n3-hour minimum with easy on-the-spot extensions. Perfect for business meetings, wine tours, weddings, concerts, medical appointments, and city sightseeing.",
+    "href": "hourly-chauffeur-hire"
+  }
+]
+},
     "pricing": {
       "title": "What It Costs To Hire Viaro",
       "subtitle": "Every rate is shown before you book. No fuel surcharges. No service fees added at checkout. Gratuity is paid directly to your chauffeur and included in your fare from the start.",
