@@ -12,7 +12,9 @@ import { getDictionary } from "@/lib/get-dictionary";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-// ── TRUST METRICS ─────────────────────────────────────────────────────────────
+const btnPrimary =
+  "bg-primary text-white hover:bg-brand2 rounded-full uppercase tracking-widest text-xs font-semibold transition-colors";
+
 const TRUST_METRICS = [
   {
     value: "99.8%",
@@ -73,9 +75,6 @@ const TRUST_METRICS = [
   },
 ];
 
-{
-  /* ── Componente auxiliar (definilo fuera de ServicesPage o arriba del return) ── */
-}
 function ServiceCard({
   s,
   lng,
@@ -89,7 +88,6 @@ function ServiceCard({
 }) {
   return (
     <div className="group flex flex-col border border-white/5 rounded-3xl overflow-hidden hover:border-primary/40 transition-all duration-300 bg-white/[0.02]">
-      {/* Imagen */}
       <div
         className={`relative w-full overflow-hidden ${wide ? "aspect-[21/9]" : "aspect-[16/9]"}`}
       >
@@ -100,11 +98,9 @@ function ServiceCard({
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, 50vw"
         />
-        {/* overlay sutil */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
 
-      {/* Contenido */}
       <div className="flex flex-col flex-grow p-6 sm:p-8">
         <h3 className="font-serif font-bold text-xl sm:text-2xl mb-3 leading-snug">
           {s.title}
@@ -114,7 +110,7 @@ function ServiceCard({
         </p>
         <a
           href={`/${lng}/service/${s.href}`}
-          className="mt-6 inline-flex items-center gap-2 border border-primary px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-black transition-all duration-300 w-fit"
+          className={`mt-6 inline-flex items-center gap-2 px-6 py-2.5 w-fit ${btnPrimary}`}
         >
           {learnMore}
           <svg
@@ -135,6 +131,7 @@ function ServiceCard({
     </div>
   );
 }
+
 export default function ServicesPage() {
   const params = useParams();
   const lng = params.lng as "es" | "en";
@@ -153,65 +150,63 @@ export default function ServicesPage() {
   return (
     <main className="bg-black text-white">
       {/* ── HERO ── */}
-      
-<section id="inicio" className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
-  <Image
-    src="/images/ImagenServices1.png"
-    alt="Luxury vehicle parked in front of a modern building"
-    fill
-    priority
-    className="object-cover object-top sm:object-center"
-    sizes="100vw"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
+      <section id="inicio" className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
+        <Image
+          src="/images/ImagenServices1.png"
+          alt="Luxury vehicle parked in front of a modern building"
+          fill
+          priority
+          className="object-cover object-top sm:object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
 
-  <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
+        <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
+          <div className="flex flex-col items-center text-center sm:hidden">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
+              {t.hero.eyebrow ?? t.hero.subtitle}
+            </p>
+          </div>
 
-    <div className="flex flex-col items-center text-center sm:hidden">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
-        {t.hero.eyebrow ?? t.hero.subtitle}
-      </p>
-    </div>
+          <div>
+            <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand">
+              {t.hero.eyebrow ?? t.hero.subtitle}
+            </p>
 
-    <div>
-      <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand">
-        {t.hero.eyebrow ?? t.hero.subtitle}
-      </p>
+            <h1 className="font-serif font-bold leading-[1.1] text-[1.6rem] sm:text-4xl lg:text-5xl xl:text-6xl max-w-[280px] sm:max-w-xl lg:max-w-2xl">
+              {t.hero.title}
+            </h1>
 
-      <h1 className="font-serif font-bold leading-[1.1] text-[1.6rem] sm:text-4xl lg:text-5xl xl:text-6xl max-w-[280px] sm:max-w-xl lg:max-w-2xl">
-        {t.hero.title}
-      </h1>
+            {t.hero.tagline && (
+              <p className="mt-2 sm:mt-3 text-xs sm:text-base text-white/60 leading-relaxed font-light max-w-[260px] sm:max-w-xl">
+                {t.hero.tagline}
+              </p>
+            )}
 
-      {t.hero.tagline && (
-        <p className="mt-2 sm:mt-3 text-xs sm:text-base text-white/60 leading-relaxed font-light max-w-[260px] sm:max-w-xl">
-          {t.hero.tagline}
-        </p>
-      )}
+            <div className="mt-5 sm:mt-8 flex flex-wrap gap-3">
+              <a href="/booking">
+                <button className={`px-6 py-3 text-sm ${btnPrimary}`}>
+                  {t.hero.cta_book}
+                </button>
+              </a>
+              <a href="tel:2066728281">
+                <button className="border border-white/60 text-white font-semibold text-sm px-6 py-3 rounded-full hover:border-white hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
+                  </svg>
+                  {t.hero.cta_call}
+                </button>
+              </a>
+            </div>
 
-      <div className="mt-5 sm:mt-8 flex flex-wrap gap-3">
-        <a href="/booking">
-          <button className="border border-primary bg-primary text-black font-semibold text-sm px-6 py-3 rounded-full hover:bg-transparent hover:text-white transition-all duration-300">
-            {t.hero.cta_book}
-          </button>
-        </a>
-        <a href="tel:2066728281">
-          <button className="border border-white/60 text-white font-semibold text-sm px-6 py-3 rounded-full hover:border-white hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center gap-2">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
-            </svg>
-            {t.hero.cta_call}
-          </button>
-        </a>
-      </div>
-
-      {t.hero.body && (
-        <p className="mt-4 text-sm italic text-white/30 text-center sm:text-base">
-          "{t.hero.body}"
-        </p>
-      )}
-    </div>
-  </div>
-</section>
+            {t.hero.body && (
+              <p className="mt-4 text-sm italic text-white/30 text-center sm:text-base">
+                "{t.hero.body}"
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
 
       {/* ── TRUST METRICS ── */}
       <section
@@ -250,24 +245,10 @@ export default function ServicesPage() {
           {TRUST_METRICS.map((m) => (
             <div
               key={m.value}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 10,
-              }}
+              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}
             >
-              <div style={{ color: "var(--color-primary, #2563eb)" }}>
-                {m.icon}
-              </div>
-              <span
-                style={{
-                  fontSize: 22,
-                  fontWeight: 700,
-                  color: "#ffffff",
-                  lineHeight: 1,
-                }}
-              >
+              <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
+              <span style={{ fontSize: 22, fontWeight: 700, color: "#ffffff", lineHeight: 1 }}>
                 {m.value}
               </span>
               <span
@@ -285,38 +266,10 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
-      <section className="py-16 sm:py-24 border-t border-neutral-800 bg-black">
-        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 text-center">
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-3xl mx-auto">
-            {t.professional.title}
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
-            {t.professional.cards.map((item: any) => (
-              <div
-                key={item.title}
-                className="border border-primary/40 rounded-2xl p-6 sm:p-8 hover:border-primary transition-all duration-300"
-              >
-                <h3 className="font-serif font-bold text-xl sm:text-2xl mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-sm sm:text-base whitespace-pre-line text-gray-400 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10">
-            <a href="https://booking.allblacklimoseattle.com/">
-              <button className="bg-primary text-white font-bold px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-primary/90 transition">
-                {t.professional.cta}
-              </button>
-            </a>
-          </div>
-        </div>
-      </section>
 
-      <section className=" bg-black">
-        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+      {/* ── SERVICE CARDS ── */}
+      <section className="bg-black">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mt-10">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-3">
               {lng === "en" ? "What We Offer" : "Lo Que Ofrecemos"}
@@ -324,7 +277,7 @@ export default function ServicesPage() {
             <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-3xl mx-auto">
               {t.serviceCards.title}
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed max-w-xl mx-auto text-justify">
               {t.serviceCards.subtitle}
             </p>
           </div>
@@ -340,7 +293,6 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          {/* 5ta card — centrada y más ancha */}
           <div className="mt-6 max-w-2xl mx-auto">
             <ServiceCard
               s={t.serviceCards.items[4]}
@@ -369,34 +321,24 @@ export default function ServicesPage() {
                 key={s.category}
                 className="relative flex flex-col border border-primary/40 rounded-2xl p-6 sm:p-8 hover:border-primary transition-all duration-300"
               >
-                <span className="absolute -top-3 left-6 bg-primary text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                <span className="absolute -top-3 left-6 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                   {s.category}
                 </span>
                 <h3 className="font-serif font-bold text-xl sm:text-2xl mt-2">
                   {s.type}
                 </h3>
-                <p className="mt-3 text-4xl font-bold text-primary">
-                  ${s.price}
-                </p>
+                <p className="mt-3 text-4xl font-bold text-primary">${s.price}</p>
                 <p className="mt-1 text-xs text-gray-500">{s.description}</p>
                 <ul className="mt-6 space-y-3 flex-grow">
                   {s.features.map((f: string) => (
-                    <li
-                      key={f}
-                      className="flex items-start gap-2 text-sm text-gray-300"
-                    >
-                      <span className="text-primary mt-0.5 flex-shrink-0">
-                        ✓
-                      </span>
+                    <li key={f} className="flex items-start gap-2 text-sm text-gray-300">
+                      <span className="text-primary mt-0.5 flex-shrink-0">✓</span>
                       {f}
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="https://booking.allblacklimoseattle.com/"
-                  className="mt-8 block"
-                >
-                  <button className="w-full bg-primary text-black font-bold py-3 rounded-full text-xs uppercase tracking-widest hover:bg-white transition-all duration-300">
+                <a href="https://booking.allblacklimoseattle.com/" className="mt-8 block">
+                  <button className={`w-full py-3 ${btnPrimary}`}>
                     {t.pricing.bookCta} {s.type}
                   </button>
                 </a>
@@ -417,7 +359,7 @@ export default function ServicesPage() {
           <FA data={fa} />
           <div className="mt-10 flex justify-center">
             <a href="/faq">
-              <button className="bg-primary text-white font-bold px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-primary/90 transition">
+              <button className={`px-8 py-3 text-sm ${btnPrimary}`}>
                 {t.faq.cta}
               </button>
             </a>

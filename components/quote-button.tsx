@@ -44,8 +44,9 @@ export function QuoteButton({ label, lng }: QuoteButtonProps) {
   };
 
   return (
-    <button
+   <button
       onClick={handleClick}
+      suppressHydrationWarning
       className="fixed bottom-6 right-6 z-[9999] bg-primary text-white px-6 py-3 rounded-full shadow-xl font-semibold transition-all duration-300 hover:bg-neutral-800 hover:-translate-y-1"
     >
       {label}

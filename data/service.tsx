@@ -3,7 +3,8 @@ import type { TestiMapKey } from "./Tetimonials";
 
 type ExtraSection = {
   h3: string;
-  quote?: string;
+  h2?: string;
+  quote?: React.ReactNode;
   desc?: React.ReactNode;
   image?: { src: string; alt: string };
   items?: { label: string; desc: React.ReactNode }[];
@@ -18,6 +19,7 @@ type AirportRegion = {
   airports: string[];
   description: React.ReactNode;
   image?: string;
+  url?: string;
 };
 
 type ServiceItem = {
@@ -35,7 +37,7 @@ type ServiceItem = {
   bodyContent: {
     h2: string;
     h3: string;
-    content: string[];
+    content: React.ReactNode[];
     airports: AirportRegion[];
   };
   extraContent?: ExtraSection[];
@@ -48,7 +50,6 @@ type ServiceItem = {
       models: string[];
       extras: string[];
     }[];
-    note: string;
     cta: string;
   };
 };
@@ -73,18 +74,17 @@ export const serviceEn: ServiceItem[] = [
     trustBar: [
       "Live Flight Tracking",
       "Flat Rates",
-      "Pro Chauffeurs",
-      "Luxury Fleet",
+      "14 Years of Experience",
       "24/7 Booking",
     ],
     bodyContent: {
       h2: "Serving the World's Busiest Travel Hubs",
       h3: "Premium Transportation Where You Need It Most",
       content: [
-        "We provide consistent, world-class luxury transportation at major airports across North America. Our luxury sedans, SUVs, and Sprinter vans are available for every trip.",
-        "Our chauffeurs offer professional meet-and-greet services inside the terminal. We wait at baggage claim with a personalized sign, ready to assist with your bags.",
-        "Unlike ride-share apps that surge during peak hours, Viaro guarantees your ride with transparent, flat-rate pricing.",
-        "We track every flight in real time. Your chauffeur adjusts automatically — no need to call us.",
+        "We provide consistent, world-class luxury transportation solutions at major airports across North America. Whether you are travelling to an important business meeting, we are ready. Our luxury sedans, SUVs, and Sprinter vans are available. ",
+        "We understand that flying can be tiring. That is why our chauffeurs offer professional meet-and-greet services inside the terminal. We wait at baggage claim with a personalized sign, ready to assist with your heavy bags.",
+        "Unlike ride-share apps that use hidden peak-hour multipliers or cancel during busy times, Viaro guarantees your ride. We offer transparent pricing with no surprising surge multipliers. Your exact quote is calculated based on vehicle type, travel distance, and time of day.",
+        "We track every commercial and private flight in real time, so if your flight is delayed, we already know. Your chauffeur adjusts automatically, so you don’t need to communicate. From the moment you step off the plane, you can relax in a quiet, climate-controlled luxury vehicle.",
       ],
       airports: [
         {
@@ -158,16 +158,15 @@ export const serviceEn: ServiceItem[] = [
         {
           type: "Sprinter",
           price: 279,
-          passengers: 14,
+          passengers: 13,
           models: ["Mercedes Sprinter"],
           extras: [
-            "Up to 14 passengers",
+            "Up to 13 passengers",
             "Event and meeting transportation",
             "Ideal for corporate groups",
           ],
         },
       ],
-      note: "Rates shown are for trips up to 18 miles. All-inclusive. Minimum fare.",
       cta: "Check Airport Availability & Rates →",
     },
   },
@@ -185,7 +184,7 @@ export const serviceEn: ServiceItem[] = [
       h1: "Corporate Transportation & Executive Car Service",
       h2: "Reliable Black Car Travel for Business Leaders Across North America",
       description:
-        "Business moves fast. Your transportation must keep up. Leading companies—from tech giants in Seattle to financial firms on Wall Street—trust Viaro for executive ground transportation. Centralized billing. Flight tracking. FBO tarmac pickup. Available 24/7 across the United States, Canada, and Costa Rica.",
+        "Business moves fast. Your transportation must keep up.When you travel for work, you cannot afford to wait in taxi lines or deal with cancelled rideshare apps. A delayed car can derail a million-dollar meeting. That is why leading companies—from tech giants in Seattle to financial firms on Wall Street—trust Viaro for executive ground transportation.We provide the quiet, reliable space your team needs to prepare for the day ahead. Centralized billing. Flight tracking. FBO tarmac pickup. Available 24/7 across the United States, Canada, and Costa Rica.",
       cta: { book: "Open a Corporate Account Today", phone: "(206) 672-8281" },
     },
     trustBar: [
@@ -193,16 +192,14 @@ export const serviceEn: ServiceItem[] = [
       "Centralized Billing",
       "Flight Tracking",
       "24/7 Support",
-      "Fortune 500 Trusted",
     ],
     bodyContent: {
       h2: "Why Leading Companies Choose Viaro",
       h3: "Industries That Rely on Viaro",
       content: [
-        "If you manage travel for a large company, you know ground transportation is usually the weakest link. That is why companies across every industry trust Viaro as their corporate transportation partner.",
-        "At massive airports like LAX, JFK, and ORD, rideshare apps force executives to walk half a mile to pickup lots. Viaro chauffeurs use restricted commercial vehicle lanes and meet your team at baggage claim.",
-        "If your executives fly private into FBO hubs like Boeing Field (BFI) or Teterboro (TEB), our cars pull right up to the jet on the tarmac where security allows.",
-        "Viaro aligns with GBTA travel policies: detailed digital receipts, centralized monthly invoicing, expense code tagging, and a dedicated account manager for enterprise clients.",
+        "If you manage travel for a large company, you know ground transportation is usually the weakest link. Flight tracking is precise. Hotels confirm instantly. But ground transport? That is where things fall apart.",
+        "That is why companies across every industry—from technology and finance to healthcare and manufacturing—trust Viaro as their corporate transportation partner.",
+        "Top companies from tech giants like Microsoft in Redmond, to financial firms on Wall Street—trust our",
       ],
       airports: [
         {
@@ -222,7 +219,7 @@ export const serviceEn: ServiceItem[] = [
               </a>
               ,{" "}
               <a
-                href="https://www.amazon.jobs/en/locations/seattle"
+                href="https://www.aboutamazon.com/news/workplace/amazon-spheres-seattle-inside-tour"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
@@ -294,7 +291,7 @@ export const serviceEn: ServiceItem[] = [
                   href={`/en/service-areas`}
                   className="border-b border-white/60 hover:border-primary hover:text-primary transition"
                 >
-                  across 25+ cities
+                  across 50+ cities
                 </a>{" "}
                 — New York to Boston to Chicago, seamlessly.
               </>
@@ -344,8 +341,8 @@ export const serviceEn: ServiceItem[] = [
           ],
         },
         {
-          type: "Executive SUV",
-          price: 169,
+          type: "Executive\nSUV",
+          price: 159,
           passengers: 6,
           models: ["Cadillac Escalade", "Lincoln Navigator", "Mercedes GLS"],
           extras: [
@@ -357,16 +354,15 @@ export const serviceEn: ServiceItem[] = [
         {
           type: "Executive Sprinter",
           price: 299,
-          passengers: 14,
+          passengers: 13,
           models: ["Mercedes Sprinter"],
           extras: [
-            "Up to 14 passengers",
+            "Up to 13 passengers",
             "Conference setup available",
             "Ideal for roadshows & teams",
           ],
         },
       ],
-      note: "Rates shown are for trips up to 18 miles. All-inclusive. Minimum fare.",
       cta: "Get a Custom Corporate Quote →",
     },
   },
@@ -384,24 +380,24 @@ export const serviceEn: ServiceItem[] = [
       h1: "FBO Ground Transportation & Airline Crew Transfers",
       h2: "Tarmac-Side Pickup for Private Aviation | Crew Shuttles at 25+ Airports",
       description:
-        "You fly private to save travel time. Your ground transportation should respect that. Viaro tracks your tail number and has your car in position when your wheels touch down. Transparent pricing. Available 24/7 across the US, Canada, and Costa Rica.",
+        "You fly private to save travel time. Your ground transportation should respect that.Viaro provides tarmac-side FBO pickup for private jet travelers and reliable crew shuttles for airline flight departments. We track your tail number—not just the schedule. When your wheels touch down, your car is already in position.Transparent pricing. No surprising rates. Available 24/7 across the United States, Canada, and Costa Rica. ",
       cta: { book: "Request Your Instant Quote Now", phone: "(206) 672-8281" },
     },
     trustBar: [
-      "Tail Number Tracking",
+      "Live Flight & Tail Tracking",
       "Tarmac-Side Pickup",
-      "Flat Rates",
+      "Transparen Rates",
       "24/7 Dispatch",
       "Full Discretion",
     ],
     bodyContent: {
       h2: "VIP FBO Transfers: Where Every Second Counts",
-      h3: "Major FBO Hubs We Serve",
+      h3: "The Standard for Private Aviation Ground Transportation",
       content: [
-        "It makes no sense to spend $20,000+ on a charter flight and then wait 20 minutes for a driver who cannot find the FBO entrance.",
-        "We obtain the security clearances required to meet you tarmac-side — right beside your aircraft. We track your specific tail number through FlightAware, not a general schedule.",
+        "It makes no sense to spend $20,000+ on a charter flight and then wait 20 minutes for a driver who cannot find the FBO entrance. The executives, entrepreneurs, and public figures who fly private expect ground transportation that matches the aircraft experience.",
+        "We do not park in the lobby as if it were a commercial airline lot and text you to come outside. We obtain the security clearances required to meet you tarmac-side—right beside your aircraft. We track your specific tail number through FlightAware, not a general airline schedule. When your wheels touch down, your luxury sedan is already in position on the ramp.",
         "You step off the jet and directly into your car. Door to door. Zero wasted time.",
-        "Every Viaro chauffeur signs a confidentiality agreement. We coordinate directly with security teams when required. Discretion is standard, not an add-on.",
+        "These are the major Fixed-Base Operators (FBOs) for private flights and business aviation we serve in North America:",
       ],
       airports: [
         {
@@ -439,25 +435,52 @@ export const serviceEn: ServiceItem[] = [
             "South Florida's premier executive airport. Direct service to Miami Beach and cruise terminals.",
           image: "/images/OpaLocka.png",
         },
-        {
-          region: "Centennial (APA)",
-          airports: ["APA"],
-          description:
-            "Colorado's busiest GA airport. SUVs equipped for mountain resort transfers.",
-          image: "/images/Centannial.png",
-        },
-      ],
+       {
+  region: "Centennial (APA)",
+  airports: ["APA"],
+  description:
+    "Colorado's busiest GA airport. SUVs equipped for mountain resort transfers.",
+  image: "/images/Centannial.png",
+},
+],
+},
+extraContent: [
+  {
+    h3: "The Pilot's Perspective: Crew Transportation That Works",
+    h2: "Written by a Pilot Who Has Been There",
+    quote: (
+      <>
+        <p className="mb-3">
+          “After twenty years and thousands of flight hours in private air travel, I can tell you this. The hardest part of any trip is not the approach into busy Class B airspace.”
+        </p>
+
+        <p className="mb-3">
+          Getting an exhausted crew to the hotel without a disaster.
+        </p>
+
+        <p className="mb-3">
+          Most ground transport services treat crew pickups like an afterthought. Others send us to public rideshare zones or lose track of our arrival time. Others make us stand in the cold at 2 AM waiting for a van that may or may not arrive.
+        </p>
+
+        <p className="mb-3">
+          <span className=" text-brand">Viaro</span> does it differently. They understand crew rest regulations and why getting us to bed fast actually matters for flight safety.”
+        </p>
+
+       <p className="mt-3">
+          The difference is simple:{" "}
+          <span className=" text-brand">Viaro</span> tracks your flight
+          status in real time. By the time we finish post-flight checks and walk
+          out, a clean Sprinter van is already waiting. No wandering the garage.
+          Just a smooth ride to a warm bed.
+        </p>
+      </>
+    ),
+    image: {
+      src: "/images/ImagenAirline.png",
+      alt: "Airline crew boarding a private Viaro Sprinter van for a quick and comfortable hotel transfer.",
     },
-    extraContent: [
-      {
-        h3: "The Pilot's Perspective: Crew Transportation That Works",
-        quote:
-          '"After twenty years and thousands of flight hours in private air travel, I can tell you this. The hardest part of any trip is not the approach into busy Class B airspace — it is getting an exhausted crew to the hotel without a disaster. Most ground transport services treat crew pickups like an afterthought. Others make us stand in the cold at 2 AM waiting for a van that may or may not arrive. Viaro does it differently. They understand crew rest regulations and why getting us to bed fast actually matters for flight safety."',
-        image: {
-          src: "/images/ImagenAirline.png",
-          alt: "Airline crew boarding a private Viaro Sprinter van for a quick and comfortable hotel transfer.",
-        },
-      },
+  },
+
       {
         h3: "Insider Hacks at Major Airports",
         items: [
@@ -526,7 +549,7 @@ export const serviceEn: ServiceItem[] = [
         {
           type: "Sprinter",
           price: 299,
-          passengers: 14,
+          passengers: 13,
           models: ["Mercedes Sprinter"],
           extras: [
             "Full crew transport",
@@ -535,7 +558,6 @@ export const serviceEn: ServiceItem[] = [
           ],
         },
       ],
-      note: "Rates shown are for trips up to 18 miles. All-inclusive. Minimum fare.",
       cta: "Reserve Your Private FBO Transfer →",
     },
   },
@@ -553,7 +575,7 @@ export const serviceEn: ServiceItem[] = [
       h1: "Seamless Cruise Port Transfers Car Service",
       h2: "Private Black Car Service at 15+ Cruise Ports in the US & Canada",
       description:
-        "Skip the long taxi lines and crowded shuttle buses. With Viaro, your private chauffeur meets you right at the pier exit. We handle your bags and get you straight to the airport or hotel — in a clean, quiet, climate-controlled vehicle.",
+        "You just spent a week relaxing on the ocean. The last thing you need is the stress of dragging heavy bags through a crowded terminal.Skip the long taxi lines. Avoid the crowded shuttle buses that wait until every seat fills before leaving.With Viaro, your private chauffeur meets you right at the pier exit. We handle your bags and get you straight to the airport or hotel—in a clean, quiet, climate-controlled vehicle.Price transparency guaranteed. We track your ship and your flight, so you never wait.",
       cta: {
         book: "Book Your Private Cruise Transfer Now",
         phone: "(206) 672-8281",
@@ -562,80 +584,127 @@ export const serviceEn: ServiceItem[] = [
     trustBar: [
       "Ship Tracking",
       "Live Flight Tracking",
-      "Flat Rates",
+      "Guaranteed Transparency",
       "24/7 Dispatch",
-      "Curbside Pickup",
     ],
     bodyContent: {
       h2: "The Frequent Cruiser's Guide to Port Transfers",
       h3: "Port-by-Port Hacks That Save Time",
       content: [
-        "The worst part of any cruise vacation is not the ship — it is the chaos at the port when you get off.",
-        "At massive ports like Seattle Pier 91 or PortMiami, Uber and Lyft cannot reach the main terminal curb. You must drag your heavy bags up to half a mile to the rideshare pickup lot.",
-        "Cruise line buses wait until every seat is full before leaving. On a busy turnaround day, you could sit there for 30–45 minutes.",
-        "Viaro eliminates both problems. Our drivers pull up as close as port security allows — usually right at the terminal curb.",
+        "After dozens of cruises on every major line—from Alaska sailings to Caribbean getaways, we can tell you the worst part of any cruise vacation is not the ship. It is the chaos at the port when you get off.",
+        "Most travelers do not know the hidden traps until it is too late. Here are the two biggest mistakes",
+       
       ],
       airports: [
-        {
-          region: "Seattle, WA",
-          airports: ["Pier 66", "Pier 91"],
-          description:
-            "Alaska cruise hub. Viaro knows Elliott Avenue shortcuts to Sea-Tac in 25–35 minutes.",
-          image: "/images/SeattleCruise.png",
-        },
-        {
-          region: "Miami, FL",
-          airports: ["PortMiami"],
-          description:
-            "World's busiest cruise port. We time your pickup to avoid peak MacArthur Causeway traffic.",
-          image: "/images/PortMiami.png",
-        },
-        {
-          region: "Fort Lauderdale, FL",
-          airports: ["Port Everglades"],
-          description:
-            "Multiple piers — Viaro coordinates the exact terminal with your cruise line.",
-          image: "/images/PortEverglades.png",
-        },
-        {
-          region: "Vancouver, BC",
-          airports: ["Canada Place"],
-          description:
-            "Viaro handles the complex timing around US-Canada customs for a stress-free departure.",
-          image: "/images/CanadaPlace.png",
-        },
-        {
-          region: "New Orleans, LA",
-          airports: ["Erato Street Terminal"],
-          description:
-            "Transfers to MSY airport or French Quarter hotels, navigating narrow downtown streets.",
-          image: "/images/EratoStreet.png",
-        },
-        {
-          region: "Galveston, TX",
-          airports: ["Port of Galveston"],
-          description:
-            "50-mile drive to IAH or HOU airports, timed to avoid I-45 traffic.",
-          image: "/images/Galveston.png",
-        },
-      ],
+  {
+    region: "Seattle, WA",
+    airports: ["Pier 66 & 91", "Pier 91"],
+    description:
+      "Alaska cruise hub. Viaro knows Elliott Avenue shortcuts to Sea-Tac in 25–35 minutes.",
+    image: "/images/SeattleCruise.png",
+    url: "https://www.portseattle.org/places/smith-cove-cruise-terminal-pier-91",
+  },
+  {
+    region: "Miami, FL",
+    airports: ["PortMiami"],
+    description:
+      "World's busiest cruise port. We time your pickup to avoid peak MacArthur Causeway traffic.",
+    image: "/images/PortMiami.png",
+    url: "https://www.miamidade.gov/portmiami/cruise-terminals.page",
+  },
+  {
+    region: "Fort Lauderdale, FL",
+    airports: ["Port Everglades"],
+    description:
+      "Multiple piers — Viaro coordinates the exact terminal with your cruise line.",
+    image: "/images/PortEverglades.png",
+    url: "https://www.porteverglades.net/cruising/",
+  },
+  {
+    region: "Vancouver, BC",
+    airports: ["Canada Place"],
+    description:
+      "Viaro handles the complex timing around US-Canada customs for a stress-free departure.",
+    image: "/images/CanadaPlace.png",
+    url: "https://www.canadaplace.ca/",
+  },
+  {
+    region: "New Orleans, LA",
+    airports: ["Erato Street Terminal"],
+    description:
+      "Transfers to MSY airport or French Quarter hotels, navigating narrow downtown streets.",
+    image: "/images/EratoStreet.png",
+    url: "https://portnola.com/cruise",
+  },
+  {
+    region: "Galveston, TX",
+    airports: ["Port of Galveston"],
+    description:
+      "50-mile drive to IAH or HOU airports, timed to avoid I-45 traffic.",
+    image: "/images/Galveston.png",
+    url: "https://www.portofgalveston.com/cruise",
+  },
+]
     },
     extraContent: [
       {
         h3: 'Insider Tips to Avoid the Cruise "Terminal Scramble"',
         items: [
-          {
-            label: "The Rideshare Hike",
-            desc: "At massive ports like Seattle Pier 91 or PortMiami, Uber and Lyft cannot reach the main terminal curb. You must drag your heavy bags up to half a mile. With four suitcases and tired kids, that walk feels like a marathon.",
-          },
-          {
-            label: "The Shuttle Shuffle",
-            desc: "Cruise line buses look convenient, but they wait until every seat is full before leaving. On a busy turnaround day, you could sit there for 30–45 minutes while the bus fills up.",
-          },
-          {
-            label: "The Viaro Difference",
-            desc: "Our drivers pull up as close as port security allows — usually right at the terminal curb. You walk off the ship and into a luxury private car in minutes.",
-          },
+         {
+  label: "The Rideshare Hike",
+  desc: (
+    <>
+      At massive ports like Seattle Pier 91{" "}
+      <a
+        href="https://www.portseattle.org/places/smith-cove-cruise-terminal-pier-91"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+      >
+        Smith Cove Cruise Terminal
+      </a>{" "}
+      or PortMiami{" "}
+      <a
+        href="https://www.miamidade.gov/portmiami/cruise-terminals.page"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+      >
+        Cruise Terminals
+      </a>
+      , Uber and Lyft cannot reach the main terminal curb. You must drag your
+      heavy bags up to half a mile to reach the rideshare pickup lot. With
+      four suitcases and tired kids, that walk feels like a marathon.
+    </>
+  ),
+},
+{
+  label: "The Shuttle Shuffle",
+  desc: (
+    <>
+      Cruise line buses look convenient, but they wait until every seat is
+      full before leaving. On a busy turnaround day, you could sit there for
+      30–45 minutes while the bus fills up.
+    </>
+  ),
+},
+{
+  label: "The Viaro Difference",
+  desc: (
+    <>
+      Viaro eliminates both problems. Our drivers pull up as close as port
+      security allows—usually right at the terminal curb. You walk off the
+      ship and into a luxury private car{" "}
+      <a
+        href="/en/fleet"
+        className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+      >
+        FLEET
+      </a>{" "}
+      in minutes.
+    </>
+  ),
+}
         ],
       },
       {
@@ -733,16 +802,15 @@ export const serviceEn: ServiceItem[] = [
         {
           type: "Sprinter",
           price: 299,
-          passengers: 14,
+          passengers: 13,
           models: ["Mercedes Sprinter"],
           extras: [
-            "Up to 14 passengers",
+            "Up to 13 passengers",
             "Group cruise transfers",
             "Ample luggage capacity",
           ],
         },
       ],
-      note: "Rates shown are for trips up to 18 miles. All-inclusive. Minimum fare.",
       cta: "Check Cruise Port Availability & Rates →",
     },
   },
@@ -760,7 +828,7 @@ export const serviceEn: ServiceItem[] = [
       h1: "Hourly Chauffeur Service & Private VIP Car Hire",
       h2: "Your Personal Driver for the Day — Safe, Discreet & Always Waiting",
       description:
-        "Sometimes you need more than just a quick ride. You need a driver who stays with you. With Viaro's hourly chauffeur service, the car is yours. You control the pace of the day. Your driver waits while you shop, dine, or meet. No rushing. No searching for parking. No waiting alone on a dark street for a rideshare app. ",
+        "Sometimes you need more than just a quick ride. You need a driver who stays with you.With Viaro's hourly chauffeur service, the car is yours. You control the pace of the day. Your driver waits while you shop, dine, or meet. No rushing. No searching for parking. No waiting alone on a dark street for a rideshare app.Whether you need a designated driver for a night out, safe transport for elderly parents, discreet VIP travel, or a full-day shopping companion—we are here for you. Serving 40+ cities across the United States, Canada, and Costa Rica.",
       cta: { book: "Book Your Hourly Chauffeur Now", phone: "(206) 672-8281" },
     },
     trustBar: [
@@ -768,17 +836,20 @@ export const serviceEn: ServiceItem[] = [
       "Safe Family Travel",
       "Wait & Return",
       "Flexible Routing",
-      "24/7 Support",
     ],
     bodyContent: {
       h2: "Who Uses Hourly Chauffeur Service?",
       h3: "The Smart Choice for Safe Travel and Total Convenience",
-      content: [
-        "Whether you need a designated driver for a night out, safe transport for elderly parents, discreet VIP travel, or a full-day shopping companion —we are here for you. Serving 40+ cities across the United States, Canada, and Costa Rica.",
-        "When you book our hourly VIP service, the car is yours. Your chauffeur follows your exact schedule, waits while you handle business, and keeps the car ready at a moment's notice.",
-        "Our chauffeurs respect your privacy and provide a quiet, secure environment.",
-        "This flexible service is perfect for a wide range of needs across our service areas.",
-      ],
+     content: [
+  "When you book our hourly VIP service, the car is yours. Your chauffeur follows your exact schedule, waits while you handle business, and keeps the car ready at a moment's notice.",
+  "Our chauffeurs respect your privacy and provide a quiet, secure environment.",
+  <>
+    This flexible service is perfect for a wide range of needs across our{" "}
+    <a href="/en/service-areas/" className="text-primary underline">
+      service areas
+    </a>.
+  </>,
+],
       airports: [
         {
           region: "VIP & Celebrity Discretion",
@@ -809,12 +880,37 @@ export const serviceEn: ServiceItem[] = [
           image: "/images/Family.png",
         },
         {
-          region: "Shopping Trips & Errands",
-          airports: ["BH", "CHI", "SEA", "MIA"],
-          description:
-            "Need a car for a full day of shopping? Your chauffeur drops you at the entrance, keeps the car nearby, and stores your bags safely in the trunk while you visit the next store. Popular shopping destinations we serve include Rodeo Drive [https://www.rodeodrive-bh.com/] in Beverly Hills, The Magnificent Mile [https://www.themagnificentmile.com/] in Chicago, and high-end boutiques in downtown Seattle, Miami, and Vancouver.",
-          image: "/images/Galveston.png",
-        },
+  region: "Shopping Trips & Errands",
+  airports: ["BH", "CHI", "SEA", "MIA"],
+  description: (
+    <>
+      Need a car for a full day of shopping? Your chauffeur drops you at the
+      entrance, keeps the car nearby, and stores your bags safely in the trunk
+      while you visit the next store. Popular shopping destinations we serve
+      include{" "}
+      <a
+        href="https://www.rodeodrive-bh.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+      >
+        Rodeo Drive
+      </a>{" "}
+      in Beverly Hills,{" "}
+      <a
+        href="https://www.themagnificentmile.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+      >
+        The Magnificent Mile
+      </a>{" "}
+      in Chicago, and high-end boutiques in downtown Seattle, Miami, and
+      Vancouver.
+    </>
+  ),
+  image: "/images/Galveston.png",
+},
         {
           region: "Designated Driver & Night Out",
           airports: ["All cities"],
@@ -830,12 +926,42 @@ export const serviceEn: ServiceItem[] = [
           image: "/images/Galveston.png",
         },
         {
-          region: "Hotel & Airport Connections",
-          airports: ["All cities"],
-          description:
-            "Arriving for business with a packed schedule? Book hourly service from airport arrival [link to /airport-car-service/] to your hotel], then keep the car for meetings, site visits, or dinners. Your luggage stays secure in the vehicle while you work. Popular hotel connections include The Edgewater Hotel [https://www.edgewaterhotel.com/] and Fairmont Olympic Seattle [https://www.fairmont.com/seattle/].",
-          image: "/images/Galveston.png",
-        },
+  region: "Hotel & Airport Connections",
+  airports: ["All cities"],
+  description: (
+    <>
+      Arriving for business with a packed schedule? Book hourly service from{" "}
+      <a
+        href="/airport-car-service/"
+        className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+      >
+        airport arrival
+      </a>{" "}
+      to your hotel, then keep the car for meetings, site visits, or dinners.
+      Your luggage stays secure in the vehicle while you work. Popular hotel
+      connections include{" "}
+      <a
+        href="https://www.edgewaterhotel.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+      >
+        The Edgewater Hotel
+      </a>{" "}
+      and{" "}
+      <a
+        href="https://www.fairmont.com/seattle/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+      >
+        Fairmont Olympic Seattle
+      </a>
+      .
+    </>
+  ),
+  image: "/images/Galveston.png",
+},
         {
           region: "Weddings & Special Events",
           airports: ["All cities"],
@@ -883,12 +1009,10 @@ export const serviceEn: ServiceItem[] = [
           ],
         },
       ],
-      note: "Rates vary by city. Final quote provided at booking. Extra time billed in 15-minute increments.",
       cta: "Get Your Hourly Quote →",
     },
   },
 ];
-
 export const serviceEs: ServiceItem[] = [
   // 1. TRASLADOS AL AEROPUERTO
   {
@@ -898,46 +1022,41 @@ export const serviceEs: ServiceItem[] = [
     hero: {
       image: {
         src: "/images/ImagenAirport.png",
-        alt: "Chofer profesional de Viaro esperando en la recogida de equipaje del aeropuerto.",
+        alt: "Chofer profesional de Viaro esperando al cliente en la sala de equipajes del aeropuerto.",
       },
-      h1: "Servicio de Auto de Lujo Confiable al Aeropuerto",
-      h2: "Traslados Privados en Auto Negro por EE.UU., Canadá y Costa Rica",
+      h1: "Servicio de Auto de Lujo al Aeropuerto",
+      h2: "Traslados Privados en Auto Negro por EE. UU., Canadá y Costa Rica",
       description:
-        "Evite las filas de taxi y el caos de las apps de rideshare. En Viaro rastreamos su vuelo en tiempo real. Si aterriza antes, ya estamos ahí. Si se retrasa, lo esperamos. Su conductor lo recibe en la recogida de equipaje, ayuda con sus maletas y lo lleva a su destino con seguridad.",
-      cta: {
-        book: "Reserve su Traslado al Aeropuerto",
-        phone: "(206) 672-8281",
-      },
+        "Olvídate de las filas de taxis y el caos de las apps de transporte. En Viaro, rastreamos tu vuelo en tiempo real. Si aterrizas antes, ya estamos ahí. Si tu vuelo se retrasa, te esperamos. Tu conductor te recibe en la sala de equipajes, te ayuda con el equipaje y te lleva a tu destino con seguridad.",
+      cta: { book: "Reserva Tu Traslado al Aeropuerto", phone: "(206) 672-8281" },
     },
     trustBar: [
-      "Rastreo de Vuelo en Vivo",
+      "Rastreo de Vuelos en Vivo",
       "Tarifas Fijas",
-      "Choferes Pro",
-      "Flota de Lujo",
+      "14 Años de Experiencia",
       "Reservas 24/7",
     ],
     bodyContent: {
-      h2: "Servicio en los Hubs de Viaje más Ocupados del Mundo",
-      h3: "Transporte Premium Donde Más lo Necesita",
+      h2: "Cubrimos los Aeropuertos Más Importantes del Mundo",
+      h3: "Transporte Premium Donde Más lo Necesitas",
       content: [
-        "Ofrecemos soluciones de transporte de lujo consistentes en los principales aeropuertos de Norteamérica. Nuestros sedanes, SUVs y vans Sprinter están disponibles para cada viaje.",
-        "Nuestros choferes ofrecen servicio profesional de recepción dentro de la terminal, esperándole en la recogida de equipaje con un cartel personalizado.",
-        "A diferencia de las apps de rideshare con tarifas dinámicas, Viaro garantiza su traslado con precios fijos y transparentes.",
-        "Rastreamos cada vuelo en tiempo real. Su chofer se ajusta automáticamente — sin necesidad de llamarnos.",
+        "Ofrecemos soluciones de transporte de lujo consistentes y de clase mundial en los principales aeropuertos de América del Norte. Ya sea que viajes a una reunión de negocios importante, estamos listos. Nuestros sedanes de lujo, SUV y vans Sprinter están disponibles.",
+        "Sabemos que volar puede ser agotador. Por eso nuestros choferes ofrecen servicios profesionales de bienvenida dentro de la terminal. Te esperamos en la sala de equipajes con un letrero personalizado, listos para ayudarte con tus maletas.",
+        "A diferencia de las apps de transporte que aplican multiplicadores ocultos en horas pico o se cancelan en momentos de alta demanda, Viaro garantiza tu servicio. Ofrecemos precios transparentes sin sorpresas. Tu cotización exacta se calcula según el tipo de vehículo, la distancia y la hora del día.",
+        "Rastreamos cada vuelo comercial y privado en tiempo real. Si tu vuelo se retrasa, ya lo sabemos. Tu chofer se ajusta automáticamente, sin necesidad de que nos contactes. Desde el momento en que bajas del avión, puedes relajarte en un vehículo de lujo silencioso y climatizado.",
       ],
       airports: [
         {
           region: "Nueva York",
           airports: ["JFK", "LGA"],
           description:
-            "Llegue a Manhattan o Wall Street con facilidad, evitando el tráfico de la ciudad.",
+            "Navega el tráfico de la ciudad fácilmente hacia Manhattan o Wall Street.",
           image: "/images/ImagenNewYork2.png",
         },
         {
           region: "Los Ángeles",
           airports: ["LAX", "VNY"],
-          description:
-            "Llegue a Hollywood o Beverly Hills con total comodidad.",
+          description: "Llega a Hollywood o Beverly Hills con total comodidad.",
           image: "/images/ImagenLosAngeles2.png",
         },
         {
@@ -951,27 +1070,27 @@ export const serviceEs: ServiceItem[] = [
           region: "Atlanta",
           airports: ["ATL"],
           description:
-            "Evite las multitudes en el hub de viaje más ocupado del mundo.",
+            "Evita las enormes multitudes del aeropuerto más transitado del mundo.",
           image: "/images/ImagenAtlanta2.png",
         },
         {
-          region: "Miami & Seattle",
+          region: "Miami y Seattle",
           airports: ["MIA - SEA", "SEA"],
           description:
-            "Perfecto para traslados directos del aeropuerto al puerto de cruceros.",
+            "Ideal para traslados directos del aeropuerto al terminal de cruceros.",
           image: "/images/ImagenMiami2.png",
         },
         {
-          region: "Internacional",
+          region: "Destinos Internacionales",
           airports: ["YVR", "SJO", "LIR"],
           description:
-            "Servicio fluido en los principales aeropuertos internacionales de Canadá y Costa Rica.",
+            "Servicio impecable en los principales aeropuertos internacionales de Canadá y Costa Rica.",
           image: "/images/ImagenSeatle2.png",
         },
       ],
     },
     pricing: {
-      h2: "Tarifas del Servicio de Auto al Aeropuerto",
+      h2: "Tarifas del Servicio al Aeropuerto",
       vehicles: [
         {
           type: "Sedán",
@@ -981,34 +1100,33 @@ export const serviceEs: ServiceItem[] = [
           extras: [
             "Chofer profesional",
             "Rastreo de vuelo incluido",
-            "Propina al chofer, no a la empresa",
+            "Propina al conductor, no a la empresa",
           ],
         },
         {
           type: "SUV",
-          price: 159,
+          price: 169,
           passengers: 6,
           models: ["Cadillac Escalade", "Mercedes", "Volvo"],
           extras: [
             "Espacio extra para equipaje",
-            "Chofer preasignado",
+            "Chofer asignado previamente",
             "Rastreo de vuelo incluido",
           ],
         },
         {
           type: "Sprinter",
-          price: 299,
-          passengers: 14,
+          price: 279,
+          passengers: 13,
           models: ["Mercedes Sprinter"],
           extras: [
-            "Hasta 14 pasajeros",
+            "Hasta 13 pasajeros",
             "Transporte para eventos y reuniones",
             "Ideal para grupos corporativos",
           ],
         },
       ],
-      note: "Tarifas para viajes de hasta 18 millas. Todo incluido. Tarifa mínima.",
-      cta: "Verificar Disponibilidad y Tarifas →",
+      cta: "Consultar Disponibilidad y Tarifas →",
     },
   },
 
@@ -1023,71 +1141,89 @@ export const serviceEs: ServiceItem[] = [
         alt: "Ejecutivo de negocios llegando a una reunión corporativa en un lujoso SUV de Viaro.",
       },
       h1: "Transporte Corporativo y Servicio de Auto Ejecutivo",
-      h2: "Transporte Confiable en Auto Negro para Líderes Empresariales en Norteamérica",
+      h2: "Transporte Confiable en Auto Negro para Líderes Empresariales en América del Norte",
       description:
-        "Los negocios se mueven rápido. Su transporte debe seguir el mismo ritmo. Las empresas líderes confían en Viaro para su transporte ejecutivo — silencioso, confiable, con facturación centralizada, rastreo de vuelo y recogida en la pista del FBO. Disponible 24/7 en EE.UU., Canadá y Costa Rica.",
-      cta: {
-        book: "Abrir una Cuenta Corporativa Hoy",
-        phone: "(206) 672-8281",
-      },
+        "Los negocios se mueven rápido. Tu transporte debe seguir el ritmo. Cuando viajas por trabajo, no puedes perder tiempo en filas de taxis ni lidiar con apps canceladas. Un auto retrasado puede arruinar una reunión millonaria. Por eso las empresas líderes — desde gigantes tecnológicos en Seattle hasta firmas financieras en Wall Street — confían en Viaro para el transporte terrestre ejecutivo. Ofrecemos el espacio silencioso y confiable que tu equipo necesita para prepararse. Facturación centralizada. Rastreo de vuelos. Recogida en pista FBO. Disponible 24/7 en EE. UU., Canadá y Costa Rica.",
+      cta: { book: "Abre una Cuenta Corporativa Hoy", phone: "(206) 672-8281" },
     },
     trustBar: [
-      "Discreción Total",
+      "Total Discreción",
       "Facturación Centralizada",
-      "Rastreo de Vuelo",
+      "Rastreo de Vuelos",
       "Soporte 24/7",
-      "Fortune 500",
     ],
     bodyContent: {
       h2: "Por Qué las Empresas Líderes Eligen Viaro",
       h3: "Industrias que Confían en Viaro",
       content: [
-        "Si administra viajes para una empresa grande, sabe que el transporte terrestre suele ser el eslabón más débil. Por eso empresas de todos los sectores confían en Viaro.",
-        "En aeropuertos masivos como LAX, JFK y ORD, las apps de rideshare obligan a los ejecutivos a caminar media milla. Viaro usa carriles comerciales exclusivos.",
-        "Si sus ejecutivos vuelan privado a hubs FBO como Boeing Field (BFI) o Teterboro (TEB), nuestros autos llegan hasta la pista donde la seguridad lo permite.",
-        "Viaro se alinea con las políticas del GBTA: recibos digitales, facturación centralizada, códigos de gasto y gerente de cuenta dedicado.",
+        "Si gestionas los viajes de una empresa grande, sabes que el transporte terrestre suele ser el eslabón más débil. El rastreo de vuelos es preciso. Los hoteles confirman al instante. ¿Pero el transporte terrestre? Ahí es donde todo falla.",
+        "Por eso empresas de todas las industrias — desde tecnología y finanzas hasta salud y manufactura — confían en Viaro como su socio de transporte corporativo.",
+        "Las mejores empresas, desde gigantes tecnológicos como Microsoft en Redmond hasta firmas financieras en Wall Street, confían en nuestro servicio.",
       ],
       airports: [
         {
           region: "Tecnología",
           airports: ["SEA", "BFI"],
-          description:
-            "Empresas tecnológicas del área de Seattle confían en Viaro para transporte entre Redmond, South Lake Union y Sea-Tac.",
+          description: (
+            <>
+              Las empresas tecnológicas del área de Seattle confían en Viaro
+              para el transporte ejecutivo diario entre el{" "}
+              <a
+                href="https://www.microsoft.com/en-us/about"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+              >
+                Campus de Microsoft en Redmond
+              </a>
+              ,{" "}
+              <a
+                href="https://www.aboutamazon.com/news/workplace/amazon-spheres-seattle-inside-tour"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+              >
+                la sede de Amazon en South Lake Union
+              </a>{" "}
+              y el Aeropuerto Sea-Tac. Cuando los ejecutivos llegan a Boeing
+              Field (BFI), los recibimos directamente en la pista.
+            </>
+          ),
           image: "/images/Technology.png",
         },
         {
           region: "Finanzas",
           airports: ["TEB", "JFK", "LGA"],
           description:
-            "Bancos de inversión en Nueva York usan Viaro para reuniones con clientes y roadshows multi-ciudad.",
+            "Bancos de inversión y firmas de capital privado en Nueva York usan Viaro para reuniones con clientes y roadshows. Coordinamos la logística entre ciudades — de Teterboro a Manhattan y JFK — para que los socios se concentren en los negocios.",
           image: "/images/Finance.png",
         },
         {
           region: "Salud",
           airports: ["ORD", "DTW"],
           description:
-            "Empresas médicas confían en Viaro para transporte de conferencias con discreción.",
+            "Empresas de dispositivos médicos y ejecutivos farmacéuticos confían en Viaro para el transporte en congresos y visitas hospitalarias. Ofrecemos discreción consciente con HIPAA para viajes sensibles.",
           image: "/images/Healthcare.png",
         },
         {
           region: "Manufactura",
           airports: ["DTW", "ORD", "IAH"],
           description:
-            "SUVs y vans Sprinter confiables para tours de plantas y reuniones con proveedores.",
+            "Para visitas a plantas y reuniones con proveedores en ciudades como Detroit (DTW), Chicago (ORD) y Houston (IAH), Viaro ofrece SUV y vans Sprinter confiables para equipos ejecutivos.",
           image: "/images/Manufacturing.png",
         },
         {
           region: "Costa Oeste",
           airports: ["LAX", "VNY", "SFO"],
           description:
-            "Estudios, Beverly Hills y Silicon Valley con choferes locales experimentados.",
+            "Estudios en Burbank, salas de juntas en Beverly Hills y campus de Silicon Valley — atendidos por choferes locales experimentados que conocen cada autopista, atajo y entrada VIP.",
           image: "/images/WestCoast.png",
         },
         {
           region: "Internacional",
           airports: ["YVR", "SJO", "LIR"],
           description:
-            "Viajes corporativos transfronterizos en Canadá y Costa Rica sin complicaciones.",
+            "Viajes corporativos transfronterizos en Canadá y Costa Rica sin complicaciones. Desde el distrito financiero de Vancouver hasta los centros de negocios de San José y los corredores de resorts de Guanacaste.",
           image: "/images/International.png",
         },
       ],
@@ -1098,32 +1234,59 @@ export const serviceEs: ServiceItem[] = [
         items: [
           {
             label: "La Ventaja del Carril Comercial",
-            desc: "En aeropuertos masivos como LAX, JFK y ORD, las apps de rideshare obligan a los ejecutivos a caminar media milla. Los choferes de Viaro usan carriles comerciales exclusivos y reciben a su equipo en la recogida de equipaje.",
+            desc: "En aeropuertos masivos como LAX, JFK y ORD, las apps obligan a los ejecutivos a caminar medio kilómetro hasta las zonas de recogida pública. Los choferes de Viaro usan los carriles comerciales restringidos. Recibimos a tu equipo en la sala de equipajes y los acompañamos directamente al auto — sin multitudes ni confusión.",
           },
           {
-            label: "Recogida en la Pista del FBO",
-            desc: "Si sus ejecutivos vuelan privado a hubs FBO como Boeing Field (BFI), Teterboro (TEB) o Van Nuys (VNY), nunca deben esperar en un lobby. Donde la seguridad lo permite, nuestros autos llegan hasta el avión en la pista.",
+            label: "La Recogida en Pista FBO",
+            desc: "Si tus ejecutivos llegan en vuelo privado a hubs FBO como Boeing Field (BFI), Teterboro (TEB) o Van Nuys (VNY), no deberían esperar en una sala. Donde la seguridad lo permite, nuestros autos se acercan directamente al avión en la pista. Tu CEO baja del avión y entra al auto.",
           },
           {
-            label: "El Roadshow Multi-Ciudad",
-            desc: "¿Planeando un roadshow en tres ciudades en dos días? Con una sola cuenta Viaro manejamos la logística compleja en 25+ ciudades — Nueva York, Boston, Chicago, sin contratiempos.",
+            label: "El Roadshow Multiudad",
+            desc: (
+              <>
+                ¿Planeas un roadshow de inversores en tres ciudades en dos días?
+                Una cuenta de Viaro gestiona la logística compleja{" "}
+                <a
+                  href={`/es/service-areas`}
+                  className="border-b border-white/60 hover:border-primary hover:text-primary transition"
+                >
+                  en más de 50 ciudades
+                </a>{" "}
+                — de Nueva York a Boston y Chicago, sin interrupciones.
+              </>
+            ),
           },
         ],
       },
       {
         h3: "Diseñado para el Cumplimiento de Políticas de Viaje",
+        desc: (
+          <>
+            Viaro se alinea con las estrictas políticas de viaje de
+            organizaciones como la{" "}
+            <a
+              href="https://www.gbta.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-b border-white/60 hover:border-primary hover:text-primary transition"
+            >
+              Global Business Travel Association (GBTA)
+            </a>
+            . Ofrecemos:
+          </>
+        ),
         list: [
           "Recibos digitales detallados por cada viaje",
           "Facturación mensual centralizada para departamentos de finanzas",
-          "Etiquetado de códigos de gasto para asignación por centro de costos",
-          "Reservas 24/7 para asistentes ejecutivos y gerentes de viaje",
-          "Gerente de cuenta dedicado para clientes empresariales",
+          "Etiquetado por código de gasto para asignación de centros de costo",
+          "Reservas 24/7 para asistentes ejecutivos y gestores de viaje",
+          "Gestor de cuenta dedicado para clientes empresariales",
         ],
-        cta: "Obtener Cotización Corporativa →",
+        cta: "Obtener Cotización Corporativa Personalizada →",
       },
     ],
     pricing: {
-      h2: "Tarifas de Transporte Corporativo",
+      h2: "Tarifas del Servicio Corporativo",
       vehicles: [
         {
           type: "Sedán Ejecutivo",
@@ -1131,7 +1294,7 @@ export const serviceEs: ServiceItem[] = [
           passengers: 3,
           models: ["Mercedes S-Class", "BMW 7 Series", "Audi A8"],
           extras: [
-            "Cabina silenciosa con Wi-Fi",
+            "Cabina silenciosa y Wi-Fi",
             "Chofer profesional",
             "Facturación centralizada",
           ],
@@ -1142,29 +1305,28 @@ export const serviceEs: ServiceItem[] = [
           passengers: 6,
           models: ["Cadillac Escalade", "Lincoln Navigator", "Mercedes GLS"],
           extras: [
-            "Hasta 6 pasajeros + equipaje",
-            "Chofer preasignado",
+            "Hasta 6 pasajeros y equipaje",
+            "Chofer asignado previamente",
             "Rastreo de vuelo incluido",
           ],
         },
         {
           type: "Sprinter Ejecutivo",
           price: 299,
-          passengers: 14,
+          passengers: 13,
           models: ["Mercedes Sprinter"],
           extras: [
-            "Hasta 14 pasajeros",
-            "Configuración de sala de conferencias",
+            "Hasta 13 pasajeros",
+            "Configuración para conferencias disponible",
             "Ideal para roadshows y equipos",
           ],
         },
       ],
-      note: "Tarifas para viajes de hasta 18 millas. Todo incluido. Tarifa mínima.",
       cta: "Obtener Cotización Corporativa Personalizada →",
     },
   },
 
-  // 3. FBO Y TRIPULACIONES
+  // 3. TRASLADOS FBO Y TRIPULACIÓN
   {
     id: "fbo-crew-transportation",
     FA: "ServiceAirlineFa",
@@ -1172,94 +1334,118 @@ export const serviceEs: ServiceItem[] = [
     hero: {
       image: {
         src: "/images/ImagenAirline.png",
-        alt: "Auto de lujo negro estacionado en la pista junto a un jet privado en una terminal FBO.",
+        alt: "Auto negro de lujo estacionado en la pista junto a un jet privado en un terminal FBO.",
       },
-      h1: "Transporte Terrestre FBO y Traslados para Tripulaciones",
-      h2: "Recogida en la Pista para Aviación Privada | Traslados para Tripulaciones en 25+ Aeropuertos",
+      h1: "Transporte FBO y Traslados de Tripulación Aérea",
+      h2: "Recogida en Pista para Aviación Privada | Shuttles de Tripulación en 25+ Aeropuertos",
       description:
-        "Vuela privado para ahorrar tiempo. Su transporte terrestre debe respetar eso. Viaro rastrea su número de cola y tiene su auto en posición cuando sus ruedas tocan la pista. Precios transparentes. Disponible 24/7 en EE.UU., Canadá y Costa Rica.",
-      cta: {
-        book: "Solicite su Cotización Inmediata",
-        phone: "(206) 672-8281",
-      },
+        "Viajas en privado para ahorrar tiempo. Tu transporte terrestre debe respetarlo. Viaro ofrece recogida FBO en pista para viajeros en jet privado y shuttles confiables para tripulaciones aéreas. Rastreamos tu número de cola — no solo el horario. Cuando tus ruedas tocan tierra, tu auto ya está en posición. Precios transparentes. Sin tarifas sorpresa. Disponible 24/7 en EE. UU., Canadá y Costa Rica.",
+      cta: { book: "Solicita Tu Cotización Instantánea", phone: "(206) 672-8281" },
     },
     trustBar: [
-      "Rastreo de Número de Cola",
+      "Rastreo de Vuelo y Cola en Vivo",
       "Recogida en Pista",
-      "Tarifas Fijas",
+      "Tarifas Transparentes",
       "Despacho 24/7",
-      "Discreción Total",
+      "Total Discreción",
     ],
     bodyContent: {
       h2: "Traslados VIP FBO: Donde Cada Segundo Cuenta",
-      h3: "Principales Hubs FBO que Atendemos",
+      h3: "El Estándar en Transporte Terrestre para Aviación Privada",
       content: [
-        "No tiene sentido gastar $20,000+ en un vuelo chárter y luego esperar 20 minutos a un conductor que no encuentra la entrada del FBO.",
-        "Obtenemos los permisos de seguridad necesarios para recibirle en la pista — junto a su aeronave. Rastreamos su número de cola específico, no un horario general.",
-        "Baja del jet y entra directamente a su auto. De puerta a puerta. Cero tiempo perdido.",
-        "Cada chofer de Viaro firma un acuerdo de confidencialidad. La discreción es estándar, no un complemento.",
+        "No tiene sentido gastar $20,000+ en un vuelo chárter y luego esperar 20 minutos a un conductor que no encuentra la entrada del FBO. Los ejecutivos, empresarios y figuras públicas que vuelan en privado esperan un transporte terrestre a la altura de la experiencia en el avión.",
+        "No estacionamos en el lobby como si fuera una terminal comercial y te enviamos un mensaje para que salgas. Obtenemos los permisos de seguridad necesarios para recibirte en la pista — junto a tu aeronave. Rastreamos tu número de cola específico a través de FlightAware, no el horario general de la aerolínea. Cuando tus ruedas tocan tierra, tu sedán de lujo ya está en posición en la rampa.",
+        "Bajas del jet directamente a tu auto. De puerta a puerta. Cero tiempo perdido.",
+        "Estos son los principales Operadores de Base Fija (FBOs) para vuelos privados y aviación empresarial que atendemos en América del Norte:",
       ],
       airports: [
         {
           region: "Teterboro (TEB)",
           airports: ["TEB"],
           description:
-            "La puerta de Manhattan. Coordinamos con Signature, Atlantic y Meridian para acceso a la pista.",
+            "La puerta de entrada a Manhattan. Coordinamos con Signature, Atlantic y Meridian para acceso fluido a la rampa.",
           image: "/images/Teterboro.png",
         },
         {
           region: "Van Nuys (VNY)",
           airports: ["VNY"],
           description:
-            "El aeropuerto GA más activo de LA. Servicio directo a Beverly Hills, Malibú y estudios.",
+            "El aeropuerto de aviación general más transitado de LA. Servicio directo a Beverly Hills, Malibú y estudios de cine.",
           image: "/images/VanNuys.png",
         },
         {
           region: "Boeing Field (BFI)",
           airports: ["BFI"],
           description:
-            "Hub de aviación privada del Noroeste. 10 minutos al centro de Seattle.",
+            "Hub de aviación privada del Pacífico Noroeste. A 10 minutos del centro de Seattle.",
           image: "/images/BoeingField.png",
         },
         {
           region: "DuPage (DPA)",
           airports: ["DPA"],
           description:
-            "Evite el caos comercial de O'Hare. Traslados fluidos al centro de Chicago.",
+            "Evita el caos comercial de O'Hare. Traslados directos al centro de Chicago.",
           image: "/images/DuePage.png",
         },
         {
           region: "Opa-locka (OPF)",
           airports: ["OPF"],
           description:
-            "Aeropuerto ejecutivo premier del sur de Florida. Servicio directo a Miami Beach.",
+            "El principal aeropuerto ejecutivo del sur de Florida. Servicio directo a Miami Beach y terminales de cruceros.",
           image: "/images/OpaLocka.png",
         },
         {
           region: "Centennial (APA)",
           airports: ["APA"],
           description:
-            "El aeropuerto GA más activo de Colorado. SUVs para traslados a resorts de montaña.",
+            "El aeropuerto de aviación general más transitado de Colorado. SUV equipados para traslados a resorts de montaña.",
           image: "/images/Centannial.png",
         },
       ],
     },
     extraContent: [
       {
-        h3: "La Perspectiva del Piloto: Transporte para Tripulaciones que Funciona",
-        quote:
-          '"Después de veinte años y miles de horas de vuelo en aviación privada, puedo decirles esto. La parte más difícil de cualquier viaje no es la aproximación al espacio aéreo Clase B — es llevar a una tripulación agotada al hotel sin que todo se derrumbe. La mayoría de los servicios de transporte tratan las recogidas de tripulación como una ocurrencia tardía. Viaro lo hace diferente. Entienden las regulaciones de descanso de tripulación y por qué llegarnos a la cama rápido importa de verdad para la seguridad de vuelo."',
+        h3: "La Perspectiva del Piloto: Transporte de Tripulación que Funciona",
+        h2: "Escrito por un Piloto que lo Ha Vivido",
+        quote: (
+          <>
+            <p className="mb-3">
+              "Después de veinte años y miles de horas de vuelo en aviación privada, puedo decirte esto. La parte más difícil de cualquier viaje no es la aproximación al espacio aéreo clase B."
+            </p>
+
+            <p className="mb-3">
+              Es llevar a una tripulación agotada al hotel sin que nada salga mal.
+            </p>
+
+            <p className="mb-3">
+              La mayoría de los servicios de transporte tratan los traslados de tripulación como algo secundario. Otros nos mandan a zonas de transporte público o pierden el rastro de nuestra hora de llegada. Otros nos hacen esperar en el frío a las 2 AM a una van que puede o no aparecer.
+            </p>
+
+            <p className="mb-3">
+              <span className="text-brand">Viaro</span> lo hace diferente. Entienden las regulaciones de descanso de tripulación y por qué llevarnos a la cama rápido realmente importa para la seguridad del vuelo."
+            </p>
+
+            <p className="mt-3">
+              La diferencia es simple:{" "}
+              <span className="text-brand">Viaro</span> rastrea el estado de
+              tu vuelo en tiempo real. Para cuando terminamos los chequeos
+              posteriores al vuelo y salimos, una van Sprinter limpia ya está
+              esperando. Sin caminar por el estacionamiento. Solo un viaje
+              tranquilo hacia una cama cálida.
+            </p>
+          </>
+        ),
         image: {
           src: "/images/ImagenAirline.png",
-          alt: "Tripulación aérea abordando una van Sprinter privada de Viaro para un traslado cómodo al hotel.",
+          alt: "Tripulación aérea abordando una van Sprinter privada de Viaro para un traslado rápido y cómodo al hotel.",
         },
       },
       {
-        h3: "Trucos Internos en los Principales Aeropuertos",
+        h3: "Trucos en los Principales Aeropuertos",
         items: [
           {
             label: "JFK (Nueva York)",
-            desc: "Evite el caos del Terminal 4. Viaro recoge en el área de vehículos comerciales — salida más rápida y conductores que conocen los atajos hacia los hoteles de Jamaica.",
+            desc: "Evita el caos del área de transporte del Terminal 4. Viaro recoge en el área de vehículos comerciales — salida más rápida y conductores que conocen los atajos del Belt Parkway hacia los hoteles de Jamaica.",
           },
           {
             label: "LAX (Los Ángeles)",
@@ -1267,35 +1453,35 @@ export const serviceEs: ServiceItem[] = [
           },
           {
             label: "ORD (Chicago)",
-            desc: "Las escalas invernales aquí ponen a prueba a todos. Viaro posiciona los vehículos en el garaje climatizado. Cuando pasa la aduana en el Terminal 5, ya lo están esperando.",
+            desc: "Las escalas de invierno aquí ponen a prueba a todos. Viaro posiciona los vehículos en el estacionamiento climatizado. Cuando sales de la aduana en la Terminal 5, ya están esperando.",
           },
           {
             label: "ATL (Atlanta)",
-            desc: "El aeropuerto más ocupado del mundo significa el peor caos terrestre. Viaro usa estratégicamente la división norte/sur doméstica — conocen su concurso antes que usted.",
+            desc: "El aeropuerto más transitado del mundo significa el peor caos terrestre. Viaro usa estratégicamente la división norte/sur doméstica — conocen tu terminal antes que tú.",
           },
           {
             label: "SEA (Seattle)",
-            desc: "Tercer piso, ascensor morado. Ese es el secreto de las tripulaciones. Viaro lo sabe. Su conductor espera ahí mientras otros dan vueltas en la acera de llegadas.",
+            desc: "Tercer piso, ascensor morado. Ese es el secreto de la tripulación. Viaro lo sabe. Tu conductor espera ahí mientras otros circulan por la acera de llegadas.",
           },
           {
             label: "YVR (Vancouver)",
-            desc: "Para tripulaciones transfronterizas, Viaro maneja el tiempo alrededor de los retrasos en aduana. Rastrean su vuelo y se ajustan — nunca tendrá que llamar para decir 'acabo de aterrizar'.",
+            desc: "Para tripulaciones transfronterizas, Viaro gestiona el tiempo considerando los retrasos en aduana. Rastrean tu vuelo y se ajustan — nunca tienes que llamar para decir 'acabamos de aterrizar'.",
           },
         ],
       },
       {
         h3: "La Discreción es Estándar",
         list: [
-          "No hablamos de a quién trasladamos. No publicamos fotos. No confirmamos ni negamos reservas.",
+          "No comentamos a quién transportamos. No publicamos fotos. No confirmamos ni desmentimos reservas.",
           "Cada chofer de Viaro firma un acuerdo de confidencialidad.",
-          "El personal limpia y detalla los vehículos antes de cada viaje.",
-          "Coordinamos directamente con los equipos de seguridad cuando se requiere.",
-          "Esto no es un complemento premium — así operamos con cada cliente FBO.",
+          "El personal revisa y detalla los vehículos antes de cada viaje.",
+          "Coordinamos directamente con equipos de seguridad cuando se requiere.",
+          "Esto no es un servicio premium adicional — así operamos con todos los clientes FBO.",
         ],
       },
     ],
     pricing: {
-      h2: "Tarifas de Traslados FBO y Tripulaciones",
+      h2: "Tarifas de Traslados FBO y Tripulación",
       vehicles: [
         {
           type: "Sedán",
@@ -1315,28 +1501,27 @@ export const serviceEs: ServiceItem[] = [
           models: ["Cadillac Escalade", "Lincoln Navigator", "Mercedes GLS"],
           extras: [
             "Espacio extra para equipaje",
-            "Chofer preasignado",
-            "Coordinación de permisos",
+            "Chofer asignado previamente",
+            "Coordinación de permisos de seguridad",
           ],
         },
         {
           type: "Sprinter",
           price: 299,
-          passengers: 14,
+          passengers: 13,
           models: ["Mercedes Sprinter"],
           extras: [
             "Transporte completo de tripulación",
-            "Configuración de conferencias",
+            "Configuración para conferencias disponible",
             "Ideal para departamentos de vuelo",
           ],
         },
       ],
-      note: "Tarifas para viajes de hasta 18 millas. Todo incluido. Tarifa mínima.",
-      cta: "Reserve su Traslado FBO Privado →",
+      cta: "Reserva Tu Traslado FBO Privado →",
     },
   },
 
-  // 4. TRASLADOS A CRUCEROS
+  // 4. TRASLADOS A PUERTOS DE CRUCEROS
   {
     id: "cruise-port-transfers",
     FA: "ServiceCruiseFa",
@@ -1344,128 +1529,172 @@ export const serviceEs: ServiceItem[] = [
     hero: {
       image: {
         src: "/images/ImagenCruise.png",
-        alt: "Familia llegando al puerto de cruceros en SUV privado de Viaro con chofer cargando el equipaje de vacaciones.",
+        alt: "Familia llegando a la terminal de cruceros en un SUV privado de Viaro con chofer profesional cargando el equipaje.",
       },
-      h1: "Servicio de Traslado al Puerto de Cruceros sin Estrés",
-      h2: "Servicio de Auto Negro Privado en 15+ Puertos de Crucero en EE.UU. y Canadá",
+      h1: "Traslados a Puertos de Cruceros sin Complicaciones",
+      h2: "Servicio Privado en Auto Negro en 15+ Puertos de EE. UU. y Canadá",
       description:
-        "Evite las largas filas de taxi y los autobuses repletos. Con Viaro, su chofer privado lo espera justo a la salida del muelle, maneja su equipaje y lo lleva directamente al aeropuerto u hotel — en un vehículo limpio, silencioso y climatizado.",
+        "Acabas de pasar una semana relajándote en el océano. Lo último que necesitas es el estrés de arrastrar maletas pesadas por una terminal llena de gente. Olvídate de las largas filas de taxis. Evita los autobuses lanzadera abarrotados que esperan a que se llenen antes de salir. Con Viaro, tu chofer privado te espera justo a la salida del muelle. Nos encargamos de tu equipaje y te llevamos directamente al aeropuerto o al hotel — en un vehículo limpio, silencioso y climatizado. Transparencia de precios garantizada. Rastreamos tu barco y tu vuelo para que nunca tengas que esperar.",
       cta: {
-        book: "Reserve su Traslado Privado al Crucero",
+        book: "Reserva Tu Traslado de Crucero Privado",
         phone: "(206) 672-8281",
       },
     },
     trustBar: [
-      "Rastreo del Barco",
-      "Rastreo de Vuelo en Vivo",
-      "Tarifas Fijas",
+      "Rastreo de Barcos",
+      "Rastreo de Vuelos en Vivo",
+      "Transparencia Garantizada",
       "Despacho 24/7",
-      "Recogida en Muelle",
     ],
     bodyContent: {
       h2: "La Guía del Crucerista Frecuente para Traslados en Puerto",
-      h3: "Trucos Puerto a Puerto que Ahorran Tiempo",
+      h3: "Trucos por Puerto que Ahorran Tiempo",
       content: [
-        "La peor parte de cualquier crucero no es el barco — es el caos en el puerto cuando desembarca.",
-        "En puertos masivos como el Muelle 91 de Seattle o PortMiami, Uber y Lyft no pueden llegar al andén principal. Debe arrastrar su equipaje hasta medio kilómetro.",
-        "Los autobuses de la naviera esperan hasta llenarse antes de salir. En un día de alta rotación, puede estar sentado 30–45 minutos.",
-        "Viaro elimina ambos problemas. Nuestros conductores llegan tan cerca como lo permite la seguridad del puerto — generalmente justo en el andén de la terminal.",
+        "Después de docenas de cruceros en todas las líneas principales — desde viajes a Alaska hasta escapadas al Caribe — podemos decirte que la peor parte de cualquier vacación en crucero no es el barco. Es el caos en el puerto cuando desembarcas.",
+        "La mayoría de los viajeros no conoce las trampas ocultas hasta que es demasiado tarde. Estos son los dos errores más grandes.",
       ],
       airports: [
         {
           region: "Seattle, WA",
-          airports: ["Muelle 66", "Muelle 91"],
+          airports: ["Pier 66 y 91", "Pier 91"],
           description:
-            "Hub de cruceros a Alaska. Viaro conoce los atajos por Elliott Avenue para llegar a Sea-Tac en 25–35 minutos.",
+            "Hub de cruceros a Alaska. Viaro conoce los atajos por Elliott Avenue hacia Sea-Tac en 25–35 minutos.",
           image: "/images/SeattleCruise.png",
+          url: "https://www.portseattle.org/places/smith-cove-cruise-terminal-pier-91",
         },
         {
           region: "Miami, FL",
           airports: ["PortMiami"],
           description:
-            "Puerto de cruceros más concurrido del mundo. Cronometramos su recogida para evitar el tráfico del MacArthur Causeway.",
+            "El puerto de cruceros más transitado del mundo. Coordinamos la recogida para evitar el tráfico pico en MacArthur Causeway.",
           image: "/images/PortMiami.png",
+          url: "https://www.miamidade.gov/portmiami/cruise-terminals.page",
         },
         {
           region: "Fort Lauderdale, FL",
           airports: ["Port Everglades"],
           description:
-            "Múltiples muelles — Viaro coordina la terminal exacta con su naviera.",
+            "Múltiples muelles — Viaro coordina la terminal exacta con tu línea de cruceros.",
           image: "/images/PortEverglades.png",
+          url: "https://www.porteverglades.net/cruising/",
         },
         {
           region: "Vancouver, BC",
           airports: ["Canada Place"],
           description:
-            "Viaro maneja el timing complejo alrededor de la aduana EE.UU.-Canadá.",
+            "Viaro gestiona el complejo timing en torno a la aduana EE. UU.–Canadá para una salida sin estrés.",
           image: "/images/CanadaPlace.png",
+          url: "https://www.canadaplace.ca/",
         },
         {
           region: "Nueva Orleans, LA",
           airports: ["Terminal Erato Street"],
           description:
-            "Traslados al aeropuerto MSY o hoteles del Barrio Francés.",
+            "Traslados al aeropuerto MSY u hoteles del Barrio Francés, navegando las estrechas calles del centro.",
           image: "/images/EratoStreet.png",
+          url: "https://portnola.com/cruise",
         },
         {
           region: "Galveston, TX",
           airports: ["Puerto de Galveston"],
           description:
-            "Viaje de 80 km a los aeropuertos IAH o HOU, cronometrado para evitar el tráfico de la I-45.",
+            "Viaje de 50 millas a los aeropuertos IAH o HOU, calculado para evitar el tráfico de la I-45.",
           image: "/images/Galveston.png",
+          url: "https://www.portofgalveston.com/cruise",
         },
       ],
     },
     extraContent: [
       {
-        h3: 'Consejos para Evitar el "Caos de la Terminal" en el Crucero',
-        image: {
-          src: "/images/ImagenCruise.png",
-          alt: "Auto negro de lujo de Viaro recogiendo directamente en la acera de la terminal de cruceros.",
-        },
+        h3: 'Consejos para Evitar el "Caos del Terminal" en Cruceros',
         items: [
           {
-            label: "La Caminata del Rideshare",
-            desc: "En puertos masivos como el Muelle 91 de Seattle o PortMiami, Uber y Lyft no pueden llegar al andén principal. Debe arrastrar su equipaje hasta medio kilómetro. Con cuatro maletas y niños cansados, esa caminata se siente como una maratón.",
+            label: "La Caminata del Transporte Compartido",
+            desc: (
+              <>
+                En puertos masivos como el{" "}
+                <a
+                  href="https://www.portseattle.org/places/smith-cove-cruise-terminal-pier-91"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+                >
+                  Terminal de Cruceros Smith Cove en el Pier 91 de Seattle
+                </a>{" "}
+                o el{" "}
+                <a
+                  href="https://www.miamidade.gov/portmiami/cruise-terminals.page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+                >
+                  PortMiami
+                </a>
+                , Uber y Lyft no pueden llegar al bordillo principal de la
+                terminal. Debes arrastrar tu equipaje pesado hasta medio
+                kilómetro para llegar a la zona de recogida. Con cuatro maletas
+                y niños cansados, esa caminata se siente como un maratón.
+              </>
+            ),
           },
           {
-            label: "El Shuffle del Autobús",
-            desc: "Los autobuses de la naviera parecen convenientes, pero esperan hasta llenarse antes de salir. En un día de alta rotación, puede estar sentado 30–45 minutos mientras el autobús se llena.",
+            label: "El Baile de los Autobuses",
+            desc: (
+              <>
+                Los autobuses de las líneas de cruceros parecen convenientes,
+                pero esperan a que todos los asientos estén ocupados antes de
+                salir. En un día de alta rotación, puedes quedarte ahí 30–45
+                minutos mientras se llena.
+              </>
+            ),
           },
           {
-            label: "La Diferencia Viaro",
-            desc: "Nuestros conductores llegan tan cerca como lo permite la seguridad del puerto — generalmente justo en el andén. Baja del barco y entra directamente a un auto privado de lujo en minutos.",
+            label: "La Diferencia de Viaro",
+            desc: (
+              <>
+                Viaro elimina ambos problemas. Nuestros conductores se acercan
+                lo más posible al muelle — generalmente justo en el bordillo del
+                terminal. Bajas del barco y entras a un auto privado de lujo{" "}
+                <a
+                  href="/es/fleet"
+                  className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+                >
+                  de nuestra flota
+                </a>{" "}
+                en minutos.
+              </>
+            ),
           },
         ],
       },
       {
-        h3: "El Truco del Port Valet para Escalas",
+        h3: "El Truco de la Escala con Port Valet",
         list: [
-          "Si tiene un vuelo tarde después del crucero, use el servicio gratuito Port Valet en algunos puertos para enviar su equipaje directamente a la aerolínea.",
-          "Luego pida a Viaro que lo lleve a un tour rápido por la ciudad antes de su vuelo.",
-          "En Seattle: una parada en Pike Place Market o el Space Needle antes de ir a Sea-Tac.",
-          "En Miami: almuerzo en Wynwood o South Beach.",
-          "El servicio de chofer por horas de Viaro hace estas aventuras post-crucero muy fáciles.",
+          "Si tienes un vuelo tardío después de tu crucero, usa el servicio gratuito Port Valet disponible en algunos puertos para enviar tu equipaje directamente a tu aerolínea.",
+          "Luego deja que Viaro te lleve a un recorrido rápido por la ciudad antes de tu vuelo.",
+          "En Seattle: para en Pike Place Market o el Space Needle antes de ir a Sea-Tac.",
+          "En Miami: almuerza en Wynwood o South Beach.",
+          "El servicio de renta por horas de Viaro hace que estas aventuras post-crucero sean muy fáciles.",
         ],
-        cta: "Verificar Disponibilidad en Puerto de Cruceros →",
+        cta: "Consultar Disponibilidad y Tarifas en Puertos →",
       },
       {
-        h3: "Puertos de Crucero que Atendemos",
+        h3: "Puertos de Cruceros que Atendemos",
         portList: [
           {
             port: "Seattle, WA",
-            terminals: "Muelle 66 (Bell Street), Muelle 91 (Smith Cove)",
+            terminals: "Pier 66 (Bell Street), Pier 91 (Smith Cove)",
             note: "Hub de cruceros a Alaska",
           },
           {
             port: "Vancouver, BC",
             terminals: "Canada Place",
-            note: "Cruceros Alaska y Pacífico",
+            note: "Cruceros a Alaska y el Pacífico",
           },
           {
             port: "Miami, FL",
             terminals: "PortMiami",
-            note: "Puerto más concurrido del mundo",
+            note: "Puerto de cruceros más transitado del mundo",
           },
           {
             port: "Fort Lauderdale, FL",
@@ -1475,7 +1704,7 @@ export const serviceEs: ServiceItem[] = [
           {
             port: "Tampa, FL",
             terminals: "Port Tampa Bay",
-            note: "Cruceros al Golfo de México",
+            note: "Cruceros por el Golfo de México",
           },
           {
             port: "Port Canaveral, FL",
@@ -1495,12 +1724,12 @@ export const serviceEs: ServiceItem[] = [
           {
             port: "San Diego, CA",
             terminals: "B Street Pier",
-            note: "Cruceros Baja y Pacífico",
+            note: "Cruceros por Baja y el Pacífico",
           },
           {
             port: "San Francisco, CA",
-            terminals: "Muelle 27",
-            note: "Cruceros Alaska y costas",
+            terminals: "Pier 27",
+            note: "Cruceros a Alaska y la costa",
           },
         ],
       },
@@ -1516,7 +1745,7 @@ export const serviceEs: ServiceItem[] = [
           extras: [
             "Chofer profesional",
             "Rastreo de barco y vuelo",
-            "Recogida en muelle",
+            "Recogida en el muelle",
           ],
         },
         {
@@ -1533,22 +1762,20 @@ export const serviceEs: ServiceItem[] = [
         {
           type: "Sprinter",
           price: 299,
-          passengers: 14,
+          passengers: 13,
           models: ["Mercedes Sprinter"],
           extras: [
-            "Hasta 14 pasajeros",
-            "Traslados grupales a cruceros",
-            "Gran capacidad de equipaje",
+            "Hasta 13 pasajeros",
+            "Traslados grupales en crucero",
+            "Amplia capacidad de equipaje",
           ],
         },
       ],
-      note: "Tarifas para viajes de hasta 18 millas. Todo incluido. Tarifa mínima.",
-      cta: "Verificar Disponibilidad en Puerto de Cruceros →",
+      cta: "Consultar Disponibilidad y Tarifas en Puertos →",
     },
   },
 
-  // 5. CHOFER POR HORAS
-  // 5. CHOFER POR HORAS
+  // 5. SERVICIO DE CHOFER POR HORAS
   {
     id: "hourly-chauffeur-hire",
     FA: "ServiceHourlyFa",
@@ -1556,87 +1783,154 @@ export const serviceEs: ServiceItem[] = [
     hero: {
       image: {
         src: "/images/ImagenHourly.png",
-        alt: "Chofer profesional de Viaro abriendo la puerta para un cliente VIP durante el servicio privado de chofer por horas en un destino de compras de lujo.",
+        alt: "Chofer profesional de Viaro abriendo la puerta a un cliente VIP durante el servicio privado de auto por horas en un destino de compras de lujo.",
       },
       h1: "Servicio de Chofer por Horas y Alquiler Privado VIP",
-      h2: "Tu Conductor Personal para el Día — Seguro, Discreto y Siempre Esperando",
+      h2: "Tu Conductor Personal por el Día — Seguro, Discreto y Siempre Disponible",
       description:
-        "A veces necesitas más que un simple traslado. Necesitas un conductor que se quede contigo. Con el servicio de chofer por horas de Viaro, el auto es tuyo. Tú controlas el ritmo del día. Tu conductor espera mientras compras, comes o te reúnes. Sin prisas. Sin buscar estacionamiento. Sin esperar solo en una calle oscura por una app de rideshare. ",
-      cta: {
-        book: "Reserva tu Chofer por Horas Ahora",
-        phone: "(206) 672-8281",
-      },
+        "A veces necesitas más que un simple viaje. Necesitas un conductor que se quede contigo. Con el servicio de chofer por horas de Viaro, el auto es tuyo. Tú controlas el ritmo del día. Tu conductor espera mientras haces compras, cenas o te reúnes. Sin prisas. Sin buscar estacionamiento. Sin esperar solo en una calle oscura a una app de transporte. Ya sea que necesites un conductor designado para una noche de salida, transporte seguro para tus padres mayores, viaje VIP discreto o un acompañante de compras para el día — aquí estamos. Con servicio en más de 40 ciudades en EE. UU., Canadá y Costa Rica.",
+      cta: { book: "Reserva Tu Chofer por Horas Ahora", phone: "(206) 672-8281" },
     },
     trustBar: [
       "Discreción VIP",
-      "Transporte Familiar Seguro",
+      "Viaje Familiar Seguro",
       "Espera y Regreso",
-      "Ruta Flexible",
-      "Soporte 24/7",
+      "Rutas Flexibles",
     ],
     bodyContent: {
       h2: "¿Quién Usa el Servicio de Chofer por Horas?",
-      h3: "La Opción Inteligente para Viajes Seguros y Total Comodidad",
+      h3: "La Elección Inteligente para Viajes Seguros y Máxima Comodidad",
       content: [
-        "Ya sea que necesites un conductor designado para una salida nocturna, transporte seguro para tus padres mayores, viaje VIP discreto o un compañero de compras para todo el día —estamos aquí para ti. Servicio en 40+ ciudades en EE.UU., Canadá y Costa Rica.",
-        "Cuando reservas nuestro servicio VIP por horas, el auto es tuyo. Tu chofer sigue tu agenda exacta, espera mientras manejas tus asuntos y mantiene el auto listo en todo momento.",
-        "Nuestros choferes respetan tu privacidad y proporcionan un ambiente tranquilo y seguro.",
-        "Este servicio flexible es perfecto para una amplia variedad de necesidades en todas nuestras ciudades de servicio.",
+        "Cuando reservas nuestro servicio VIP por horas, el auto es tuyo. Tu chofer sigue tu agenda exacta, espera mientras atiendes negocios y mantiene el auto listo en todo momento.",
+        "Nuestros choferes respetan tu privacidad y te brindan un entorno silencioso y seguro.",
+        <>
+          Este servicio flexible es perfecto para una amplia variedad de
+          necesidades en nuestras{" "}
+          <a href="/es/service-areas/" className="text-primary underline">
+            áreas de servicio
+          </a>
+          .
+        </>,
       ],
       airports: [
         {
-          region: "Discreción VIP y Celebridades",
+          region: "Discreción VIP y para Celebridades",
           airports: ["LAX", "JFK", "Todas las ciudades"],
           description:
-            "Para clientes de alto perfil — ejecutivos, artistas, figuras públicas — la privacidad lo es todo. Los choferes de Viaro están capacitados en discreción. Firmamos acuerdos de confidencialidad cuando se solicitan. Sin preguntas. Sin fotos. Solo servicio profesional y tranquilo. Nuestros conductores saben cómo evitar los puntos de paparazzi en ciudades como Los Ángeles y Nueva York, y pueden coordinarse con equipos de seguridad para llegadas sin contratiempos.",
+            "Para clientes de alto perfil — ejecutivos, artistas, figuras públicas — la privacidad lo es todo. Los choferes de Viaro están entrenados en discreción. Firmamos acuerdos de confidencialidad cuando se solicita. Sin preguntas. Sin fotos. Solo un servicio profesional y silencioso. Nuestros conductores saben cómo evitar los puntos de paparazzi en ciudades como Los Ángeles y Nueva York, y pueden coordinarse con equipos de seguridad para llegadas impecables.",
+          image: "/images/VIP.png",
         },
         {
           region: "Viaje Seguro para Mujeres",
           airports: ["Todas las ciudades"],
           description:
-            "Nunca deberías tener que esperar sola en una calle oscura por una app de rideshare. Con el servicio por horas de Viaro, tu chofer siempre está esperando justo afuera de la puerta — ya sea que salgas de un restaurante, la casa de un amigo o un evento nocturno. Nuestros conductores profesionalmente verificados ofrecen un ambiente seguro, especialmente para mujeres que viajan solas y quieren tranquilidad.",
+            "Nunca deberías tener que esperar sola en una calle oscura a una app de transporte. Con el servicio por horas de Viaro, tu chofer siempre está esperando justo afuera de la puerta — ya sea que salgas de un restaurante, la casa de una amiga o un evento nocturno. Nuestros conductores verificados profesionalmente brindan un entorno seguro, especialmente para mujeres que viajan solas y quieren tranquilidad.",
+          image: "/images/SafeWomen.png",
         },
         {
-          region: "Mandados para Mayores y Médico",
+          region: "Diligencias para Adultos Mayores y Citas Médicas",
           airports: ["Todas las ciudades"],
           description:
-            "Los padres y abuelos merecen un transporte paciente y atento. Los choferes de Viaro ayudan con servicio puerta a puerta, asistencia de movilidad y espera durante citas médicas. Ya sea una visita semanal al médico, una ida a la farmacia o un día de mandados, tratamos a tus seres queridos con el respeto que merecen.",
+            "Padres y abuelos merecen un transporte paciente y atento. Los choferes de Viaro ofrecen servicio de puerta a puerta, ayudan con la movilidad y esperan durante citas médicas. Ya sea una visita semanal al médico, ir a la farmacia o un día de diligencias, tratamos a tus seres queridos con el respeto que se merecen.",
+          image: "/images/Galveston.png",
         },
         {
-          region: "Seguridad Familiar y Juvenil",
+          region: "Seguridad Familiar y para Jóvenes",
           airports: ["Todas las ciudades"],
           description:
-            "Los padres confían en Viaro para el transporte seguro de niños y adolescentes. ¿Necesitas que recojan a tu hijo del entrenamiento de fútbol? ¿Llevar a tu familia entre actividades todo el día? Proporcionamos sillas de seguridad infantil (para bebé, convertible, de refuerzo) bajo solicitud y tratamos a los pasajeros más jóvenes con cuidado especial. Nuestros conductores tienen verificación de antecedentes y capacitación profesional.",
+            "Los padres confían en Viaro para el transporte seguro de niños y adolescentes. ¿Necesitas que recojan a tu hijo del entrenamiento de fútbol? ¿Llevas a tu familia entre actividades todo el día? Proporcionamos sillas de seguridad infantil (para bebés, convertibles y de refuerzo) bajo petición y tratamos a los pasajeros más jóvenes con especial cuidado. Nuestros conductores tienen antecedentes verificados y formación profesional.",
+          image: "/images/Family.png",
         },
         {
-          region: "Compras y Mandados Personales",
+          region: "Compras y Diligencias",
           airports: ["BH", "CHI", "SEA", "MIA"],
-          description:
-            "¿Necesitas un auto para un día completo de compras? Tu chofer te deja en la entrada, mantiene el auto cerca y guarda tus bolsas de forma segura en el maletero mientras visitas la siguiente tienda. Destinos de compras populares que atendemos incluyen Rodeo Drive en Beverly Hills, The Magnificent Mile en Chicago y boutiques de lujo en el centro de Seattle, Miami y Vancouver.",
+          description: (
+            <>
+              ¿Necesitas un auto para un día completo de compras? Tu chofer te
+              deja en la entrada, mantiene el auto cerca y guarda tus bolsas de
+              forma segura en el maletero mientras visitas la siguiente tienda.
+              Destinos de compras populares que atendemos:{" "}
+              <a
+                href="https://www.rodeodrive-bh.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+              >
+                Rodeo Drive
+              </a>{" "}
+              en Beverly Hills,{" "}
+              <a
+                href="https://www.themagnificentmile.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+              >
+                The Magnificent Mile
+              </a>{" "}
+              en Chicago y boutiques de lujo en el centro de Seattle, Miami y
+              Vancouver.
+            </>
+          ),
+          image: "/images/Galveston.png",
         },
         {
-          region: "Conductor Designado y Salida Nocturna",
+          region: "Conductor Designado y Noche de Salida",
           airports: ["Todas las ciudades"],
           description:
-            "Disfruta tu noche sin preocuparte por llegar a casa con seguridad. Viaro actúa como tu conductor designado para cenas, fiestas, conciertos y salidas nocturnas. Te recogemos, esperamos mientras disfrutas el evento y te llevamos a casa — sin precios de demanda, sin buscar un traslado a las 2 AM.",
+            "Disfruta tu noche sin preocuparte por llegar a casa con seguridad. Viaro actúa como tu conductor designado para cenas, fiestas, conciertos y salidas nocturnas. Te recogemos, esperamos mientras disfrutas el evento y te llevamos a casa — sin tarifas sorpresa ni buscar transporte a las 2 AM.",
+          image: "/images/Galveston.png",
         },
         {
           region: "Tours de Vinos y Ocasiones Especiales",
           airports: ["SFO", "SEA", "PDX"],
           description:
-            "Napa Valley, Woodinville Wine Country cerca de Seattle y Willamette Valley en Oregon. Conduce entre viñedos sin preocuparte por el camino.",
+            "Napa Valley, el wine country de Woodinville cerca de Seattle y el Valle de Willamette en Oregón. Recorre las bodegas sin preocuparte por el camino.",
+          image: "/images/Galveston.png",
         },
         {
-          region: "Conexiones de Hotel y Aeropuerto",
+          region: "Conexiones Hotel y Aeropuerto",
           airports: ["Todas las ciudades"],
-          description:
-            "¿Llegando por negocios con una agenda apretada? Reserva el servicio por horas desde la llegada al aeropuerto hasta tu hotel, luego mantén el auto para reuniones, visitas a sitios o cenas. Tu equipaje permanece seguro en el vehículo mientras trabajas. Conexiones de hotel populares incluyen The Edgewater Hotel y Fairmont Olympic Seattle.",
+          description: (
+            <>
+              ¿Llegas por negocios con una agenda apretada? Reserva el servicio
+              por horas desde la{" "}
+              <a
+                href="/airport-car-service/"
+                className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+              >
+                llegada al aeropuerto
+              </a>{" "}
+              hasta tu hotel y luego quédate con el auto para reuniones, visitas
+              o cenas. Tu equipaje se queda seguro en el vehículo mientras
+              trabajas. Conexiones hoteleras populares:{" "}
+              <a
+                href="https://www.edgewaterhotel.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+              >
+                The Edgewater Hotel
+              </a>{" "}
+              y el{" "}
+              <a
+                href="https://www.fairmont.com/seattle/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b border-white/60 hover:border-primary hover:text-primary transition"
+              >
+                Fairmont Olympic Seattle
+              </a>
+              .
+            </>
+          ),
+          image: "/images/Galveston.png",
         },
         {
           region: "Bodas y Eventos Especiales",
           airports: ["Todas las ciudades"],
           description:
-            "Viaro ofrece servicio por horas para bodas, aniversarios, cumpleaños, bar-mitzvahs o quinceañeras y celebraciones importantes. Transportamos al grupo de bodas entre los lugares, proporcionamos el auto para los novios y aseguramos que los invitados lleguen a tiempo. Nuestros conductores entienden la importancia de tu día especial y entregan un servicio impecable. Cualquiera que sea tu día, Viaro te ayuda a tener éxito con comodidad, seguridad y estilo.",
+            "Viaro ofrece servicio por horas para bodas, aniversarios, cumpleaños, bar-mitzvahs, quinceañeras y celebraciones importantes. Transportamos a los integrantes del cortejo entre venues, proveemos el auto de salida para la pareja y nos aseguramos de que los invitados lleguen a tiempo. Nuestros conductores entienden la importancia de tu día especial y ofrecen un servicio impecable. Sea lo que sea que tu día requiera, Viaro te ayuda a lograrlo con comodidad, seguridad y estilo.",
+          image: "/images/Galveston.png",
         },
       ],
     },
@@ -1650,8 +1944,8 @@ export const serviceEs: ServiceItem[] = [
           models: ["Mercedes S-Class", "BMW 7 Series", "Audi A8"],
           extras: [
             "Mínimo 3 horas",
-            "Conductor espera en cada parada",
-            "Estándar de privacidad VIP",
+            "El conductor espera en cada parada",
+            "Privacidad VIP estándar",
           ],
         },
         {
@@ -1677,8 +1971,7 @@ export const serviceEs: ServiceItem[] = [
           ],
         },
       ],
-      note: "Las tarifas varían según la ciudad. Cotización final al momento de la reserva. El tiempo extra se cobra en incrementos de 15 minutos.",
-      cta: "Obtener tu Cotización por Horas →",
+      cta: "Obtener Tu Cotización por Horas →",
     },
   },
 ];

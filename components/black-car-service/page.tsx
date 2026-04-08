@@ -9,15 +9,160 @@ import { serviceEn, serviceEs } from "@/data/service";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getDictionary } from "@/lib/get-dictionary";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Phone } from "lucide-react";
 
-// ── ICON MAP ──────────────────────────────────────────────────────────────────
-// Maps keywords in trustBar strings to SVG icons
+const btnPrimary =
+  "bg-primary text-white hover:bg-brand2 rounded-full uppercase tracking-widest text-xs font-semibold transition-colors";
+
 function getTrustIcon(label: string) {
   const l = label.toLowerCase();
 
   if (
+    l.includes("discret") ||
+    l.includes("confidential") ||
+    l.includes("privacy") ||
+    l.includes("privaci") ||
+    l.includes("vip")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+        <circle cx="12" cy="11" r="2" />
+        <line x1="12" y1="13" x2="12" y2="16" />
+      </svg>
+    );
+  if (
+    l.includes("guarant") ||
+    l.includes("garantí") ||
+    l.includes("garantia") ||
+    l.includes("transparency") ||
+    l.includes("transparenc")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <circle cx="11" cy="14" r="3" />
+        <line x1="13.5" y1="16.5" x2="16" y2="19" />
+      </svg>
+    );
+  if (l.includes("flexible") || l.includes("routing") || l.includes("ruta"))
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <circle cx="5" cy="6" r="2" />
+        <circle cx="19" cy="6" r="2" />
+        <circle cx="12" cy="19" r="2" />
+        <path d="M5 8c0 4 3 6 7 6s7-2 7-6" />
+        <line x1="12" y1="14" x2="12" y2="17" />
+      </svg>
+    );
+  if (
+    l.includes("wait") ||
+    l.includes("espera") ||
+    l.includes("return") ||
+    l.includes("regreso")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 14" />
+        <path d="M3 3l3.5 3.5" />
+        <path d="M3 7.5V3h4.5" />
+      </svg>
+    );
+  if (
+    l.includes("family") ||
+    l.includes("familia") ||
+    l.includes("safe family") ||
+    (l.includes("safe") && l.includes("travel"))
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M12 3L4 7v5c0 5 4 8 8 9 4-1 8-4 8-9V7z" />
+        <circle cx="9" cy="10" r="1.5" />
+        <circle cx="15" cy="10" r="1.5" />
+        <circle cx="12" cy="12" r="1" />
+        <path d="M6.5 15.5c.8-1.5 2-2.5 2.5-2.5h6c.5 0 1.7 1 2.5 2.5" />
+      </svg>
+    );
+  if (
+    l.includes("billing") ||
+    l.includes("factura") ||
+    l.includes("flat") ||
+    l.includes("rate") ||
+    l.includes("tarifa") ||
+    l.includes("fija") ||
+    l.includes("transparent")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M5 2h12a1 1 0 0 1 1 1v17l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5-2 1.5V3a1 1 0 0 1 1-1z" />
+        <line x1="8" y1="7" x2="14" y2="7" />
+        <line x1="8" y1="11" x2="14" y2="11" />
+        <line x1="8" y1="15" x2="11" y2="15" />
+      </svg>
+    );
+
+  if (
     l.includes("flight") ||
     l.includes("vuelo") ||
+    l.includes("tail") ||
+    l.includes("cola") ||
     l.includes("track") ||
     l.includes("rastreo")
   )
@@ -32,17 +177,21 @@ function getTrustIcon(label: string) {
         width={28}
         height={28}
       >
-        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 2c-2-2-4-2-5.5-.5L10 5 1.8 6.2c-.5.1-.9.6-.6 1.1l1.7 2.7c.3.5.9.6 1.3.3l2.8-1.8 2.3 2.3-2.7 4.9c-.3.5.1 1.1.6 1.1l2.8-.1c.5 0 .9-.3 1-.8l.5-2.6 2.5 2.5-.1 2.8c0 .5.6.9 1.1.6l4.9-2.7c.5-.3.6-.9.3-1.3l-1.8-2.8z" />
+        <path d="M4 16L8.5 8 11 13l3-2.5L18 8l-2 8-6-3z" />
+        <circle cx="19" cy="5" r="1.5" fill="currentColor" stroke="none" />
+        <circle cx="19" cy="5" r="3.5" strokeWidth={1} opacity={0.5} />
+        <circle cx="19" cy="5" r="5.5" strokeWidth={0.7} opacity={0.25} />
       </svg>
     );
 
   if (
-    l.includes("rate") ||
-    l.includes("flat") ||
-    l.includes("tarifa") ||
-    l.includes("fija") ||
-    l.includes("billing") ||
-    l.includes("factura")
+    (l.includes("24") ||
+      l.includes("support") ||
+      l.includes("soporte") ||
+      l.includes("booking") ||
+      l.includes("reserva")) &&
+    !l.includes("dispatch") &&
+    !l.includes("despacho")
   )
     return (
       <svg
@@ -55,18 +204,92 @@ function getTrustIcon(label: string) {
         width={28}
         height={28}
       >
-        <rect x="2" y="5" width="20" height="14" rx="2" />
-        <path d="M2 10h20" />
-        <path d="M6 15h4M14 15h4" />
+        <rect x="3" y="4" width="18" height="17" rx="2" />
+        <line x1="3" y1="9" x2="21" y2="9" />
+        <line x1="8" y1="2" x2="8" y2="6" />
+        <line x1="16" y1="2" x2="16" y2="6" />
+        <circle cx="15" cy="15" r="4" />
+        <polyline points="15 13 15 15.5 16.5 16.5" />
+      </svg>
+    );
+
+  if (l.includes("dispatch") || l.includes("despacho"))
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <line x1="12" y1="12" x2="12" y2="21" />
+        <path d="M7.5 7.5C6 9 5 11 5 13" />
+        <path d="M16.5 7.5C18 9 19 11 19 13" />
+        <path d="M9.5 9.5C8.5 10.5 8 12 8 13.5" />
+        <path d="M14.5 9.5C15.5 10.5 16 12 16 13.5" />
+        <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+      </svg>
+    );
+
+  if (
+    l.includes("tarmac") ||
+    l.includes("pista") ||
+    l.includes("fbo") ||
+    l.includes("pickup") ||
+    l.includes("curbside")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M2 16l3-1 4 3 8-5 1-4-2 1-2 3-3-1 1-3-2 1-1 3-7 2z" />
+        <line x1="2" y1="20" x2="22" y2="20" />
+        <path d="M18 20v-5h3v5" />
+        <circle cx="19.5" cy="16.5" r="0.5" fill="currentColor" stroke="none" />
+      </svg>
+    );
+
+  if (
+    l.includes("year") ||
+    l.includes("año") ||
+    l.includes("experience") ||
+    l.includes("experiencia")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        {/* Award medal with ribbon */}
+        <circle cx="12" cy="8" r="6" />
+        <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12" />
+        <line x1="10" y1="8" x2="12" y2="6" />
+        <line x1="12" y1="6" x2="12" y2="11" />
       </svg>
     );
 
   if (
     l.includes("chauffeur") ||
-    l.includes("pro") ||
     l.includes("chofer") ||
     l.includes("driver") ||
-    l.includes("conductor")
+    l.includes("conductor") ||
+    l.includes("pro")
   )
     return (
       <svg
@@ -84,6 +307,7 @@ function getTrustIcon(label: string) {
       </svg>
     );
 
+  // ── FLEET / VEHICLE / LUXURY ─────────────────────────────────────────────────
   if (
     l.includes("fleet") ||
     l.includes("flota") ||
@@ -110,85 +334,12 @@ function getTrustIcon(label: string) {
     );
 
   if (
-    l.includes("24/7") ||
-    l.includes("support") ||
-    l.includes("booking") ||
-    l.includes("reserva") ||
-    l.includes("soporte") ||
-    l.includes("dispatch") ||
-    l.includes("despacho")
-  )
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        width={28}
-        height={28}
-      >
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-        <path d="M12 7v2M12 13h.01" />
-      </svg>
-    );
-
-  if (
-    l.includes("discret") ||
-    l.includes("confidential") ||
-    l.includes("privacy") ||
-    l.includes("privaci") ||
-    l.includes("fortune") ||
-    l.includes("vip")
-  )
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        width={28}
-        height={28}
-      >
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    );
-
-  if (
-    l.includes("tarmac") ||
-    l.includes("pista") ||
-    l.includes("tail") ||
-    l.includes("cola") ||
-    l.includes("fbo")
-  )
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        width={28}
-        height={28}
-      >
-        <path d="M3 17h1l6-10 4 6 2-2 3 6h1" />
-        <path d="M3 21h18" />
-      </svg>
-    );
-
-  if (
     l.includes("ship") ||
     l.includes("barco") ||
     l.includes("cruise") ||
     l.includes("crucero") ||
     l.includes("port") ||
-    l.includes("muelle") ||
-    l.includes("curbside")
+    l.includes("muelle")
   )
     return (
       <svg
@@ -208,47 +359,6 @@ function getTrustIcon(label: string) {
         <path d="M12 3v4" />
       </svg>
     );
-
-  if (
-    l.includes("safe") ||
-    l.includes("segur") ||
-    l.includes("family") ||
-    l.includes("familia") ||
-    l.includes("flexible") ||
-    l.includes("wait") ||
-    l.includes("espera")
-  )
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        width={28}
-        height={28}
-      >
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    );
-
-  // default
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      stroke="currentColor"
-      strokeWidth={1}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      width={28}
-      height={28}
-    >
-      <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
-    </svg>
-  );
 }
 
 export default function ServicePage() {
@@ -292,30 +402,36 @@ export default function ServicePage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/50" />
-        <div className="absolute top-0 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 sm:pt-28 lg:pt-32">
+
+        <div className="absolute bottom-0 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24 sm:pb-20">
           <h1 className="font-serif font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl xl:text-6xl max-w-3xl">
             {cityData.hero.h1}
           </h1>
           <h2 className="mt-3 text-sm sm:text-base text-white/70 font-light tracking-wide max-w-xl">
             {cityData.hero.h2}
           </h2>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24 sm:pb-20">
-          <p className="text-xs sm:text-sm text-white/50 leading-relaxed max-w-lg">
-            {cityData.hero.description}
-          </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a href="https://booking.allblacklimoseattle.com/">
-              <button className="bg-primary text-black font-bold px-7 py-3 rounded-full text-xs uppercase tracking-widest hover:bg-white transition">
+              <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
                 {cityData.hero.cta.book}
-              </button>
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </a>
             <a href={`tel:${cityData.hero.cta.phone.replace(/\D/g, "")}`}>
-              <button className="border border-white text-white font-bold px-7 py-3 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition">
+              <Button
+                variant="outline"
+                className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+              >
+                <Phone className="mr-2 h-4 w-4" />
                 {cityData.hero.cta.phone}
-              </button>
+              </Button>
             </a>
           </div>
+          {cityData.hero.description && (
+            <p className="mt-4 text-sm italic text-white/30 sm:text-base">
+              "{cityData.hero.description}"
+            </p>
+          )}
         </div>
       </section>
 
@@ -394,8 +510,8 @@ export default function ServicePage() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-primary mb-8">
               {cityData.bodyContent.h3}
             </h3>
-            <div className="max-w-3xl space-y-5 mb-16">
-              {cityData.bodyContent.content.map((p, i) => (
+            <div className="max-w-3xl space-y-5 mb-16 text-justify">
+              {cityData.bodyContent.content?.map((p, i) => (
                 <p
                   key={i}
                   className="text-sm sm:text-base text-neutral-400 leading-relaxed"
@@ -410,27 +526,28 @@ export default function ServicePage() {
                   key={i}
                   className="group relative overflow-hidden rounded-2xl h-80"
                 >
-                  <img
-                    src={airport.image}
-                    alt={airport.region}
-                    className="w-full h-full object-cover transition duration-500 group-hover:opacity-40"
-                  />
-
-                  {/* Overlay IATA */}
+                  <a
+                    href={airport.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={airport.image}
+                      alt={airport.region}
+                      className="w-full h-full object-cover transition duration-500 group-hover:opacity-40"
+                    />
+                  </a>
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none z-10">
                     <span className="text-white text-4xl font-bold tracking-widest drop-shadow-lg">
                       {airport.airports?.[0]}
                     </span>
                   </div>
-
-                  {/* Panel inferior */}
                   <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-5 z-20">
                     <h4 className="text-primary text-lg font-serif font-bold mb-1 leading-tight">
                       {airport.region}
                     </h4>
-
                     <p className="text-xs text-neutral-300 leading-relaxed">
-                      {airport.description} {/* ✅ ya incluye links */}
+                      {airport.description}
                     </p>
                   </div>
                 </div>
@@ -440,17 +557,23 @@ export default function ServicePage() {
         </section>
       )}
 
-      {/* ── EXTRA CONTENT ── */}
       {cityData.extraContent && cityData.extraContent.length > 0 && (
         <section className="py-10 sm:py-24 bg-black">
           <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 space-y-24">
             {cityData.extraContent.map((section, i) => (
               <div key={i}>
-                <div className="flex items-center gap-4 mb-10">
+                <div className="flex items-center gap-4 ">
                   <div className="h-px w-8 bg-primary flex-shrink-0" />
-                  <h3 className="font-serif font-bold text-2xl sm:text-3xl">
-                    {section.h3}
-                  </h3>
+
+                  <div className="flex flex-col">
+                    <h3 className="font-serif font-bold text-2xl sm:text-3xl">
+                      {section.h3}
+                    </h3>
+
+                    <h2 className="text-sm font-bold uppercase tracking-widest text-primary mt-2">
+                      {section.h2}
+                    </h2>
+                  </div>
                 </div>
                 <div className="max-w-3xl space-y-5 mb-16">
                   {section.content?.map((p, i) => (
@@ -473,9 +596,9 @@ export default function ServicePage() {
                             "
                           </span>
                         </div>
-                        <p className="text-sm sm:text-base text-neutral-300 leading-relaxed italic">
+                        <div className="text-sm sm:text-base text-neutral-300 leading-relaxed italic">
                           {section.quote}
-                        </p>
+                        </div>
                       </blockquote>
                     )}
                     {section.image && (
@@ -516,33 +639,29 @@ export default function ServicePage() {
                     ))}
                   </div>
                 )}
-               {section.list && (
-  <>
-    {section.desc && (
-      <p className="text-sm text-neutral-300 mb-6 leading-relaxed">
-        {section.desc}
-      </p>
-    )}
-
-    <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-10">
-      {section.list.map((item, idx) => (
-        <li key={idx} className="flex gap-3 items-start group">
-          
-          <div className="flex-shrink-0 mt-0.5 h-5 w-5 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-            <span className="text-primary text-[10px] font-bold">
-              ✓
-            </span>
-          </div>
-
-          <span className="text-sm text-neutral-300 leading-relaxed group-hover:text-white transition-colors">
-            {item}
-          </span>
-
-        </li>
-      ))}
-    </ul>
-  </>
-)}
+                {section.list && (
+                  <>
+                    {section.desc && (
+                      <p className="text-sm text-neutral-300 mb-6 leading-relaxed">
+                        {section.desc}
+                      </p>
+                    )}
+                    <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-10">
+                      {section.list.map((item, idx) => (
+                        <li key={idx} className="flex gap-3 items-start group">
+                          <div className="flex-shrink-0 mt-0.5 h-5 w-5 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                            <span className="text-primary text-[10px] font-bold">
+                              ✓
+                            </span>
+                          </div>
+                          <span className="text-sm text-neutral-300 leading-relaxed group-hover:text-white transition-colors">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
                 {section.portList && (
                   <div className="mb-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -583,13 +702,11 @@ export default function ServicePage() {
                 )}
                 {section.cta && (
                   <div className="text-center">
-                    <a
-                      href="https://booking.allblacklimoseattle.com/"
-                      className="inline-block"
-                    >
-                      <button className="bg-primary text-black font-bold px-8 py-3 rounded-full text-xs uppercase tracking-widest hover:bg-white transition-all duration-300">
+                    <a href="https://booking.allblacklimoseattle.com/">
+                      <Button className={`px-8 h-11 sm:h-12 ${btnPrimary}`}>
                         {section.cta}
-                      </button>
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
                     </a>
                   </div>
                 )}
@@ -602,7 +719,7 @@ export default function ServicePage() {
       {/* ── PRICING ── */}
       <section className="py-16 sm:py-24 bg-neutral-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-12">
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-12 whitespace-pre-line">
             {cityData.pricing.h2}
           </h2>
           <div className="grid gap-6 sm:grid-cols-3">
@@ -655,22 +772,21 @@ export default function ServicePage() {
                   href="https://booking.allblacklimoseattle.com/"
                   className="mt-8 block"
                 >
-                  <button className="w-full bg-primary text-black font-bold py-3 rounded-full text-xs uppercase tracking-widest hover:bg-white transition">
-                    {lng === "es" ? `Reservar ${p.type}` : `Book ${p.type}`}
-                  </button>
+                  <Button
+                    className={`w-full h-auto min-h-11 py-2 ${btnPrimary} whitespace-normal text-center leading-snug`}
+                  >
+                    {lng === "es" ? `Reservar ${p.type}` : `Book ${p.type}`} →
+                  </Button>
                 </a>
               </div>
             ))}
           </div>
           <div className="mt-10 text-center">
             <a href="https://booking.allblacklimoseattle.com/">
-              <button className="bg-primary text-black font-bold px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-white transition">
+              <Button className={`px-8 h-11 sm:h-12 ${btnPrimary}`}>
                 {cityData.pricing.cta}
-              </button>
+              </Button>
             </a>
-            <p className="mt-4 text-xs text-neutral-500">
-              {cityData.pricing.note}
-            </p>
           </div>
         </div>
       </section>
@@ -688,11 +804,15 @@ export default function ServicePage() {
           <FA data={faData} />
           <div className="mt-10 flex justify-center">
             <a href={`/${lng}/faq`}>
-              <button className="bg-primary text-white font-bold px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-primary/90 transition">
+              <Button
+                variant="outline"
+                className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+              >
+                <Phone className="mr-2 h-4 w-4" />
                 {lng === "es"
-                  ? "¿Más preguntas? Contáctanos →"
-                  : "Have More Questions? Contact Us →"}
-              </button>
+                  ? "¿Más preguntas? Contáctanos"
+                  : "Have More Questions? Contact Us"}
+              </Button>
             </a>
           </div>
         </div>

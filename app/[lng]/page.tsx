@@ -10,7 +10,7 @@ export default async function HomePage({
   const dict = await getDictionary(lng) as any;
 
  return (
-    <main>
+    <main className="bg-black">
       <MainContent key={lng} dict={dict.home} lng={lng} />
     </main>
   );

@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 
 type Fa = {
   question: string;
-  answer:  React.ReactNode;
+  answer: React.ReactNode;
 };
 
 type FaProps = {
@@ -20,19 +20,18 @@ export function FA({ data }: FaProps) {
   };
 
   return (
-    <section className="py-10 bg-black text-white ">
+    <section className="py-10 bg-black text-white">
       <div className="max-w-4xl mx-auto px-6">
-       
-
         <div className="space-y-4">
           {data.map((fa, index) => (
             <div
               key={index}
-              className=" rounded-2xl overflow-hidden transition-all duration-300 hover:border-neutral-600"
+              className="rounded-2xl overflow-hidden transition-all duration-300 hover:border-neutral-600"
             >
               <button
                 onClick={() => toggle(index)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left"
+                suppressHydrationWarning
               >
                 <span className="font-semibold text-lg">{fa.question}</span>
 
@@ -59,8 +58,6 @@ export function FA({ data }: FaProps) {
             </div>
           ))}
         </div>
-        
-        
       </div>
     </section>
   );

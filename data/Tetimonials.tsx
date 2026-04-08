@@ -181,7 +181,26 @@ export const servicesHourlyTestimonials = [
     rating: 5,
   },
 ];
-
+export const FleetTestimonials = [
+  {
+    name: "Denise, Trustpilot",
+    role: "Roomy and Spotless",
+    text: "Viaro is my go-to for limo/car service. They are always professional, courteous and on-time. The vehicles are roomy, spotless and the drivers are top notch! I highly recommend them for all your needs.",
+    rating: 5,
+  },
+  {
+    name: "Bre O., Yelp",
+    role: "Super Clean with Beverages",
+    text: "10/10 had such a great experience. Booking was seamless and easy on site. The car was super clean and had an array of beverages! Our driver was also outstanding. Really friendly, great communication and on time. I will definitely book again!",
+    rating: 5,
+  },
+  {
+    name: "Laurie S., Yelp",
+    role: "Perfect Air Conditioning",
+    text: "Picked up right on time & car was super clean. Waters were provided & air conditioning was perfect. Conversation was light & fun, a perfect start to a memorable night. I would not hesitate to use again. Well done!",
+    rating: 5,
+  },
+];
 export const TestimonialsMap = {
   servicesAirportTestimonials,
   servicesTestimonials,
@@ -189,8 +208,29 @@ export const TestimonialsMap = {
   servicesAirlineTestimonials,
   servicesCruiseTestimonials,
   servicesHourlyTestimonials,
+  FleetTestimonials
 };
 export type TestiMapKey = keyof typeof TestimonialsMap;
+export const FleetTestimonialsEs = [
+  {
+    name: "Denise, Trustpilot",
+    role: "Amplio e Impecable",
+    text: "Viaro es mi primera opción para servicio de limusina y auto. Siempre son profesionales, atentos y puntuales. ¡Los vehículos son amplios, impecables y los conductores son de primer nivel! Los recomiendo ampliamente para todas sus necesidades.",
+    rating: 5,
+  },
+  {
+    name: "Bre O., Yelp",
+    role: "Súper Limpio con Bebidas",
+    text: "10/10, tuve una experiencia increíble. La reserva fue sencilla y fácil en el sitio. ¡El auto estaba súper limpio y tenía una variedad de bebidas! Nuestro conductor también fue excepcional. Muy amable, excelente comunicación y puntual. ¡Definitivamente volveré a reservar!",
+    rating: 5,
+  },
+  {
+    name: "Laurie S., Yelp",
+    role: "Aire Acondicionado Perfecto",
+    text: "Nos recogieron puntualmente y el auto estaba súper limpio. Nos ofrecieron agua y el aire acondicionado estaba perfecto. La conversación fue ligera y divertida, un comienzo perfecto para una noche memorable. No dudaría en usarlos de nuevo. ¡Muy bien hecho!",
+    rating: 5,
+  },
+];
 export const AboutTestimonialsEs = [
   {
     name: "Nick, Trustpilot",
@@ -386,5 +426,6 @@ export const TestimonialsMapEs = {
   servicesCruiseTestimonials: servicesCruiseTestimonialsEs,
   servicesHourlyTestimonials: servicesHourlyTestimonialsEs,
   servicesTestimonials: servicesTestimonialsEs,
+  FleetTestimonials:FleetTestimonialsEs
 };
 export type TestiMapKeyEs = keyof typeof TestimonialsMapEs;

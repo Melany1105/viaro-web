@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -15,14 +15,17 @@ import { Button } from "../ui/button";
 import { getDictionary } from "@/lib/get-dictionary";
 import Link from "next/link";
 
+const btnPrimary =
+  "bg-primary text-white hover:bg-brand2 rounded-full uppercase tracking-widest text-xs font-semibold transition-colors";
+
 // ── TRUST METRICS ─────────────────────────────────────────────────────────────
 const TRUST_METRICS = [
   {
     value: "5.0",
     labelKey: "ratingLabel",
     icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
+        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
       </svg>
     ),
   },
@@ -31,7 +34,8 @@ const TRUST_METRICS = [
     labelKey: "flightLabel",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 2c-2-2-4-2-5.5-.5L10 5 1.8 6.2c-.5.1-.9.6-.6 1.1l1.7 2.7c.3.5.9.6 1.3.3l2.8-1.8 2.3 2.3-2.7 4.9c-.3.5.1 1.1.6 1.1l2.8-.1c.5 0 .9-.3 1-.8l.5-2.6 2.5 2.5-.1 2.8c0 .5.6.9 1.1.6l4.9-2.7c.5-.3.6-.9.3-1.3l-1.8-2.8z"/>
+        <path d="M22 16.5H2M2 16.5l4-8 4 4 4-2 4-4 2 2-4 8z" />
+        <path d="M6 19.5h12" />
       </svg>
     ),
   },
@@ -40,8 +44,8 @@ const TRUST_METRICS = [
     labelKey: "supportLabel",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        <path d="M12 7v2M12 13h.01"/>
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <path d="M12 7v2M12 13h.01" />
       </svg>
     ),
   },
@@ -50,8 +54,8 @@ const TRUST_METRICS = [
     labelKey: "licensedLabel",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-        <path d="m9 12 2 2 4-4"/>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+        <path d="m9 12 2 2 4-4" />
       </svg>
     ),
   },
@@ -181,69 +185,56 @@ export default function LocationsContent() {
   return (
     <main>
 
-     
-<section className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
-  <Image
-    src="/images/ImagenLocations1.png"
-    alt="Luxury vehicle parked in front of a modern building"
-    fill
-    priority
-    className="object-cover object-top sm:object-center"
-    sizes="100vw"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
-
-  <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
-
-    <div className="flex flex-col items-center text-center sm:hidden">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
-        {t.hero.subtitle}
-      </p>
-    </div>
-
-    <div>
-      <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand">
-        {t.hero.subtitle}
-      </p>
-
-      <h1 className="font-serif font-bold leading-[1.1] text-[1.6rem] sm:text-4xl lg:text-5xl xl:text-6xl max-w-[280px] sm:max-w-xl lg:max-w-2xl">
-        {t.hero.title}
-      </h1>
-
-      {t.hero.description && (
-        <p className="mt-2 sm:mt-3 text-xs sm:text-base text-white/60 leading-relaxed font-light max-w-[260px] sm:max-w-xl">
-          {t.hero.description}
-        </p>
-      )}
-
-      <div className="mt-5 sm:mt-8 flex flex-wrap gap-3">
-        <a href="https://booking.allblacklimoseattle.com/">
-          <button className="border border-primary bg-primary text-black font-semibold text-sm px-6 py-3 rounded-full hover:bg-transparent hover:text-white transition-all duration-300">
-            {t.buttons.bookNow}
-          </button>
-        </a>
-        <a href="tel:2066728281">
-          <button className="border border-white/60 text-white font-semibold text-sm px-6 py-3 rounded-full hover:border-white hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center gap-2">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
-            </svg>
-            {t.buttons.callUs ?? "Call Us"}
-          </button>
-        </a>
-      </div>
-
-      {t.hero.body && (
-        <p className="mt-4 text-sm italic text-white/30 text-center sm:text-base">
-          "{t.hero.body}"
-        </p>
-      )}
-    </div>
-  </div>
-</section>
+      {/* ── HERO ── */}
+      <section id="inicio" className="relative min-h-screen flex items-center pt-0">
+        <div className="absolute w-full h-[60vh] md:h-[75vh] lg:h-screen">
+          <Image
+            src="/images/ImagenLocations1.png"
+            alt="Luxury vehicle parked in front of a modern building"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-background/75" />
+        </div>
+        <div className="relative z-20 max-w-7xl pl-6 lg:pl-16 pt-20">
+          <div className="max-w-3xl">
+            <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)]">
+              {t.hero.subtitle}
+            </p>
+            <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)]">
+              {t.subtitle}
+            </p>
+            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl text-balance">
+              {t.hero.title}
+            </h1>
+            <p className="mt-4 mb-6 text-sm font-semibold uppercase tracking-[0.3em]">
+              {t.hero.description}
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a href="https://booking.allblacklimoseattle.com/">
+                <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
+                  {t.buttons.bookNow}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+              <a href="tel:2066728281">
+                <Button
+                  variant="outline"
+                  className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+                >
+                  <Phone className="mr-2 h-4 w-4" />
+                  {t.buttons.callUs ?? "Call Us"}
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── TRUST METRICS ── */}
       <section style={{
-        background: "rgb(9,9,11)",
+        background: "rgb(30,30,30)",
         borderTop: "1px solid rgba(255,255,255,0.1)",
         borderBottom: "1px solid rgba(255,255,255,0.1)",
         padding: "40px 16px",
@@ -284,10 +275,10 @@ export default function LocationsContent() {
         <div>
           <h2 className="text-3xl font-semibold mb-6">{t.intro.title}</h2>
           <h3 className="mb-4">{t.intro.subtitle}</h3>
-          <p className="text-neutral-400 leading-relaxed whitespace-pre-line">{t.intro.description}</p>
+          <p className="text-neutral-400 leading-relaxed">{t.intro.description}</p>
           <div className="mt-8">
             <a href="https://booking.allblacklimoseattle.com/">
-              <Button size="lg" className="bg-primary rounded-full text-primary-foreground hover:bg-primary/90 px-8 uppercase tracking-widest text-xs font-semibold h-10">
+              <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
                 {t.buttons.bookNow}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -342,19 +333,19 @@ export default function LocationsContent() {
                 {section.cities.map((city) => (
                   <Link
                     key={city.name}
-                    href={city.slug ? `/${lng}/service-area/${city.slug}` : "#"}
+                    href={city.slug ? `/${lng}/black-car-service/${city.slug}` : "#"}
                     className={city.slug ? "block" : "block pointer-events-none"}
                   >
-                    <div className="p-6 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-primary/50 transition-all group cursor-pointer">
-                      <div className="flex justify-between items-start mb-4">
+                    <div className="p-4 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-primary/50 transition-all group cursor-pointer">
+                      <div className="flex justify-between items-start mb-2">
                         <h3 className="text-lg font-semibold text-white group-hover:text-primary transition-colors">{city.name}</h3>
                         <MapPin className="w-5 h-5 text-brand group-hover:text-primary transition-colors duration-200" />
                       </div>
                       <p className="text-neutral-400 text-sm leading-relaxed">{city.desc}</p>
                       {city.slug && (
-                        <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="inline-flex items-center gap-1 mt-2 text-[10px] font-semibold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1">
                           {isES ? "Ver detalles" : "View details"} <ArrowRight className="w-3 h-3" />
-                        </p>
+                        </span>
                       )}
                     </div>
                   </Link>
@@ -376,9 +367,9 @@ export default function LocationsContent() {
       <FA data={fa} />
       <div className="mb-9 flex justify-center">
         <a href="/faq">
-          <button className="text-sm md:text-base font-semibold text-white bg-primary px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105">
+          <Button className={`px-8 h-11 sm:h-12 ${btnPrimary}`}>
             {t.buttons.moreQuestions}
-          </button>
+          </Button>
         </a>
       </div>
 

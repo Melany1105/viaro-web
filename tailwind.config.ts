@@ -13,6 +13,7 @@ const config: Config = {
     extend: {
       colors: {
         brand: "#89b4d4 ",
+         brand2: "#072F7F ",
         muted2: "#6096ba",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

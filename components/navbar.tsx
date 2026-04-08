@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,7 +16,6 @@ export function Navbar({ dict, lng }: NavbarProps) {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   const pathname = usePathname();
 
   const changeLanguage = (newLng: string) => {
@@ -28,7 +27,6 @@ export function Navbar({ dict, lng }: NavbarProps) {
 
   const base = `/${lng}`;
 
-  // Pequeño delay al cerrar para que el mouse pueda moverse al dropdown sin que se cierre
   const handleMouseEnter = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setServicesOpen(true);
@@ -44,19 +42,29 @@ export function Navbar({ dict, lng }: NavbarProps) {
       label: dict.navbar.services,
       href: `${base}/black-car-services`,
       dropdown: [
-        { label: dict.navbar.airport,    href: `${base}/black-car-service/airport-transfers` },
-        { label: dict.navbar.corporate,  href: `${base}/black-car-service/corporate-transportation-executive-car-service` },
-        { label: dict.navbar.airline,    href: `${base}/black-car-service/fbo-crew-transportation` },
-        { label: dict.navbar.cruise,     href: `${base}/black-car-service/cruise-port-transfers` },
-        { label: dict.navbar.hourly,     href: `${base}/black-car-service/hourly-chauffeur-hire` },
+        { label: dict.navbar.airport,   href: `${base}/black-car-service/airport-transfers` },
+        { label: dict.navbar.corporate, href: `${base}/black-car-service/corporate-transportation-executive-car-service` },
+        { label: dict.navbar.airline,   href: `${base}/black-car-service/fbo-crew-transportation` },
+        { label: dict.navbar.cruise,    href: `${base}/black-car-service/cruise-port-transfers` },
+        { label: dict.navbar.hourly,    href: `${base}/black-car-service/hourly-chauffeur-hire` },
       ],
     },
+    { label: dict.navbar.fleet,     href: `${base}/fleet` },
     { label: dict.navbar.locations, href: `${base}/service-areas` },
+    { label: dict.navbar.about,     href: `${base}/about-us` },
     { label: dict.navbar.contact,   href: `${base}/contact` },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-md border-b border-border">
+    <>
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40 lg:hidden"
+          onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
+          style={{ pointerEvents: mobileServicesOpen ? "none" : "auto" }}
+        />
+      )}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-md border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
 
@@ -64,40 +72,28 @@ export function Navbar({ dict, lng }: NavbarProps) {
             <img src="/Logo/Logo.png" alt="Viaro Logo" className="h-12 w-auto" />
           </Link>
 
-          {/* ── Desktop nav ───────────────────────────────────────────────── */}
+          {/* ── Desktop nav ── */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) =>
               link.dropdown ? (
-                // El onMouseEnter/Leave va SOLO en el trigger, no en el wrapper completo
                 <div key={link.label} className="relative py-4">
-                  <div
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                    className="inline-block"
-                  >
+                  <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="inline-block">
                     <Link
                       href={link.href}
                       className="flex items-center gap-1 text-sm font-medium uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
                     >
                       {link.label}
-                      <ChevronDown
-                        className={`h-3.5 w-3.5 transition-transform duration-300 ${
-                          servicesOpen ? "rotate-180" : ""
-                        }`}
-                      />
+                      <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} />
                     </Link>
                   </div>
 
-                  {/* Dropdown — también mantiene abierto mientras el mouse está dentro */}
                   {servicesOpen && (
                     <div
                       onMouseEnter={handleMouseEnter}
                       onMouseLeave={handleMouseLeave}
                       className="absolute top-[calc(100%-0.5rem)] left-1/2 -translate-x-1/2 w-64 bg-neutral-950 border border-white/10 rounded-xl shadow-2xl shadow-black/50 overflow-hidden z-50"
                     >
-                      {/* Arrow */}
                       <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-neutral-950 border-l border-t border-white/10 rotate-45" />
-
                       <div className="py-2">
                         {link.dropdown.map((item) => (
                           <Link
@@ -126,25 +122,11 @@ export function Navbar({ dict, lng }: NavbarProps) {
             )}
           </div>
 
-          {/* ── Desktop right ─────────────────────────────────────────────── */}
+          {/* ── Desktop right ── */}
           <div className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-2 border border-gray-700 rounded-full px-3 py-1 text-xs uppercase tracking-widest">
-              <Link
-                href={changeLanguage("en")}
-                className={`px-2 py-1 rounded-full transition ${
-                  lng === "en" ? "bg-primary text-black" : "text-gray-500 hover:text-white"
-                }`}
-              >
-                EN
-              </Link>
-              <Link
-                href={changeLanguage("es")}
-                className={`px-2 py-1 rounded-full transition ${
-                  lng === "es" ? "bg-primary text-black" : "text-gray-500 hover:text-white"
-                }`}
-              >
-                ES
-              </Link>
+              <Link href={changeLanguage("en")} className={`px-2 py-1 rounded-full transition ${lng === "en" ? "bg-primary text-black" : "text-gray-500 hover:text-white"}`}>EN</Link>
+              <Link href={changeLanguage("es")} className={`px-2 py-1 rounded-full transition ${lng === "es" ? "bg-primary text-black" : "text-gray-500 hover:text-white"}`}>ES</Link>
             </div>
             <a href="tel:(206)672-8281" className="flex items-center gap-2 text-sm text-muted-foreground">
               <Phone className="h-4 w-4" />
@@ -157,70 +139,58 @@ export function Navbar({ dict, lng }: NavbarProps) {
             </a>
           </div>
 
-          {/* ── Mobile toggle ─────────────────────────────────────────────── */}
-          <button className="lg:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {/* ── Mobile toggle ── */}
+          <button
+            suppressHydrationWarning
+            className="lg:hidden flex items-center justify-center h-10 w-10 rounded-full border border-white/10 text-foreground transition hover:border-white/30"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
-
-      {/* ── Mobile menu ───────────────────────────────────────────────────── */}
       {isOpen && (
-        <div className="border-t border-border bg-background lg:hidden">
-          <div className="flex flex-col gap-1 px-4 py-6">
-            <div className="flex items-center justify-between mb-8 px-2 py-3 border-b border-white/10">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                {lng === "en" ? "Select Language" : "Seleccionar Idioma"}
-              </span>
-              <div className="flex bg-neutral-900 p-1 rounded-full border border-white/5">
-                <Link
-                  href={changeLanguage("en")}
-                  onClick={() => setIsOpen(false)}
-                  className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                    lng === "en" ? "bg-primary text-black shadow-lg" : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  EN
-                </Link>
-                <Link
-                  href={changeLanguage("es")}
-                  onClick={() => setIsOpen(false)}
-                  className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-                    lng === "es" ? "bg-primary text-black shadow-lg" : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  ES
-                </Link>
-              </div>
+        <div className="lg:hidden border-t border-white/10 bg-neutral-950">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-white/5">
+            <a href="tel:(206)672-8281" className="flex items-center gap-2 text-xs text-white/50 hover:text-white transition-colors">
+              <Phone className="h-3.5 w-3.5" />
+              (206) 672-8281
+            </a>
+            <div className="flex bg-black p-0.5 rounded-full border border-white/10">
+              <Link href={changeLanguage("en")} onClick={() => setIsOpen(false)} className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all ${lng === "en" ? "bg-primary text-black" : "text-gray-400 hover:text-white"}`}>EN</Link>
+              <Link href={changeLanguage("es")} onClick={() => setIsOpen(false)} className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all ${lng === "es" ? "bg-primary text-black" : "text-gray-400 hover:text-white"}`}>ES</Link>
             </div>
-
+          </div>
+          <div className="flex flex-col px-4 pt-2 pb-4">
             {navLinks.map((link) =>
               link.dropdown ? (
-                <div key={link.label} className="flex flex-col">
-                  <div className="flex items-center justify-between py-3">
+                <div key={link.label} className="border-b border-white/5">
+                  <div className="flex items-center justify-between">
                     <Link
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-sm font-medium uppercase tracking-widest text-muted-foreground"
+                      className="flex-1 py-4 text-sm font-semibold uppercase tracking-widest text-white/80 hover:text-primary transition-colors"
                     >
                       {link.label}
                     </Link>
-                    <button onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
-                      <ChevronDown
-                        className={`h-5 w-5 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
-                      />
+                    <button
+                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                      className="flex items-center justify-center h-8 w-8 rounded-full bg-white/5 hover:bg-primary/20 transition-colors ml-2"
+                    >
+                      <ChevronDown className={`h-4 w-4 text-primary transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`} />
                     </button>
                   </div>
                   {mobileServicesOpen && (
-                    <div className="flex flex-col pl-4 border-l border-gray-700 mb-2">
+                    <div className="flex flex-col gap-1.5 pb-3">
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
                           onClick={() => setIsOpen(false)}
-                          className="py-2 text-sm text-muted-foreground hover:text-primary"
+                          className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 border border-white/5 text-xs text-white/60 hover:text-white hover:border-primary/30 hover:bg-white/8 transition-all duration-200"
                         >
-                          {item.label}
+                          <span>{item.label}</span>
+                          <ArrowRight className="h-3 w-3 text-primary flex-shrink-0" />
                         </Link>
                       ))}
                     </div>
@@ -231,15 +201,25 @@ export function Navbar({ dict, lng }: NavbarProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="py-3 text-sm font-medium uppercase tracking-widest text-muted-foreground hover:text-primary"
+                  className="py-4 text-sm font-semibold uppercase tracking-widest text-white/80 hover:text-primary transition-colors border-b border-white/5"
                 >
                   {link.label}
                 </Link>
               ),
             )}
           </div>
+          <div className="px-4 pb-6">
+            <a href="https://booking.allblacklimoseattle.com/" onClick={() => setIsOpen(false)} className="block">
+              <button className="w-full h-12 rounded-full bg-primary text-black text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors">
+                {dict.navbar.book}
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </a>
+          </div>
+
         </div>
       )}
-    </nav>
+      </nav>
+    </>
   );
 }

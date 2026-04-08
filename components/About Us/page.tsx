@@ -8,6 +8,11 @@ import { useEffect, useState } from "react";
 import { getDictionary } from "@/lib/get-dictionary";
 import { AboutFa, AboutFaEs } from "@/data/Fa";
 import { FA } from "../FA";
+import { ArrowRight, Phone } from "lucide-react";
+import { Button } from "../ui/button";
+
+const btnPrimary =
+  "bg-primary text-white hover:bg-brand2 rounded-full uppercase tracking-widest text-xs font-semibold transition-colors";
 
 const METRICS = [
   {
@@ -59,7 +64,7 @@ const METRICS = [
     value: "5-Star",
     label: { en: "Rating", es: "Calificación" },
     icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
         <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
       </svg>
     ),
@@ -83,69 +88,66 @@ export default function AboutContent() {
   return (
     <main className="bg-black text-white">
 
-<section className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
-  <Image
-    src="/images/ImagenAboutUs.png"
-    alt="Viaro luxury black car"
-    fill
-    priority
-    className="object-cover object-top sm:object-center"
-    sizes="100vw"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
+      {/* ── HERO ── */}
+      <section className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
+        <Image
+          src="/images/ImagenAboutUs.png"
+          alt="Viaro luxury black car"
+          fill
+          priority
+          className="object-cover object-top sm:object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
 
-  {/* Contenido — distribuido verticalmente en móvil */}
-  <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
+        <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
+          <div className="flex flex-col items-center text-center sm:hidden">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
+              {t.hero.eyebrow}
+            </p>
+          </div>
 
-    {/* Bloque superior solo en móvil — eyebrow centrado */}
-    <div className="flex flex-col items-center text-center sm:hidden">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
-        {t.hero.eyebrow}
-      </p>
-    </div>
+          <div>
+            <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand whitespace-pre-line">
+              {t.hero.eyebrow}
+            </p>
 
-    {/* Bloque principal */}
-    <div>
-      {/* Eyebrow — solo visible en sm+ */}
-      <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand whitespace-pre-line">
-        {t.hero.eyebrow}
-      </p>
+            <h1 className="font-serif font-bold leading-[1.1] text-[1.6rem] xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl max-w-[280px] xs:max-w-sm sm:max-w-xl lg:max-w-2xl">
+              {t.hero.title}
+            </h1>
 
-      <h1 className="font-serif font-bold leading-[1.1] text-[1.6rem] xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl max-w-[280px] xs:max-w-sm sm:max-w-xl lg:max-w-2xl">
-        {t.hero.title}
-      </h1>
+            {t.hero.subtitle && (
+              <p className="mt-2 sm:mt-3 text-xs sm:text-base text-white/60 leading-relaxed font-light max-w-[260px] xs:max-w-xs sm:max-w-xl">
+                {t.hero.subtitle}
+              </p>
+            )}
 
-      {t.hero.subtitle && (
-        <p className="mt-2 sm:mt-3 text-xs sm:text-base text-white/60 leading-relaxed font-light max-w-[260px] xs:max-w-xs sm:max-w-xl">
-          {t.hero.subtitle}
-        </p>
-      )}
+            <div className="mt-5 sm:mt-8 flex flex-wrap gap-3">
+              <a href="/booking">
+                <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
+                  {t.hero.cta_book}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+              <a href="tel:2066728281">
+                <Button
+                  variant="outline"
+                  className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+                >
+                  <Phone className="mr-2 h-4 w-4" />
+                  {t.hero.cta_call}
+                </Button>
+              </a>
+            </div>
 
-      {/* Botones — apilados en móvil, fila en sm+ */}
-      <div className="mt-5 sm:mt-8 flex flex-wrap gap-3">
-        <a href="/booking">
-          <button className="border border-primary bg-primary text-black font-semibold text-sm px-6 py-3 rounded-full hover:bg-transparent hover:text-white transition-all duration-300">
-            {t.hero.cta_book}
-          </button>
-        </a>
-        <a href="tel:2066728281">
-          <button className="border border-white/60 text-white font-semibold text-sm px-6 py-3 rounded-full hover:border-white hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center gap-2">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
-            </svg>
-            {t.hero.cta_call}
-          </button>
-        </a>
-      </div>
-
-      {t.hero.quote && (
-        <p className="mt-4 text-sm italic text-white/30 text-center sm:text-base">
-          "{t.hero.quote}"
-        </p>
-      )}
-    </div>
-  </div>
-</section>
+            {t.hero.quote && (
+              <p className="mt-4 text-sm italic text-white/30 text-center sm:text-base">
+                "{t.hero.quote}"
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
 
       {/* ── TRUST BAR ── */}
       <section style={{
@@ -174,22 +176,22 @@ export default function AboutContent() {
           textAlign: "center",
         }}>
           {METRICS.map((m) => (
-  <div key={m.value} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-    <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
-    <span style={{ fontSize: 22, fontWeight: 700, color: "#ffffff", lineHeight: 1 }}>
-      {m.value}
-    </span>
-    <span style={{
-      fontSize: 11,
-      color: "#9ca3af !important" as any,
-      textTransform: "uppercase" as const,
-      letterSpacing: "0.08em",
-      display: "block",
-    }}>
-      {m.label[lng as "en" | "es"]}
-    </span>
-  </div>
-))}
+            <div key={m.value} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+              <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
+              <span style={{ fontSize: 22, fontWeight: 700, color: "#ffffff", lineHeight: 1 }}>
+                {m.value}
+              </span>
+              <span style={{
+                fontSize: 11,
+                color: "rgba(255,255,255,0.4)",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                display: "block",
+              }}>
+                {m.label[lng as "en" | "es"]}
+              </span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -202,9 +204,7 @@ export default function AboutContent() {
           <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
             {t.story.title}
           </h2>
-
           <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
-            {/* Texto */}
             <div className="flex flex-col justify-between gap-6">
               <div className="space-y-4">
                 {(t.story.paragraphs as string[]).map((p: string, i: number) => (
@@ -214,12 +214,10 @@ export default function AboutContent() {
                   {t.story.cta}
                 </a>
               </div>
-              <button className="self-start sm:self-center border border-primary bg-primary text-black font-semibold text-sm px-6 py-3 rounded-full hover:bg-transparent hover:text-white transition-all duration-300">
+              <Button className={`self-start sm:self-center px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
                 {t.story.city}
-              </button>
+              </Button>
             </div>
-
-            {/* Imagen — 16/9 en móvil, 4/3 en tablet, full height en desktop */}
             <div className="relative w-full aspect-video sm:aspect-[4/3] lg:aspect-auto lg:min-h-[400px] rounded-2xl overflow-hidden">
               <Image
                 src="/images/Imagen2About.png"
@@ -259,8 +257,10 @@ export default function AboutContent() {
           </div>
           {t.team.cta && (
             <div className="mt-10 flex justify-center">
-              <a href="/chauffeurs" className="inline-block bg-primary border border-primary text-white font-semibold text-sm px-8 py-3 rounded-full hover:bg-primary/80 transition-all duration-300">
-                {t.team.cta}
+              <a href="/chauffeurs">
+                <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
+                  {t.team.cta}
+                </Button>
               </a>
             </div>
           )}
@@ -293,7 +293,6 @@ export default function AboutContent() {
               <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">{t.mission.title}</h2>
               <p className="text-sm sm:text-base text-neutral-400 leading-relaxed whitespace-pre-line">{t.mission.description}</p>
             </div>
-            {/* Imagen — 16/9 en móvil, 4/3 en tablet+  */}
             <div className="relative w-full aspect-video sm:aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/images/Imagen2About.png"
@@ -311,7 +310,6 @@ export default function AboutContent() {
       <section className="py-16 sm:py-24 bg-black">
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            {/* Imagen — en móvil va arriba, en desktop a la izquierda */}
             <div className="relative w-full aspect-video sm:aspect-[4/3] rounded-2xl overflow-hidden order-1 lg:order-1">
               <Image
                 src="/images/Imagen3About.png"
@@ -336,9 +334,9 @@ export default function AboutContent() {
       <FA data={fa} />
       <div className="mb-9 flex justify-center">
         <a href="/faq">
-          <button className="text-sm md:text-base font-semibold text-white bg-primary px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105">
+          <Button className={`px-8 h-11 sm:h-12 ${btnPrimary}`}>
             {t.buttons.moreQuestions}
-          </button>
+          </Button>
         </a>
       </div>
 

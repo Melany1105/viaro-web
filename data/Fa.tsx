@@ -379,7 +379,43 @@ export const ServiceHourlyFa = [
     answer:"Yes! Designated driver service is one of our most popular bookings. We pick you up, wait while you enjoy your event, and drive you home safely—no surge pricing, no searching for a ride late at night."
   },
 ];
-
+export const FleetFa = [
+  {
+    question: "Are your vehicles sanitized before every trip?",
+    answer:
+      "Yes. Every vehicle is thoroughly sanitized between trips using hospital-grade disinfectants. We implemented enhanced COVID-19 sanitization protocols in 2020 and have maintained those elevated standards ever since. High-touch surfaces — door handles, armrests, seat belts, and controls — are cleaned before every pickup.",
+  },
+  {
+    question: "Can I request a specific vehicle make or model?",
+    answer:
+      "We guarantee the vehicle class you book (sedan, SUV, or Sprinter). Exact make and model availability depends on your booking time and service area. If you have a specific request — such as a Mercedes S-Class or Cadillac Escalade — let us know and we will do our best to accommodate. Contact our team for special vehicle requests.",
+  },
+  {
+    question: "How are your chauffeurs vetted?",
+    answer:
+      "Every chauffeur passes a rigorous multi-step screening process including federal and state background checks, sex offender registry screening, motor vehicle record review, and mandatory drug testing. All drivers are commercially licensed, fully insured, and undergo ongoing performance and safety reviews.",
+  },
+  {
+    question: "What is your cancellation policy?",
+    answer:
+      "For standard point-to-point trips (airport transfers, etc.), cancel up to 24 hours before pickup for a full refund. For hourly charters and special event bookings, we require 72 hours' notice. We understand plans change — contact us and we will work with you.",
+  },
+  {
+    question: "Are your vehicles commercially insured?",
+    answer:
+      "Yes. All vehicles in our fleet are commercially licensed, fully insured, and regularly inspected. We carry comprehensive liability coverage that exceeds industry standards and maintain full compliance with local transportation authorities in every city we serve.",
+  },
+  {
+    question: "Do you offer child safety seats?",
+    answer:
+      "Yes. We provide infant carriers, convertible seats, and booster seats upon request. There is a minimum fee for child seat service. Please request the seat type when booking and provide your child's age and weight so we have the correct seat installed.",
+  },
+  {
+    question: "What amenities are included in the vehicles?",
+    answer:
+      "All vehicles include climate control, premium leather seating, complimentary bottled water, phone charging ports, and Wi-Fi (select vehicles). Our chauffeurs are happy to adjust temperature, music, or route to your preference.",
+  },
+];
 export const FAMap = {
   ServiceAirportFa,
   ServicesFa,
@@ -387,7 +423,8 @@ export const FAMap = {
   ServiceCruiseFa,
   ServiceAirlineFa,
   ServiceCorporateFa,
-  LocationsSeaTacFa
+  LocationsSeaTacFa,
+  FleetFa
 
 };
 export type FAMapKey = keyof typeof FAMap;
@@ -785,7 +822,43 @@ export const LocationsSeaTacFaEs = [
     answer: "¡Sí! El servicio de conductor designado es una de nuestras reservas más populares. Le recogemos, esperamos mientras disfruta de su evento y le llevamos a casa de forma segura, sin precios variables ni necesidad de buscar transporte a altas horas de la noche."
   },
 ];
-
+export const FleetFaEs = [
+  {
+    question: "¿Los vehículos se sanitizan antes de cada viaje?",
+    answer:
+      "Sí. Cada vehículo se desinfecta exhaustivamente entre viajes con desinfectantes de grado hospitalario. Implementamos protocolos mejorados de sanitización por COVID-19 en 2020 y hemos mantenido esos estándares elevados desde entonces. Las superficies de alto contacto — manijas de puertas, apoyabrazos, cinturones de seguridad y controles — se limpian antes de cada servicio.",
+  },
+  {
+    question: "¿Puedo solicitar una marca o modelo específico de vehículo?",
+    answer:
+      "Garantizamos la clase de vehículo que reserve (sedán, SUV o Sprinter). La disponibilidad de marca y modelo exactos depende de su horario de reserva y área de servicio. Si tiene una solicitud específica — como un Mercedes S-Class o un Cadillac Escalade — comuníquenoslo y haremos todo lo posible por atenderle. Contáctenos para solicitudes especiales de vehículos.",
+  },
+  {
+    question: "¿Cómo se selecciona a los choferes?",
+    answer:
+      "Cada chofer supera un riguroso proceso de selección de múltiples pasos que incluye verificación de antecedentes federales y estatales, revisión del registro de delincuentes sexuales, revisión del historial de conducción y pruebas obligatorias de drogas. Todos los conductores tienen licencia comercial vigente, seguro completo y se someten a revisiones de desempeño continuas.",
+  },
+  {
+    question: "¿Cuál es la política de cancelación?",
+    answer:
+      "Para viajes estándar punto a punto (traslados al aeropuerto, etc.), puede cancelar hasta 24 horas antes del recogido para obtener un reembolso completo. Para servicios por hora y reservas para eventos especiales, requerimos 72 horas de anticipación. Entendemos que los planes cambian — contáctenos y trabajaremos con usted.",
+  },
+  {
+    question: "¿Los vehículos tienen seguro comercial?",
+    answer:
+      "Sí. Todos los vehículos de nuestra flota tienen licencia comercial, están completamente asegurados y son inspeccionados regularmente. Contamos con cobertura de responsabilidad civil integral que supera los estándares de la industria y mantenemos pleno cumplimiento con las autoridades de transporte locales en cada ciudad que servimos.",
+  },
+  {
+    question: "¿Ofrecen sillas de seguridad para niños?",
+    answer:
+      "Sí. Proporcionamos portabebés, sillas convertibles y asientos elevadores bajo solicitud. Hay una tarifa mínima por el servicio de silla infantil. Por favor solicite el tipo de asiento al momento de reservar e indíquenos la edad y el peso de su hijo para que tengamos instalada la silla correcta.",
+  },
+  {
+    question: "¿Qué amenidades incluyen los vehículos?",
+    answer:
+      "Todos los vehículos incluyen control de clima, asientos de cuero premium, agua embotellada de cortesía, puertos de carga para teléfonos y Wi-Fi (en vehículos seleccionados). Nuestros choferes están encantados de ajustar la temperatura, la música o la ruta según su preferencia.",
+  },
+];
 export const FAMapEs = {
   ServiceAirportFa: ServiceAirportFaEs,
   ServicesFa: ServicesFaEs,
@@ -793,7 +866,8 @@ export const FAMapEs = {
   ServiceAirlineFa: ServiceAirlineFaEs,
   ServiceCruiseFa: ServiceCruiseFaEs,
   ServiceHourlyFa:ServiceHourlyFaEs,
-  LocationsSeaTacFa: LocationsSeaTacFaEs
+  LocationsSeaTacFa: LocationsSeaTacFaEs,
+  FleetFa:FleetFaEs
 };
 
 export type FAMapKeyEs = keyof typeof FAMapEs;

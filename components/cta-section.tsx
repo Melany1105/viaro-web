@@ -18,12 +18,14 @@ export function CtaSection() {
     getDictionary(lng).then(setDict);
   }, [lng]);
 
-if (!dict) return null;  const t = dict.cta;
+  if (!dict) return null;
+  const t = dict.cta;
 
   return (
     <section id="contact-us" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* ── Left column ── */}
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
               {t.sectionTitle}
@@ -42,7 +44,8 @@ if (!dict) return null;  const t = dict.cta;
                 { icon: MapPin,...t.info.office },
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center border border-border">
+                  {/* Icon badge — rounded */}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-border">
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
@@ -54,19 +57,21 @@ if (!dict) return null;  const t = dict.cta;
             </div>
           </div>
 
-          <div className="border border-border bg-card p-8 lg:p-10">
+          {/* ── Right column — card ── */}
+          <div className="rounded-2xl border border-border bg-card p-8 lg:p-10">
             <h3 className="font-serif text-2xl font-semibold text-card-foreground">
               {t.form.title}
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">{t.form.subtitle}</p>
+
             {state.success && (
-              <div className="mt-6 flex items-center gap-2 rounded border border-green-500/40 bg-green-500/10 px-4 py-3 text-sm text-green-400">
+              <div className="mt-6 flex items-center gap-2 rounded-xl border border-green-500/40 bg-green-500/10 px-4 py-3 text-sm text-green-400">
                 <CheckCircle2 className="h-4 w-4 flex-shrink-0" />
                 {t.form.successMessage ?? "Message sent! We'll be in touch soon."}
               </div>
             )}
             {!state.success && state.message && (
-              <div className="mt-6 flex items-center gap-2 rounded border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+              <div className="mt-6 flex items-center gap-2 rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-400">
                 <AlertCircle className="h-4 w-4 flex-shrink-0" />
                 {state.message}
               </div>
@@ -112,7 +117,7 @@ if (!dict) return null;  const t = dict.cta;
               <button
                 type="submit"
                 disabled={pending}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed rounded-none uppercase tracking-widest text-xs font-semibold h-14 w-full flex items-center justify-center transition-opacity"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed rounded-full uppercase tracking-widest text-xs font-semibold h-14 w-full flex items-center justify-center transition-opacity"
               >
                 {pending ? (
                   <>
@@ -128,7 +133,6 @@ if (!dict) return null;  const t = dict.cta;
               </button>
             </form>
           </div>
-
         </div>
       </div>
     </section>
@@ -147,7 +151,7 @@ function Field({
   rows?: number;
 }) {
   const base =
-    "w-full border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition-colors " +
+    "w-full rounded-xl border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition-colors " +
     (error
       ? "border-red-500 focus:border-red-400"
       : "border-border focus:border-primary");

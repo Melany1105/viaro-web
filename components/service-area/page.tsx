@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -15,14 +15,17 @@ import { Button } from "../ui/button";
 import { getDictionary } from "@/lib/get-dictionary";
 import Link from "next/link";
 
+const btnPrimary =
+  "bg-primary text-white hover:bg-brand2 rounded-full uppercase tracking-widest text-xs font-semibold transition-colors";
+
 // ── TRUST METRICS ─────────────────────────────────────────────────────────────
 const TRUST_METRICS = [
   {
     value: "5.0",
     labelKey: "ratingLabel",
     icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
+        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
       </svg>
     ),
   },
@@ -31,7 +34,8 @@ const TRUST_METRICS = [
     labelKey: "flightLabel",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 2c-2-2-4-2-5.5-.5L10 5 1.8 6.2c-.5.1-.9.6-.6 1.1l1.7 2.7c.3.5.9.6 1.3.3l2.8-1.8 2.3 2.3-2.7 4.9c-.3.5.1 1.1.6 1.1l2.8-.1c.5 0 .9-.3 1-.8l.5-2.6 2.5 2.5-.1 2.8c0 .5.6.9 1.1.6l4.9-2.7c.5-.3.6-.9.3-1.3l-1.8-2.8z"/>
+        <path d="M22 16.5H2M2 16.5l4-8 4 4 4-2 4-4 2 2-4 8z" />
+        <path d="M6 19.5h12" />
       </svg>
     ),
   },
@@ -40,8 +44,8 @@ const TRUST_METRICS = [
     labelKey: "supportLabel",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        <path d="M12 7v2M12 13h.01"/>
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <path d="M12 7v2M12 13h.01" />
       </svg>
     ),
   },
@@ -50,8 +54,8 @@ const TRUST_METRICS = [
     labelKey: "licensedLabel",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-        <path d="m9 12 2 2 4-4"/>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+        <path d="m9 12 2 2 4-4" />
       </svg>
     ),
   },
@@ -204,10 +208,25 @@ export default function LocationsContent() {
             <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl text-balance">
               {t.hero.title}
             </h1>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em]">
-                {t.hero.description}
-              </p>
+            <p className="mt-4 mb-8 text-sm font-semibold uppercase tracking-[0.3em]">
+              {t.hero.description}
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a href="https://booking.allblacklimoseattle.com/">
+                <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
+                  {t.buttons.bookNow}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+              <a href="tel:2066728281">
+                <Button
+                  variant="outline"
+                  className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+                >
+                  <Phone className="mr-2 h-4 w-4" />
+                  {t.buttons.callUs ?? "Call Us"}
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -259,7 +278,7 @@ export default function LocationsContent() {
           <p className="text-neutral-400 leading-relaxed">{t.intro.description}</p>
           <div className="mt-8">
             <a href="https://booking.allblacklimoseattle.com/">
-              <Button size="lg" className="bg-primary rounded-full text-primary-foreground hover:bg-primary/90 px-8 uppercase tracking-widest text-xs font-semibold h-10">
+              <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
                 {t.buttons.bookNow}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -348,9 +367,9 @@ export default function LocationsContent() {
       <FA data={fa} />
       <div className="mb-9 flex justify-center">
         <a href="/faq">
-          <button className="text-sm md:text-base font-semibold text-white bg-primary px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105">
+          <Button className={`px-8 h-11 sm:h-12 ${btnPrimary}`}>
             {t.buttons.moreQuestions}
-          </button>
+          </Button>
         </a>
       </div>
 

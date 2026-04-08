@@ -1,6 +1,6 @@
-import LocationPage from "@/components/service-area/page";
+import LocationsContent from "@/components/service-area/page";
 
 export default async function Page(
 ) {
-  return <LocationPage  />;
+  return <LocationsContent  />;
 }
