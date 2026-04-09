@@ -333,7 +333,7 @@ export default function LocationsContent() {
                 {section.cities.map((city) => (
                   <Link
                     key={city.name}
-                    href={city.slug ? `/${lng}/black-car-service/${city.slug}` : "#"}
+                    href={city.slug ? `/${lng}/service-area/${city.slug}` : "#"}
                     className={city.slug ? "block" : "block pointer-events-none"}
                   >
                     <div className="p-4 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-primary/50 transition-all group cursor-pointer">

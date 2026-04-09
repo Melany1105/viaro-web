@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 interface FooterProps {
@@ -28,18 +27,9 @@ export function Footer({ dict, lng }: FooterProps) {
   const companyLinks = ["About Us", "Contact", "Blog", "FaQ"];
 
   const socialLinks = [
-    {
-      name: "Instagram",
-      url: "https://www.instagram.com/all_black_limo/?hl=es",
-    },
-    {
-      name: "Facebook",
-      url: "https://www.facebook.com/ALLBLACKLIMO/",
-    },
-    {
-      name: "LinkedIn",
-      url: "https://linkedin.com/company/allblacklimo-llc/about/",
-    },
+    { name: "Instagram", url: "https://www.instagram.com/all_black_limo/?hl=es" },
+    { name: "Facebook",  url: "https://www.facebook.com/ALLBLACKLIMO/" },
+    { name: "LinkedIn",  url: "https://linkedin.com/company/allblacklimo-llc/about/" },
   ];
 
   return (
@@ -47,13 +37,7 @@ export function Footer({ dict, lng }: FooterProps) {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <span className="font-serif text-2xl font-bold tracking-tight text-primary">
-              <img
-                src="/Logo/Logo.png"
-                alt="Viaro Logo"
-                className="h-12 w-auto"
-              />
-            </span>
+            <img src="/Logo/Logo.png" alt="Viaro Logo" className="h-12 w-auto" />
           </div>
 
           <div>
@@ -106,7 +90,13 @@ export function Footer({ dict, lng }: FooterProps) {
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} Viaro. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
+            <a
+              href={`${base}/terms-condition`}
+              className="text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+            >
+              Terms & Conditions
+            </a>
             {socialLinks.map((social) => (
               <a
                 key={social.name}

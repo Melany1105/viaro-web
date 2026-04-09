@@ -659,5 +659,90 @@
 
     "faqTitle": "Fleet & Vehicle FAQs",
     "faqCta": "Have More Questions? Call (206) 672-8281"
-  }
+  },
+  "terms": {
+      "hero": {
+        "eyebrow": "Legal & Partnership",
+        "title": "Terms & Conditions",
+        "subtitle": "Guidelines for all partners, clients, contractors, and collaborators working with Viaro."
+      },
+      "sections": [
+        {
+          "h3": "Affiliate Companies",
+          "h2": "Partnership Requirements",
+          "intro": "To become a Viaro affiliate partner, companies must meet the following standards.",
+          "items": [
+            "4.5 rating minimum",
+            "Legally registered; 2+ yrs operation",
+            "Complementary industry required",
+            "Invoicing monthly",
+            "Refunds deducted from next payout",
+            "Co-branded content requires prior approval"
+          ]
+        },
+        {
+          "h3": "Hotels",
+          "h2": "Hotel Partner Standards",
+          "intro": "Viaro partners exclusively with hotels that uphold superior guest experience standards.",
+          "items": [
+            "4-star minimum classification",
+            "Active concierge / guest services team",
+            "Bookings: 4 hrs notice (standard), 24 hrs (groups)",
+            "Rates set annually; 30-day revision notice",
+            "Guest data used solely for trip fulfillment",
+            "Preferred status does not imply exclusivity"
+          ]
+        },
+        {
+          "h3": "Corporate Clients",
+          "h2": "Corporate Account Terms",
+          "intro": "Corporate accounts are subject to the following booking, billing, and loyalty policies.",
+          "items": [
+            "Registered entity - authorized bookers on file",
+            "Min. 2 hrs notice; 48 hrs for 5+ vehicles",
+            "Invoicing monthly",
+            "Invoices due within 15 days; 1.5%/mo late fee",
+            "Loyalty: 30 trips/month unlocks 7th trip free per employee",
+            "Free trips credited on next invoice cycle",
+            "Cancellation: <2 hrs = 100% fare; 2–4 hrs = 0%"
+          ]
+        },
+        {
+          "h3": "Influencers",
+          "h2": "Creator Partnership Terms",
+          "intro": "Influencer partnerships are reserved for creators who meet our audience and content standards.",
+          "items": [
+            "10,000+ engaged followers (primary platform)",
+            "2%+ average engagement (last 90 days)",
+            "Luxury / travel / business audience niche",
+            "All content approved before publication",
+            "#ad / #sponsored disclosure required",
+            "No direct competitor promo during campaign",
+            "Viaro may repost co-created content"
+          ]
+        },
+        {
+          "h3": "Contractors",
+          "h2": "Independent Driver Terms",
+          "intro": "All independent contractors operating under the Viaro network must comply with the following requirements.",
+          "items": [
+            "Valid professional driver's license",
+            "Clean record, maximum 1 minor infraction / 3 yrs",
+            "Background check required",
+            "Own vehicle, insurance & permits",
+            "Arrive 15 min early, vehicle clean & fueled",
+            "Independent contractor, not an employee",
+            "No direct client solicitation",
+            "Pay bi-weekly",
+            "Pay split 60% for contractor of the total trip"
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Ready to Partner?",
+        "title": "Let's Work Together",
+        "subtitle": "Have questions about our terms or want to start a partnership? Reach out to our team.",
+        "book": "Get in Touch"
+      }
+    }
 }

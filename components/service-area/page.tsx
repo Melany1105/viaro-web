@@ -1,378 +1,461 @@
 "use client";
-import { ArrowRight, MapPin, Phone } from "lucide-react";
+
 import Image from "next/image";
+import { FA } from "../FA";
+import { FAMap, FAMapEs } from "@/data/Fa";
+import { TestimonialsMap, TestimonialsMapEs } from "@/data/Tetimonials";
+import { Testimonials } from "../testimonials";
+import { locationEn, locationEs } from "@/data/locations";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import {
-  locationsTestimonials,
-  locationsTestimonialsEs,
-} from "@/data/Tetimonials";
-import { Testimonials } from "../testimonials";
-import { LocationsFa, LocationsFaEs } from "@/data/Fa";
-import { FA } from "../FA";
-import UsMapScroll from "../UsMapScroll";
-import { Button } from "../ui/button";
 import { getDictionary } from "@/lib/get-dictionary";
-import Link from "next/link";
+import { ArrowRight, Phone } from "lucide-react";
+import { Button } from "../ui/button";
 
+// ── TRUST BAR ICONS ───────────────────────────────────────────────────────────
 const btnPrimary =
   "bg-primary text-white hover:bg-brand2 rounded-full uppercase tracking-widest text-xs font-semibold transition-colors";
 
-// ── TRUST METRICS ─────────────────────────────────────────────────────────────
-const TRUST_METRICS = [
-  {
-    value: "5.0",
-    labelKey: "ratingLabel",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+function getTrustIcon(label: string) {
+  const l = label.toLowerCase();
+  if (
+    l.includes("flight") ||
+    l.includes("vuelo") ||
+    l.includes("tail") ||
+    l.includes("cola") ||
+    l.includes("track") ||
+    l.includes("rastreo")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M4 16L8.5 8 11 13l3-2.5L18 8l-2 8-6-3z" />
+        <circle cx="19" cy="5" r="1.5" fill="currentColor" stroke="none" />
+        <circle cx="19" cy="5" r="3.5" strokeWidth={1} opacity={0.5} />
+        <circle cx="19" cy="5" r="5.5" strokeWidth={0.7} opacity={0.25} />
       </svg>
-    ),
-  },
-  {
-    value: "Live",
-    labelKey: "flightLabel",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M22 16.5H2M2 16.5l4-8 4 4 4-2 4-4 2 2-4 8z" />
-        <path d="M6 19.5h12" />
+    );
+  if (
+    l.includes("save") ||
+    l.includes("ahorra") ||
+    l.includes("%") ||
+    l.includes("early") ||
+    l.includes("anticip")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
-    ),
-  },
-  {
-    value: "24/7",
-    labelKey: "supportLabel",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-        <path d="M12 7v2M12 13h.01" />
+    );
+  if (
+    l.includes("chauffeur") ||
+    l.includes("chofer") ||
+    l.includes("pro") ||
+    l.includes("driver")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
       </svg>
-    ),
-  },
-  {
-    value: "100%",
-    labelKey: "licensedLabel",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-        <path d="m9 12 2 2 4-4" />
+    );
+  if (
+    l.includes("luxury") ||
+    l.includes("lujo") ||
+    l.includes("fleet") ||
+    l.includes("flota")
+  )
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h11l5 5v5h-2m-9 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0m9 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0" />
       </svg>
-    ),
-  },
-];
+    );
+  if (l.includes("24") || l.includes("booking") || l.includes("reserva"))
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    );
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      width={28}
+      height={28}
+    >
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  );
+}
 
-export default function LocationsContent() {
-  const params = useParams();
-  const lng = params.lng as "es" | "en";
+// ── COMPONENT ─────────────────────────────────────────────────────────────────
+export default function LocationPage() {
+  const params = useParams<{ lng: "es" | "en"; id: string }>();
+  const lng = params.lng;
+  const id = params.id;
+
   const [dict, setDict] = useState<any>(null);
 
   useEffect(() => {
-    const loadDict = async () => {
-      const data = await getDictionary(lng);
-      setDict(data);
-    };
-    loadDict();
+    getDictionary(lng).then(setDict);
   }, [lng]);
 
-  const testimonios = lng === "en" ? locationsTestimonials : locationsTestimonialsEs;
-  const fa = lng === "en" ? LocationsFa : LocationsFaEs;
-  if (!dict) return <div>Loading...</div>;
-  const t = dict.locations;
-  const isES = lng === "es";
+  const dataset = lng === "es" ? locationEs : locationEn;
+  const data = dataset.find((loc) => loc.id === id);
 
-  const locations2 = [
-    {
-      city: "New York City",
-      airport: "JFK",
-      description: isES
-        ? "La capital cultural del mundo. Rascacielos icónicos, luces de Broadway y energía imparable."
-        : "The cultural capital of the world. Iconic skyscrapers, Broadway lights, and unstoppable energy.",
-      image: "/images/ImagenNewYork.png",
-    },
-    {
-      city: "Los Angeles",
-      airport: "LAX",
-      description: isES
-        ? "Donde Hollywood se encuentra con el Pacífico. Cine, playas y el auténtico estilo de vida californiano."
-        : "Where Hollywood meets the Pacific. Film, beaches, and the ultimate California lifestyle.",
-      image: "/images/ImagenLA.png",
-    },
-    {
-      city: "Seattle",
-      airport: "SEA",
-      description: isES
-        ? "La Ciudad Esmeralda con la icónica Space Needle, vibrante zona costera y un próspero sector tecnológico."
-        : "Emerald City with iconic Space Needle, vibrant waterfront, and a thriving tech scene.",
-      image: "/images/ImagenSeattle.png",
-    },
-    {
-      city: "Las Vegas",
-      airport: "LAS",
-      description: isES
-        ? "La capital mundial del entretenimiento. Resorts de lujo, vida nocturna y emoción sin parar."
-        : "The world's entertainment capital. Luxury resorts, nightlife, and nonstop excitement.",
-      image: "/images/ImagenLasVegas.png",
-    },
-    {
-      city: "Chicago",
-      airport: "ORD",
-      description: isES
-        ? "Arquitectura impactante, jazz legendario y una de las mejores escenas culinarias del país."
-        : "Striking architecture, legendary jazz, and one of the country's finest culinary scenes.",
-      image: "/images/ImagenChicago.png",
-    },
-    {
-      city: "San Francisco",
-      airport: "SFO",
-      description: isES
-        ? "Puentes icónicos, colinas escénicas y el corazón tecnológico de Silicon Valley."
-        : "Iconic bridges, scenic hills, and the heart of Silicon Valley innovation.",
-      image: "/images/ImagenSanFrancisco.png",
-    },
-  ];
+  if (!data) return <p className="text-white p-10">Location not found: {id}</p>;
+  if (!dict) return null;
 
-  const locations = [
-    {
-      region: isES ? "Estados Unidos - Oeste" : "Western United States",
-      cities: [
-        { name: "Anaheim, CA (SNA)", slug: "anaheim-sna", desc: isES ? "Servicio de lujo en Orange County." : "Orange County luxury car service." },
-        { name: "Los Angeles, CA (LAX, VNY)", slug: "los-angeles-lax", desc: isES ? "Servicio ejecutivo para Hollywood y Beverly Hills." : "Executive car service for Hollywood & Beverly Hills." },
-        { name: "Seattle, WA (SEA, BFI)", slug: "seattle-seatac-airport", desc: isES ? "Traslados al aeropuerto Sea-Tac y puertos de crucero." : "Sea-Tac airport & Pier 66/91 cruise transfers." },
-      ],
-    },
-    {
-      region: isES ? "Estados Unidos - Centro" : "Central United States",
-      cities: [
-        { name: "Chicago, IL (ORD, MDW)", slug: "chicago-ord", desc: isES ? "Servicio aeropuerto O'Hare y Midway." : "O'Hare & Midway airport service." },
-        { name: "Dallas, TX (DFW, DAL)", slug: "dallas-dfw", desc: isES ? "Transporte corporativo y servicio Love Field." : "Corporate roadshows & Love Field service." },
-      ],
-    },
-    {
-      region: isES ? "Estados Unidos - Este" : "Eastern United States",
-      cities: [
-        { name: "Miami, FL (MIA)", slug: "miami-mia", desc: isES ? "South Beach, PortMiami y viajes corporativos." : "South Beach, PortMiami & Brickell corporate travel." },
-        { name: "Washington, DC (IAD, DCA)", slug: "washington-dc-iad", desc: isES ? "Aeropuertos Dulles y Reagan." : "Dulles & Reagan airport. Government & diplomatic travel." },
-      ],
-    },
-    {
-      region: "Canada",
-      note: isES
-        ? "Todos los viajes a Canadá requieren mínimo 8 horas por posibles demoras fronterizas."
-        : "All Canada trips require 8-hour minimum due to potential border/customs delays.",
-      cities: [
-        { name: "Vancouver, BC (YVR)", slug: "vancouver-yvr", desc: isES ? "Puerto Canada Place y viajes corporativos." : "Canada Place cruise port & downtown business travel." },
-      ],
-    },
-    {
-      region: "Costa Rica",
-      cities: [
-        { name: "Liberia, CR (LIR)", slug: "liberia-lir", desc: isES ? "Traslados a resorts de playa en Guanacaste." : "Guanacaste beach resort & golf transfers." },
-        { name: "San José, CR (SJO)", slug: "san-jose-sjo", desc: isES ? "Aeropuerto capitalino y eventos especiales." : "Capital city airport & special events." },
-      ],
-    },
-  ];
+  const faSource = lng === "es" ? FAMapEs : FAMap;
+  const testiSource = lng === "es" ? TestimonialsMapEs : TestimonialsMap;
 
-  const scrollToRegion = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      const headerOffset = 100;
-      const elementPosition = section.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    }
-  };
+  const faData = faSource[data.FA as keyof typeof faSource] || [];
+  const testiData = testiSource[data.Testi as keyof typeof testiSource] || [];
 
   return (
-    <main>
-
+    <main className="bg-neutral-950 text-white">
       {/* ── HERO ── */}
-      <section id="inicio" className="relative min-h-screen flex items-center pt-0">
-        <div className="absolute w-full h-[60vh] md:h-[75vh] lg:h-screen">
-          <Image
-            src="/images/ImagenLocations1.png"
-            alt="Luxury vehicle parked in front of a modern building"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-background/75" />
-        </div>
-        <div className="relative z-20 max-w-7xl pl-6 lg:pl-16 pt-20">
-          <div className="max-w-3xl">
-            <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)]">
-              {t.hero.subtitle}
-            </p>
-            <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)]">
-              {t.subtitle}
-            </p>
-            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl text-balance">
-              {t.hero.title}
-            </h1>
-            <p className="mt-4 mb-8 text-sm font-semibold uppercase tracking-[0.3em]">
-              {t.hero.description}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a href="https://booking.allblacklimoseattle.com/">
-                <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
-                  {t.buttons.bookNow}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
-              <a href="tel:2066728281">
-                <Button
-                  variant="outline"
-                  className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
-                >
-                  <Phone className="mr-2 h-4 w-4" />
-                  {t.buttons.callUs ?? "Call Us"}
-                </Button>
-              </a>
-            </div>
+      <section
+        className="relative min-h-screen flex items-center pt-0"
+        style={{ height: "100dvh" }}
+      >
+        <Image
+          src={data.hero.image.src}
+          alt={data.hero.image.alt}
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/50" />
+
+        <div className="absolute bottom-0 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24 sm:pb-20">
+          <h1 className="font-serif font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl xl:text-6xl max-w-3xl">
+            {data.hero.h1}
+          </h1>
+          <h2 className="mt-3 text-sm sm:text-base text-white/70 font-light tracking-wide max-w-xl">
+            {data.hero.h2}
+          </h2>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a href="https://booking.allblacklimoseattle.com/">
+              <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
+                {data.hero.cta.book}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+            <a href={`tel:${data.hero.cta.phone.replace(/\D/g, "")}`}>
+              <Button
+                variant="outline"
+                className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                {data.hero.cta.phone}
+              </Button>
+            </a>
           </div>
+          {data.hero.description && (
+            <p className="mt-4 text-sm italic text-white/30 sm:text-base">
+              "{data.hero.description}"
+            </p>
+          )}
         </div>
       </section>
 
-      {/* ── TRUST METRICS ── */}
-      <section style={{
-        background: "rgb(30,30,30)",
-        borderTop: "1px solid rgba(255,255,255,0.1)",
-        borderBottom: "1px solid rgba(255,255,255,0.1)",
-        padding: "40px 16px",
-      }}>
-        <p style={{
-          textAlign: "center",
-          fontSize: 11,
-          textTransform: "uppercase",
-          letterSpacing: "0.15em",
-          color: "rgba(255,255,255,0.4)",
-          marginBottom: 32,
-          fontWeight: 500,
-        }}>
-          {lng === "es" ? "Confianza de miles en Norteamérica" : "Trusted by thousands across North America"}
-        </p>
-        <div style={{
-          maxWidth: 900,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-          gap: 24,
-          textAlign: "center",
-        }}>
-          {TRUST_METRICS.map((m) => (
-            <div key={m.value} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-              <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
-              <span style={{ fontSize: 22, fontWeight: 700, color: "#fff", lineHeight: 1 }}>{m.value}</span>
-              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                {t.stats[m.labelKey]}
+      {/* ── TRUST BAR ── */}
+      <section className="bg-neutral-900 border-y border-white/10 py-6">
+        <div className="max-w-6xl mx-auto px-6 sm:px-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+          {data.trustBar.map((item) => (
+            <div
+              key={item}
+              className="flex flex-col items-center gap-2 text-center"
+            >
+              <span className="text-primary">{getTrustIcon(item)}</span>
+              <span
+                style={{
+                  fontSize: 22,
+                  fontWeight: 700,
+                  color: "#fff",
+                  lineHeight: 1.3,
+                }}
+              >
+                {item}
               </span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── INTRO ── */}
-      <section className="py-10 container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2 className="text-3xl font-semibold mb-6">{t.intro.title}</h2>
-          <h3 className="mb-4">{t.intro.subtitle}</h3>
-          <p className="text-neutral-400 leading-relaxed">{t.intro.description}</p>
-          <div className="mt-8">
-            <a href="https://booking.allblacklimoseattle.com/">
-              <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
-                {t.buttons.bookNow}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </a>
-          </div>
-        </div>
-        <img
-          src="/images/ImagenLocations2.png"
-          alt="Luxury executive transportation"
-          className="rounded-2xl shadow-2xl"
-        />
-      </section>
-
-      <UsMapScroll onSelectRegion={scrollToRegion} />
-
-      {/* ── TOP CITIES ── */}
-      <div className="max-w-7xl mx-auto py-20 px-6">
-        <h2 className="text-2xl font-bold uppercase tracking-tighter text-white mb-10">
-          {t.topCities}
+      {/* ── BODY CONTENT ── */}
+      <section className="py-16 sm:py-20 max-w-6xl mx-auto px-6 sm:px-12">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-3">
+          {data.bodyContent.h2}
         </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {locations2.map((section, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-2xl cursor-pointer">
-              <img
-                src={section.image}
-                alt={section.city}
-                className="w-full h-80 object-cover transition duration-500 group-hover:brightness-50"
-              />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-                <span className="text-white text-5xl font-bold tracking-widest">{section.airport}</span>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
-                <h3 className="text-white text-xl font-semibold">{section.city}</h3>
-                <p className="text-gray-300 text-sm">{section.description}</p>
+        <h3 className="text-lg sm:text-xl text-primary font-semibold mb-6">
+          {data.bodyContent.h3}
+        </h3>
+        <div className="space-y-4 text-white/70 text-sm sm:text-base max-w-3xl mb-14">
+          {data.bodyContent.content.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+
+        {/* Destinations grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {data.bodyContent.destinations.map((dest) => (
+            <div
+              key={dest.name}
+              className="relative rounded-2xl overflow-hidden group aspect-[4/3] bg-neutral-800"
+            >
+              {dest.image && (
+                <Image
+                  src={dest.image}
+                  alt={dest.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-primary font-bold text-lg">
+                    {dest.name}
+                  </span>
+                  <span className="text-white/60 text-xs border border-white/20 px-2 py-0.5 rounded-full">
+                    {dest.time}
+                  </span>
+                </div>
+                <p className="text-white/70 text-xs leading-snug">
+                  {dest.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      {/* ── REGIONS ── */}
-      <div className="max-w-7xl mx-auto py-20 px-6">
-        {locations.map((section) => {
-          const regionId = section.region.toLowerCase().replace(/\s+/g, "-");
-          return (
-            <div key={section.region} id={regionId} className="mb-24 scroll-mt-24">
-              <div className="flex items-center gap-4 mb-10">
-                <h2 className="text-2xl font-bold uppercase tracking-tighter text-white">{section.region}</h2>
-                <div className="h-px bg-blue-500/30 flex-grow" />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {section.cities.map((city) => (
-                  <Link
-                    key={city.name}
-                    href={city.slug ? `/${lng}/black-car-service/${city.slug}` : "#"}
-                    className={city.slug ? "block" : "block pointer-events-none"}
-                  >
-                    <div className="p-4 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-primary/50 transition-all group cursor-pointer">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-lg font-semibold text-white group-hover:text-primary transition-colors">{city.name}</h3>
-                        <MapPin className="w-5 h-5 text-brand group-hover:text-primary transition-colors duration-200" />
+      {/* ── EXTRA CONTENT ── */}
+      {data.extraContent && data.extraContent.length > 0 && (
+        <section className="py-12 sm:py-16 bg-neutral-900">
+          <div className="max-w-6xl mx-auto px-6 sm:px-12 space-y-16">
+            {data.extraContent.map((section, i) => (
+              <div key={i}>
+                <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-primary">
+                  {section.h3}
+                </h3>
+
+                {section.content && (
+                  <div className="space-y-3 text-white/70 text-sm sm:text-base max-w-3xl mb-8">
+                    {section.content.map((p, j) => (
+                      <p key={j}>{p}</p>
+                    ))}
+                  </div>
+                )}
+
+                {section.items && (
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                    {section.items.map((item) => (
+                      <div
+                        key={item.label}
+                        className="bg-neutral-800 rounded-xl p-5 border border-white/10"
+                      >
+                        <p className="text-primary font-semibold mb-2">
+                          {item.label}
+                        </p>
+                        <p className="text-white/60 text-sm">{item.desc}</p>
                       </div>
-                      <p className="text-neutral-400 text-sm leading-relaxed">{city.desc}</p>
-                      {city.slug && (
-                        <span className="inline-flex items-center gap-1 mt-2 text-[10px] font-semibold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1">
-                          {isES ? "Ver detalles" : "View details"} <ArrowRight className="w-3 h-3" />
-                        </span>
-                      )}
-                    </div>
-                  </Link>
-                ))}
+                    ))}
+                  </div>
+                )}
+
+                {section.list && (
+                  <ul className="list-disc list-inside text-white/70 text-sm space-y-1 mb-8">
+                    {section.list.map((li, j) => (
+                      <li key={j}>{li}</li>
+                    ))}
+                  </ul>
+                )}
+
+                {section.portList && (
+                  <div className="space-y-4 mb-8">
+                    {section.portList.map((port) => (
+                      <div
+                        key={port.port}
+                        className="bg-neutral-800 rounded-xl p-5 border border-white/10"
+                      >
+                        <p className="font-semibold text-white">{port.port}</p>
+                        <p className="text-white/60 text-sm">
+                          {port.terminals}
+                        </p>
+                        {port.note && (
+                          <p className="text-primary text-xs mt-1">
+                            {port.note}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {section.image && (
+                  <div className="relative w-full aspect-[16/6] rounded-2xl overflow-hidden mb-8">
+                    <Image
+                      src={section.image.src}
+                      alt={section.image.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+
+                {section.quote && (
+                  <blockquote className="border-l-4 border-primary pl-6 text-white/70 italic text-base my-8">
+                    {section.quote}
+                  </blockquote>
+                )}
+
+                {section.cta && (
+                  <a
+                    href="https://booking.allblacklimoseattle.com/"
+                    className="inline-flex items-center justify-center bg-primary text-black font-semibold text-xs uppercase tracking-widest px-8 h-11 rounded-full hover:opacity-90 transition"
+                  >
+                    {section.cta}
+                  </a>
+                )}
               </div>
-              {section.note && (
-                <p className="text-sm text-brand mb-6 mt-3">{section.note}</p>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── PRICING ── */}
+      <section className="py-16 sm:py-20 max-w-6xl mx-auto px-6 sm:px-12">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center">
+          {data.pricing.h2}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {data.pricing.vehicles.map((v) => (
+            <div
+              key={v.type}
+              className={`relative rounded-2xl p-6 border ${v.badge ? "border-primary" : "border-white/10"} bg-neutral-900`}
+            >
+              {v.badge && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-black text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest">
+                  {v.badge}
+                </span>
               )}
+              <h3 className="text-xl font-bold mb-1">{v.type}</h3>
+              {v.price > 0 && (
+                <p className="text-3xl font-bold text-primary mb-1">
+                  ${v.price}
+                </p>
+              )}
+              {v.passengers > 0 && (
+                <p className="text-white/50 text-xs mb-4">
+                  {lng === "es" ? "Hasta" : "Up to"} {v.passengers}{" "}
+                  {lng === "es" ? "pasajeros" : "passengers"} · {v.bags}{" "}
+                  {lng === "es" ? "maletas" : "bags"}
+                </p>
+              )}
+              <ul className="space-y-2">
+                {v.extras.map((e) => (
+                  <li
+                    key={e}
+                    className="flex items-start gap-2 text-sm text-white/70"
+                  >
+                    <span className="text-primary mt-0.5">✓</span> {e}
+                  </li>
+                ))}
+              </ul>
             </div>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+        <p className="text-white/50 text-sm text-center mb-8">
+          {data.pricing.note}
+        </p>
+        <div className="flex justify-center">
+          <a
+            href="https://booking.allblacklimoseattle.com/"
+            className="inline-flex items-center justify-center bg-primary text-black font-semibold text-xs uppercase tracking-widest px-10 h-12 rounded-full hover:opacity-90 transition"
+          >
+            {data.pricing.cta}
+          </a>
+        </div>
+      </section>
 
-      <Testimonials data={testimonios} />
+      <Testimonials data={testiData} />
 
-      <h2 className="text-3xl md:text-4xl font-serif font-semibold text-center mt-10">
-        {t.faqTitle}
-      </h2>
-      <FA data={fa} />
-      <div className="mb-9 flex justify-center">
-        <a href="/faq">
-          <Button className={`px-8 h-11 sm:h-12 ${btnPrimary}`}>
-            {t.buttons.moreQuestions}
-          </Button>
-        </a>
-      </div>
-
+      <section className="py-16 sm:py-24 bg-black">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-12">
+            {lng === "es"
+              ? "Preguntas Frecuentes"
+              : "Frequently Asked Questions"}
+          </h2>
+          <FA data={faData} />
+          <div className="mt-10 flex justify-center">
+            <a href={`/${lng}/faq`}>
+              <Button
+                variant="outline"
+                className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                {lng === "es"
+                  ? "¿Más preguntas? Contáctanos"
+                  : "Have More Questions? Contact Us"}
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
