@@ -229,28 +229,28 @@ export const LocationsFa = [
 ];
 export const LocationsSeaTacFa = [
   {
-    question:"Do you provide service to Canada?",
-    answer:"Yes! We offer professional chauffeur service to Vancouver, BC. All trips to Canada require an 8-hour minimum booking due to potential customs and border delays. This ensures your driver stays with you through the crossing for a stress-free experience."
+    question:"Where does my driver meet me at SEA-TAC?",
+    answer:"Standard pickup is at the third-floor parking garage by the purple elevator —the fastest exit from the airport. After baggage claim, follow the signs to the parking garage. Take the elevator to the third floor and look for the purple elevator markers. Your driver waits there. For $25 extra, we offer meet-and-greet inside the terminal at baggage claim with a name sign."
   },
   {
-    question:"Do you travel to Mexico?",
-    answer:"We do not currently provide transportation across the US-Mexico border. However, we do serve Costa Rica with chauffeur services in San José and Liberia."
+    question:"What if my flight is delayed?",
+    answer:"We track every SEA-TAC flight in real time. If your plane is early or late, we adjust your pickup automatically—no extra charge for delays. You do not need to call us. We text you when your driver is ready at the purple elevator."
   },
   {
     question:"Do you provide child safety seats?",
-    answer:"Yes, we offer infant carriers, convertible seats, and booster seats. There is a small fee for child seat service. Please request the seat type when booking and provide your child's age and weight so we have the right one ready."
+    answer:"Yes, we offer infant carriers, convertible seats, and booster seats. A minimum fee applies for child seat service. Please request the seat type when booking and provide your child's age and weight so we can install the right one."
   },
   {
     question:"What is your cancellation policy?",
-    answer:"Plans change, and we understand. You can cancel a standard airport transfer up to 24 hours before pickup for a full refund. Hourly charters require 72 hours’ notice for a full refund. Check your confirmation email for specific terms."
+    answer:"You can cancel a standard SEA-TAC airport transfer up to 3 hours before pickup for a full refund. Hourly charters require 24 hours’ notice. Check your confirmation email for specific terms."
   },
   {
-    question:"What happens if my flight is delayed?",
-    answer:"You do not need to worry! We track every flight in real time. If your plane is early or late, we automatically adjust your pickup. Your chauffeur will be waiting when you land—no extra charge for delays."
+    question:"What areas do you serve from SEA-TAC?",
+    answer:"We serve all areas in Puget Sound. This includes all Seattle neighborhoods: Bellevue, Kirkland, Redmond, Tacoma, Gig Harbor, Everett, Olympia, and surrounding cities. We also provide cruise transfers to the Seattle Cruise Terminal, including Pier 66 and Pier 91."
   },
   {
-    question:"Which airports do you serve?",
-    answer:"We provide service at 50+ major airports across the US, Canada, and Costa Rica. This includes all major hubs like LAX, JFK, ORD, ATL, DFW, SEA, MIA, SFO, DEN, YVR, and many more."
+    question:"Why is the purple elevator pickup better than curbside?",
+    answer:"The third-floor purple elevator is faster because your driver can wait there without circling. Curbside requires drivers to keep moving because of airport rules, adding 5-45 minutes of wait time. Unless you need curbside for mobility reasons, the purple elevator saves time for everyone."
   },
 ];
 export const ServiceAirportFa = [
@@ -416,6 +416,48 @@ export const FleetFa = [
       "All vehicles include climate control, premium leather seating, complimentary bottled water, phone charging ports, and Wi-Fi (select vehicles). Our chauffeurs are happy to adjust temperature, music, or route to your preference.",
   },
 ];
+export const locationNewYorkFA = [
+  {
+    question: "How much does a black car from JFK to Manhattan cost?",
+    answer:
+      "Viaro offers flat-rate pricing from JFK to Manhattan starting at $95 for a sedan. No surge pricing—ever. Your quote is locked in at booking, regardless of traffic or weather. SUVs and Sprinter vans are available at higher rates.",
+  },
+  {
+    question: "Do you provide service from Newark Airport?",
+    answer:
+      "Yes. We provide full service from Newark Liberty International (EWR) to Manhattan, Brooklyn, New Jersey, and beyond. Newark is often less congested than JFK and offers quick access to Lower Manhattan via the Holland Tunnel. Flat rates available.",
+  },
+  {
+    question: "Do you provide tarmac pickup at Teterboro?",
+    answer:
+      "Yes. We coordinate directly with FBO operations at Teterboro. Where security allows, our vehicle meets you at the jet stairs. You step off the plane and into the car. Contact us to arrange tarmac service for your arrival.",
+  },
+  {
+    question: "What is your cancellation policy?",
+    answer:
+      "For standard airport transfers, cancel up to 3 hours before pickup for a full refund. For hourly charters and event bookings, we require 72 hours notice. Plans change—contact us and we will work with you.",
+  },
+  {
+    question: "Do you track my flight?",
+    answer:
+      "Yes. We monitor your flight in real-time. If your plane lands early or late, we adjust pickup automatically. You never need to call us with updates—we already know.",
+  },
+  {
+    question: "Which airports do you serve in New York?",
+    answer:
+      "We serve all five major NYC-area airports: JFK International, LaGuardia (LGA), Newark Liberty (EWR), Teterboro (TEB) for private aviation, and Westchester County (HPN).",
+  },
+  {
+    question: "Can I book a car for a full day in Manhattan?",
+    answer:
+      "Yes. Our hourly chauffeur service [/black-car-services/hourly-chauffeur-service/] is perfect for full-day Manhattan coverage. Your driver waits while you attend meetings, shop, or dine. 3-hour minimum.",
+  },
+  {
+    question: "Do you provide service to The Hamptons?",
+    answer:
+      "Yes. We provide transfers from all NYC airports to the Hamptons (Southampton, East Hampton, Montauk). Flat rates available. Contact us for a quote.",
+  },
+];
 export const FAMap = {
   ServiceAirportFa,
   ServicesFa,
@@ -424,10 +466,53 @@ export const FAMap = {
   ServiceAirlineFa,
   ServiceCorporateFa,
   LocationsSeaTacFa,
-  FleetFa
+  FleetFa,
+  locationNewYorkFA
 
 };
 export type FAMapKey = keyof typeof FAMap;
+export const locationNewYorkFAES = [
+  {
+    question: "¿Cuánto cuesta un auto negro desde JFK hasta Manhattan?",
+    answer:
+      "Viaro ofrece tarifas fijas desde JFK hasta Manhattan desde $95 para un sedán. Sin precios dinámicos, nunca. Su cotización queda fija al momento de la reserva, independientemente del tráfico o el clima. SUVs y furgonetas Sprinter disponibles a tarifas más altas.",
+  },
+  {
+    question: "¿Ofrecen servicio desde el Aeropuerto de Newark?",
+    answer:
+      "Sí. Ofrecemos servicio completo desde Newark Liberty International (EWR) hacia Manhattan, Brooklyn, Nueva Jersey y más allá. Newark suele tener menos tráfico que JFK y ofrece acceso rápido al Bajo Manhattan por el Túnel Holland. Tarifas fijas disponibles.",
+  },
+  {
+    question: "¿Ofrecen recogida en la pista en Teterboro?",
+    answer:
+      "Sí. Coordinamos directamente con las operaciones del FBO en Teterboro. Donde la seguridad lo permite, nuestro vehículo lo espera al pie de las escalerillas. Usted baja del avión y sube al auto. Contáctenos para coordinar el servicio en pista para su llegada.",
+  },
+  {
+    question: "¿Cuál es su política de cancelación?",
+    answer:
+      "Para traslados estándar al aeropuerto, cancele hasta 3 horas antes de la recogida para obtener un reembolso completo. Para chárteres por hora y reservas de eventos, requerimos 72 horas de aviso. Los planes cambian: contáctenos y trabajaremos con usted.",
+  },
+  {
+    question: "¿Rastrean mi vuelo?",
+    answer:
+      "Sí. Monitoreamos su vuelo en tiempo real. Si su avión aterriza antes o después de lo previsto, ajustamos la recogida automáticamente. Nunca necesita llamarnos con actualizaciones, nosotros ya lo sabemos.",
+  },
+  {
+    question: "¿Qué aeropuertos atienden en Nueva York?",
+    answer:
+      "Atendemos los cinco principales aeropuertos del área de Nueva York: JFK International, LaGuardia (LGA), Newark Liberty (EWR), Teterboro (TEB) para aviación privada y el Condado de Westchester (HPN).",
+  },
+  {
+    question: "¿Puedo reservar un auto por un día completo en Manhattan?",
+    answer:
+      "Sí. Nuestro servicio de chófer por hora [/black-car-services/hourly-chauffeur-service/] es ideal para cobertura de día completo en Manhattan. Su conductor espera mientras usted asiste a reuniones, hace compras o cena. Mínimo de 3 horas.",
+  },
+  {
+    question: "¿Ofrecen servicio hacia Los Hamptons?",
+    answer:
+      "Sí. Realizamos traslados desde todos los aeropuertos de Nueva York hacia Los Hamptons (Southampton, East Hampton, Montauk). Tarifas fijas disponibles. Contáctenos para obtener una cotización.",
+  },
+];
 export const MainFaEs = [
   {
     question: "¿Con cuánta anticipación debo reservar un servicio de transporte ejecutivo?",
@@ -794,32 +879,28 @@ export const ServiceHourlyFaEs = [
 ];
 export const LocationsSeaTacFaEs = [
   {
-    question: "¿Hay un tiempo mínimo de reserva para el servicio por hora?",
-    answer: "Sí. El servicio de chofer por hora requiere un mínimo de 3 horas de reserva. Esto garantiza que su conductor esté completamente dedicado a su agenda sin apresurarse entre clientes."
+    question: "¿Dónde me espera mi conductor en SEA-TAC?",
+    answer: "La recogida estándar es en el estacionamiento del tercer piso junto al elevador morado, la salida más rápida del aeropuerto. Después de recoger su equipaje, siga las señales hacia el estacionamiento. Tome el elevador al tercer piso y busque los marcadores del elevador morado. Su conductor lo espera allí. Por $25 adicionales, ofrecemos servicio de bienvenida dentro de la terminal en la recogida de equipaje con un letrero con su nombre."
   },
   {
-    question: "¿Qué incluye la tarifa por hora?",
-    answer: "Su tarifa por hora incluye el vehículo, chofer profesional, combustible y propina estándar. El conductor espera con el auto en cada parada, ayuda con paquetes y equipaje, y sigue su agenda exactamente. Sin cargos ocultos."
+    question: "¿Qué pasa si mi vuelo se retrasa?",
+    answer: "Rastreamos cada vuelo de SEA-TAC en tiempo real. Si su avión llega antes o después de lo previsto, ajustamos su recogida automáticamente, sin cargo adicional por retrasos. No necesita llamarnos. Le enviamos un mensaje de texto cuando su conductor está listo en el elevador morado."
   },
   {
-    question: "¿Puedo cambiar mi itinerario durante la reserva?",
-    answer: "El servicio por hora es completamente flexible. Puede agregar paradas, cambiar destinos o extender su tiempo de reserva sobre la marcha. Solo avísele a su chofer. Si necesita más tiempo del reservado originalmente, cobramos en incrementos de 15 minutos."
+    question: "¿Ofrecen sillas de seguridad para niños?",
+    answer: "Sí, ofrecemos sillas para bebés, sillas convertibles y alzadores. Se aplica una tarifa mínima por el servicio de silla para niños. Por favor solicite el tipo de silla al reservar e indique la edad y el peso de su hijo para instalar la adecuada."
   },
   {
-    question: "¿Proporcionan sillas de seguridad para niños en viajes familiares?",
-    answer: "Sí. Ofrecemos sillas portabebés, asientos convertibles y asientos elevadores. Hay una tarifa mínima por el servicio de silla infantil. Por favor solicite el tipo de asiento al reservar e indíquenos la edad y el peso de su hijo para instalar el correcto."
+    question: "¿Cuál es su política de cancelación?",
+    answer: "Puede cancelar un traslado estándar al aeropuerto SEA-TAC hasta 3 horas antes de la recogida para obtener un reembolso completo. Los chárteres por hora requieren 24 horas de aviso. Consulte su correo electrónico de confirmación para ver los términos específicos."
   },
   {
-    question: "¿Cuál es la política de cancelación para reservas por hora?",
-    answer: "Para cancelaciones en reservas de chofer por hora, requerimos un aviso de 72 horas antes de la hora de recogida para recibir un reembolso completo; de lo contrario, no se emitirán reembolsos. Tenga en cuenta que esto difiere de los traslados estándar de punto a punto (que permiten cancelación con 24 horas de antelación), ya que las reservas por hora reservan un conductor dedicado por un período prolongado."
+    question: "¿Qué áreas atienden desde SEA-TAC?",
+    answer: "Atendemos todas las áreas de Puget Sound. Esto incluye todos los barrios de Seattle: Bellevue, Kirkland, Redmond, Tacoma, Gig Harbor, Everett, Olympia y ciudades aledañas. También realizamos traslados a cruceros hacia la Terminal de Cruceros de Seattle, incluyendo el Muelle 66 y el Muelle 91."
   },
   {
-    question: "¿El servicio por hora está disponible para citas médicas?",
-    answer: "Sí. Muchos clientes reservan el servicio por hora para citas médicas, especialmente cuando los tiempos de espera son impredecibles. Su chofer espera durante la cita y brinda servicio de puerta a puerta. Tratamos a los pasajeros mayores y con movilidad limitada con especial cuidado."
-  },
-  {
-    question: "¿Puedo reservar el servicio por hora como conductor designado?",
-    answer: "¡Sí! El servicio de conductor designado es una de nuestras reservas más populares. Le recogemos, esperamos mientras disfruta de su evento y le llevamos a casa de forma segura, sin precios variables ni necesidad de buscar transporte a altas horas de la noche."
+    question: "¿Por qué es mejor la recogida en el elevador morado que en la acera?",
+    answer: "El elevador morado del tercer piso es más rápido porque su conductor puede esperar allí sin dar vueltas. En la acera, los conductores deben seguir circulando por las normas del aeropuerto, lo que añade entre 5 y 45 minutos de espera. A menos que necesite la acera por razones de movilidad, el elevador morado ahorra tiempo para todos."
   },
 ];
 export const FleetFaEs = [
@@ -867,7 +948,8 @@ export const FAMapEs = {
   ServiceCruiseFa: ServiceCruiseFaEs,
   ServiceHourlyFa:ServiceHourlyFaEs,
   LocationsSeaTacFa: LocationsSeaTacFaEs,
-  FleetFa:FleetFaEs
+  FleetFa:FleetFaEs,
+  locationNewYorkFA:locationNewYorkFAES
 };
 
 export type FAMapKeyEs = keyof typeof FAMapEs;

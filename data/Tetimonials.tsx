@@ -201,6 +201,26 @@ export const FleetTestimonials = [
     rating: 5,
   },
 ];
+export const locationNewYork = [
+  {
+    name: "Denise, Trustpilot",
+    role: "Always Professional, Courteous, and On-Time",
+    text: "Viaro is my go-to for limo/car service. They are always professional, courteous and on-time. The vehicles are roomy, spotless and the drivers are top notch! I highly recommend them for all your needs.",
+    rating: 5,
+  },
+  {
+    name: "Ryan Wilber, Trustpilot",
+    role: "The Best by a Long Shot",
+    text: "The best service! I've used them for years and will always call them when the need arises. I think I've used almost every car service in the area, as I was a very frequent traveler for about 2.5 years. Viaro is by far the most responsive and has the best vehicles.",
+    rating: 5,
+  },
+  {
+    name: "Nick, Trustpilot",
+    role: "Delivering Peace of Mind",
+    text: "What really sets the company apart is its commitment to consistency. They've built a strong reputation not just by providing transportation, but by delivering peace of mind to busy professionals and organizations.",
+    rating: 5,
+  },
+];
 export const TestimonialsMap = {
   servicesAirportTestimonials,
   servicesTestimonials,
@@ -208,9 +228,30 @@ export const TestimonialsMap = {
   servicesAirlineTestimonials,
   servicesCruiseTestimonials,
   servicesHourlyTestimonials,
-  FleetTestimonials
+  FleetTestimonials,
+  locationNewYork
 };
 export type TestiMapKey = keyof typeof TestimonialsMap;
+export const locationNewYorkEs = [
+  {
+    name: "Denise, Trustpilot",
+    role: "Siempre Profesional, Cortés y Puntual",
+    text: "Viaro es mi servicio de limusina/auto de confianza. Siempre son profesionales, corteses y puntuales. Los vehículos son amplios, impecables y los conductores son de primera. ¡Los recomiendo ampliamente para todas sus necesidades!",
+    rating: 5,
+  },
+  {
+    name: "Ryan Wilber, Trustpilot",
+    role: "El Mejor con Diferencia",
+    text: "¡El mejor servicio! Los he usado por años y siempre los llamaré cuando lo necesite. Creo que he usado casi todos los servicios de autos en el área, ya que fui un viajero muy frecuente durante unos 2.5 años. Viaro es, con creces, el más receptivo y tiene los mejores vehículos.",
+    rating: 5,
+  },
+  {
+    name: "Nick, Trustpilot",
+    role: "Brindando Tranquilidad",
+    text: "Lo que realmente distingue a la empresa es su compromiso con la consistencia. Han construido una sólida reputación no solo brindando transporte, sino ofreciendo tranquilidad a profesionales y organizaciones ocupadas.",
+    rating: 5,
+  },
+];
 export const FleetTestimonialsEs = [
   {
     name: "Denise, Trustpilot",
@@ -426,6 +467,7 @@ export const TestimonialsMapEs = {
   servicesCruiseTestimonials: servicesCruiseTestimonialsEs,
   servicesHourlyTestimonials: servicesHourlyTestimonialsEs,
   servicesTestimonials: servicesTestimonialsEs,
-  FleetTestimonials:FleetTestimonialsEs
+  FleetTestimonials:FleetTestimonialsEs,
+  locationNewYork:locationNewYorkEs
 };
 export type TestiMapKeyEs = keyof typeof TestimonialsMapEs;
