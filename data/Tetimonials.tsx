@@ -97,7 +97,7 @@ export const servicesAirportTestimonials = [
   {
     name: "Ryan W., United States on Trustpilot",
     role: "The best service",
-    text: "The best service! Iced used them for years and will always call them when the need arises. I think I’ve used almost every car service in the area, as I was a very frequent traveler for about 2.5 years. All Black is by far the most responsive and has the best vehicles. Very personal service and always dependable at the last minute!",
+    text: "The best service! Iced used them for years and will always call them when the need arises. I think I’ve used almost every car service in the area, as I was a very frequent traveler for about 2.5 years.All black Viaro is by far the most responsive and has the best vehicles. Very personal service and always dependable at the last minute!",
     rating: 5,
   },
 ];
