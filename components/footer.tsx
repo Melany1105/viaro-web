@@ -18,13 +18,13 @@ export function Footer({ dict, lng }: FooterProps) {
   const base = `/${lng}`;
   const serviceLinks = [
     "Airport Transfers",
-    "Corporate Transportation Executive Car Service",
+    "Corporate Transportation",
     "FBO Crew Transportation",
     "Cruise Port Transfers",
     "Hourly Chauffeur Hire",
   ];
 
-  const companyLinks = ["About Us", "Contact", "Blog", "FaQ"];
+  const companyLinks = ["About Us", "Contact", "Blog", "FAQ"];
 
   const socialLinks = [
     { name: "Instagram", url: "https://www.instagram.com/all_black_limo/?hl=es" },

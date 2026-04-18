@@ -633,7 +633,8 @@
         }
       ],
       "disclaimer": "Dado que nuestros vehículos tienen alta demanda, la marca y modelo exactos disponibles dependerán de tu horario de reserva y área de servicio específica. Contáctanos para solicitudes de vehículos específicos.",
-      "guarantee": "Siempre garantizamos la clase de vehículo premium que selecciones — impecable, cómodo y listo para llevarte a tu traslado al aeropuerto, crucero o cita con seguridad.",
+
+      "guarantee": "Siempre garantizamos la clase de vehículo premium que selecciones — impecable, cómodo y listo para llevarte de forma segura a tu <a href='/es/black-car-service/airport-transfers' class='text-primary font-bold hover:underline'>traslado al aeropuerto</a>, <a href='/es/black-car-service/cruise-port-transfers/' class='text-primary font-bold hover:underline'>crucero</a> o <a href='/es/black-car-service/hourly-chauffeur-hire/' class='text-primary font-bold hover:underline'>servicio por horas</a>.",
       "cta": "Elige Tu Vehículo y Reserva Hoy"
     },
 
@@ -647,7 +648,7 @@
       "pillars": [
         {
           "title": "Choferes Profesionales en Quienes Confiar",
-          "description": "Cada chofer en nuestra red debe superar un riguroso proceso de selección de múltiples pasos, incluyendo verificaciones de antecedentes federales y estatales, registro de delincuentes sexuales y revisión de historial vehicular.",
+  "description": "Cada chófer en nuestra red debe pasar un riguroso proceso de verificación de múltiples etapas impulsado por <a href='https://checkr.com' target='_blank' rel='noopener noreferrer' class='text-primary font-bold hover:underline'>Checkr</a>. Esto incluye verificaciones exhaustivas de antecedentes federales y estatales, revisión del registro de delincuentes sexuales y evaluación del historial de conducción.",
           "checks": [
             "Verificación de antecedentes en múltiples niveles (federal, estatal, condado)",
             "Pruebas obligatorias de drogas y alcohol",
@@ -675,88 +676,88 @@
     "faqCta": "¿Más Preguntas? Llama al (206) 672-8281"
   },
   "terms": {
-      "hero": {
-        "eyebrow": "Legal y Alianzas",
-        "title": "Términos y Condiciones",
-        "subtitle": "Lineamientos para todos los socios, clientes, contratistas y colaboradores que trabajan con Viaro."
+    "hero": {
+      "eyebrow": "Legal y Alianzas",
+      "title": "Términos y Condiciones",
+      "subtitle": "Lineamientos para todos los socios, clientes, contratistas y colaboradores que trabajan con Viaro."
+    },
+    "sections": [
+      {
+        "h3": "Empresas Afiliadas",
+        "h2": "Requisitos de Asociación",
+        "intro": "Para convertirse en socio afiliado de Viaro, las empresas deben cumplir los siguientes estándares.",
+        "items": [
+          "Calificación mínima de 4.5",
+          "Legalmente registrada; 2+ años de operación",
+          "Se requiere industria complementaria",
+          "Facturación mensual",
+          "Reembolsos deducidos del siguiente pago",
+          "El contenido de co-marca requiere aprobación previa"
+        ]
       },
-      "sections": [
-        {
-          "h3": "Empresas Afiliadas",
-          "h2": "Requisitos de Asociación",
-          "intro": "Para convertirse en socio afiliado de Viaro, las empresas deben cumplir los siguientes estándares.",
-          "items": [
-            "Calificación mínima de 4.5",
-            "Legalmente registrada; 2+ años de operación",
-            "Se requiere industria complementaria",
-            "Facturación mensual",
-            "Reembolsos deducidos del siguiente pago",
-            "El contenido de co-marca requiere aprobación previa"
-          ]
-        },
-        {
-          "h3": "Hoteles",
-          "h2": "Estándares para Socios Hoteleros",
-          "intro": "Viaro se asocia exclusivamente con hoteles que mantienen estándares superiores de experiencia para huéspedes.",
-          "items": [
-            "Clasificación mínima de 4 estrellas",
-            "Equipo activo de conserjería / servicios al huésped",
-            "Reservas: 4 hrs de aviso (estándar), 24 hrs (grupos)",
-            "Tarifas establecidas anualmente; aviso de revisión de 30 días",
-            "Los datos del huésped se usan únicamente para el cumplimiento del viaje",
-            "El estatus preferido no implica exclusividad"
-          ]
-        },
-        {
-          "h3": "Clientes Corporativos",
-          "h2": "Términos de Cuenta Corporativa",
-          "intro": "Las cuentas corporativas están sujetas a las siguientes políticas de reserva, facturación y lealtad.",
-          "items": [
-            "Entidad registrada - reservadores autorizados en archivo",
-            "Mín. 2 hrs de aviso; 48 hrs para 5+ vehículos",
-            "Facturación mensual",
-            "Facturas vencen en 15 días; cargo por mora de 1.5%/mes",
-            "Lealtad: 30 viajes/mes desbloquea el 7mo viaje gratis por empleado",
-            "Viajes gratis acreditados en el próximo ciclo de facturación",
-            "Cancelación: <2 hrs = 100% tarifa; 2–4 hrs = 0%"
-          ]
-        },
-        {
-          "h3": "Influencers",
-          "h2": "Términos de Asociación con Creadores",
-          "intro": "Las asociaciones con influencers están reservadas para creadores que cumplan nuestros estándares de audiencia y contenido.",
-          "items": [
-            "10,000+ seguidores comprometidos (plataforma principal)",
-            "2%+ de engagement promedio (últimos 90 días)",
-            "Nicho de audiencia de lujo / viajes / negocios",
-            "Todo el contenido aprobado antes de su publicación",
-            "Se requiere etiqueta #ad / #sponsored",
-            "Sin promoción de competidores directos durante la campaña",
-            "Viaro puede republicar contenido co-creado"
-          ]
-        },
-        {
-          "h3": "Contratistas",
-          "h2": "Términos para Conductores Independientes",
-          "intro": "Todos los contratistas independientes que operan bajo la red Viaro deben cumplir con los siguientes requisitos.",
-          "items": [
-            "Licencia de conducir profesional vigente",
-            "Récord limpio, máximo 1 infracción menor / 3 años",
-            "Se requiere verificación de antecedentes",
-            "Vehículo propio, seguro y permisos",
-            "Llegar 15 min antes, vehículo limpio y con combustible",
-            "Contratista independiente, no empleado",
-            "Sin solicitud directa de clientes",
-            "Pago quincenal",
-            "División de pago: 60% para el contratista del total del viaje"
-          ]
-        }
-      ],
-      "cta": {
-        "eyebrow": "¿Listo para Asociarte?",
-        "title": "Trabajemos Juntos",
-        "subtitle": "¿Tienes preguntas sobre nuestros términos o deseas iniciar una asociación? Contáctanos.",
-        "book": "Contáctanos"
+      {
+        "h3": "Hoteles",
+        "h2": "Estándares para Socios Hoteleros",
+        "intro": "Viaro se asocia exclusivamente con hoteles que mantienen estándares superiores de experiencia para huéspedes.",
+        "items": [
+          "Clasificación mínima de 4 estrellas",
+          "Equipo activo de conserjería / servicios al huésped",
+          "Reservas: 4 hrs de aviso (estándar), 24 hrs (grupos)",
+          "Tarifas establecidas anualmente; aviso de revisión de 30 días",
+          "Los datos del huésped se usan únicamente para el cumplimiento del viaje",
+          "El estatus preferido no implica exclusividad"
+        ]
+      },
+      {
+        "h3": "Clientes Corporativos",
+        "h2": "Términos de Cuenta Corporativa",
+        "intro": "Las cuentas corporativas están sujetas a las siguientes políticas de reserva, facturación y lealtad.",
+        "items": [
+          "Entidad registrada - reservadores autorizados en archivo",
+          "Mín. 2 hrs de aviso; 48 hrs para 5+ vehículos",
+          "Facturación mensual",
+          "Facturas vencen en 15 días; cargo por mora de 1.5%/mes",
+          "Lealtad: 30 viajes/mes desbloquea el 7mo viaje gratis por empleado",
+          "Viajes gratis acreditados en el próximo ciclo de facturación",
+          "Cancelación: <2 hrs = 100% tarifa; 2–4 hrs = 0%"
+        ]
+      },
+      {
+        "h3": "Influencers",
+        "h2": "Términos de Asociación con Creadores",
+        "intro": "Las asociaciones con influencers están reservadas para creadores que cumplan nuestros estándares de audiencia y contenido.",
+        "items": [
+          "10,000+ seguidores comprometidos (plataforma principal)",
+          "2%+ de engagement promedio (últimos 90 días)",
+          "Nicho de audiencia de lujo / viajes / negocios",
+          "Todo el contenido aprobado antes de su publicación",
+          "Se requiere etiqueta #ad / #sponsored",
+          "Sin promoción de competidores directos durante la campaña",
+          "Viaro puede republicar contenido co-creado"
+        ]
+      },
+      {
+        "h3": "Contratistas",
+        "h2": "Términos para Conductores Independientes",
+        "intro": "Todos los contratistas independientes que operan bajo la red Viaro deben cumplir con los siguientes requisitos.",
+        "items": [
+          "Licencia de conducir profesional vigente",
+          "Récord limpio, máximo 1 infracción menor / 3 años",
+          "Se requiere verificación de antecedentes",
+          "Vehículo propio, seguro y permisos",
+          "Llegar 15 min antes, vehículo limpio y con combustible",
+          "Contratista independiente, no empleado",
+          "Sin solicitud directa de clientes",
+          "Pago quincenal",
+          "División de pago: 60% para el contratista del total del viaje"
+        ]
       }
+    ],
+    "cta": {
+      "eyebrow": "¿Listo para Asociarte?",
+      "title": "Trabajemos Juntos",
+      "subtitle": "¿Tienes preguntas sobre nuestros términos o deseas iniciar una asociación? Contáctanos.",
+      "book": "Contáctanos"
     }
+  }
 }

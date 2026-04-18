@@ -33,14 +33,10 @@ export function Testimonials({ data }: TestimonialsProps) {
       if (!dict) return <div>Loading...</div>; 
       const t = dict.testimo;
   return (
-    <section id="testimonials" className="py-10">
+    <section id="testimonials" className="py-2">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center">
-          <p className="mt-4 font-serif text-4xl font-bold tracking-tight text-card-foreground sm:text-5xl">
-        {t.title}
-          </p>
-        </div>
+       
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {data.map((testimonial) => (
@@ -48,7 +44,15 @@ export function Testimonials({ data }: TestimonialsProps) {
               key={testimonial.text}
               className="border rounded-xl p-8 transition-all duration-300 border-primary/50"
             >
-              <div className="flex gap-1">
+               <div className="">
+                <p className="font-serif text-lg font-semibold text-card-foreground">
+                  {testimonial.name}
+                </p>
+                <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                  {testimonial.role}
+                </p>
+              </div>
+              <div className="flex gap-1 mt-3 border-t border-border pt-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
                   <Star
                     key={i}
@@ -61,14 +65,7 @@ export function Testimonials({ data }: TestimonialsProps) {
                 {`"${testimonial.text}"`}
               </p>
 
-              <div className="mt-6 border-t border-border pt-6">
-                <p className="font-serif text-lg font-semibold text-card-foreground">
-                  {testimonial.name}
-                </p>
-                <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
-                  {testimonial.role}
-                </p>
-              </div>
+             
             </div>
           ))}
         </div>

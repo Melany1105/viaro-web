@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import React from "react";
 import Image from "next/image";
@@ -35,8 +35,6 @@ const TRUST_METRICS = [
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
-        width={28}
-        height={28}
       >
         <path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3" />
         <circle cx="17" cy="17" r="4" />
@@ -46,23 +44,21 @@ const TRUST_METRICS = [
     ),
   },
   {
-  value: "5.0★",
-  label: { en: "Average Rating", es: "Calificación Promedio" },
-  icon: (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.5}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      width={28}
-      height={28}
-    >
-      <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
-    </svg>
-  ),
-},
+    value: "5.0★",
+    label: { en: "Average Rating", es: "Calificación Promedio" },
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+      </svg>
+    ),
+  },
   {
     value: "Licensed",
     label: { en: "& Insured", es: "y Asegurado" },
@@ -74,8 +70,6 @@ const TRUST_METRICS = [
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
-        width={28}
-        height={28}
       >
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
         <path d="m9 12 2 2 4-4" />
@@ -93,8 +87,6 @@ const TRUST_METRICS = [
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
-        width={28}
-        height={28}
       >
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         <path d="M12 7v2M12 13h.01" />
@@ -116,9 +108,6 @@ function BookingForm({ t }: { t: any }) {
   const [dateEnd, setDateEnd] = React.useState("");
   const [pkgNotes, setPkgNotes] = React.useState("");
   const [passengers, setPassengers] = React.useState("1");
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
 
   const tabs: { key: TripType; label: string }[] = [
     { key: "oneway", label: t.trip_oneway ?? "One Way" },
@@ -134,7 +123,7 @@ function BookingForm({ t }: { t: any }) {
     setStops((s) => s.map((v, idx) => (idx === i ? val : v)));
 
   return (
-    <div className="bg-white/5 backdrop-blur-xl border border-white/15 rounded-2xl p-6 sm:p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+    <div className="bg-white/5 backdrop-blur-xl border border-white/15 rounded-2xl p-6 sm:p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] w-full min-w-0">
       <h3 className="font-serif font-bold text-xl sm:text-2xl mb-1">
         {t.form_title ?? "Book Your Ride"}
       </h3>
@@ -142,13 +131,13 @@ function BookingForm({ t }: { t: any }) {
         {t.form_subtitle ?? "Instant quote · No commitment"}
       </p>
 
-      {/* Trip type tabs */}
+      {/* Trip type tabs — FIX: text-[9px] en móvil para que no desborde */}
       <div className="grid grid-cols-4 gap-1 bg-white/5 rounded-xl p-1 mb-5">
         {tabs.map(({ key, label }) => (
           <button
             key={key}
             onClick={() => setTrip(key)}
-            className={`py-2 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+            className={`py-2 rounded-lg text-[9px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
               trip === key
                 ? "bg-primary text-white"
                 : "text-white/50 hover:text-white"
@@ -218,7 +207,8 @@ function BookingForm({ t }: { t: any }) {
                 className={inputCls}
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            {/* FIX: grid-cols-1 en móvil muy pequeño, cols-2 desde sm */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className={labelCls}>{t.form_date ?? "Date"}</label>
                 <input
@@ -270,7 +260,7 @@ function BookingForm({ t }: { t: any }) {
                 className={inputCls}
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className={labelCls}>
                   {t.form_date_depart ?? "Departure"}
@@ -292,7 +282,7 @@ function BookingForm({ t }: { t: any }) {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className={labelCls}>
                   {t.form_date_return ?? "Return"}
@@ -348,7 +338,7 @@ function BookingForm({ t }: { t: any }) {
                 className={inputCls}
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className={labelCls}>
                   {t.form_date ?? "Start Date"}
@@ -431,7 +421,7 @@ function BookingForm({ t }: { t: any }) {
             >
               + {t.form_add_stop ?? "Add Stop"}
             </button>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className={labelCls}>{t.form_date ?? "Date"}</label>
                 <input
@@ -499,10 +489,10 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
 
   return (
     <section id="MainContent" className="bg-black text-white">
-      <main>
-        {/* ── HERO ── */}
-        <section className="relative w-full min-h-[100dvh]">
-          <div className="absolute inset-0 h-full min-h-[100dvh]">
+      <main className="w-full ">
+      
+        <section className="relative w-full min-h-screen bg-neutral-900">
+          <div className="absolute inset-0">
             <Image
               src="/images/ImagenPrincipal.png"
               alt="Viaro black car services: airport pickup with chauffeur, corporate executive travel, cruise port transfer, and private jet FBO transportation."
@@ -511,11 +501,14 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
               className="object-cover object-[center_30%] sm:object-center"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-black/50" />
           </div>
+
+          {/* FIX: w-full + overflow-hidden para que el grid no desborde */}
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-32 sm:pt-36 pb-20 sm:pb-28">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div className="max-w-2xl">
+           
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div className="max-w-2xl min-w-0">
                 <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)] whitespace-pre-line">
                   {t.hero_top_text}
                 </p>
@@ -527,7 +520,9 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a href="https://booking.allblacklimoseattle.com/">
-                    <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
+                    <Button
+                      className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}
+                    >
                       {t.book_now}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -543,18 +538,20 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                   </a>
                 </div>
               </div>
-              <BookingForm t={t} />
+              <div className="min-w-0 w-full">
+                <BookingForm t={t} />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ── TRUST METRICS ── */}
         <section
           style={{
-            background: "rgb(9,9,11)",
+            background: "rgb(30,30,30)",
             borderTop: "1px solid rgba(255,255,255,0.1)",
             borderBottom: "1px solid rgba(255,255,255,0.1)",
-            padding: "40px 16px",
+            padding: "32px 12px",
+            overflow: "hidden",
           }}
         >
           <p
@@ -564,7 +561,7 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
               textTransform: "uppercase",
               letterSpacing: "0.15em",
               color: "rgba(255,255,255,0.4)",
-              marginBottom: 32,
+              marginBottom: 24,
               fontWeight: 500,
             }}
           >
@@ -577,8 +574,8 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
               maxWidth: 900,
               margin: "0 auto",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-              gap: 24,
+              gridTemplateColumns: "repeat(4, 1fr)",  // siempre 4 columnas
+              gap: 8,
               textAlign: "center",
             }}
           >
@@ -589,15 +586,24 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  gap: 10,
+                  gap: 6,
+                  padding: "0 4px",
                 }}
               >
-                <div style={{ color: "var(--color-primary, #3b82f6)" }}>
+                {/* icono pequeño igual que antes */}
+                <div
+                  style={{
+                    color: "var(--color-primary, #3b82f6)",
+                    width: "clamp(16px, 4.5vw, 28px)",
+                    height: "clamp(16px, 4.5vw, 28px)",
+                    flexShrink: 0,
+                  }}
+                >
                   {m.icon}
                 </div>
                 <span
                   style={{
-                    fontSize: 22,
+                    fontSize: "clamp(12px, 3.5vw, 22px)",
                     fontWeight: 700,
                     color: "#fff",
                     lineHeight: 1,
@@ -607,10 +613,11 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                 </span>
                 <span
                   style={{
-                    fontSize: 11,
+                    fontSize: "clamp(7px, 1.8vw, 11px)",
                     color: "rgba(255,255,255,0.4)",
                     textTransform: "uppercase",
-                    letterSpacing: "0.08em",
+                    letterSpacing: "0.05em",
+                    lineHeight: 1.2,
                   }}
                 >
                   {m.label[lng as "en" | "es"]}
@@ -624,7 +631,7 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
         <section className="py-16 sm:py-20 bg-neutral-950">
           <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-              <div>
+              <div className="min-w-0">
                 <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
                   {t.welcome_title
                     .split("Viaro")
@@ -641,7 +648,7 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                   {t.welcome_description}
                 </p>
               </div>
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden min-w-0">
                 <Image
                   src="/images/Imagen2Home.png"
                   alt="Luxury vehicle"
@@ -662,7 +669,8 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                 {t.services_title}
               </h2>
               <div className="mt-12">
-                <div className="grid gap-4 sm:grid-cols-3">
+                {/* FIX: grid-cols-1 en móvil para evitar overflow */}
+                <div className="grid gap-4 grid-cols-1 sm:grid-cols-3">
                   {services.slice(0, 3).map((s: any) => (
                     <div
                       key={s.id}
@@ -700,7 +708,7 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                   ))}
                 </div>
                 {services.length > 3 && (
-                  <div className="grid gap-6 sm:grid-cols-2 xl:w-2/3 xl:mx-auto mt-6">
+                  <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:w-2/3 xl:mx-auto mt-6">
                     {services.slice(3).map((s: any) => (
                       <div
                         key={s.id}
@@ -762,7 +770,16 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
               <div className="lg:w-1/3 mb-10 lg:mb-0 lg:sticky lg:top-24">
                 {t.locations_subtitle && (
                   <p className="text-sm sm:text-base text-gray-400 text-center lg:text-left">
-                    {t.locations_subtitle}
+                    {t.locations_subtitle.split("Viaro")
+                    .map((part: string, i: number, arr: string[]) => (
+                      <React.Fragment key={i}>
+                        {part}
+                        {i < arr.length - 1 && (
+                          <span className="text-muted2">Viaro</span>
+                        )}
+                      </React.Fragment>
+                    ))
+                    }
                   </p>
                 )}
                 {t.locations_cta && (
@@ -775,13 +792,18 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                   </div>
                 )}
               </div>
-              <div className="lg:w-2/3">
+              <div className="lg:w-2/3 min-w-0">
                 {locationsRegions.length > 0 ? (
-                  <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+                  // FIX: grid-cols-2 en móvil en vez de 4 para no desbordar
+                  <div className="grid gap-8 grid-cols-2 xl:grid-cols-4">
                     {locationsRegions.map((r: any, index: number) => (
                       <div
                         key={r.region}
-                        className={index === locationsRegions.length - 1 ? "xl:col-start-4" : ""}
+                        className={
+                          index === locationsRegions.length - 1
+                            ? "xl:col-start-4"
+                            : ""
+                        }
                       >
                         <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-primary">
                           {r.region}
@@ -804,17 +826,34 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
-                      "New York", "Los Angeles", "Chicago", "Dallas",
-                      "Atlanta", "Washington DC", "Miami", "Boston",
-                      "San Francisco", "Seattle", "Las Vegas", "Houston",
-                      "Phoenix", "Denver", "San Diego", "Charlotte",
-                      "Nashville", "Austin", "Philadelphia", "Orlando",
+                      "New York",
+                      "Los Angeles",
+                      "Chicago",
+                      "Dallas",
+                      "Atlanta",
+                      "Washington DC",
+                      "Miami",
+                      "Boston",
+                      "San Francisco",
+                      "Seattle",
+                      "Las Vegas",
+                      "Houston",
+                      "Phoenix",
+                      "Denver",
+                      "San Diego",
+                      "Charlotte",
+                      "Nashville",
+                      "Austin",
+                      "Philadelphia",
+                      "Orlando",
                     ].map((city) => (
                       <Link
                         key={city}
                         href={`/${lng}/service-area/${city.toLowerCase().replace(" ", "-")}`}
                       >
-                        <button className={`w-full py-3 border-0 ${btnPrimary}`}>
+                        <button
+                          className={`w-full py-3 border-0 ${btnPrimary}`}
+                        >
                           {city}
                         </button>
                       </Link>
@@ -833,7 +872,8 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
               <h2 className="text-center font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
                 {t.fleet_title}
               </h2>
-              <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {/* FIX: grid-cols-1 en móvil */}
+              <div className="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {fleet.map((v: any) => (
                   <div
                     key={v.type}
@@ -868,7 +908,9 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                         <span className="text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">
                           Best For
                         </span>
-                        <p className="text-sm text-gray-300 italic">{v.bestFor}</p>
+                        <p className="text-sm text-gray-300 italic">
+                          {v.bestFor}
+                        </p>
                       </div>
                       <div>
                         <span className="text-[10px] uppercase tracking-widest text-muted-foreground block mb-1">
@@ -902,7 +944,15 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
           <section className="py-16 sm:py-20 bg-neutral-950">
             <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
               <h2 className="text-center font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-12">
-                {t.about_title}
+                {t.about_title.split("Viaro")
+                    .map((part: string, i: number, arr: string[]) => (
+                      <React.Fragment key={i}>
+                        {part}
+                        {i < arr.length - 1 && (
+                          <span className="text-muted2">Viaro</span>
+                        )}
+                      </React.Fragment>
+                    ))}
               </h2>
               <div className="mb-8">
                 {t.about_founder_label && (
@@ -915,7 +965,7 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                 </p>
               </div>
               <div className="grid gap-8 lg:grid-cols-2 mb-10">
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-6 min-w-0">
                   {t.about_vision && (
                     <div className="border border-primary/30 rounded-xl p-5 flex-1">
                       <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2">
@@ -938,8 +988,8 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                   )}
                 </div>
                 <div
-                  className="relative rounded-2xl overflow-hidden"
-                  style={{ minHeight: "100%" }}
+                  className="relative rounded-2xl overflow-hidden min-w-0"
+                  style={{ minHeight: "240px" }}
                 >
                   <Image
                     src="/images/Imagen2Home.png"
@@ -953,9 +1003,18 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
               {aboutWhy.length > 0 && (
                 <>
                   <h3 className="font-serif font-bold text-xl sm:text-2xl mb-5">
-                    {t.about_why_title}
+                    {t.about_why_title.split("Viaro")
+                    .map((part: string, i: number, arr: string[]) => (
+                      <React.Fragment key={i}>
+                        {part}
+                        {i < arr.length - 1 && (
+                          <span className="text-muted2">Viaro</span>
+                        )}
+                      </React.Fragment>
+                    ))}
                   </h3>
-                  <ul className="grid sm:grid-cols-2 gap-4 mb-8">
+                  {/* FIX: grid-cols-1 en móvil */}
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                     {aboutWhy.map((w: any) => (
                       <li key={w.label} className="flex gap-3">
                         <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -988,19 +1047,50 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
           </section>
         )}
 
-        <Testimonials data={testimonios} />
-        <CtaSection />
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-center mt-10 text-white">
-          {t.faqTitle}
-        </h2>
-        <FA data={fa} />
-        <div className="mb-9 flex justify-center">
-          <a href="/faq">
-            <button className={`px-5 py-2.5 text-sm md:text-base ${btnPrimary} hover:scale-105`}>
-              {t.moreQuestions}
-            </button>
-          </a>
+        <div className="text-center">
+          <p className="mt-4 font-serif text-4xl font-bold tracking-tight text-card-foreground sm:text-5xl">
+            {t.title}
+          </p>
         </div>
+
+        {/* ── TESTIMONIALS ── */}
+        <section className="pt-16 sm:pt-24 overflow-hidden">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mb-1 text-center">
+            <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+              {lng === "es"
+                ? "RESEÑAS DE TRANSPORTE DE LUJO CON 5 ESTRELLAS"
+                : "5-STAR RATED LUXURY TRANSPORTATION REVIEWS"}
+            </h2>
+          </div>
+          <Testimonials data={testimonios} />
+        </section>
+
+        <CtaSection />
+
+        {/* ── FAQ ── */}
+        <section className="py-16 sm:py-24 bg-black">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+            <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-6">
+              {lng === "es"
+                ? "PREGUNTAS FRECUENTES"
+                : "BLACK CAR SERVICE FAQs"}
+            </h2>
+            <FA data={fa} />
+            <div className="mt-12 flex justify-center">
+              <a href={`/${lng}/faq`}>
+                <Button
+                  variant="outline"
+                  className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+                >
+                  <Phone className="mr-2 h-4 w-4" />
+                  {lng === "es"
+                    ? "¿Más preguntas? Contáctanos"
+                    : "Have More Questions? Contact Us"}
+                </Button>
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
     </section>
   );

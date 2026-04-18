@@ -43,7 +43,7 @@ export function Navbar({ dict, lng }: NavbarProps) {
       href: `${base}/black-car-services`,
       dropdown: [
         { label: dict.navbar.airport,   href: `${base}/black-car-service/airport-transfers` },
-        { label: dict.navbar.corporate, href: `${base}/black-car-service/corporate-transportation-executive-car-service` },
+        { label: dict.navbar.corporate, href: `${base}/black-car-service/corporate-transportation` },
         { label: dict.navbar.airline,   href: `${base}/black-car-service/fbo-crew-transportation` },
         { label: dict.navbar.cruise,    href: `${base}/black-car-service/cruise-port-transfers` },
         { label: dict.navbar.hourly,    href: `${base}/black-car-service/hourly-chauffeur-hire` },

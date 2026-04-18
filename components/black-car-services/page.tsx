@@ -10,7 +10,9 @@ import { ServicesFa, ServicesFaEs } from "@/data/Fa";
 import { FA } from "../FA";
 import { getDictionary } from "@/lib/get-dictionary";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Phone } from "lucide-react";
+import { Button } from "../ui/button";
 
 const btnPrimary =
   "bg-primary text-white hover:bg-brand2 rounded-full uppercase tracking-widest text-xs font-semibold transition-colors";
@@ -20,16 +22,7 @@ const TRUST_METRICS = [
     value: "99.8%",
     label: { en: "On-Time Rate", es: "Puntualidad" },
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        width={28}
-        height={28}
-      >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
         <circle cx="12" cy="12" r="10" />
         <polyline points="12 6 12 12 16 14" />
       </svg>
@@ -39,16 +32,7 @@ const TRUST_METRICS = [
     value: "DOT",
     label: { en: "Professional Chauffeurs", es: "Choferes Profesionales" },
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        width={28}
-        height={28}
-      >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
         <path d="m9 12 2 2 4-4" />
       </svg>
@@ -58,18 +42,18 @@ const TRUST_METRICS = [
     value: "24/7",
     label: { en: "Live Support", es: "Soporte en Vivo" },
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        width={28}
-        height={28}
-      >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         <path d="M12 7v2M12 13h.01" />
+      </svg>
+    ),
+  },
+  {
+    value: "5.0★",
+    label: { en: "Rated Experience", es: "Experiencia Calificada" },
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
       </svg>
     ),
   },
@@ -149,8 +133,11 @@ export default function ServicesPage() {
 
   return (
     <main className="bg-black text-white">
-      {/* ── HERO ── */}
-      <section id="inicio" className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
+      <section
+        id="inicio"
+        className="relative w-full overflow-hidden"
+        style={{ height: "100dvh" }}
+      >
         <Image
           src="/images/ImagenServices1.png"
           alt="Luxury vehicle parked in front of a modern building"
@@ -161,15 +148,9 @@ export default function ServicesPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
 
-        <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
-          <div className="flex flex-col items-center text-center sm:hidden">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
-              {t.hero.eyebrow ?? t.hero.subtitle}
-            </p>
-          </div>
-
+        <div className="absolute inset-0 z-10 flex flex-col justify-end mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pb-20">
           <div>
-            <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand">
+            <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)] whitespace-pre-line">
               {t.hero.eyebrow ?? t.hero.subtitle}
             </p>
 
@@ -191,8 +172,18 @@ export default function ServicesPage() {
               </a>
               <a href="tel:2066728281">
                 <button className="border border-white/60 text-white font-semibold text-sm px-6 py-3 rounded-full hover:border-white hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"
+                    />
                   </svg>
                   {t.hero.cta_call}
                 </button>
@@ -208,13 +199,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── TRUST METRICS ── */}
       <section
         style={{
-          background: "rgb(9,9,11)",
+          background: "rgb(30,30,30)",
           borderTop: "1px solid rgba(255,255,255,0.1)",
           borderBottom: "1px solid rgba(255,255,255,0.1)",
-          padding: "40px 16px",
+          padding: "32px 12px",
+          overflow: "hidden",
         }}
       >
         <p
@@ -224,7 +215,7 @@ export default function ServicesPage() {
             textTransform: "uppercase",
             letterSpacing: "0.15em",
             color: "rgba(255,255,255,0.4)",
-            marginBottom: 32,
+            marginBottom: 24,
             fontWeight: 500,
           }}
         >
@@ -232,44 +223,84 @@ export default function ServicesPage() {
             ? "Confianza de miles en Norteamérica"
             : "Trusted by thousands across North America"}
         </p>
+
         <div
           style={{
             maxWidth: 900,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-            gap: 24,
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "8px 4px",
             textAlign: "center",
           }}
         >
           {TRUST_METRICS.map((m) => (
             <div
               key={m.value}
-              style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                gap: 8,
+                padding: "12px 8px",
+              }}
             >
-              <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
-              <span style={{ fontSize: 22, fontWeight: 700, color: "#ffffff", lineHeight: 1 }}>
-                {m.value}
-              </span>
-              <span
+              {/* Icono con tamaño fijo, sin solaparse */}
+              <div
                 style={{
-                  fontSize: 11,
-                  color: "#9ca3af",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  display: "block",
+                  color: "var(--color-primary, #3b82f6)",
+                  width: 28,
+                  height: 28,
+                  flexShrink: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
-                {m.label[lng]}
+                {m.icon}
+              </div>
+
+              <span
+                style={{
+                  fontSize: "clamp(14px, 3.5vw, 22px)",
+                  fontWeight: 700,
+                  color: "#fff",
+                  lineHeight: 1,
+                }}
+              >
+                {m.value}
+              </span>
+
+              <span
+                style={{
+                  fontSize: "clamp(8px, 1.8vw, 11px)",
+                  color: "rgba(255,255,255,0.4)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                  lineHeight: 1.3,
+                }}
+              >
+                {m.label[lng as "en" | "es"]}
               </span>
             </div>
           ))}
         </div>
+
+        {/* Media query para móvil: 2 columnas × 2 filas */}
+        <style>{`
+    @media (max-width: 540px) {
+      #trust-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px 8px !important;
+      }
+    }
+  `}</style>
       </section>
 
       {/* ── SERVICE CARDS ── */}
       <section className="bg-black">
-        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mt-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mt-10 mb-5">
           <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-3">
               {lng === "en" ? "What We Offer" : "Lo Que Ofrecemos"}
@@ -309,7 +340,15 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
           <div className="text-center mb-12">
             <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
-              {t.pricing.title}
+              {t.pricing.title.split("Viaro")
+                                  .map((part: string, i: number, arr: string[]) => (
+                                    <React.Fragment key={i}>
+                                      {part}
+                                      {i < arr.length - 1 && (
+                                        <span className="text-muted2">Viaro</span>
+                                      )}
+                                    </React.Fragment>
+                                  ))}
             </h2>
             <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed max-w-2xl mx-auto">
               {t.pricing.subtitle}
@@ -327,17 +366,27 @@ export default function ServicesPage() {
                 <h3 className="font-serif font-bold text-xl sm:text-2xl mt-2">
                   {s.type}
                 </h3>
-                <p className="mt-3 text-4xl font-bold text-primary">${s.price}</p>
+                <p className="mt-3 text-4xl font-bold text-primary">
+                  ${s.price}
+                </p>
                 <p className="mt-1 text-xs text-gray-500">{s.description}</p>
                 <ul className="mt-6 space-y-3 flex-grow">
                   {s.features.map((f: string) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-gray-300">
-                      <span className="text-primary mt-0.5 flex-shrink-0">✓</span>
+                    <li
+                      key={f}
+                      className="flex items-start gap-2 text-sm text-gray-300"
+                    >
+                      <span className="text-primary mt-0.5 flex-shrink-0">
+                        ✓
+                      </span>
                       {f}
                     </li>
                   ))}
                 </ul>
-                <a href="https://booking.allblacklimoseattle.com/" className="mt-8 block">
+                <a
+                  href="https://booking.allblacklimoseattle.com/"
+                  className="mt-8 block"
+                >
                   <button className={`w-full py-3 ${btnPrimary}`}>
                     {t.pricing.bookCta} {s.type}
                   </button>
@@ -348,20 +397,38 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <Testimonials data={testimonios} />
+      {/* ── TESTIMONIALS ── */}
+      <section className="pt-16 sm:pt-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mb-2 text-center">
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+            {lng === "es"
+              ? "LO QUE DICEN NUESTROS PASAJEROS"
+              : "What Our Riders Say"}
+          </h2>
+        </div>
+        <Testimonials data={testimonios} />
+      </section>
 
       {/* ── FAQ ── */}
       <section className="py-16 sm:py-24 bg-black">
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-12">
-            {t.faq.title}
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-2">
+            {lng === "es"
+              ? "Preguntas Frecuentes"
+              : "Frequently Asked Questions"}
           </h2>
           <FA data={fa} />
-          <div className="mt-10 flex justify-center">
-            <a href="/faq">
-              <button className={`px-8 py-3 text-sm ${btnPrimary}`}>
-                {t.faq.cta}
-              </button>
+          <div className="mt-3 flex justify-center">
+            <a href={`/${lng}/faq`}>
+              <Button
+                variant="outline"
+                className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                {lng === "es"
+                  ? "¿Más preguntas? Contáctanos"
+                  : "Have More Questions? Contact Us"}
+              </Button>
             </a>
           </div>
         </div>

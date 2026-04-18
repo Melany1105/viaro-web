@@ -19,7 +19,16 @@ const TRUST_METRICS = [
     value: "60,000+",
     label: { en: "Trips Completed", es: "Viajes Completados" },
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
         <path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3" />
         <circle cx="17" cy="17" r="4" />
         <path d="m21 21-1.5-1.5M17 15v2l1 1" />
@@ -27,21 +36,21 @@ const TRUST_METRICS = [
       </svg>
     ),
   },
-  {
-    value: "11 Years",
-    label: { en: "Of Excellence", es: "De Excelencia" },
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <circle cx="12" cy="8" r="6" />
-        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
-      </svg>
-    ),
-  },
+
   {
     value: "50+ States",
     label: { en: "Plus CAN & CRC", es: "Más CAN & CRC" },
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
         <circle cx="12" cy="12" r="10" />
         <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
         <path d="M2 12h20" />
@@ -52,21 +61,39 @@ const TRUST_METRICS = [
     value: "BBB",
     label: { en: "Verified", es: "Verificado" },
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         <path d="m9 12 2 2 4-4" />
       </svg>
     ),
   },
   {
-  value: "5-Star",
-  label: { en: "Rating", es: "Calificación" },
-  icon: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-      <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
-    </svg>
-  ),
-},
+    value: "5-Star",
+    label: { en: "Rating", es: "Calificación" },
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+      </svg>
+    ),
+  },
 ];
 
 export default function FleetContent() {
@@ -86,9 +113,10 @@ export default function FleetContent() {
 
   return (
     <main className="bg-black text-white">
-
-      {/* ── HERO ── */}
-      <section className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
+      <section
+        className="relative w-full overflow-hidden"
+        style={{ height: "100dvh" }}
+      >
         <Image
           src="/images/FleetHero.png"
           alt={t.hero.imageAlt}
@@ -99,16 +127,9 @@ export default function FleetContent() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
 
-        <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
-          {/* Eyebrow — mobile only top */}
-          <div className="flex flex-col items-center text-center sm:hidden">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
-              {t.hero.eyebrow}
-            </p>
-          </div>
-
+        <div className="absolute inset-0 z-10 flex flex-col justify-end mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pb-10 sm:pb-20">
           <div>
-            <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand">
+            <p className="mb-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-brand">
               {t.hero.eyebrow}
             </p>
             <h1 className="font-serif font-bold leading-[1.1] text-[1.6rem] xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl max-w-[280px] xs:max-w-sm sm:max-w-2xl lg:max-w-3xl">
@@ -117,8 +138,6 @@ export default function FleetContent() {
             <h2 className="mt-2 sm:mt-3 text-xs sm:text-base text-white/60 leading-relaxed font-light max-w-[260px] xs:max-w-xs sm:max-w-xl lg:max-w-2xl">
               {t.hero.subtitle}
             </h2>
-
-           
 
             <div className="mt-5 sm:mt-8 flex flex-wrap gap-3">
               <a href="/booking">
@@ -137,69 +156,112 @@ export default function FleetContent() {
                 </Button>
               </a>
             </div>
+
             {t.hero.description && (
-              <p className="mt-4 text-sm italic text-white/30 text-center sm:text-base">
+              <p className="mt-4 text-sm italic text-white/30 sm:text-base">
                 "{t.hero.description}"
               </p>
             )}
           </div>
         </div>
       </section>
+      {/* ── TRUST METRICS ── */}
+<section
+  style={{
+    background: "rgb(30,30,30)",
+    borderTop: "1px solid rgba(255,255,255,0.1)",
+    borderBottom: "1px solid rgba(255,255,255,0.1)",
+    padding: "40px 16px",
+  }}
+>
+  <style>{`
+    .trust-label { font-size: 11px; }
+    .trust-value { font-size: 22px; }
+    .trust-icon svg { width: 28px; height: 28px; }
+    .trust-heading { font-size: 11px; }
+    @media (max-width: 480px) {
+      .trust-label { font-size: 9px; }
+      .trust-value { font-size: 16px; }
+      .trust-icon svg { width: 20px; height: 20px; }
+      .trust-heading { font-size: 9px; }
+    }
+  `}</style>
 
-      {/* ── TRUST BAR ── */}
-      <section style={{
-        background: "rgb(9,9,11)",
-        borderTop: "1px solid rgba(255,255,255,0.1)",
-        borderBottom: "1px solid rgba(255,255,255,0.1)",
-        padding: "40px 16px",
-      }}>
-        <p style={{
-          textAlign: "center",
-          fontSize: 11,
-          textTransform: "uppercase",
-          letterSpacing: "0.15em",
-          color: "rgba(255,255,255,0.4)",
-          marginBottom: 32,
-          fontWeight: 500,
-        }}>
-          {t.trustBar.label}
-        </p>
-        <div style={{
-          maxWidth: 960,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-          gap: 24,
-          textAlign: "center",
-        }}>
-          {TRUST_METRICS.map((m) => (
-            <div key={m.value} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-              <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
-              <span style={{ fontSize: 22, fontWeight: 700, color: "#ffffff", lineHeight: 1 }}>{m.value}</span>
-              <span style={{ fontSize: 11, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                {m.label[lng]}
-              </span>
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center mt-10">
-          <a href="/booking">
-            <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
-              {t.trustBar.cta}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </a>
-        </div>
-      </section>
+  <p
+    className="trust-heading"
+    style={{
+      textAlign: "center",
+      textTransform: "uppercase",
+      letterSpacing: "0.15em",
+      color: "rgba(255,255,255,0.4)",
+      marginBottom: 32,
+      fontWeight: 500,
+    }}
+  >
+    {lng === "es"
+      ? "Confianza de miles en Norteamérica"
+      : "Trusted by thousands across North America"}
+  </p>
 
+  <div
+    style={{
+      maxWidth: 900,
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+      gap: 24,
+      textAlign: "center",
+    }}
+  >
+    {TRUST_METRICS.map((m) => (
+      <div
+        key={m.value}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 10,
+        }}
+      >
+        <div className="trust-icon" style={{ color: "var(--color-primary, #2563eb)" }}>
+          {m.icon}
+        </div>
+        <span
+          className="trust-value"
+          style={{
+            fontWeight: 700,
+            color: "#fff",
+            lineHeight: 1,
+          }}
+        >
+          {m.value}
+        </span>
+        <span
+          className="trust-label"
+          style={{
+            color: "rgba(255,255,255,0.4)",
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+          }}
+        >
+          {m.label[lng as "en" | "es"]}
+        </span>
+      </div>
+    ))}
+  </div>
+</section>
       {/* ── FLEET CARDS ── */}
       <section className="py-16 sm:py-24 bg-black">
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">{t.fleet.label}</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">
+            {t.fleet.label}
+          </p>
           <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-3">
             {t.fleet.title}
           </h2>
-          <h3 className="text-base sm:text-lg text-white/60 mb-10">{t.fleet.subtitle}</h3>
+          <h3 className="text-base sm:text-lg text-white/60 mb-10">
+            {t.fleet.subtitle}
+          </h3>
 
           {/* Interior image */}
           <div className="relative w-full aspect-video sm:aspect-[21/9] rounded-2xl overflow-hidden mb-12">
@@ -211,7 +273,9 @@ export default function FleetContent() {
               sizes="(max-width: 640px) 100vw, 80vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-              <p className="text-sm text-white/80 italic">{t.fleet.interiorCaption}</p>
+              <p className="text-sm text-white/80 italic">
+                {t.fleet.interiorCaption}
+              </p>
             </div>
           </div>
 
@@ -243,14 +307,21 @@ export default function FleetContent() {
                     <li>{v.luggage}</li>
                     <li className="text-white/50 text-xs italic">{v.models}</li>
                   </ul>
-                  <p className="text-sm text-neutral-400 leading-relaxed mt-1">{v.description}</p>
+                  <p className="text-sm text-neutral-400 leading-relaxed mt-1">
+                    {v.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
-          <p className="mt-8 text-sm text-white/40 italic">{t.fleet.disclaimer}</p>
-          <p className="mt-2 text-sm text-neutral-400">{t.fleet.guarantee}</p>
+          <p className="mt-8 text-sm text-white/40 italic">
+            {t.fleet.disclaimer}
+          </p>
+          <p
+  className="mt-2 text-sm text-neutral-400"
+  dangerouslySetInnerHTML={{ __html: t.fleet.guarantee }}
+/>
 
           <div className="mt-10 flex justify-center">
             <a href="/booking">
@@ -266,7 +337,9 @@ export default function FleetContent() {
       {/* ── SAFETY ── */}
       <section className="py-16 sm:py-24 bg-neutral-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">{t.safety.label}</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">
+            {t.safety.label}
+          </p>
           <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
             {t.safety.title}
           </h2>
@@ -274,7 +347,9 @@ export default function FleetContent() {
           {/* Chauffeur image + intro */}
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center mb-16">
             <div>
-              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed mb-6">{t.safety.intro}</p>
+              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed mb-6">
+                {t.safety.intro}
+              </p>
               <a href="/booking">
                 <Button className={`px-6 sm:px-8 h-11 sm:h-12 ${btnPrimary}`}>
                   {t.safety.cta}
@@ -291,7 +366,9 @@ export default function FleetContent() {
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                <p className="text-xs text-white/70 italic">{t.safety.imageCaption}</p>
+                <p className="text-xs text-white/70 italic">
+                  {t.safety.imageCaption}
+                </p>
               </div>
             </div>
           </div>
@@ -304,12 +381,22 @@ export default function FleetContent() {
                 className="flex flex-col border border-white/10 rounded-2xl bg-black/40 p-6 sm:p-8 hover:border-primary/50 transition-all duration-300"
               >
                 <div className="h-px w-10 bg-primary mb-4" />
-                <h3 className="font-serif font-bold text-lg sm:text-xl mb-3">{p.title}</h3>
-                <p className="text-sm text-neutral-400 leading-relaxed whitespace-pre-line">{p.description}</p>
+                <h3 className="font-serif font-bold text-lg sm:text-xl mb-3">
+                  {p.title}
+                </h3>
+                <p
+  className="text-sm text-neutral-400 leading-relaxed whitespace-pre-line [&_a]:text-primary [&_a]:font-bold [&_a:hover]:underline"
+  {...(p.description.includes("<a")
+    ? { dangerouslySetInnerHTML: { __html: p.description } }
+    : { children: p.description })}
+/>
                 {p.checks && (
                   <ul className="mt-3 space-y-1">
                     {p.checks.map((c: string, j: number) => (
-                      <li key={j} className="text-sm text-neutral-300 flex gap-2">
+                      <li
+                        key={j}
+                        className="text-sm text-neutral-300 flex gap-2"
+                      >
                         <span className="text-primary">✓</span> {c}
                       </li>
                     ))}
@@ -322,25 +409,41 @@ export default function FleetContent() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <Testimonials data={testimonials} />
+      <section className="pt-16 sm:pt-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mb-10 text-center">
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+            {lng === "es"
+              ? "LO QUE DICEN NUESTROS CLIENTES SOBRE NUESTRA FLOTA"
+              : " What Our Clients Say About Our Fleet"}
+          </h2>
+        </div>
+        <Testimonials data={testimonials} />
+      </section>
 
       {/* ── FAQ ── */}
-      <section className="py-4 bg-black">
-        <h2 className="text-3xl md:text-4xl font-serif font-semibold text-center mb-2">{t.faqTitle}</h2>
+      <section className="py-16 sm:py-24 bg-black">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-12">
+            {lng === "es"
+              ? "PREGUNTAS FRECUENTES — FLOTA Y VEHÍCULOS"
+              : "Fleet & Vehicle FAQs"}
+          </h2>
+          <FA data={fa} />
+          <div className="mt-12 flex justify-center">
+            <a href={`/${lng}/faq`}>
+              <Button
+                variant="outline"
+                className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                {lng === "es"
+                  ? "¿Más preguntas? Contáctanos"
+                  : "Have More Questions? Contact Us"}
+              </Button>
+            </a>
+          </div>
+        </div>
       </section>
-      <FA data={fa} />
-      <div className="mb-12 flex justify-center">
-        <a href="tel:2066728281">
-          <Button
-            variant="outline"
-            className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
-          >
-            <Phone className="mr-2 h-4 w-4" />
-            {t.faqCta}
-          </Button>
-        </a>
-      </div>
-
     </main>
   );
 }

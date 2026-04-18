@@ -27,16 +27,7 @@ const METRICS = [
       </svg>
     ),
   },
-  {
-    value: "11 Years",
-    label: { en: "Of Excellence", es: "De Excelencia" },
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <circle cx="12" cy="8" r="6" />
-        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
-      </svg>
-    ),
-  },
+  
   {
     value: "50+ States",
     label: { en: "Plus CAN & CRC", es: "Más CAN & CRC" },
@@ -100,15 +91,10 @@ export default function AboutContent() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
 
-        <div className="absolute inset-0 z-10 flex flex-col justify-between mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-0 sm:pb-20 sm:justify-end">
-          <div className="flex flex-col items-center text-center sm:hidden">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
-              {t.hero.eyebrow}
-            </p>
-          </div>
-
+        {/* Todo abajo siempre — se eliminó justify-between y el eyebrow flotante de móvil */}
+        <div className="absolute inset-0 z-10 flex flex-col justify-end mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-16 pb-10 sm:pb-20">
           <div>
-            <p className="hidden sm:block mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand whitespace-pre-line">
+            <p className="mb-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-brand whitespace-pre-line">
               {t.hero.eyebrow}
             </p>
 
@@ -141,7 +127,7 @@ export default function AboutContent() {
             </div>
 
             {t.hero.quote && (
-              <p className="mt-4 text-sm italic text-white/30 text-center sm:text-base">
+              <p className="mt-4 text-sm italic text-white/30 sm:text-base">
                 "{t.hero.quote}"
               </p>
             )}
@@ -149,50 +135,103 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── TRUST BAR ── */}
-      <section style={{
-        background: "rgb(9,9,11)",
-        borderTop: "1px solid rgba(255,255,255,0.1)",
-        borderBottom: "1px solid rgba(255,255,255,0.1)",
-        padding: "40px 16px",
-      }}>
-        <p style={{
-          textAlign: "center",
-          fontSize: 11,
-          textTransform: "uppercase",
-          letterSpacing: "0.15em",
-          color: "rgba(255,255,255,0.4)",
-          marginBottom: 32,
-          fontWeight: 500,
-        }}>
-          {lng === "es" ? "Confianza de miles en Norteamérica" : "Trusted by thousands across North America"}
+      <section
+        style={{
+          background: "rgb(30,30,30)",
+          borderTop: "1px solid rgba(255,255,255,0.1)",
+          borderBottom: "1px solid rgba(255,255,255,0.1)",
+          padding: "32px 12px",
+          overflow: "hidden",
+        }}
+      >
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: 11,
+            textTransform: "uppercase",
+            letterSpacing: "0.15em",
+            color: "rgba(255,255,255,0.4)",
+            marginBottom: 24,
+            fontWeight: 500,
+          }}
+        >
+          {lng === "es"
+            ? "Confianza de miles en Norteamérica"
+            : "Trusted by thousands across North America"}
         </p>
-        <div style={{
-          maxWidth: 900,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-          gap: 24,
-          textAlign: "center",
-        }}>
+
+        <div
+          style={{
+            maxWidth: 900,
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "8px 4px",
+            textAlign: "center",
+          }}
+        >
           {METRICS.map((m) => (
-            <div key={m.value} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-              <div style={{ color: "var(--color-primary, #2563eb)" }}>{m.icon}</div>
-              <span style={{ fontSize: 22, fontWeight: 700, color: "#ffffff", lineHeight: 1 }}>
+            <div
+              key={m.value}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                gap: 8,
+                padding: "12px 8px",
+              }}
+            >
+              {/* Icono con tamaño fijo, sin solaparse */}
+              <div
+                style={{
+                  color: "var(--color-primary, #3b82f6)",
+                  width: 28,
+                  height: 28,
+                  flexShrink: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {m.icon}
+              </div>
+
+              <span
+                style={{
+                  fontSize: "clamp(14px, 3.5vw, 22px)",
+                  fontWeight: 700,
+                  color: "#fff",
+                  lineHeight: 1,
+                }}
+              >
                 {m.value}
               </span>
-              <span style={{
-                fontSize: 11,
-                color: "rgba(255,255,255,0.4)",
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                display: "block",
-              }}>
+
+              <span
+                style={{
+                  fontSize: "clamp(8px, 1.8vw, 11px)",
+                  color: "rgba(255,255,255,0.4)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                  lineHeight: 1.3,
+                }}
+              >
                 {m.label[lng as "en" | "es"]}
               </span>
             </div>
           ))}
         </div>
+
+        {/* Media query para móvil: 2 columnas × 2 filas */}
+        <style>{`
+    @media (max-width: 540px) {
+      #trust-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px 8px !important;
+      }
+    }
+  `}</style>
       </section>
 
       {/* ── STORY ── */}
@@ -295,7 +334,7 @@ export default function AboutContent() {
             </div>
             <div className="relative w-full aspect-video sm:aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/Imagen2About.png"
+                src="/images/ImagenAboutMain.png"
                 alt="Luxury executive transportation"
                 fill
                 className="object-cover"
@@ -328,17 +367,42 @@ export default function AboutContent() {
         </div>
       </section>
 
-      <Testimonials data={testimonios} />
+      {/* ── TESTIMONIALS ── */}
+      <section className="pt-16 sm:pt-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mb-2 text-center">
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+            {lng === "es"
+              ? "LO QUE DICEN NUESTROS CLIENTES"
+              : "What Our Clients Say About Us"}
+          </h2>
+        </div>
+        <Testimonials data={testimonios} />
+      </section>
 
-      <h2 className="text-3xl md:text-4xl font-serif font-semibold text-center mt-10">{t.faqTitle}</h2>
-      <FA data={fa} />
-      <div className="mb-9 flex justify-center">
-        <a href="/faq">
-          <Button className={`px-8 h-11 sm:h-12 ${btnPrimary}`}>
-            {t.buttons.moreQuestions}
-          </Button>
-        </a>
-      </div>
+      {/* ── FAQ ── */}
+      <section className="py-16 sm:py-24 bg-black">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-2">
+            {lng === "es"
+              ? "PREGUNTAS FRECUENTES SOBRE VIARO"
+              : "Frequently Asked Questions ABOUT VIARO"}
+          </h2>
+          <FA data={fa} />
+          <div className="mt-3 flex justify-center">
+            <a href={`/${lng}/faq`}>
+              <Button
+                variant="outline"
+                className="rounded-full px-6 sm:px-8 uppercase tracking-widest text-xs font-semibold h-11 sm:h-12 border-white text-white hover:bg-white hover:text-black"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                {lng === "es"
+                  ? "¿Más preguntas? Contáctanos"
+                  : "Have More Questions? Contact Us"}
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
 
     </main>
   );

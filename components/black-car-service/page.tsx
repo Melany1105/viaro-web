@@ -7,7 +7,7 @@ import { TestimonialsMap, TestimonialsMapEs } from "@/data/Tetimonials";
 import { Testimonials } from "../testimonials";
 import { serviceEn, serviceEs } from "@/data/service";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getDictionary } from "@/lib/get-dictionary";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
@@ -388,7 +388,6 @@ export default function ServicePage() {
 
   return (
     <div className="bg-black text-white">
-      {/* ── HERO ── */}
       <section
         className="relative min-h-screen flex items-center pt-0"
         style={{ height: "100dvh" }}
@@ -435,16 +434,35 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* ── TRUST BAR ── */}
       {cityData.trustBar && cityData.trustBar.length > 0 && (
         <section
           style={{
-            background: "rgb(9,9,11)",
+            background: "rgb(30,30,30)",
             borderTop: "1px solid rgba(255,255,255,0.1)",
             borderBottom: "1px solid rgba(255,255,255,0.1)",
-            padding: "40px 16px",
+            padding: "32px 12px",
+            overflow: "hidden",
           }}
         >
+          <style>{`
+      .trust-bar-grid {
+        display: grid;
+        grid-template-columns: repeat(${cityData.trustBar.length}, 1fr);
+        gap: 8px 4px;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .trust-bar-icon svg { width: 26px; height: 26px; }
+      .trust-bar-label { font-size: clamp(8px, 1.8vw, 11px); }
+      @media (max-width: 540px) {
+        .trust-bar-grid { gap: 10px 4px; }
+        .trust-bar-icon svg { width: 18px; height: 18px; }
+        .trust-bar-label { font-size: 8px; }
+        .trust-bar-value { font-size: 11px !important; }
+      }
+    `}</style>
+
           <p
             style={{
               textAlign: "center",
@@ -452,7 +470,7 @@ export default function ServicePage() {
               textTransform: "uppercase",
               letterSpacing: "0.15em",
               color: "rgba(255,255,255,0.4)",
-              marginBottom: 32,
+              marginBottom: 24,
               fontWeight: 500,
             }}
           >
@@ -460,16 +478,8 @@ export default function ServicePage() {
               ? "Confianza de miles en Norteamérica"
               : "Trusted by thousands across North America"}
           </p>
-          <div
-            style={{
-              maxWidth: 900,
-              margin: "0 auto",
-              display: "grid",
-              gridTemplateColumns: `repeat(${cityData.trustBar.length}, 1fr)`,
-              gap: 24,
-              textAlign: "center",
-            }}
-          >
+
+          <div className="trust-bar-grid">
             {cityData.trustBar.map((item, i) => (
               <div
                 key={i}
@@ -477,19 +487,23 @@ export default function ServicePage() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  gap: 10,
+                  gap: 8,
+                  padding: "8px 4px",
                 }}
               >
-                <div style={{ color: "var(--color-primary, #2563eb)" }}>
+                <div
+                  className="trust-bar-icon"
+                  style={{ color: "var(--color-primary, #3b82f6)" }}
+                >
                   {getTrustIcon(item)}
                 </div>
                 <span
+                  className="trust-bar-label"
                   style={{
-                    fontSize: 17,
+                    fontSize: "clamp(10px, 3.5vw, 20px)",
                     fontWeight: 700,
                     color: "#fff",
-                    lineHeight: 1.3,
-                    textAlign: "center",
+                    lineHeight: 1,
                   }}
                 >
                   {item}
@@ -499,13 +513,21 @@ export default function ServicePage() {
           </div>
         </section>
       )}
-
       {/* ── BODY CONTENT ── */}
       {cityData.bodyContent && (
         <section className="bg-black">
           <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mt-6 mb-4">
             <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
-              {cityData.bodyContent.h2}
+              {cityData.bodyContent.h2
+                .split("Viaro")
+                .map((part: string, i: number, arr: string[]) => (
+                  <React.Fragment key={i}>
+                    {part}
+                    {i < arr.length - 1 && (
+                      <span className="text-muted2">Viaro</span>
+                    )}
+                  </React.Fragment>
+                ))}
             </h2>
             <h3 className="text-sm font-bold uppercase tracking-widest text-primary mb-8">
               {cityData.bodyContent.h3}
@@ -537,11 +559,7 @@ export default function ServicePage() {
                       className="w-full h-full object-cover transition duration-500 group-hover:opacity-40"
                     />
                   </a>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none z-10">
-                    <span className="text-white text-4xl font-bold tracking-widest drop-shadow-lg">
-                      {airport.airports?.[0]}
-                    </span>
-                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none z-10"></div>
                   <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-5 z-20">
                     <h4 className="text-primary text-lg font-serif font-bold mb-1 leading-tight">
                       {airport.region}
@@ -607,7 +625,7 @@ export default function ServicePage() {
                           src={section.image.src}
                           alt={section.image.alt}
                           fill
-                          className="object-cover"
+                          className="object-cover object-[50%_80%]"
                           sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -623,9 +641,7 @@ export default function ServicePage() {
                         className="group flex gap-4 border border-white/5 rounded-2xl p-5 bg-neutral-900/30 hover:border-primary/30 hover:bg-neutral-900/60 transition-all duration-300"
                       >
                         <div className="flex-shrink-0 mt-1 h-7 w-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <span className="text-primary text-xs font-bold">
-                            {idx + 1}
-                          </span>
+                          <div className="w-3 h-3 bg-primary rounded-full shadow-[0_0_10px_rgba(59,130,246,0.8)]"></div>
                         </div>
                         <div>
                           <p className="text-sm sm:text-base font-semibold text-white mb-1 group-hover:text-primary transition-colors">
@@ -791,7 +807,17 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <Testimonials data={testimonialData} />
+      {/* ── TESTIMONIALS ── */}
+      <section className="pt-16 sm:pt-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mb-10 text-center">
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+            {lng === "es"
+              ? "LO QUE DICEN NUESTROS VIAJEROS"
+              : " WHAT OUR TRAVELERS SAY"}
+          </h2>
+        </div>
+        <Testimonials data={testimonialData} />
+      </section>
 
       {/* ── FAQ ── */}
       <section className="py-16 sm:py-24 bg-black">
@@ -802,7 +828,7 @@ export default function ServicePage() {
               : "Frequently Asked Questions"}
           </h2>
           <FA data={faData} />
-          <div className="mt-10 flex justify-center">
+          <div className="mt-12 flex justify-center">
             <a href={`/${lng}/faq`}>
               <Button
                 variant="outline"

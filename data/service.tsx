@@ -173,7 +173,7 @@ export const serviceEn: ServiceItem[] = [
 
   // 2. CORPORATE TRANSPORTATION
   {
-    id: "corporate-transportation-executive-car-service",
+    id: "corporate-transportation",
     FA: "ServiceCorporateFa",
     Testi: "servicesCorporateTestimonials",
     hero: {
@@ -386,8 +386,7 @@ export const serviceEn: ServiceItem[] = [
     trustBar: [
       "Live Flight & Tail Tracking",
       "Tarmac-Side Pickup",
-      "Transparen Rates",
-      "24/7 Dispatch",
+      "Transparent Rates",
       "Full Discretion",
     ],
     bodyContent: {
@@ -476,7 +475,7 @@ extraContent: [
       </>
     ),
     image: {
-      src: "/images/ImagenAirline.png",
+      src: "/images/ImagenFBO3.png",
       alt: "Airline crew boarding a private Viaro Sprinter van for a quick and comfortable hotel transfer.",
     },
   },
@@ -1132,7 +1131,7 @@ export const serviceEs: ServiceItem[] = [
 
   // 2. TRANSPORTE CORPORATIVO
   {
-    id: "corporate-transportation-executive-car-service",
+    id: "corporate-transportation",
     FA: "ServiceCorporateFa",
     Testi: "servicesCorporateTestimonials",
     hero: {
@@ -1346,7 +1345,6 @@ export const serviceEs: ServiceItem[] = [
       "Rastreo de Vuelo y Cola en Vivo",
       "Recogida en Pista",
       "Tarifas Transparentes",
-      "Despacho 24/7",
       "Total Discreción",
     ],
     bodyContent: {

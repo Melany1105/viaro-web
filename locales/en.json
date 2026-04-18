@@ -619,7 +619,7 @@
         }
       ],
       "disclaimer": "Because our vehicles are in high demand, the exact make and model available will depend on your specific booking time and service area. Contact our team for specific vehicle requests.",
-      "guarantee": "We always guarantee the premium vehicle class you select — spotless, comfortable, and ready to get you to your airport transfer, cruise, or appointment safely.",
+  "guarantee": "We always guarantee the premium vehicle class you select — spotless, comfortable, and ready to get you to your <a href='/en/black-car-service/airport-transfers' class='text-primary font-bold hover:underline'>airport transfer</a>, <a href='/en/black-car-service/cruise-port-transfers/' class='text-primary font-bold hover:underline'>cruise</a> or <a href='/en/black-car-service/hourly-chauffeur-hire/' class='text-primary font-bold hover:underline'>appointment</a> safely.",
       "cta": "Choose Your Vehicle and Book Today"
     },
 
@@ -633,8 +633,7 @@
       "pillars": [
         {
           "title": "Professional Chauffeurs You Can Trust",
-          "description": "Every chauffeur in our network must pass a rigorous, multi-step vetting process powered by Checkr, including comprehensive federal and state background checks, sex offender registry screening, and motor vehicle record review.",
-          "checks": [
+  "description": "Every chauffeur in our network must pass a rigorous, multi-step vetting process powered by <a href='https://checkr.com' target='_blank' rel='noopener noreferrer' class='text-primary font-bold hover:underline'>Checkr</a>. This includes comprehensive federal and state background checks, sex offender registry screening, and motor vehicle record review.",          "checks": [
             "Multi-level background checks (federal, state, county)",
             "Mandatory drug and alcohol testing",
             "Valid commercial driver's license verification",

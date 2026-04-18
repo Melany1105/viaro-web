@@ -119,7 +119,7 @@ export const AboutFa = [
         headquarters are in Seattle, Washington, but our reach spans the continent. More
         countries are in development. See our full service areas{" "}
         <a
-          href="/service-areas/"
+          href="/en/service-areas/"
           className="underline underline-offset-4 font-semibold hover:text-primary"
         >
           here
@@ -251,6 +251,128 @@ export const LocationsSeaTacFa = [
   {
     question:"Why is the purple elevator pickup better than curbside?",
     answer:"The third-floor purple elevator is faster because your driver can wait there without circling. Curbside requires drivers to keep moving because of airport rules, adding 5-45 minutes of wait time. Unless you need curbside for mobility reasons, the purple elevator saves time for everyone."
+  },
+];
+export const LocationsLAFa = [
+  {
+    question:"How much does a black car from LAX to Beverly Hills cost?",
+    answer:"Viaro offers flat-rate pricing from LAX to Beverly Hills starting at $85 for a sedan. No surge pricing—ever. Your quote is locked in at booking, regardless of traffic. SUVs and Sprinter vans available at higher rates."
+  },
+  {
+    question:"Do you provide tarmac pickup at Van Nuys?",
+    answer:"Yes. We coordinate directly with FBO operations at Van Nuys including Signature, Castle & Cooke, and Jet Aviation. Where security allows, our vehicle meets you at the jet stairs. Contact us to arrange tarmac service."
+  },
+  {
+    question:"Which airport should I use for Disneyland?",
+    answer:"John Wayne Airport (SNA) is the closest—about 15 minutes to Disneyland. Long Beach (LGB) is also convenient. Both are faster and calmer than LAX, which is 35+ miles away and can take 60-90 minutes in traffic."
+  },
+  {
+    question:"What is your cancellation policy?",
+    answer:"For standard airport transfers, cancel up to 3 hours before pickup for a full refund. For hourly charters and event bookings, we require 72 hours notice. Plans change—contact us and we will work with you."
+  },
+  {
+    question:"Do you track my flight?",
+    answer:"Yes. We monitor your flight in real-time. If your plane lands early or late, we adjust pickup automatically. You never need to call us with updates—we already know."
+
+  },
+  {
+    question:"Which airports do you serve in Los Angeles?",
+    answer:"We serve all major LA-area airports: LAX, Van Nuys (VNY) for private aviation, Hollywood Burbank (BUR), Long Beach (LGB), and John Wayne/Orange County (SNA)."
+  },
+    {
+    question:"Can I book an all-day car in LA?",
+    answer:<>
+        Yes. Our{" "}
+        <a
+          href="/en/black-car-service/hourly-chauffeur-hire"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          hourly chauffeur service
+        </a>{" "}
+        is perfect for studio visits, shopping on Rodeo Drive, or wine country day trips. Your driver waits while you work. 3-hour minimum.
+        </>
+  },
+];
+export const LocationsSanFranciscoFa = [
+  {
+    question:"How much does a black car from SFO to Downtown San Francisco cost?",
+    answer:"Viaro offers transparent pricing from SFO to Downtown starting at $75 for a sedan. Your rate is locked at booking—no rideshare-style surges, even during Dreamforce or Oracle OpenWorld. SUVs and Sprinter vans are available at higher rates."
+  },
+  {
+    question:"Which airport is closest to Silicon Valley?",
+    answer:"San Jose (SJC) is in the heart of Silicon Valley—15 minutes to Apple Park, 10 minutes to Google. SFO is about 30-45 minutes to South Bay depending on traffic. Oakland is best for East Bay destinations. We serve all three."
+  },
+  {
+    question:"Do you provide Napa Valley wine tours?",
+    answer:"Yes. Our hourly chauffeur service [/black-car-services/hourly-chauffeur-service/] is perfect for full-day Napa and Sonoma wine tours. Your driver stays with you all day, handles the driving between wineries, and gets you home safely. 3-hour minimum."
+  },
+  {
+    question:"What is your cancellation policy?",
+    answer:"For standard airport transfers, cancel up to 3 hours before pickup for a full refund. For hourly charters and event bookings, we require 72 hours notice. Plans change—contact us and we will work with you."
+  },
+  {
+    question:"Do you track my flight?",
+    answer:"Yes. We monitor your flight in real-time. If your plane lands early or late—or gets delayed by SFO fog—we adjust pickup automatically. You never need to call us with updates."
+  },
+  {
+    question:"Do you provide service to McCormick Place?",
+    answer:
+    "Yes. McCormick Place is the largest convention center in North America, and we provide service from all Chicago airports. We also offer hourly chauffeur service for multi-day conventions—your driver stays with you throughout the event."
+  },
+    {
+    question:"Can I book an all-day car in Chicago?",
+    answer:<>
+        Yes. Our{" "}
+        <a
+          href="/en/black-car-service/hourly-chauffeur-hire"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          hourly chauffeur service
+        </a>{" "}
+        is perfectfor client meetings, office visits across the city, or full-day coverage during conferences. Your driver waits while you work. 3-hour minimum.
+        </>
+  },
+];
+export const LocationsChicagocoFa = [
+  {
+    question:" How much does a black car from O'Hare to Downtown Chicago cost?",
+    answer:"Viaro offers transparent pricing from O'Hare to Downtown starting at $75 for a sedan. Your rate is locked at booking—no rideshare-style surges, even during snowstorms or rush hour. SUVs and Sprinter vans available at higher rates."
+  },
+  {
+    question:"Do you provide tarmac pickup at DuPage Airport?",
+    answer:"Yes. We coordinate directly with FBO operations at DuPage including Signature Flight Support and Atlantic Aviation. Where security allows, our vehicle meets you at the jet stairs. Contact us to arrange tarmac service for your arrival."
+  },
+  {
+    question:"Which airport is best for Downtown Chicago?",
+    answer:"Midway is closer (11 miles) but has fewer flight options. O'Hare (17 miles) offers more airlines and routes. DuPage is best for private aviation and western suburbs. We serve all three—choose based on your flight, and we handle the ground transportation."
+  },
+  {
+    question:"What is your cancellation policy?",
+    answer:"For standard airport transfers, cancel up to 3 hours before pickup for a full refund. For hourly charters and event bookings, we require 72 hours notice. Plans change—contact us and we will work with you."
+  },
+  {
+    question:"Do you track my flight?",
+    answer:"Yes. We monitor your flight in real-time. If your plane lands early or late—or gets delayed by SFO fog—we adjust pickup automatically. You never need to call us with updates."
+  },
+  {
+    question:"Do you provide service during Dreamforce and tech conferences?",
+    answer:"Yes. We provide extensive service during Dreamforce, Google I/O, Apple WWDC, and other major tech events. Book early—demand is high. Our locked rates mean no surge pricing even when the city is packed with 170,000 Salesforce attendees."
+  },
+    {
+    question:"Can I book a car for investor meetings on Sand Hill Road?",
+    answer:<>
+        Yes. Our{" "}
+        <a
+          href="/en/black-car-service/corporate-transportation"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          corporate transportation
+        </a>{" "}
+and hourly chauffeur services are popular with founders doing VC pitches. Your driver waits outside while you meet with Sequoia, Andreessen, or Kleiner Perkins, then takes you to the next firm.        
+</>
   },
 ];
 export const ServiceAirportFa = [
@@ -467,8 +589,10 @@ export const FAMap = {
   ServiceCorporateFa,
   LocationsSeaTacFa,
   FleetFa,
-  locationNewYorkFA
-
+  locationNewYorkFA,
+  LocationsLAFa,
+  LocationsSanFranciscoFa,
+  LocationsChicagocoFa
 };
 export type FAMapKey = keyof typeof FAMap;
 export const locationNewYorkFAES = [
@@ -940,6 +1064,128 @@ export const FleetFaEs = [
       "Todos los vehículos incluyen control de clima, asientos de cuero premium, agua embotellada de cortesía, puertos de carga para teléfonos y Wi-Fi (en vehículos seleccionados). Nuestros choferes están encantados de ajustar la temperatura, la música o la ruta según su preferencia.",
   },
 ];
+export const LocationsLAFaEs = [
+  {
+    question: "¿Cuánto cuesta un auto negro del LAX a Beverly Hills?",
+    answer: "Viaro ofrece tarifas fijas desde LAX hasta Beverly Hills a partir de $85 para un sedán. Sin precios variables—nunca. Tu cotización queda fija al momento de la reserva, independientemente del tráfico. SUVs y vans Sprinter disponibles a tarifas más altas."
+  },
+  {
+    question: "¿Ofrecen recogida en la pista en Van Nuys?",
+    answer: "Sí. Coordinamos directamente con las operaciones FBO en Van Nuys, incluyendo Signature, Castle & Cooke y Jet Aviation. Donde la seguridad lo permite, nuestro vehículo te recibe al pie de la escalerilla. Contáctanos para coordinar el servicio en pista."
+  },
+  {
+    question: "¿Qué aeropuerto debo usar para Disneyland?",
+    answer: "El Aeropuerto John Wayne (SNA) es el más cercano—aproximadamente 15 minutos hasta Disneyland. Long Beach (LGB) también es conveniente. Ambos son más rápidos y tranquilos que LAX, que está a más de 35 millas y puede tardar entre 60 y 90 minutos con tráfico."
+  },
+  {
+    question: "¿Cuál es su política de cancelación?",
+    answer: "Para traslados estándar al aeropuerto, cancela hasta 3 horas antes de la recogida para un reembolso completo. Para chárteres por hora y reservas de eventos, requerimos 72 horas de anticipación. Los planes cambian—contáctanos y buscaremos una solución."
+  },
+  {
+    question: "¿Rastrean mi vuelo?",
+    answer: "Sí. Monitoreamos tu vuelo en tiempo real. Si tu avión aterriza antes o después, ajustamos la recogida automáticamente. Nunca necesitas llamarnos con actualizaciones—nosotros ya lo sabemos."
+  },
+  {
+    question: "¿Qué aeropuertos atienden en Los Ángeles?",
+    answer: "Atendemos todos los principales aeropuertos del área de LA: LAX, Van Nuys (VNY) para aviación privada, Hollywood Burbank (BUR), Long Beach (LGB) y John Wayne/Orange County (SNA)."
+  },
+  {
+    question: "¿Puedo reservar un auto por todo el día en LA?",
+    answer: <>
+      Sí. Nuestro{" "}
+     <a
+        href="/es/black-car-service/hourly-chauffeur-hire"
+        rel="noopener noreferrer"
+        className="underline underline-offset-4 font-semibold hover:text-primary"
+      >
+        servicio de chofer por hora
+      </a>{" "}
+      es perfecto para visitas a estudios, compras en Rodeo Drive o excursiones de un día a la región vinícola. Tu conductor espera mientras trabajas. Mínimo de 3 horas.
+    </>
+  },
+];
+
+export const LocationsSanFranciscoFaEs = [
+  {
+    question: "¿Cuánto cuesta un auto negro del SFO al centro de San Francisco?",
+    answer: "Viaro ofrece precios transparentes desde SFO hasta el centro a partir de $75 para un sedán. Tu tarifa queda fija al momento de la reserva—sin incrementos al estilo de las apps de transporte, ni siquiera durante Dreamforce u Oracle OpenWorld. SUVs y vans Sprinter disponibles a tarifas más altas."
+  },
+  {
+    question: "¿Qué aeropuerto está más cerca de Silicon Valley?",
+    answer: "San Jose (SJC) está en el corazón de Silicon Valley—a 15 minutos de Apple Park y 10 minutos de Google. SFO está a unos 30-45 minutos del South Bay según el tráfico. Oakland es la mejor opción para destinos en el East Bay. Atendemos los tres."
+  },
+  {
+    question: "¿Ofrecen tours de vino en el Valle de Napa?",
+    answer: "Sí. Nuestro servicio de chofer por hora [/black-car-services/hourly-chauffeur-service/] es perfecto para tours de un día completo por Napa y Sonoma. Tu conductor permanece contigo todo el día, maneja entre bodegas y te lleva a casa de forma segura. Mínimo de 3 horas."
+  },
+  {
+    question: "¿Cuál es su política de cancelación?",
+    answer: "Para traslados estándar al aeropuerto, cancela hasta 3 horas antes de la recogida para un reembolso completo. Para chárteres por hora y reservas de eventos, requerimos 72 horas de anticipación. Los planes cambian—contáctanos y buscaremos una solución."
+  },
+  {
+    question: "¿Rastrean mi vuelo?",
+    answer: "Sí. Monitoreamos tu vuelo en tiempo real. Si tu avión aterriza antes o después—o se retrasa por la niebla del SFO—ajustamos la recogida automáticamente. Nunca necesitas llamarnos con actualizaciones."
+  },
+  {
+    question: "¿Ofrecen servicio al McCormick Place?",
+    answer: "Sí. McCormick Place es el centro de convenciones más grande de América del Norte y ofrecemos servicio desde todos los aeropuertos de Chicago. También contamos con servicio de chofer por hora para convenciones de varios días—tu conductor permanece contigo durante todo el evento."
+  },
+  {
+    question: "¿Puedo reservar un auto por todo el día en Chicago?",
+    answer: <>
+      Sí. Nuestro{" "}
+       <a
+        href="/es/black-car-service/hourly-chauffeur-hire"
+        rel="noopener noreferrer"
+        className="underline underline-offset-4 font-semibold hover:text-primary"
+      >
+        servicio de chofer por hora
+      </a>{" "}
+      es perfecto para reuniones con clientes, visitas a oficinas por toda la ciudad o cobertura de día completo durante conferencias. Tu conductor espera mientras trabajas. Mínimo de 3 horas.
+    </>
+  },
+];
+
+export const LocationsChicagocoFaEs = [
+  {
+    question: "¿Cuánto cuesta un auto negro del O'Hare al centro de Chicago?",
+    answer: "Viaro ofrece precios transparentes desde O'Hare hasta el centro a partir de $75 para un sedán. Tu tarifa queda fija al momento de la reserva—sin incrementos al estilo de las apps de transporte, ni siquiera durante nevadas o la hora pico. SUVs y vans Sprinter disponibles a tarifas más altas."
+  },
+  {
+    question: "¿Ofrecen recogida en la pista en el Aeropuerto DuPage?",
+    answer: "Sí. Coordinamos directamente con las operaciones FBO en DuPage, incluyendo Signature Flight Support y Atlantic Aviation. Donde la seguridad lo permite, nuestro vehículo te recibe al pie de la escalerilla. Contáctanos para coordinar el servicio en pista para tu llegada."
+  },
+  {
+    question: "¿Qué aeropuerto es mejor para el centro de Chicago?",
+    answer: "Midway está más cerca (11 millas) pero tiene menos opciones de vuelos. O'Hare (17 millas) ofrece más aerolíneas y rutas. DuPage es la mejor opción para aviación privada y los suburbios del oeste. Atendemos los tres—elige según tu vuelo y nosotros nos encargamos del transporte terrestre."
+  },
+  {
+    question: "¿Cuál es su política de cancelación?",
+    answer: "Para traslados estándar al aeropuerto, cancela hasta 3 horas antes de la recogida para un reembolso completo. Para chárteres por hora y reservas de eventos, requerimos 72 horas de anticipación. Los planes cambian—contáctanos y buscaremos una solución."
+  },
+  {
+    question: "¿Rastrean mi vuelo?",
+    answer: "Sí. Monitoreamos tu vuelo en tiempo real. Si tu avión aterriza antes o después—o se retrasa por la niebla del SFO—ajustamos la recogida automáticamente. Nunca necesitas llamarnos con actualizaciones."
+  },
+  {
+    question: "¿Ofrecen servicio durante Dreamforce y conferencias tecnológicas?",
+    answer: "Sí. Ofrecemos un servicio amplio durante Dreamforce, Google I/O, Apple WWDC y otros grandes eventos tecnológicos. Reserva con anticipación—la demanda es alta. Nuestras tarifas fijas garantizan que no haya precios incrementales, incluso cuando la ciudad está llena de los 170,000 asistentes de Salesforce."
+  },
+  {
+    question: "¿Puedo reservar un auto para reuniones con inversores en Sand Hill Road?",
+    answer: <>
+      Sí. Nuestro{" "}
+       <a
+        href="/es/black-car-service/corporate-transportation"
+        rel="noopener noreferrer"
+        className="underline underline-offset-4 font-semibold hover:text-primary"
+      >
+        transporte corporativo
+      </a>{" "}
+      y servicios de chofer por hora son populares entre fundadores que hacen presentaciones a capital de riesgo. Tu conductor espera afuera mientras te reúnes con Sequoia, Andreessen o Kleiner Perkins, y luego te lleva a la siguiente firma.
+    </>
+  },
+];
 export const FAMapEs = {
   ServiceAirportFa: ServiceAirportFaEs,
   ServicesFa: ServicesFaEs,
@@ -949,7 +1195,10 @@ export const FAMapEs = {
   ServiceHourlyFa:ServiceHourlyFaEs,
   LocationsSeaTacFa: LocationsSeaTacFaEs,
   FleetFa:FleetFaEs,
-  locationNewYorkFA:locationNewYorkFAES
+  locationNewYorkFA:locationNewYorkFAES,
+  LocationsLAFa:LocationsLAFaEs,
+  LocationsSanFranciscoFa:LocationsSanFranciscoFaEs,
+  LocationsChicagocoFa:LocationsChicagocoFaEs
 };
 
 export type FAMapKeyEs = keyof typeof FAMapEs;
