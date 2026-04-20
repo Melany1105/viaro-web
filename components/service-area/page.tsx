@@ -492,76 +492,111 @@ export default function LocationPage() {
           </div>
         </section>
       )}
+{data.whereSection && (
+  <section
+    className="py-16 sm:py-24"
+    style={{
+      background: "rgb(10,10,10)",
+      borderTop: "1px solid rgba(255,255,255,0.06)",
+    }}
+  >
+    <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
 
-      {/* ══════════════════════════════════════════════════════════════
-          WHERE SECTION — h2 + imagen con caption + contenido + cta
-      ══════════════════════════════════════════════════════════════ */}
-      {data.whereSection && (
-        <section
-          className="py-16 sm:py-24"
-          style={{
-            background: "rgb(10,10,10)",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-          }}
-        >
-          <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-
-            <div className="flex items-center gap-4 mb-10">
-              <div className="h-px w-8 bg-primary flex-shrink-0" />
-              <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
-                {data.whereSection.h2.split("Viaro")
-                                    .map((part: string, i: number, arr: string[]) => (
-                                      <React.Fragment key={i}>
-                                        {part}
-                                        {i < arr.length - 1 && (
-                                          <span className="text-muted2">Viaro</span>
-                                        )}
-                                      </React.Fragment>
-                                    ))
-                }
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Content */}
-              <div className="space-y-4">
-                {data.whereSection.content.map((p, i) => (
-                  <p key={i} className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-                    {p}
-                  </p>
-                ))}
-                <div className="pt-4">
-                  <a href="https://booking.allblacklimoseattle.com/">
-                    <Button className={`px-8 h-11 sm:h-12 ${btnPrimary}`}>
-                      {data.whereSection.cta}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </a>
-                </div>
-              </div>
-
-              {/* Image */}
-              <div>
-                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/5">
-                  <Image
-                    src={data.whereSection.image.src}
-                    alt={data.whereSection.image.alt}
-                    fill
-                    className="object-cover object-[50%_60%]"
-                    sizes="(max-width:1024px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                </div>
-                {data.whereSection.image.caption && (
-                  <p className="mt-3 text-xs text-neutral-600 italic text-center">
-                    {data.whereSection.image.caption}
-                  </p>
+      {/* Header centrado */}
+      <div className="flex flex-col items-center text-center mb-10">
+        <div className="h-px w-8 bg-primary mb-6" />
+        <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+          {data.whereSection.h2.split("Viaro")
+            .map((part: string, i: number, arr: string[]) => (
+              <React.Fragment key={i}>
+                {part}
+                {i < arr.length - 1 && (
+                  <span className="text-muted2">Viaro</span>
                 )}
-              </div>
+              </React.Fragment>
+            ))
+          }
+        </h2>
+        <h3  className="font-serif font-bold text-xs sm:text-xl lg:text-3xl leading-tight">
+           {data.whereSection.h3}
+        </h3>
+      </div>
+      {data.whereSection.items && (
+            <div className="grid grid-cols-2 gap-2 mt-6 mb-6">
+              {data.whereSection.items.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 bg-white/[0.02] border border-white/5 rounded-xl px-4 py-3.5"
+                >
+                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-white/5 flex items-center justify-center">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      className="text-neutral-400"
+                    >
+                      <circle cx="8" cy="8" r="6" />
+                      <path d="M8 5v3l2 2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-white">{item.label}</div>
+                    <div className="text-xs text-neutral-500 mt-0.5">
+                      {item.time} · {item.desc}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
+          )}
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        {/* Content */}
+        <div className="space-y-4">
+          {data.whereSection.content.map((p, i) => (
+            <p key={i} className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+              {p}
+            </p>
+          ))}
+
+          
+
+         
+        </div>
+
+        {/* Image */}
+        <div>
+          <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/5">
+            <Image
+              src={data.whereSection.image.src}
+              alt={data.whereSection.image.alt}
+              fill
+              className="object-cover object-[50%_60%]"
+              sizes="(max-width:1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           </div>
-        </section>
-      )}
+          {data.whereSection.image.caption && (
+            <p className="mt-3 text-xs text-neutral-600 italic text-center">
+              {data.whereSection.image.caption}
+            </p>
+          )}
+        </div>
+      </div>
+       <div className="pt-6 flex justify-center">
+            <a href="https://booking.allblacklimoseattle.com/">
+              <Button className={`px-8 h-11 sm:h-12 ${btnPrimary}`}>
+                {data.whereSection.cta}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+          </div>
+    </div>
+  </section>
+)}
 
       {/* ══════════════════════════════════════════════════════════════
           PRICING

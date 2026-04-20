@@ -168,7 +168,7 @@ export default function LocationsContent() {
     },
     {
       city: "Las Vegas",
-      url: "",
+      url: "las-vegas",
       airport: "LAS",
       description: isES
         ? "La capital mundial del entretenimiento. Resorts de lujo, vida nocturna y emoción sin parar."

@@ -572,13 +572,68 @@ export const locationNewYorkFA = [
   {
     question: "Can I book a car for a full day in Manhattan?",
     answer:
-      "Yes. Our hourly chauffeur service [/black-car-services/hourly-chauffeur-service/] is perfect for full-day Manhattan coverage. Your driver waits while you attend meetings, shop, or dine. 3-hour minimum.",
+      <>
+        Yes. Our{" "}
+        <a
+          href="/en/black-car-service/hourly-chauffeur-hire"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          hourly chauffeur service
+        </a>{" "}
+        is perfect for full-day Manhattan coverage. Your driver waits while you attend meetings, shop, or dine. 3-hour minimum.
+        </> ,
   },
   {
     question: "Do you provide service to The Hamptons?",
+    answer:"Yes. We provide transfers from all NYC airports to the Hamptons (Southampton, East Hampton, Montauk). Flat rates available. Contact us for a quote."
+        },
+];
+export const locationLasVegasFA = [
+  {
+    question: "How much does a black car from Harry Reid Airport to the Strip cost?",
     answer:
-      "Yes. We provide transfers from all NYC airports to the Hamptons (Southampton, East Hampton, Montauk). Flat rates available. Contact us for a quote.",
+      "Viaro offers transparent pricing from Harry Reid to Strip resorts starting at $65 for a sedan. Your rate is locked at booking—no rideshare-style surges, even during CES, SEMA, or fight weekends. SUVs and Sprinter vans available at higher rates.",
   },
+  {
+    question: "Do you provide tarmac pickup at Henderson Executive?",
+    answer:
+      "Yes. We coordinate directly with FBO operations at Henderson including Signature Flight Support. Where security allows, our vehicle meets you at the jet stairs. Contact us to arrange tarmac service for your arrival.",
+  },
+  {
+    question: "Do you provide service during CES and major conventions?",
+    answer:
+      "Yes. We provide extensive service during CES, SEMA, NAB, and all major conventions. Book early—demand is extremely high. Our locked rates mean no surge pricing even when 180,000+ attendees flood the city",
+  },
+  {
+    question: "What is your cancellation policy?",
+    answer:
+      "For standard airport transfers, cancel up to 3 hours before pickup for a full refund. For hourly charters and event bookings, we require 72 hours’ notice. Plans change—contact us and we will work with you.",
+  },
+  {
+    question: "Do you track my flight?",
+    answer:
+      "Yes. We monitor your flight in real-time. If your plane lands early or late, we adjust pickup automatically. You never need to call us with updates—we already know.",
+  },
+  {
+    question: "Are you available 24/7 in Las Vegas?",
+    answer:
+      "Yes. Vegas never sleeps, and neither do we. Our dispatch team operates 24 hours a day, 7 days a week. Whether your flight lands at 2 AM or you need a ride from a nightclub at 4 AM, we are available.",
+  },
+  {
+    question: "Can I book a car for a Grand Canyon Day trip?",
+    answer:<>
+        Yes. Our{" "}
+        <a
+          href="/en/black-car-service/hourly-chauffeur-hire"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          hourly chauffeur service
+        </a>{" "}
+       is perfect for day trips to Grand Canyon West, Hoover Dam, Red Rock Canyon, and Valley of Fire. Your driver waits while you work. 3-hour minimum.
+        </> },
+  
 ];
 export const FAMap = {
   ServiceAirportFa,
@@ -592,7 +647,8 @@ export const FAMap = {
   locationNewYorkFA,
   LocationsLAFa,
   LocationsSanFranciscoFa,
-  LocationsChicagocoFa
+  LocationsChicagocoFa,
+  locationLasVegasFA
 };
 export type FAMapKey = keyof typeof FAMap;
 export const locationNewYorkFAES = [
@@ -629,7 +685,17 @@ export const locationNewYorkFAES = [
   {
     question: "¿Puedo reservar un auto por un día completo en Manhattan?",
     answer:
-      "Sí. Nuestro servicio de chófer por hora [/black-car-services/hourly-chauffeur-service/] es ideal para cobertura de día completo en Manhattan. Su conductor espera mientras usted asiste a reuniones, hace compras o cena. Mínimo de 3 horas.",
+      <>
+        Sí. Nuestro  {" "}
+        <a
+          href="/en/black-car-service/hourly-chauffeur-hire"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          servicio chófer por hor
+        </a>{" "}
+        es ideal para cobertura de día completo en Manhattan. Su conductor espera mientras usted asiste a reuniones, hace compras o cena. Mínimo de 3 horas.
+        </> 
   },
   {
     question: "¿Ofrecen servicio hacia Los Hamptons?",
@@ -1186,6 +1252,57 @@ export const LocationsChicagocoFaEs = [
     </>
   },
 ];
+export const locationLasVegasFAEs = [
+  {
+    question: "¿Cuánto cuesta un auto de lujo desde el Aeropuerto Harry Reid hasta el Strip?",
+    answer:
+      "Viaro ofrece precios transparentes desde Harry Reid hasta los resorts del Strip a partir de $65 en sedán. Su tarifa queda fija al momento de reservar—sin alzas al estilo de las apps de transporte, incluso durante CES, SEMA o los fines de semana de peleas. SUVs y Sprinter vans disponibles a tarifas más altas.",
+  },
+  {
+    question: "¿Ofrecen recogida en pista en Henderson Executive?",
+    answer:
+      "Sí. Coordinamos directamente con las operaciones FBO en Henderson, incluyendo Signature Flight Support. Donde la seguridad lo permite, nuestro vehículo lo espera al pie de la escalerilla. Contáctenos para organizar el servicio en pista para su llegada.",
+  },
+  {
+    question: "¿Brindan servicio durante CES y las grandes convenciones?",
+    answer:
+      "Sí. Ofrecemos servicio amplio durante CES, SEMA, NAB y todas las convenciones importantes. Reserve con anticipación—la demanda es extremadamente alta. Nuestras tarifas fijas garantizan que no habrá alzas de precio aunque 180,000+ asistentes inunden la ciudad.",
+  },
+  {
+    question: "¿Cuál es su política de cancelación?",
+    answer:
+      "Para traslados estándar al aeropuerto, cancele hasta 3 horas antes de la recogida para obtener un reembolso completo. Para chárters por hora y reservas de eventos, requerimos 72 horas de aviso. Los planes cambian—contáctenos y trabajaremos con usted.",
+  },
+  {
+    question: "¿Rastrean mi vuelo?",
+    answer:
+      "Sí. Monitoreamos su vuelo en tiempo real. Si su avión aterriza antes o después de lo previsto, ajustamos la recogida automáticamente. Nunca necesita llamarnos con actualizaciones—ya lo sabemos.",
+  },
+  {
+    question: "¿Están disponibles las 24 horas en Las Vegas?",
+    answer:
+      "Sí. Vegas nunca duerme, y nosotros tampoco. Nuestro equipo de despacho opera las 24 horas del día, los 7 días de la semana. Ya sea que su vuelo aterrice a las 2 AM o necesite un traslado desde una discoteca a las 4 AM, estamos disponibles.",
+  },
+  {
+    question: "¿Puedo reservar un auto para una excursión de un día al Gran Cañón?",
+    answer: <>
+      
+        Sí. Nuestro{" "}
+      <a
+          href="/es/servicio-auto-lujo/chofer-por-hora"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 font-semibold hover:text-primary"
+        >
+          servicio de chofer por hora
+        </a>{" "}
+        es perfecto para excursiones de un día al Gran Cañón Oeste, la Presa
+        Hoover, Red Rock Canyon y Valley of Fire. Su chofer lo espera mientras
+        usted disfruta. Mínimo de 3 horas.
+      </>
+    ,
+  },
+
+];
 export const FAMapEs = {
   ServiceAirportFa: ServiceAirportFaEs,
   ServicesFa: ServicesFaEs,
@@ -1198,7 +1315,8 @@ export const FAMapEs = {
   locationNewYorkFA:locationNewYorkFAES,
   LocationsLAFa:LocationsLAFaEs,
   LocationsSanFranciscoFa:LocationsSanFranciscoFaEs,
-  LocationsChicagocoFa:LocationsChicagocoFaEs
+  LocationsChicagocoFa:LocationsChicagocoFaEs,
+  locationLasVegasFA:locationLasVegasFAEs
 };
 
 export type FAMapKeyEs = keyof typeof FAMapEs;
