@@ -196,7 +196,8 @@
           "Mercedes-Benz S-Class",
           "BMW 7 Series",
           "Volvo S90",
-          "Audi A8"
+          "Audi A8",
+          "or similar"
         ],
         "passengers": "Up to 3 comfortably",
         "luggage": "2-3 suitcases",
@@ -210,7 +211,8 @@
           "Cadillac Escalade",
           "Lincoln Navigator",
           "Chevrolet Suburban",
-          "Mercedes GLS"
+          "Mercedes GLS",
+          "or similar"
         ],
         "passengers": "Up to 6 comfortably",
         "luggage": "5-6 suitcases",
@@ -220,11 +222,11 @@
       },
       {
         "type": "Executive Sprinter Vans",
-        "models": ["Mercedes-Benz Sprinter"],
-        "passengers": "Up to 14 (executive configuration seats 8-10)",
+        "models": ["Mercedes-Benz Sprinter", "or similar"],
+        "passengers": "Up to 13 comfortably",
         "luggage": "10+ suitcases",
         "bestFor": "Corporate teams, large families, roadshows, group events",
-        "features": "High ceilings for easy entry, executive leather seating, overhead storage, USB charging throughout, and optional conference setup. Move your entire group together in comfort.",
+        "features": "Executive configuration seats 8-10, high ceilings for easy entry, executive leather seating, overhead storage, USB charging throughout, and optional conference setup. Move your entire group together in comfort.",
         "cta": "Book Executive Sprinter →"
       }
     ],
@@ -233,11 +235,11 @@
     "about_title": "Why Viaro Is America's Trusted Chauffeur Service",
     "about_founder_label": "Meet Our Founder",
     "about_founder_name": "Bijo Cherian",
-    "about_founder_description": "Viaro is led by CEO Bijo Cherian. He is an expert in the travel industry with over ten years of experience in luxury ground transportation. Bijo started with a simple goal: provide a safe and reliable private car service in the Pacific Northwest. That commitment to quality has grown into a national brand serving 21+ cities across America. Today, Viaro continues to set the standard for executive car service. Every decision we make puts our passengers first.",
+    "about_founder_description": "Viaro is led by CEO Bijo Cherian. He is an expert in the travel industry with over ten years of experience in luxury ground transportation. Bijo started with a simple goal: provide a safe and reliable private car service in the Pacific Northwest. That commitment to quality has grown into a national brand serving 50+ cities across America. Today, Viaro continues to set the standard for executive car service. Every decision we make puts our passengers first.",
     "about_vision_label": "Our Vision",
-    "about_vision": "To set the national standard for private transportation where every ride is safe, luxurious, and on time.",
+    "about_vision": "Viaro exists to be the most trusted name in luxury ground transportation across the United States, Canada, and Costa Rica. We are setting the international standard for private travel by making every ride simple, safe, and completely stress-free. With transparent pricing, guaranteed safety, and zero canceled rides, we protect your time and give you absolute peace of mind—every trip, every time.",
     "about_mission_label": "Our Mission",
-    "about_mission": "To treat every passenger like a VIP. We believe in using professional employees to make sure you get a trained, background-checked chauffeur every time you book.",
+    "about_mission": "Our mission is to treat every passenger like a VIP by eliminating the unpredictability of modern travel. We deliver world-class black car service built on strictly vetted, drug-tested professional chauffeurs. Backed by transparent rates with no hidden fees, live flight tracking, 24/7 human support, and a 99.8% on-time arrival record, we transform every airport transfer, corporate roadshow, and private FBO pickup into a flawless, reliable experience.",
     "about_why_title": "Why Choose Viaro?",
     "about_why": [
       {

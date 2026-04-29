@@ -198,7 +198,8 @@
           "Mercedes-Benz Clase S",
           "BMW Serie 7",
           "Volvo S90",
-          "Audi A8"
+          "Audi A8",
+           "o similar"
         ],
         "passengers": "Hasta 3 pasajeros cómodamente",
         "luggage": "2-3 maletas grandes",
@@ -212,7 +213,8 @@
           "Cadillac Escalade",
           "Lincoln Navigator",
           "Chevrolet Suburban",
-          "Mercedes GLS"
+          "Mercedes GLS",
+          "o similar"
         ],
         "passengers": "Hasta 6 pasajeros cómodamente",
         "luggage": "5-6 maletas grandes",
@@ -222,11 +224,11 @@
       },
       {
         "type": "Vans Sprinter Ejecutivas",
-        "models": ["Mercedes-Benz Sprinter"],
-        "passengers": "Hasta 14 (configuración ejecutiva: 8-10 asientos)",
+        "models": ["Mercedes-Benz Sprinter", "o similar"],
+        "passengers": "Hasta 13 comodamente",
         "luggage": "10+ maletas grandes",
         "bestFor": "Equipos corporativos, familias numerosas, roadshows, eventos grupales",
-        "features": "Techos altos para fácil acceso, asientos ejecutivos de cuero, almacenamiento superior, carga USB en todos los asientos y configuración para conferencias opcional. Mueve a todo tu grupo juntos y con comodidad.",
+        "features": "Configuración ejecutiva: 8-10 asientos, techos altos para fácil acceso, asientos ejecutivos de cuero, almacenamiento superior, carga USB en todos los asientos y configuración para conferencias opcional. Mueve a todo tu grupo juntos y con comodidad.",
         "cta": "Reservar Sprinter Ejecutiva →"
       }
     ],
@@ -235,11 +237,11 @@
     "about_title": "Por Qué Viaro Es el Servicio de Chofer de Confianza en América",
     "about_founder_label": "Conoce a Nuestro Fundador",
     "about_founder_name": "Bijo Cherian",
-    "about_founder_description": "Viaro está liderado por el CEO Bijo Cherian, experto en la industria de viajes con más de diez años de experiencia en transporte terrestre de lujo. Bijo comenzó con un objetivo simple: ofrecer un servicio privado seguro y confiable en el Noroeste del Pacífico. Ese compromiso con la calidad creció hasta convertirse en una marca nacional con servicio en más de 21 ciudades de América. Hoy, Viaro continúa estableciendo el estándar en servicio de auto ejecutivo, poniendo siempre a los pasajeros primero.",
+    "about_founder_description": "Viaro está liderado por el CEO Bijo Cherian, experto en la industria de viajes con más de diez años de experiencia en transporte terrestre de lujo. Bijo comenzó con un objetivo simple: ofrecer un servicio privado seguro y confiable en el Noroeste del Pacífico. Ese compromiso con la calidad creció hasta convertirse en una marca nacional con servicio en más de 50 ciudades de América. Hoy, Viaro continúa estableciendo el estándar en servicio de auto ejecutivo, poniendo siempre a los pasajeros primero.",
     "about_vision_label": "Nuestra Visión",
-    "about_vision": "Establecer el estándar nacional en transporte privado donde cada viaje sea seguro, lujoso y puntual.",
+    "about_vision": "Viaro existe para ser el nombre más confiable en transporte terrestre de lujo en los Estados Unidos, Canadá y Costa Rica. Estamos estableciendo el estándar internacional para el viaje privado, haciendo que cada trayecto sea simple, seguro y completamente libre de estrés. Con precios transparentes, seguridad garantizada y cero cancelaciones, protegemos tu tiempo y te brindamos total tranquilidad — en cada viaje, en todo momento.",
     "about_mission_label": "Nuestra Misión",
-    "about_mission": "Tratar a cada pasajero como un VIP. Creemos en el uso de empleados profesionales para garantizar un chofer capacitado y con antecedentes verificados en cada reserva.",
+    "about_mission": "Nuestra misión es tratar a cada pasajero como un VIP eliminando la incertidumbre del viaje moderno. Ofrecemos un servicio de auto de lujo de clase mundial respaldado por chóferes profesionales estrictamente seleccionados y con pruebas toxicológicas. Con tarifas transparentes sin cargos ocultos, seguimiento de vuelos en tiempo real, soporte humano 24/7 y un récord de puntualidad del 99.8%, transformamos cada traslado al aeropuerto, gira corporativa y recogida privada en FBO en una experiencia impecable y confiable.",
     "about_why_title": "¿Por Qué Elegir Viaro?",
     "about_why": [
       {

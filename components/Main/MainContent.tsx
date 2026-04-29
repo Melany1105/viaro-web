@@ -25,7 +25,7 @@ type TripType = "oneway" | "roundtrip" | "package" | "multicity";
 
 const TRUST_METRICS = [
   {
-    value: "50,000+",
+    value: "60,000+",
     label: { en: "Rides Completed", es: "Viajes Completados" },
     icon: (
       <svg
@@ -131,7 +131,6 @@ function BookingForm({ t }: { t: any }) {
         {t.form_subtitle ?? "Instant quote · No commitment"}
       </p>
 
-      {/* Trip type tabs — FIX: text-[9px] en móvil para que no desborde */}
       <div className="grid grid-cols-4 gap-1 bg-white/5 rounded-xl p-1 mb-5">
         {tabs.map(({ key, label }) => (
           <button
@@ -149,7 +148,6 @@ function BookingForm({ t }: { t: any }) {
       </div>
 
       <div className="flex flex-col gap-4">
-        {/* Service type */}
         <div>
           <label className={labelCls}>{t.form_service ?? "Service Type"}</label>
           <select
@@ -769,19 +767,25 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
             <div className="lg:flex lg:items-start lg:gap-16">
               <div className="lg:w-1/3 mb-10 lg:mb-0 lg:sticky lg:top-24">
                 {t.locations_subtitle && (
-                  <p className="text-sm sm:text-base text-gray-400 text-center lg:text-left">
-                    {t.locations_subtitle.split("Viaro")
-                    .map((part: string, i: number, arr: string[]) => (
-                      <React.Fragment key={i}>
-                        {part}
-                        {i < arr.length - 1 && (
-                          <span className="text-muted2">Viaro</span>
-                        )}
-                      </React.Fragment>
-                    ))
-                    }
-                  </p>
-                )}
+  <p className="text-sm sm:text-base text-gray-400 text-center lg:text-left">
+    {t.locations_subtitle.split("Viaro")
+    .map((part: string, i: number, arr: string[]) => (
+      <React.Fragment key={i}>
+        {part}
+        {i < arr.length - 1 && (
+          <span className="text-muted2">Viaro</span>
+        )}
+      </React.Fragment>
+    ))}
+  </p>
+)}
+
+<Link
+  href={`/${lng}/service-areas`}
+  className="block text-center lg:text-left text-xs font-bold uppercase tracking-widest text-primary hover:underline mt-3"
+>
+  {lng === "es" ? "Ver todas las áreas de servicio" : "See all service areas"}
+</Link>
                 {t.locations_cta && (
                   <div className="mt-8 flex justify-center lg:justify-start">
                     <a href="https://booking.allblacklimoseattle.com/">
