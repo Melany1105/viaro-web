@@ -88,6 +88,45 @@
   },
 
   "home": {
+    "form_title": "Reserva tu Viaje",
+  "form_subtitle": "Cotización instantánea · Sin compromiso",
+
+  "trip_oneway": "Solo Ida",
+  "trip_roundtrip": "Ida y Vuelta",
+  "trip_package": "Paquete",
+  "trip_multicity": "Multi-Ciudad",
+
+  "form_service": "Tipo de Servicio",
+  "form_service_placeholder": "Selecciona un servicio...",
+  "form_service_airport": "Traslado al Aeropuerto",
+  "form_service_corporate": "Corporativo / Ejecutivo",
+  "form_service_cruise": "Puerto de Cruceros",
+  "form_service_fbo": "Jet Privado / FBO",
+  "form_service_hourly": "Chárter por Horas",
+
+  "form_pickup": "Lugar de Recogida",
+  "form_pickup_placeholder": "Dirección, aeropuerto, hotel...",
+  "form_dropoff": "Lugar de Destino",
+  "form_dropoff_placeholder": "Destino...",
+
+  "form_date": "Fecha",
+  "form_time": "Hora",
+  "form_date_depart": "Salida",
+  "form_date_return": "Regreso",
+  "form_time_return": "Hora de Regreso",
+  "form_date_end": "Fecha de Fin",
+
+  "form_package_notes": "Detalles del Paquete",
+  "form_package_placeholder": "Ej. Retiro corporativo de 3 días...",
+
+  "form_stop": "Parada",
+  "form_stop_placeholder": "Próximo destino...",
+  "form_add_stop": "Agregar Parada",
+
+  "form_passengers": "Pasajeros",
+  "form_passenger": "pasajero",
+  "form_passengers_label": "pasajeros",
+  "form_cta": "Obtener Cotización Instantánea",
     "hero_top_text": "El Nuevo Estándar de Lujo.",
     "hero_title": "El Servicio Premier de Auto Negro y Chofer Ejecutivo en América",
     "subtitle": "De confianza para 500 empresas Fortune.",
@@ -95,6 +134,35 @@
     "call_cta": "Llamar (206) 672-8281",
     "faqTitle": "Preguntas Frecuentes",
     "welcome_title": "Bienvenido a Viaro",
+  "fleet_passengers": "Pasajeros",
+  "fleet_luggage": "Equipaje",
+  "fleet_best_for": "Ideal Para",
+  "fleet_features": "Características",
+
+  "pricing_title": "Tarifas Transparentes",
+  "pricing_subtitle": "Sin precios dinámicos. Sin cargos ocultos. Conoce tu tarifa antes de reservar.",
+  "pricing_from": "desde ",
+  "pricing_popular": "Más Popular",
+  "pricing_flight_tracking": "Rastreo de vuelo incluido",
+  "pricing_note": "* Tarifas base para traslados locales. El precio final se confirma en tu cotización según distancia, fecha y disponibilidad.",
+
+  "pricing_sedan_label": "Sedán de Lujo",
+  "pricing_sedan_p1": "Hasta 3 pasajeros",
+  "pricing_sedan_p2": "2–3 maletas grandes",
+  "pricing_sedan_p3": "Mercedes Clase S, BMW Serie 7",
+  "pricing_cta_sedan": "Reservar Sedán",
+
+  "pricing_suv_label": "SUV de Lujo",
+  "pricing_suv_p1": "Hasta 6 pasajeros",
+  "pricing_suv_p2": "5–6 maletas grandes",
+  "pricing_suv_p3": "Cadillac Escalade, Lincoln Navigator",
+  "pricing_cta_suv": "Reservar SUV",
+
+  "pricing_sprinter_label": "Sprinter Ejecutiva",
+  "pricing_sprinter_p1": "Hasta 13 pasajeros",
+  "pricing_sprinter_p2": "10+ maletas grandes",
+  "pricing_sprinter_p3": "Mercedes-Benz Sprinter",
+  "pricing_cta_sprinter": "Reservar Sprinter",
     "welcome_description": "Viajar debería ser la parte más sencilla de tu día. Viaro te da más que un viaje. Te da tranquilidad.\n¿Llegando a Nueva York?\n\n¿Cerrando un trato en Chicago? ¿O de vacaciones en Miami? Nuestros choferes profesionales están listos y esperándote.\n\nRastreamos tu vuelo. Cargamos tu equipaje. Te llevamos a tiempo, con estilo y sin estrés.",
 
     "services_title": "Servicios de Transporte de Lujo para Cada Necesidad",
@@ -203,6 +271,7 @@
         ],
         "passengers": "Hasta 3 pasajeros cómodamente",
         "luggage": "2-3 maletas grandes",
+         "price": "$149",
         "bestFor": "Viajes ejecutivos, parejas, viajes de negocios en solitario",
         "features": "Cabina silenciosa, interior de cuero, espacio de trabajo en asiento trasero, control de clima y carga de teléfono. Consulta por nuestra opción de sedán de primera clase para máximo espacio.",
         "cta": "Reservar Sedán de Lujo →"
@@ -218,6 +287,7 @@
         ],
         "passengers": "Hasta 6 pasajeros cómodamente",
         "luggage": "5-6 maletas grandes",
+        "price": "$189",
         "bestFor": "Grupos pequeños, familias, viajeros con equipaje adicional",
         "features": "Asientos amplios, mucho espacio para maletas y bolsas de golf, posición elevada y excelente visibilidad. Perfecto para viajes al aeropuerto con toda la familia.",
         "cta": "Reservar SUV de Lujo →"
@@ -226,6 +296,7 @@
         "type": "Vans Sprinter Ejecutivas",
         "models": ["Mercedes-Benz Sprinter", "o similar"],
         "passengers": "Hasta 13 comodamente",
+        "price": "$299",
         "luggage": "10+ maletas grandes",
         "bestFor": "Equipos corporativos, familias numerosas, roadshows, eventos grupales",
         "features": "Configuración ejecutiva: 8-10 asientos, techos altos para fácil acceso, asientos ejecutivos de cuero, almacenamiento superior, carga USB en todos los asientos y configuración para conferencias opcional. Mueve a todo tu grupo juntos y con comodidad.",
@@ -305,6 +376,24 @@
   },
 
   "footer": {
+     "footer_services_title":    "Servicios",
+  "footer_service_airport":   "Traslados al Aeropuerto",
+  "footer_service_corporate": "Transporte Corporativo",
+  "footer_service_fbo":       "Transporte de Tripulación FBO",
+  "footer_service_cruise":    "Traslados a Puertos de Crucero",
+  "footer_service_hourly":    "Chofer por Horas",
+
+  "footer_company_title":     "Empresa",
+  "footer_company_about":     "Nosotros",
+  "footer_company_contact":   "Contacto",
+  "footer_company_blog":      "Blog",
+  "footer_company_faq":       "Preguntas Frecuentes",
+
+  "footer_hours_title":       "Horario",
+  "footer_hours_value":       "Servicio 24/7",
+
+  "footer_rights":            "Todos los derechos reservados.",
+  "footer_terms":             "Términos y Condiciones",
     "sections": {
       "services": "Servicios",
       "company": "Empresa",

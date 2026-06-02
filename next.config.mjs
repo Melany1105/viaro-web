@@ -7,15 +7,15 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/:lng/service-area/long-beach-lgb",
+        source: "/:lng/service-area/long-beach",
         destination: "/:lng/service-area/los-angeles-lax",
       },
       {
-        source: "/:lng/service-area/orange-county-sna",
+        source: "/:lng/service-area/orange-county",
         destination: "/:lng/service-area/los-angeles-lax",
       },
       {
-        source: "/:lng/service-area/oakland-oak",
+        source: "/:lng/service-area/oakland",
         destination: "/:lng/service-area/san-francisco-sfo",
       },
     ];

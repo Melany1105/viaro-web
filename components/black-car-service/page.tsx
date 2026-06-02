@@ -19,7 +19,8 @@ function getTrustIcon(label: string) {
   const l = label.toLowerCase();
 
   if (
-    l.includes("discret") ||
+    l.includes("discre") ||
+     l.includes("discret") ||
     l.includes("confidential") ||
     l.includes("privacy") ||
     l.includes("privaci") ||

@@ -177,7 +177,7 @@ export default function LocationsContent() {
     },
     {
       city: "Chicago",
-      url: "chicago-ord",
+      url: "chicago",
       airport: "ORD",
       description: isES
         ? "Arquitectura impactante, jazz legendario y una de las mejores escenas culinarias del país."
@@ -186,7 +186,7 @@ export default function LocationsContent() {
     },
     {
       city: "San Francisco",
-      url: "san-francisco-sfo",
+      url: "san-francisco",
       airport: "SFO",
       description: isES
         ? "Puentes icónicos, colinas escénicas y el corazón tecnológico de Silicon Valley."
@@ -201,42 +201,42 @@ export default function LocationsContent() {
       cities: [
         {
           name: "Aspen / Vail, CO (ASE, EGE)",
-          slug: "aspen-vail-ase",
+          slug: "aspen-vail",
           desc: isES
             ? "Traslados a resorts de esquí y retiros de montaña."
             : "Private jet pickup, ski resort transfers, luxury mountain retreat transportation.",
         },
         {
           name: "Denver, CO (DEN, APA, BJC)",
-          slug: "denver-den",
+          slug: "denver",
           desc: isES
             ? "Traslados al aeropuerto y conexiones a resorts de esquí."
             : "Airport transfers, FBO service at Centennial, ski resort connections.",
         },
         {
           name: "Honolulu, HI (HNL)",
-          slug: "honolulu-hnl",
+          slug: "honolulu",
           desc: isES
             ? "Servicio aeropuerto, traslados a resorts y tours por isla."
             : "Airport service, resort transfers, island tours and hourly chauffeur.",
         },
         {
           name: "Jackson Hole, WY (JAC)",
-          slug: "jackson-hole-jac",
+          slug: "jackson-hole",
           desc: isES
             ? "Aviación privada, traslados a resorts de esquí y ranchos."
             : "Private aviation pickup, ski resort transfers, ranch and estate transportation.",
         },
         {
           name: "Las Vegas, NV (LAS, VGT, HND)",
-          slug: "las-vegas-las",
+          slug: "las-vegas",
           desc: isES
             ? "Traslados al aeropuerto, servicio FBO, eventos y entretenimiento 24/7."
             : "Airport and FBO transfers, convention service, 24/7 entertainment and event travel.",
         },
         {
           name: "Long Beach, CA (LGB)",
-          slug: "long-beach-lgb",
+          slug: "long-beach",
           desc: isES
             ? "Traslados al aeropuerto, servicio al puerto de cruceros y área de Los Ángeles."
             : "Airport transfers, cruise port service, Los Angeles area transportation.",
@@ -250,63 +250,63 @@ export default function LocationsContent() {
         },
         {
           name: "Oakland, CA (OAK)",
-          slug: "oakland-oak",
+          slug: "oakland",
           desc: isES
             ? "Traslados al aeropuerto y servicio corporativo en el East Bay."
             : "Airport transfers, East Bay corporate service, Bay Area coverage.",
         },
         {
           name: "Orange County, CA (SNA, JWA)",
-          slug: "orange-county-sna",
+          slug: "orange-county",
           desc: isES
             ? "Traslados John Wayne, resorts de playa, Newport y Laguna."
             : "John Wayne Airport transfers, beach resort service, Newport and Laguna travel.",
         },
         {
           name: "Palm Springs, CA (PSP, TRM)",
-          slug: "palm-springs-psp",
+          slug: "palm-springs",
           desc: isES
             ? "Servicio aeropuerto, traslados a golf y retiros en el desierto."
             : "Airport service, golf resort transfers, desert retreat transportation.",
         },
         {
           name: "Phoenix / Scottsdale, AZ (PHX, SDL)",
-          slug: "phoenix-phx",
+          slug: "phoenix",
           desc: isES
             ? "Traslados al aeropuerto, FBO en Scottsdale, golf y spas."
             : "Airport transfers, FBO at Scottsdale, golf resort and spa transportation.",
         },
         {
           name: "Portland, OR (PDX, HIO)",
-          slug: "portland-pdx",
+          slug: "portland",
           desc: isES
             ? "Servicio aeropuerto, tours por wine country y viajes corporativos."
             : "Airport service, wine country tours, corporate and leisure travel.",
         },
         {
           name: "Sacramento, CA (SMF)",
-          slug: "sacramento-smf",
+          slug: "sacramento",
           desc: isES
             ? "Traslados al aeropuerto, tours Napa Valley y servicio corporativo."
             : "Airport transfers, Napa Valley wine tours, state capital corporate service.",
         },
         {
           name: "Salt Lake City, UT (SLC)",
-          slug: "salt-lake-city-slc",
+          slug: "salt-lake-city",
           desc: isES
             ? "Servicio aeropuerto, traslados a resorts de esquí y eventos."
             : "Airport service, ski resort transfers, corporate and event transportation.",
         },
         {
           name: "San Diego, CA (SAN, CRQ, MYF)",
-          slug: "san-diego-san",
+          slug: "san-diego",
           desc: isES
             ? "Traslados al aeropuerto, resorts de playa y viajes corporativos."
             : "Airport transfers, beach resort service, corporate and leisure travel.",
         },
         {
           name: "San Francisco Bay Area (SFO, SJC, OAK)",
-          slug: "san-francisco-sfo",
+          slug: "san-francisco",
           desc: isES
             ? "Servicio aeropuerto, tours Napa Valley y viajes corporativos en Silicon Valley."
             : "Airport service, Napa Valley wine tours, Silicon Valley corporate travel.",
@@ -325,112 +325,112 @@ export default function LocationsContent() {
       cities: [
         {
           name: "Atlanta, GA (ATL, PDK)",
-          slug: "atlanta-atl",
+          slug: "atlanta",
           desc: isES
             ? "Traslados Hartsfield-Jackson, FBO en DeKalb-Peachtree y viajes corporativos."
             : "Hartsfield-Jackson transfers, FBO pickup at DeKalb-Peachtree, corporate travel.",
         },
         {
           name: "Austin, TX (AUS)",
-          slug: "austin-aus",
+          slug: "austin",
           desc: isES
             ? "Traslados al aeropuerto, campus tecnológicos y eventos SXSW."
             : "Airport transfers, tech campus pickups, SXSW and event transportation.",
         },
         {
           name: "Chicago, IL (ORD, MDW, DPA)",
-          slug: "chicago-ord",
+          slug: "chicago",
           desc: isES
             ? "Servicio O'Hare y Midway, FBO en DuPage y servicio corporativo."
             : "O'Hare and Midway transfers, FBO service at DuPage, corporate and hourly service.",
         },
         {
           name: "Cincinnati, OH (CVG)",
-          slug: "cincinnati-cvg",
+          slug: "cincinnati",
           desc: isES
             ? "Traslados al aeropuerto y viajes de negocios en el Midwest."
             : "Airport transfers, corporate headquarters visits, Midwest business travel.",
         },
         {
           name: "Cleveland, OH (CLE)",
-          slug: "cleveland-cle",
+          slug: "cleveland",
           desc: isES
             ? "Servicio aeropuerto y transporte médico en Cleveland Clinic."
             : "Airport service, Cleveland Clinic medical transportation, corporate travel.",
         },
         {
           name: "Columbus, OH (CMH)",
-          slug: "columbus-cmh",
+          slug: "columbus",
           desc: isES
             ? "Traslados al aeropuerto, eventos Ohio State y convenciones."
             : "Airport transfers, Ohio State events, corporate and convention service.",
         },
         {
           name: "Dallas / Fort Worth, TX (DFW, DAL, ADS)",
-          slug: "dallas-dfw",
+          slug: "dallas",
           desc: isES
             ? "Traslados al aeropuerto, FBO en Addison y roadshows corporativos."
             : "Airport transfers, FBO pickup at Addison, corporate roadshows and meetings.",
         },
         {
           name: "Detroit, MI (DTW, PTK)",
-          slug: "detroit-dtw",
+          slug: "detroit",
           desc: isES
             ? "Servicio aeropuerto, FBO en Oakland County e industria automotriz."
             : "Airport service, FBO at Oakland County, automotive industry travel.",
         },
         {
           name: "Houston, TX (IAH, HOU, SGR)",
-          slug: "houston-iah",
+          slug: "houston",
           desc: isES
             ? "Traslados al aeropuerto, transporte médico y FBO en Sugar Land."
             : "Airport transfers, medical center transportation, FBO at Sugar Land.",
         },
         {
           name: "Indianapolis, IN (IND)",
-          slug: "indianapolis-ind",
+          slug: "indianapolis",
           desc: isES
             ? "Servicio aeropuerto, convenciones e Indianapolis 500."
             : "Airport service, convention transportation, Indianapolis 500 and event travel.",
         },
         {
           name: "Milwaukee, WI (MKE)",
-          slug: "milwaukee-mke",
+          slug: "milwaukee",
           desc: isES
             ? "Traslados al aeropuerto, reuniones corporativas y eventos."
             : "Airport transfers, corporate meetings, event transportation.",
         },
         {
           name: "Minneapolis, MN (MSP, FCM)",
-          slug: "minneapolis-msp",
+          slug: "minneapolis",
           desc: isES
             ? "Servicio aeropuerto, FBO en Flying Cloud y sedes corporativas."
             : "Airport service, FBO at Flying Cloud, corporate headquarters travel.",
         },
         {
           name: "Nashville, TN (BNA, JWN)",
-          slug: "nashville-bna",
+          slug: "nashville",
           desc: isES
             ? "Traslados al aeropuerto, eventos musicales y bodas."
             : "Airport transfers, music industry events, wedding and celebration transportation.",
         },
         {
           name: "New Orleans, LA (MSY, NEW)",
-          slug: "new-orleans-msy",
+          slug: "new-orleans",
           desc: isES
             ? "Servicio aeropuerto, traslados a puerto de cruceros y French Quarter."
             : "Airport service, cruise port transfers, French Quarter hotel pickups.",
         },
         {
           name: "San Antonio, TX (SAT)",
-          slug: "san-antonio-sat",
+          slug: "san-antonio",
           desc: isES
             ? "Traslados al aeropuerto, centro de convenciones y viajes corporativos."
             : "Airport transfers, convention center service, leisure and corporate travel.",
         },
         {
           name: "St. Louis, MO (STL, SUS)",
-          slug: "st-louis-stl",
+          slug: "st-louis",
           desc: isES
             ? "Servicio aeropuerto, FBO en Spirit of St. Louis y transporte corporativo."
             : "Airport service, FBO at Spirit of St. Louis, corporate transportation.",
@@ -442,42 +442,42 @@ export default function LocationsContent() {
       cities: [
         {
           name: "Boston, MA (BOS, BED)",
-          slug: "boston-bos",
+          slug: "boston",
           desc: isES
             ? "Traslados Logan, jet privado en Hanscom Field, universidades y hospitales."
             : "Logan Airport transfers, private jet pickup at Hanscom Field, university and hospital visits.",
         },
         {
           name: "Charleston, SC (CHS)",
-          slug: "charleston-chs",
+          slug: "charleston",
           desc: isES
             ? "Traslados a hoteles históricos, puerto de cruceros y viajes corporativos."
             : "Historic district hotel transfers, cruise port service, corporate and leisure travel.",
         },
         {
           name: "Charlotte, NC (CLT)",
-          slug: "charlotte-clt",
+          slug: "charlotte",
           desc: isES
             ? "Traslados al aeropuerto, reuniones corporativas y eventos deportivos."
             : "Airport transfers, corporate meetings, sporting event transportation.",
         },
         {
           name: "Jacksonville, FL (JAX)",
-          slug: "jacksonville-jax",
+          slug: "jacksonville",
           desc: isES
             ? "Traslados al aeropuerto y puerto de cruceros, resorts de golf."
             : "Airport and cruise port transfers, golf resort transportation, military family travel.",
         },
         {
           name: "Miami / South Florida (MIA, FLL, PBI, OPF)",
-          slug: "miami-mia",
+          slug: "miami",
           desc: isES
             ? "Traslados al puerto de cruceros, aeropuertos, FBO Opa-locka y Palm Beach."
             : "Cruise port transfers, airport service, FBO pickup at Opa-locka, Palm Beach estates.",
         },
         {
           name: "Naples / Ft. Myers, FL (RSW, APF)",
-          slug: "naples-rsw",
+          slug: "naples",
           desc: isES
             ? "Traslados a resorts y golf, aviación privada y viajes de temporada."
             : "Resort and golf club transfers, private aviation pickup, seasonal luxury travel.",
@@ -491,49 +491,49 @@ export default function LocationsContent() {
         },
         {
           name: "Orlando, FL (MCO, SFB, ORL)",
-          slug: "orlando-mco",
+          slug: "orlando",
           desc: isES
             ? "Traslados familiares, centro de convenciones y parques temáticos."
             : "Family vacation transfers, convention center service, theme park and resort transportation.",
         },
         {
           name: "Philadelphia, PA (PHL, PNE)",
-          slug: "philadelphia-phl",
+          slug: "philadelphia",
           desc: isES
             ? "Traslados al aeropuerto, viajes corporativos y aviación privada."
             : "Airport transfers, corporate travel, private aviation at Northeast Philadelphia.",
         },
         {
           name: "Pittsburgh, PA (PIT)",
-          slug: "pittsburgh-pit",
+          slug: "pittsburgh",
           desc: isES
             ? "Servicio aeropuerto, reuniones corporativas y transporte médico."
             : "Airport service, corporate meetings, healthcare facility transportation.",
         },
         {
           name: "Raleigh-Durham, NC (RDU)",
-          slug: "raleigh-rdu",
+          slug: "raleigh-durham",
           desc: isES
             ? "Viajes corporativos en Research Triangle y centros médicos."
             : "Research Triangle corporate travel, airport transfers, medical center visits.",
         },
         {
           name: "Savannah, GA (SAV)",
-          slug: "savannah-sav",
+          slug: "savannah",
           desc: isES
             ? "Tours históricos, traslados al aeropuerto y eventos especiales."
             : "Historic district tours, airport transfers, wedding and event transportation.",
         },
         {
           name: "Tampa, FL (TPA, PIE)",
-          slug: "tampa-tpa",
+          slug: "tampa",
           desc: isES
             ? "Traslados al puerto de cruceros, aeropuerto y viajes corporativos."
             : "Cruise port transfers, airport service, corporate and leisure travel.",
         },
         {
           name: "Washington, DC (IAD, DCA, JYO)",
-          slug: "washington-dc-iad",
+          slug: "washington-dc",
           desc: isES
             ? "Viajes diplomáticos y gubernamentales, aeropuertos Dulles y Reagan."
             : "Government and diplomatic travel, airport transfers, FBO service at Leesburg.",
@@ -548,14 +548,14 @@ export default function LocationsContent() {
       cities: [
         {
           name: "Toronto, ON (YYZ, YTZ)",
-          slug: "toronto-yyz",
+          slug: "toronto",
           desc: isES
             ? "Traslados Pearson, servicio Billy Bishop y viajes corporativos transfronterizos."
             : "Pearson Airport transfers, Billy Bishop downtown service, cross-border corporate travel.",
         },
         {
           name: "Vancouver, BC (YVR)",
-          slug: "vancouver-yvr",
+          slug: "vancouver",
           desc: isES
             ? "Puerto Canada Place, traslados a cruceros de Alaska y experiencia fronteriza US-Canadá."
             : "Airport service, Alaska cruise port transfers, US-Canada border expertise.",
@@ -567,14 +567,14 @@ export default function LocationsContent() {
       cities: [
         {
           name: "Liberia, CR (LIR)",
-          slug: "liberia-lir",
+          slug: "costa-rica",
           desc: isES
             ? "Traslados a resorts de playa en la costa del Pacífico y eco-lodges."
             : "Pacific coast resort service & eco-lodge transportation.",
         },
         {
           name: "San José, CR (SJO)",
-          slug: "san-jose-sjo",
+          slug: "costa-rica",
           desc: isES
             ? "Aeropuerto capitalino, traslados de golf, negocios y eventos especiales."
             : "Capital city airport, golf transfers, business travel & special events.",

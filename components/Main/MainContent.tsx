@@ -1,6 +1,6 @@
- "use client";
+"use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Phone, CheckCircle } from "lucide-react";
@@ -25,7 +25,7 @@ type TripType = "oneway" | "roundtrip" | "package" | "multicity";
 
 const TRUST_METRICS = [
   {
-    value: "60,000+",
+    value: { en: "60,000+", es: "60,000+" },
     label: { en: "Rides Completed", es: "Viajes Completados" },
     icon: (
       <svg
@@ -44,7 +44,7 @@ const TRUST_METRICS = [
     ),
   },
   {
-    value: "5.0★",
+    value: { en: "5.0★", es: "5.0★" },
     label: { en: "Average Rating", es: "Calificación Promedio" },
     icon: (
       <svg
@@ -60,7 +60,7 @@ const TRUST_METRICS = [
     ),
   },
   {
-    value: "Licensed",
+    value: { en: "Licensed", es: "Licencia" },
     label: { en: "& Insured", es: "y Asegurado" },
     icon: (
       <svg
@@ -77,7 +77,7 @@ const TRUST_METRICS = [
     ),
   },
   {
-    value: "24/7",
+    value: { en: "24/7", es: "24/7" },
     label: { en: "Support", es: "Soporte" },
     icon: (
       <svg
@@ -94,8 +94,8 @@ const TRUST_METRICS = [
     ),
   },
 ];
-
 function BookingForm({ t }: { t: any }) {
+  const [mounted, setMounted] = React.useState(false);
   const [trip, setTrip] = React.useState<TripType>("oneway");
   const [stops, setStops] = React.useState<string[]>(["", ""]);
   const [service, setService] = React.useState("");
@@ -109,6 +109,10 @@ function BookingForm({ t }: { t: any }) {
   const [pkgNotes, setPkgNotes] = React.useState("");
   const [passengers, setPassengers] = React.useState("1");
 
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const tabs: { key: TripType; label: string }[] = [
     { key: "oneway", label: t.trip_oneway ?? "One Way" },
     { key: "roundtrip", label: t.trip_roundtrip ?? "Round Trip" },
@@ -121,6 +125,8 @@ function BookingForm({ t }: { t: any }) {
     setStops((s) => s.filter((_, idx) => idx !== i));
   const updateStop = (i: number, val: string) =>
     setStops((s) => s.map((v, idx) => (idx === i ? val : v)));
+
+  if (!mounted) return null;
 
   return (
     <div className="bg-white/5 backdrop-blur-xl border border-white/15 rounded-2xl p-6 sm:p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] w-full min-w-0">
@@ -205,7 +211,6 @@ function BookingForm({ t }: { t: any }) {
                 className={inputCls}
               />
             </div>
-            {/* FIX: grid-cols-1 en móvil muy pequeño, cols-2 desde sm */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className={labelCls}>{t.form_date ?? "Date"}</label>
@@ -484,12 +489,28 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
   const locationsRegions: any[] = t.locations_regions || [];
   const aboutWhy: any[] = t.about_why || [];
   const fa = lng === "en" ? MainFa : MainFaEs;
+  const [isMounted, setIsMounted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    console.log("Styles applied?", document.body.style.backgroundColor);
+    console.log(
+      "MainContent visibility:",
+      document.getElementById("MainContent")?.style.display,
+    );
+
+    // Forzar visibilidad
+    const mainEl = document.getElementById("MainContent");
+    if (mainEl) {
+      console.log("MainContent found:", mainEl);
+      console.log("Computed styles:", window.getComputedStyle(mainEl).display);
+    }
+  }, []);
 
   return (
     <section id="MainContent" className="bg-black text-white">
-      <main className="w-full ">
-      
-        <section className="relative w-full min-h-screen bg-neutral-900">
+      <main className="">
+        <section className="relative w-full  bg-neutral-900">
           <div className="absolute inset-0">
             <Image
               src="/images/ImagenPrincipal.png"
@@ -502,9 +523,7 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
             <div className="absolute inset-0 bg-black/50" />
           </div>
 
-          {/* FIX: w-full + overflow-hidden para que el grid no desborde */}
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-32 sm:pt-36 pb-20 sm:pb-28">
-           
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div className="max-w-2xl min-w-0">
                 <p className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand [text-shadow:0_1px_3px_rgba(0,0,0,0.9),_0_4px_12px_rgba(0,0,0,0.6)] whitespace-pre-line">
@@ -572,14 +591,14 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
               maxWidth: 900,
               margin: "0 auto",
               display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",  // siempre 4 columnas
+              gridTemplateColumns: "repeat(4, 1fr)", // siempre 4 columnas
               gap: 8,
               textAlign: "center",
             }}
           >
             {TRUST_METRICS.map((m) => (
               <div
-                key={m.value}
+                key={m.value[lng as "en" | "es"]}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -607,7 +626,7 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                     lineHeight: 1,
                   }}
                 >
-                  {m.value}
+                  {m.value[lng as "en" | "es"]}
                 </span>
                 <span
                   style={{
@@ -658,104 +677,15 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
             </div>
           </div>
         </section>
-
-        {/* ── SERVICES ── */}
-        {services.length > 0 && (
-          <section className="py-16 sm:py-20 bg-black">
-            <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-              <h2 className="text-center font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
-                {t.services_title}
-              </h2>
-              <div className="mt-12">
-                {/* FIX: grid-cols-1 en móvil para evitar overflow */}
-                <div className="grid gap-4 grid-cols-1 sm:grid-cols-3">
-                  {services.slice(0, 3).map((s: any) => (
-                    <div
-                      key={s.id}
-                      className="flex flex-col border border-primary/30 rounded-2xl bg-neutral-900/50 p-6 sm:p-8 hover:border-primary transition-all duration-300"
-                    >
-                      <h3 className="font-serif font-bold text-xl sm:text-2xl text-primary mb-3">
-                        {s.title}
-                      </h3>
-                      <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-3">
-                        {s.description}
-                      </p>
-                      <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
-                        {s.detail}
-                      </p>
-                      {s.served && (
-                        <p className="text-xs text-gray-500 italic mb-6">
-                          <span className="not-italic font-semibold text-gray-400">
-                            {s.served_label}:{" "}
-                          </span>
-                          {s.served}
-                        </p>
-                      )}
-                      <div className="mt-auto">
-                        <a
-                          href="https://booking.allblacklimoseattle.com/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Button className={`w-full h-11 ${btnPrimary}`}>
-                            {s.cta}
-                          </Button>
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                {services.length > 3 && (
-                  <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:w-2/3 xl:mx-auto mt-6">
-                    {services.slice(3).map((s: any) => (
-                      <div
-                        key={s.id}
-                        className="flex flex-col border border-primary/30 rounded-2xl bg-neutral-900/50 p-6 sm:p-8 hover:border-primary transition-all duration-300"
-                      >
-                        <h3 className="font-serif font-bold text-xl sm:text-2xl text-primary mb-3">
-                          {s.title}
-                        </h3>
-                        <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-3">
-                          {s.description}
-                        </p>
-                        <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
-                          {s.detail}
-                        </p>
-                        {s.served && (
-                          <p className="text-xs text-gray-500 italic mb-6">
-                            <span className="not-italic font-semibold text-gray-400">
-                              {s.served_label}:{" "}
-                            </span>
-                            {s.served}
-                          </p>
-                        )}
-                        <div className="mt-auto">
-                          <a
-                            href="https://booking.allblacklimoseattle.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Button className={`w-full h-11 ${btnPrimary}`}>
-                              {s.cta}
-                            </Button>
-                          </a>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* ── LOCATIONS ── */}
+        
+      
+  {/* ── LOCATIONS ── */}
         <section className="py-16 sm:py-20 bg-black">
           <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
             <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-8">
               {t.locations_title}
             </h2>
-            <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden mb-12">
+           <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden mb-12">
               <Image
                 src="/images/Mapa.png"
                 alt="Map showing Viaro luxury black car service locations across the United States."
@@ -767,25 +697,28 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
             <div className="lg:flex lg:items-start lg:gap-16">
               <div className="lg:w-1/3 mb-10 lg:mb-0 lg:sticky lg:top-24">
                 {t.locations_subtitle && (
-  <p className="text-sm sm:text-base text-gray-400 text-center lg:text-left">
-    {t.locations_subtitle.split("Viaro")
-    .map((part: string, i: number, arr: string[]) => (
-      <React.Fragment key={i}>
-        {part}
-        {i < arr.length - 1 && (
-          <span className="text-muted2">Viaro</span>
-        )}
-      </React.Fragment>
-    ))}
-  </p>
-)}
+                  <p className="text-sm sm:text-base text-gray-400 text-center lg:text-left">
+                    {t.locations_subtitle
+                      .split("Viaro")
+                      .map((part: string, i: number, arr: string[]) => (
+                        <React.Fragment key={i}>
+                          {part}
+                          {i < arr.length - 1 && (
+                            <span className="text-muted2">Viaro</span>
+                          )}
+                        </React.Fragment>
+                      ))}
+                  </p>
+                )}
 
-<Link
-  href={`/${lng}/service-areas`}
-  className="block text-center lg:text-left text-xs font-bold uppercase tracking-widest text-primary hover:underline mt-3"
->
-  {lng === "es" ? "Ver todas las áreas de servicio" : "See all service areas"}
-</Link>
+                <Link
+                  href={`/${lng}/service-areas`}
+                  className="block text-center lg:text-left text-xs font-bold uppercase tracking-widest text-primary hover:underline mt-3"
+                >
+                  {lng === "es"
+                    ? "Ver todas las áreas de servicio"
+                    : "See all service areas"}
+                </Link>
                 {t.locations_cta && (
                   <div className="mt-8 flex justify-center lg:justify-start">
                     <a href="https://booking.allblacklimoseattle.com/">
@@ -798,7 +731,6 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
               </div>
               <div className="lg:w-2/3 min-w-0">
                 {locationsRegions.length > 0 ? (
-                  // FIX: grid-cols-2 en móvil en vez de 4 para no desbordar
                   <div className="grid gap-8 grid-cols-2 xl:grid-cols-4">
                     {locationsRegions.map((r: any, index: number) => (
                       <div
@@ -868,20 +800,18 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
             </div>
           </div>
         </section>
-
         {/* ── FLEET ── */}
         {fleet.length > 0 && (
-          <section id="fleet" className="py-16 sm:py-20 bg-black">
+          <section id="fleet" className="py-14 sm:py-20 bg-black">
             <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
               <h2 className="text-center font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
                 {t.fleet_title}
               </h2>
-              {/* FIX: grid-cols-1 en móvil */}
               <div className="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {fleet.map((v: any) => (
                   <div
                     key={v.type}
-                    className="flex flex-col border border-primary/40 p-6 sm:p-8 rounded-2xl bg-neutral-900/40 hover:border-primary transition-all duration-300"
+                    className="flex flex-col border border-primary/60 p-6 sm:p-8 rounded-2xl bg-neutral-900 hover:border-primary transition-all duration-300"
                   >
                     <h3 className="font-serif font-bold text-xl sm:text-2xl text-primary mb-2">
                       {v.type}
@@ -889,10 +819,11 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                     <p className="text-sm text-gray-300 mb-6">
                       {Array.isArray(v.models) ? v.models.join(", ") : v.models}
                     </p>
-                    <div className="grid grid-cols-2 gap-4 mb-6 border-y border-white/10 py-4">
+
+                    <div className="grid grid-cols-3 gap-4 mb-6 border-y border-white/10 py-4">
                       <div className="flex flex-col">
                         <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                          Passengers
+                          {t.fleet_passengers ?? "Pasajeros"}
                         </span>
                         <span className="text-sm font-semibold text-white">
                           {v.passengers}
@@ -900,17 +831,26 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                       </div>
                       <div className="flex flex-col border-l border-white/10 pl-4">
                         <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                          Luggage
+                          {t.fleet_luggage ?? "Equipaje"}
                         </span>
                         <span className="text-sm font-semibold text-white">
                           {v.luggage}
                         </span>
                       </div>
+                      <div className="flex flex-col border-l border-white/10 pl-4">
+                        <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                          {t.pricing_from ?? "From"}
+                        </span>
+                        <span className=" font-semibold text-2xl text-primary">
+                          {v.price}
+                        </span>
+                      </div>
                     </div>
+
                     <div className="flex-grow space-y-4">
                       <div>
                         <span className="text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">
-                          Best For
+                          {t.fleet_best_for ?? "Ideal Para"}
                         </span>
                         <p className="text-sm text-gray-300 italic">
                           {v.bestFor}
@@ -918,13 +858,14 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
                       </div>
                       <div>
                         <span className="text-[10px] uppercase tracking-widest text-muted-foreground block mb-1">
-                          Features
+                          {t.fleet_features ?? "Características"}
                         </span>
                         <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
                           {v.features}
                         </p>
                       </div>
                     </div>
+
                     <div className="mt-8">
                       <a
                         href="https://booking.allblacklimoseattle.com/"
@@ -943,20 +884,21 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
           </section>
         )}
 
-        {/* ── ABOUT ── */}
+        {/* ── About us ── */}
         {t.about_title && (
-          <section className="py-16 sm:py-20 bg-neutral-950">
+          <section className="py-14 sm:py-20 bg-neutral">
             <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-              <h2 className="text-center font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-12">
-                {t.about_title.split("Viaro")
-                    .map((part: string, i: number, arr: string[]) => (
-                      <React.Fragment key={i}>
-                        {part}
-                        {i < arr.length - 1 && (
-                          <span className="text-muted2">Viaro</span>
-                        )}
-                      </React.Fragment>
-                    ))}
+              <h2 className="text-center font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+                {t.about_title
+                  .split("Viaro")
+                  .map((part: string, i: number, arr: string[]) => (
+                    <React.Fragment key={i}>
+                      {part}
+                      {i < arr.length - 1 && (
+                        <span className="text-muted2">Viaro</span>
+                      )}
+                    </React.Fragment>
+                  ))}
               </h2>
               <div className="mb-8">
                 {t.about_founder_label && (
@@ -1007,17 +949,17 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
               {aboutWhy.length > 0 && (
                 <>
                   <h3 className="font-serif font-bold text-xl sm:text-2xl mb-5">
-                    {t.about_why_title.split("Viaro")
-                    .map((part: string, i: number, arr: string[]) => (
-                      <React.Fragment key={i}>
-                        {part}
-                        {i < arr.length - 1 && (
-                          <span className="text-muted2">Viaro</span>
-                        )}
-                      </React.Fragment>
-                    ))}
+                    {t.about_why_title
+                      .split("Viaro")
+                      .map((part: string, i: number, arr: string[]) => (
+                        <React.Fragment key={i}>
+                          {part}
+                          {i < arr.length - 1 && (
+                            <span className="text-muted2">Viaro</span>
+                          )}
+                        </React.Fragment>
+                      ))}
                   </h3>
-                  {/* FIX: grid-cols-1 en móvil */}
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                     {aboutWhy.map((w: any) => (
                       <li key={w.label} className="flex gap-3">
@@ -1057,7 +999,6 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
           </p>
         </div>
 
-        {/* ── TESTIMONIALS ── */}
         <section className="pt-16 sm:pt-24 overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16 mb-1 text-center">
             <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
@@ -1070,14 +1011,10 @@ export default function MainContent({ dict, lng }: { dict: any; lng: string }) {
         </section>
 
         <CtaSection />
-
-        {/* ── FAQ ── */}
         <section className="py-16 sm:py-24 bg-black">
           <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
             <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-center mb-6">
-              {lng === "es"
-                ? "PREGUNTAS FRECUENTES"
-                : "BLACK CAR SERVICE FAQs"}
+              {lng === "es" ? "PREGUNTAS FRECUENTES" : "BLACK CAR SERVICE FAQs"}
             </h2>
             <FA data={fa} />
             <div className="mt-12 flex justify-center">

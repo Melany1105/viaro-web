@@ -147,6 +147,7 @@
     "locations_title": "Black Car Service in Major Cities Nationwide",
     "locations_subtitle": "Viaro provides consistent, high-quality service in top business and leisure destinations across the country. One account, one standard of luxury, everywhere you go.",
     "locations_cta": "Book Your Nearest Drive →",
+    
     "locations_regions": [
       {
         "region": "East Coast",
@@ -190,7 +191,9 @@
 
     "fleet_title": "Our Luxury Fleet",
     "fleet": [
+      
       {
+         "pricing_from": "From",
         "type": "Luxury Sedans",
         "models": [
           "Mercedes-Benz S-Class",
@@ -199,6 +202,7 @@
           "Audi A8",
           "or similar"
         ],
+        "price": "$149",
         "passengers": "Up to 3 comfortably",
         "luggage": "2-3 suitcases",
         "bestFor": "Executive travel, couples, solo business trips",
@@ -214,7 +218,9 @@
           "Mercedes GLS",
           "or similar"
         ],
+        "price": "$189",
         "passengers": "Up to 6 comfortably",
+   
         "luggage": "5-6 suitcases",
         "bestFor": "Small groups, families, travelers with extra luggage",
         "features": "Spacious seating, plenty of room for suitcases and golf bags, high ride position, and commanding road view. Perfect for airport runs with the whole family.",
@@ -225,6 +231,7 @@
         "models": ["Mercedes-Benz Sprinter", "or similar"],
         "passengers": "Up to 13 comfortably",
         "luggage": "10+ suitcases",
+        "price": "$299",
         "bestFor": "Corporate teams, large families, roadshows, group events",
         "features": "Executive configuration seats 8-10, high ceilings for easy entry, executive leather seating, overhead storage, USB charging throughout, and optional conference setup. Move your entire group together in comfort.",
         "cta": "Book Executive Sprinter →"
@@ -300,6 +307,24 @@
     }
   },
   "footer": {
+      "footer_services_title":    "Services",
+  "footer_service_airport":   "Airport Transfers",
+  "footer_service_corporate": "Corporate Transportation",
+  "footer_service_fbo":       "FBO Crew Transportation",
+  "footer_service_cruise":    "Cruise Port Transfers",
+  "footer_service_hourly":    "Hourly Chauffeur Hire",
+
+  "footer_company_title":     "Company",
+  "footer_company_about":     "About Us",
+  "footer_company_contact":   "Contact",
+  "footer_company_blog":      "Blog",
+  "footer_company_faq":       "FAQ",
+
+  "footer_hours_title":       "Hours",
+  "footer_hours_value":       "24/7 Service",
+
+  "footer_rights":            "All rights reserved.",
+  "footer_terms":             "Terms & Conditions",
     "sections": {
       "services": "Services",
       "company": "Company",
@@ -744,6 +769,6 @@
         "title": "Let's Work Together",
         "subtitle": "Have questions about our terms or want to start a partnership? Reach out to our team.",
         "book": "Get in Touch"
-      }
+              }
     }
 }

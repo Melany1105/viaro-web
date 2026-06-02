@@ -27,15 +27,22 @@ const METRICS = [
       </svg>
     ),
   },
-  
-  {
-    value: "50+ States",
-    label: { en: "Plus CAN & CRC", es: "Más CAN & CRC" },
+    {
+    value: "24/7",
+    label: { en: "Customer Support", es: "Atención al Cliente" },
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={28} height={28}>
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-        <path d="M2 12h20" />
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        width={28}
+        height={28}
+      >
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <path d="M12 7v2M12 13h.01" />
       </svg>
     ),
   },
